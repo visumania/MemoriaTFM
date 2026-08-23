@@ -1,0 +1,93 @@
+% Capítulo 1 - Introducción
+\chapter{Introducción}
+\label{cap:Introduccion}
+
+\begin{sugerencia}
+Redacta este apartado con tus propias palabras. Es una forma de empezar con un texto antes de pasar a la primera sección, que será la "Motivación".
+\end{sugerencia}
+
+\textit{Ejemplo: Este primer capítulo sirve de introducción y brinda una base general del proyecto. En primer lugar, se describe la motivación por la cual se ha decidido llevar a cabo este trabajo, los objetivos propuestos y las competencias que se pretenden adquirir. Finalmente se describe la estructura del documento.}
+
+\section{Motivación}
+\label{sec:Motivacion}
+\begin{sugerencia}
+Este apartado es importante. Debes reflejar el interés del trabajo elegido, detallando razones por las que es necesario investigar en la tarea que estás abordando. Se debe comenzar describiendo la situación actual y terminar diciendo que se proponen técnicas para ayudar a resolver la tarea
+\end{sugerencia}
+
+\textit{Ejemplo: Uno de los componentes que refuerzan el discurso tóxico y de odio son los estereotipos. Comprender cómo surgen y se difunden es crucial para abordar esta cuestión, ya que los estereotipos no siempre se expresan explícitamente....}
+
+\textit{Mediante este trabajo, buscamos crear modelos de inteligencia artificial que ayuden a clasificar comentarios en función de su toxicidad y la presencia de estereotipos raciales, para ayudar a mitigar estos casos y lograr unas plataformas digitales libres de abusos....}
+
+\section{Objetivos}
+\label{sec:Objetivos}
+\begin{sugerencia}
+En los TFG-M con un enfoque científico-técnico dentro del ámbito de la inteligencia artificial o el aprendizaje automático, es recomendable comenzar este apartado formulando un objetivo general que exprese con claridad el propósito principal de la investigación.
+
+Este objetivo debe situarse en el contexto del problema a resolver, e indicar de forma general qué se busca explorar, mejorar, demostrar o evaluar. A continuación, es conveniente desglosar ese objetivo en objetivos específicos, que representen las distintas tareas que conforman el desarrollo del trabajo. Por ejemplo: recopilar o preprocesar un conjunto de datos, implementar un modelo base, ajustar hiperparámetros, comparar arquitecturas, o analizar los resultados mediante métricas como la precisión o el F1-score.
+
+La redacción de los objetivos debe ser clara y concreta. Se recomienda usar verbos en infinitivo que reflejen acciones observables y medibles (analizar, entrenar, comparar, evaluar, validar...). Además, los objetivos deben ser realistas, estar bien delimitados y alineados con la metodología del trabajo.
+\end{sugerencia}
+
+\begin{sugerencia}
+Observa el uso de las viñetas. Muy sencillo con el entorno \verb|itemize|
+\end{sugerencia}
+
+\textit{Ejemplo: El objetivo principal de este proyecto es diseñar, implementar y evaluar 
+sistemas de clasificación automática de memes utilizando LLMs, considerando diferentes enfoques de aprendizaje: clasificación binaria, multiclase y multietiqueta. Para lograr dicho objetivo, se han planteado una serie de objetivos específicos:}
+\textit{\begin{itemize}
+    \item Estudiar las técnicas utilizadas en el campo de Deep Learning para resolver este tipo de tareas
+    \item Estudiar los modelos del lenguaje más eficaces
+    \item Proponer y desarrollar mejoras para incrementar el rendimiento de modelos pre-entrenados
+    \item Comparar los resultados obtenidos y analizar las ventajas y limitaciones de cada tipo de clasificación en el contexto del análisis automático de memes
+    \item ...
+\end{itemize}
+}
+
+\textit{IberLEF 2025 es una campaña de evaluación comparativa de sistemas de procesamiento del lenguaje natural en español y otras lenguas ibéricas, donde se encargan de organizar tareas competitivas de procesamiento, comprensión y generación de textos para definir nuevos retos de investigación cuyo objetivo es avanzar en el área de PLN, por lo que en este proyecto se establece como objetivo específico obtener buenos resultados en dichos retos.}
+
+\section{Competencias}
+\label{sec:Competencias}
+\begin{sugerencia}
+    Este apartado es obligatorio con el nuevo reglamento de TFG/TFM. Hay que indicar la competencia que se puso en el Anexo II y otras competencias del plan de estudios que se han adquirido.
+\end{sugerencia}
+
+
+\textit{Ejemplo: La principal competencia adquirida con la realización de este trabajo ha sido \textbf{CE7-C - Capacidad para conocer y desarrollar técnicas de aprendizaje computacional y diseñar e implementar aplicaciones y sistemas que la utilicen.}}
+
+\textit{Además, se han alcanzado otras competencias relacionadas con la línea de este TFG:}
+\textit{\begin{itemize}
+    \item \textbf{Capacidad para conocer y desarrollar técnicas de aprendizaje computacional.} Poner un par de líneas explicando cómo se ha alcanzado esta capacidad.
+    \item \textbf{Capacidad para implementar aplicaciones y sistemas que la utilicen.} Poner un par de líneas explicando cómo se ha alcanzado esta capacidad.
+    \item \textbf{Capacidad para la extracción automática de información. Poner un par de líneas explicando cómo se ha alcanzado esta capacidad.}
+    \item \textbf{Capacidad para adquirir conocimiento a partir de grandes volúmenes de datos.} Poner un par de líneas explicando cómo se ha alcanzado esta capacidad.  
+\end{itemize}}
+
+
+\section{Estructura de la Memoria}
+\label{sec:Estructura}
+\begin{sugerencia}
+    Se trata de describir cómo están estructurados los capítulos de la memoria.
+\end{sugerencia}
+
+\begin{sugerencia}
+    Observa que los Capítulos tienen su hipervínculo. Es muy sencillo usando \verb|label| y \verb|autoref|
+\end{sugerencia}
+
+\begin{sugerencia}
+Esta vez hacemos unas viñetas distintas con el entorno \verb|itemize|
+\end{sugerencia}
+
+
+\textit{Ejemplo: El resto de esta memoria se organiza de la siguiente manera:}
+\begin{itemize}[label=--]
+\item \textit{En el \autoref{cap:MarcoTeorico}, Marco Teórico, se exponen los conceptos fundamentales que se han utilizado en este trabajo, incluyendo las arquitecturas de los modelos BERT y RoBERTa y las técnicas de procesamiento de texto que se emplearon.}
+
+\item \textit{En el \autoref{cap:Metodologia} se describe la metodología propuesta para alcanzar los objetivos planteados. Se detalla la participación en el reto asociado a este trabajo, así como las técnicas y estrategias implementadas durante la experimentación. Finalmente se muestran y analizan los resultados obtenidos.}
+
+\item \textit{En el Capítulo 4 se plantean y se detallan nuevas estrategias y técnicas para mejorar los resultados obtenidos en la competición.}
+
+\item \textit{En el Capítulo 5 se presentan las conclusiones de este trabajo y las direcciones posibles para investigaciones futuras.}
+
+\item \textit{Finalmente, en el Anexo, se presenta el artículo científico que ha sido aceptado y publicado en el "The 17th International Workshop on Semantic Evaluation".}
+
+\end{itemize}

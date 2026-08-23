@@ -1,0 +1,38 @@
+\section{Aplicación Web para la Visualización y Prueba del Modelo}
+
+Como parte complementaria del trabajo, se ha desarrollado una aplicación web que permite cargar el modelo entrenado y utilizarlo para clasificar nuevas instancias de texto.
+
+Esta aplicación proporciona una interfaz sencilla e intuitiva para que cualquier usuario pueda interactuar con el modelo sin necesidad de conocimientos técnicos.
+
+\subsection*{Tecnologías Utilizadas}
+
+\begin{itemize}
+    \item \textbf{Backend:} Python con \texttt{FastAPI}, modelo cargado con \texttt{transformers}.
+    \item \textbf{Frontend:} HTML, CSS y JavaScript con \texttt{Bootstrap}.
+    \item \textbf{Despliegue:} Aplicación alojada en \textit{HuggingFace Spaces}.
+\end{itemize}
+
+\subsection*{Acceso a la Aplicación}
+
+La aplicación puede accederse desde la siguiente URL:
+
+\begin{center}
+\textbf{\url{https://miPagina.es}}
+\end{center}
+
+\subsection*{Manual de Usuario}
+
+\begin{enumerate}
+    \item Acceder a la URL anterior desde cualquier navegador.
+    \item Introducir el texto que se desea clasificar en el campo correspondiente.
+    \item Pulsar el botón “Clasificar”.
+    \item Se mostrará la predicción del modelo y, opcionalmente, las probabilidades asociadas a cada clase.
+\end{enumerate}
+
+\subsection*{Ejemplo de uso}
+
+\textit{Texto introducido:} “No me parece bien lo que estás diciendo.”  
+\textit{Salida del modelo:} \texttt{Clase: Desacuerdo}
+
+\subsection*{Capturas de pantalla}
+

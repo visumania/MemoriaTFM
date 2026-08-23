@@ -1,0 +1,130 @@
+% BEGIN_FOLD
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fichero: principal_I2C_TFGM_UHU.tex
+% Autor: Jacinto Mata Vázquez
+% Fecha de creación: marzo 2025
+% Descripción: Documento principal para la memoria de TFG/TFM
+% del Grado/Máster en Ingeniería Informática (Universidad de Huelva).
+% 
+% Es una plantilla para memorias de TFG/TFG de tipo científico-técnico  
+% (investigación) para adaptar a Latex la guía elaborada 
+% por Jacinto Mata y Victoria Pachón, de la Universidad de Huelva 
+%
+% Este documento sirve como punto de entrada para compilar 
+% la memoria completa, incluyendo capítulos, anexos y bibliografía.
+%
+%### Compilación
+% Todos los capítulos y anexos deben estar organizados en ficheros 
+% separados y ser incluidos mediante `\input{}` o `\include{}`.
+%
+% La estructura modular facilita la organización, el mantenimiento y la 
+% reutilización de secciones del documento.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END_FOLD
+
+\documentclass{clase_I2C_TFGM_UHU} % Clase base personalizada del proyecto (define estilos y paquetes comunes)
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%% PORTADA %%%%%%%%%%%%%%%%%%%%%%
+
+% Márgenes especiales SOLO para la portada
+% Esto permite centrar visualmente el recuadro sin alterar los márgenes generales del documento
+\newgeometry{left=2cm, right=2cm, top=2cm, bottom=2cm} 
+
+\pagestyle{empty}  % Página sin numeración ni encabezados
+
+% Recuadro centrado con logos, título y datos del trabajo
+% Se usa tcolorbox para crear una portada enmarcada
+\begin{tcolorbox}[
+    colframe=black,      % Color del borde
+    colback=white,       % Color de fondo
+    sharp corners,       % Esquinas sin redondear
+    width=\textwidth-1cm, % Ajustar para respetar los márgenes
+    height=\textheight-1cm, % Ajustar para respetar los márgenes
+    boxrule=2pt,         % Grosor del borde
+    halign=center,       % Centrar horizontalmente
+    valign=center,       % Centrar verticalmente
+    nobeforeafter        % Evitar espacios extra antes/después
+]
+    
+    \vspace*{-1cm}
+    \begin{minipage}{\textwidth}
+        \hspace{0.5cm}
+        \makebox[0pt][l]{\includegraphics[width=4cm]{logo_ETSI.jpg}} 
+        \hfill
+        \makebox[0pt][r]{\includegraphics[width=5cm]{logo_UHU.png}} 
+        \hspace{0.5cm}
+    \end{minipage}
+    
+    \begin{center}
+        \vspace{2cm}
+        {\LARGE \textbf{Escuela Técnica Superior de Ingeniería}}\\[0.4cm]
+        {\LARGE \textbf{Universidad de Huelva}}\\[1cm]
+
+        {\Large Máster en Ingeniería Informática}\\[1.5cm]
+        {\LARGE \textbf{Trabajo Fin de Máster}}\\[2cm]
+
+        {\LARGE \textit{DeepSexist}: Detección y Categorización de Mensajes Sexistas en Vídeos Cortos Mediante Deep Learning}
+    \end{center}
+
+    \vspace{8cm}
+    \begin{flushright}
+        {\Large Adrián Moreno Monterde}\\[0.4cm]
+        {\Large septiembre, 2026}\\
+    \end{flushright}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%% FIN PORTADA %%%%%%%%%%%%%%%%%%%%%%
+
+% Restaurar márgenes generales tras la portada
+\restoregeometry
+
+% Evitar inserción automática de página en blanco en entornos con capítulos impares
+\let\cleardoublepage\clearpage
+
+\frontmatter   % Páginas preliminares sin numeración de capítulos
+
+% Dedicatoria, resumen y agradecimientos (preámbulo del documento)
+\input{Preambulo/Dedicatoria}
+\onehalfspacing % Ajusta interlineado a 1.5 líneas 
+\input{Preambulo/Resumen}
+\input{Preambulo/Agradecimientos}
+\singlespacing  % Vuelve a interlineado simple para índices
+
+\input{Preambulo/Indices} % Índice de contenido, figuras, tablas, listados, etc.
+
+%%%%%%%%%%%%%%%%%%%%% CONTENIDO PRINCIPAL %%%%%%%%%%%%%%%%%%%%%%
+
+ % A partir de aquí se numera por capítulos
+\mainmatter
+\pagestyle{fancy} % Estilo de página con cabeceras y pies definidos
+
+% Opcional: limpiar encabezados y pies en la primera página de cada capítulo
+\ifpageonfooter
+\else
+	\cleanhdfirst
+\fi
+
+
+\onehalfspacing % Interlineado cómodo para el texto principal
+
+\include{Capitulos/Introduccion}
+\include{Capitulos/Marco_Teorico}
+\include{Capitulos/Metodologia}
+\include{Capitulos/Conclusiones}
+
+%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAFÍA %%%%%%%%%%%%%%%%%%%%%%
+\printbibliography[heading=bibintoc,title={Referencias}]
+
+%%%%%%%%%%%%%%%%%%%%% ANEXOS %%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\chapter{Anexos}
+\input{Anexos/AplicacionWeb}
+
+
+\singlespacing
+
+\end{document}

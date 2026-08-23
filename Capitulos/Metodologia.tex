@@ -1,0 +1,429 @@
+% Capítulo 3 - Metodología, Experimentación y Resultados 
+\chapter{Metodología, Experimentación y Resultados}
+\label{cap:Metodologia}
+\begin{sugerencia}
+    Como siempre, al comenzar un capítulo y antes de empezar con la primera sección, se debe escribir un párrafo introductorio para explicar lo que el lector se va a encotrar en este capítulo.
+\end{sugerencia}
+
+\section{Participación en una tarea (si es el caso)}
+\label{sec:Tarea}
+Si el trabajo se ha realizado en el contexto de una tarea como \textit{IberLEF}, \textit{CLEF}, \textit{SemEval}, etc., esta sección debe comenzar con una descripción detallada de dicha tarea. Es fundamental que el lector entienda el marco en el que se sitúa el trabajo.
+
+\begin{sugerencia}
+    IMPORTANTE: evitar usar las palabras ``competición", ``concurso", etc. Mejor usar términos como ``reto", ``desafío", etc.
+\end{sugerencia}
+
+\begin{sugerencia}
+Buscar todos los detalles posibles y relevantes de la tarea en su propia página web y describirlos. Debe quedar muy claro en qué consiste la tarea, su utilidad, su campo de aplicación, el interés que tiene, el número de ediciones, quién la organiza, el workshop en el que está incluida, etc. No escatimar palabras.
+\end{sugerencia}
+
+Se puede introducir esta parte con un párrafo como el siguiente:
+
+\textit{Este trabajo se ha desarrollado en el marco de la tarea [NombreTarea], organizada en el contexto del workshop [NombreWorkshop], celebrado en [Año]. La tarea tiene como objetivo principal...}
+
+Es recomendable incluir también información como:
+
+\begin{itemize}
+  \item Número de equipos participantes.
+  \item Descripción de los datos proporcionados.
+  \item Métricas de evaluación empleadas.
+  \item Categorías o sub-tareas existentes.
+\end{itemize}
+
+Si habéis conseguido una buena posición, es importante destacarlo con claridad:
+
+\textit{Nuestro sistema obtuvo el segundo mejor resultado en la métrica F1 para la sub-tarea de clasificación multicategoría, situándose por encima de la media de los participantes.}
+
+Y si el trabajo ha dado lugar a un artículo científico, también se puede mencionar:
+
+\textit{Como parte de la participación, se redactó un artículo científico titulado ``Título del artículo'', que fue aceptado en el workshop [Nombre del workshop], y publicado en las actas del evento.}
+
+\begin{sugerencia}
+La tarea es un medio para enmarcar el trabajo, pero no el objetivo final del TFG/TFM. El foco debe estar en el aprendizaje, la experimentación, la propuesta y evaluación de metodologías o enfoques propios, y en la comprensión profunda del problema que se aborda.
+\end{sugerencia}
+
+\section{Descripción General de la Metodología}
+\label{sec:Metodologia}
+
+En esta sección se debe mostraruna visión global y estructurada de la metodología y el marco de experimentación seguido para el desarrollo del trabajo. El objetivo es que el lector comprenda los distintos pasos y fases por los que se ha pasado para construir y evaluar los modelos y, en consecuencia, para resolver la tarea.
+
+\begin{sugerencia}
+Enumeración y descripción breve de los pasos principales en el proceso de entrenamiento del modelo: preprocesamiento, selección o definición del modelo, ajuste de hiperparámetros, entrenamiento, evaluación, etc.
+\end{sugerencia}
+
+Una posible redacción introductoria podría ser:
+
+\textit{El marco de experimentación se ha dividido en varias fases: preprocesamiento de los datos, diseño y entrenamiento de los modelos, y evaluación de su rendimiento. En esta sección se ofrece una visión general del proceso completo, que será detallado en las secciones posteriores.}
+
+\subsection*{Ejemplo de estructura de pasos}
+
+\begin{itemize}
+  \item Preprocesamiento de datos
+  \item Selección o definición del modelo base
+  \item Ajuste de hiperparámetros
+  \item Entrenamiento del modelo
+  \item Evaluación y análisis de resultados
+\end{itemize}
+
+\begin{sugerencia}
+Incluir un gráfico o diagrama de flujo que visualice la secuencia completa de pasos y procesos seguidos. Este elemento servirá como referencia visual para complementar las descripciones textuales
+\end{sugerencia}
+
+\textit{La \autoref{fig:pipeline} muestra el pipeline del marco de experimentación seguido en este trabajo.}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figuras/Pipeline.png}
+    \caption{Pipeline general del marco de experimentación.}
+    \label{fig:pipeline}
+\end{figure}
+
+\section{Preparación de los Datos}
+\label{Preparacion_Datos}
+
+En esta sección se debe explicar detalladamente cómo se han preparado los datos antes de ser utilizados por los modelos. Esto incluye su exploración inicial, transformación, limpieza, codificación y división en subconjuntos.
+
+\subsection{Descripción de los Datos}
+
+\begin{sugerencia}
+Describir los datos proporcionados por la tarea: formato, número de instancias, tipo de anotaciones, etc. Incluir ejemplos reales. Se recomienda acompañar con gráficas exploratorias (por ejemplo, palabras más frecuentes por clase, distribución de etiquetas, tamaños de texto, etc.).
+\end{sugerencia}
+
+\textit{El dataset proporcionado por la organización de la tarea está compuesto por 3500 memes anotados con una etiqueta de acuerdo o desacuerdo. Además, incluye su texto asociado. El dataset tiene la información de todos los anotadores que han participado en el proceso de anotación...}
+
+\textit{En la Figura "Tal" se muestran las palabras más frecuentes en los textos etiquetados como ``sexista''.}
+
+\subsection{Balanceo de Datos}
+\begin{sugerencia}
+Si el dataset original está desbalanceado, indicar qué técnicas se han aplicado para corregirlo (por ejemplo, backtranslation, sobre-muestreo, sub-muestreo...). Especificar qué modelos o herramientas se han usado y cómo ha quedado el dataset final tras el balanceo.
+\end{sugerencia}
+
+\textit{Dado que la clase ``sexista'' estaba poco representada (17\% del total), se aplicó una estrategia de augmentación mediante \textit{backtranslation} con el modelo Helsinki-NLP/opus-mt-en-es \footnote{https://huggingface.co/Helsinki-NLP/opus-mt-en-es}. Tras el proceso, el dataset aumentó a 5100 instancias.}
+
+\begin{sugerencia}
+\textbf{IMPORTANTE: poner notas al pie es muy fácil en Latex con el entorno} \verb|footnote|. \textbf{Se utiliza mucho para hacer referencias a direcciones URL cuando no se ponen como referencias, com en el caso del párrafo anterior}
+\end{sugerencia}
+
+\subsection{Limpieza y Normalización}
+
+\begin{sugerencia}
+Describir los pasos de limpieza y normalización aplicados al texto, como la conversión a minúsculas, eliminación de signos de puntuación, tratamiento de emojis, corrección de caracteres erróneos, etc. También puede mencionarse el paso de json a csv o la transformación de estructuras.
+\end{sugerencia}
+
+\textit{Se eliminaron los caracteres especiales no alfabéticos, se convirtieron los textos a minúsculas y se estandarizaron emoticonos comunes. El conjunto original estaba en formato JSON y fue convertido a CSV para facilitar el procesamiento posterior.}
+
+\subsection{Tokenización y Codificación}
+
+\begin{sugerencia}
+Explicar cómo se han tokenizado los textos y cómo se convierten en índices o vectores de entrada. Se recomienda incluir un ejemplo sencillo mostrando los tokens generados y sus códigos (input\_ids).
+\end{sugerencia}
+
+\textit{Para tokenizar los textos se utilizaron los tokenizadores correspondientes a cada modelo. Por ejemplo, el texto ``I totally agree'' se tokeniza como [``i'', ``totally'', ``agree''] y se codifica como [1045,  totally\_id, agree\_id].}
+
+
+\subsection{División de Datos}
+
+\begin{sugerencia}
+Describir cómo se han dividido los datos en conjuntos de entrenamiento, validación y test. Indicar proporciones y criterios. Acompañar con gráficas de barras o de otro tipo que muestren visualmente las proporciones y el equilibrio de clases en cada subconjunto.
+\end{sugerencia}
+
+\textit{Los datos se dividieron en 80\% para entrenamiento, 20\% para validación y 20\% para test. Se garantizó el equilibrio de clases en cada subconjunto mediante muestreo estratificado.}
+
+\section{Selección de los Modelos}
+\label{sec:Modelos}
+
+En esta sección se debe justificar la elección de los modelos empleados para resolver la tarea. Es importante mencionar tanto los modelos que finalmente se han utilizado como aquellos que fueron considerados durante el análisis inicial.
+
+\begin{sugerencia}
+Listar los modelos de Transformers evaluados (como \textit{BERT}, \textit{RoBERTa}, \textit{GPT}, \textit{LLaMA}, \textit{Mistral}, etc.) y explicar brevemente las razones por las que se seleccionaron o descartaron. Es obligatorio referenciar los modelos en la bibliografía o mediante notas a pie de página.
+\end{sugerencia}
+
+\textit{Durante la fase de estudio de la tarea se evaluaron varios modelos preentrenados de Transformers. Entre ellos, destacaron \texttt{bert-base-uncased}, \texttt{roberta-base} y \texttt{mistral-7b-instruct}.}
+
+\textit{La elección final del modelo \texttt{roberta-base} se basó en su buen rendimiento en tareas similares y en la disponibilidad de recursos computacionales adecuados.}
+
+\textit{También se consideró  el uso de modelos de mayor tamaño, como \texttt{LLaMA 2 13B}, pero fueron descartados por las limitaciones de memoria en los entornos disponibles.}
+
+\section{Ajuste de Hiperparámetros}
+\label{sec:Hiper}
+
+En esta sección se debe detallar el proceso seguido para ajustar los hiperparámetros del modelo. Es importante justificar las decisiones tomadas y explicar los métodos utilizados para optimizar el rendimiento del sistema.
+
+\subsection{Métodos de Búsqueda}
+
+\begin{sugerencia}
+Describir los métodos utilizados para explorar combinaciones de hiperparámetros: búsqueda exhaustiva (\textit{grid search}), búsqueda aleatoria (\textit{random search}), frameworks como \textit{Optuna}, \textit{Wandb}, etc.
+\end{sugerencia}
+
+\textit{Para el ajuste de hiperparámetros se utilizó una estrategia de búsqueda aleatoria empleando el framework \texttt{Optuna}, que permitió explorar eficientemente combinaciones relevantes sin necesidad de evaluar todas las posibles.}
+
+\subsection{Hiperparámetros Evaluados}
+
+\begin{sugerencia}
+Enumerar los hiperparámetros que se han ajustado y especificar el espacio de búsqueda de cada uno.
+\end{sugerencia}
+
+\textit{Se ajustaron los siguientes hiperparámetros: tasa de aprendizaje (\texttt{learning\_rate}) en el rango [1e-5, 5e-5], número de épocas entre 2 y 6, tamaño de batch entre 8 y 32, etc.}
+
+\begin{sugerencia}
+En lugar de escribir los valores en un párrafo, es conveniente hacer una tabla con el espacio de búsqueda
+\end{sugerencia}
+
+\subsection{Tamaño del Conjunto de Datos Utilizado}
+
+\begin{sugerencia}
+Indicar si se ha utilizado el conjunto completo de entrenamiento o solo una partición para la búsqueda de hiperparámetros. Justificar la decisión.
+\end{sugerencia}
+
+\textit{Dado el coste computacional del ajuste, se utilizó el 30\% del conjunto de entrenamiento para la búsqueda de hiperparámetros. Se mantuvo una distribución estratificada para preservar el equilibrio entre clases.}
+
+\subsection{Criterios de Selección}
+
+\begin{sugerencia}
+Explicar qué métrica se ha utilizado para determinar la combinación de hiperparámetros óptima (por ejemplo, accuracy, F1-score, etc.), y en qué conjunto se evaluó.
+\end{sugerencia}
+
+\textit{La selección del mejor conjunto de hiperparámetros se basó en la F1-score macro obtenida en el conjunto de validación. Esta métrica fue priorizada al tratarse de un problema con clases desbalanceadas.}
+
+\section{Entrenamiento de los Modelos}
+\label{sec:entrenamiento}
+
+Esta sección debe detallar cómo habéis realizado el entrenamiento de los modelos seleccionados, incluyendo las configuraciones, baselines (si se han utilizado) y el seguimiento del proceso de entrenamiento.
+
+\subsection{Baselines}
+
+\begin{sugerencia}
+Si se ha utilizado un sistema baseline, describirlo brevemente: tipo de modelo, hiperparámetros empleados, resultados obtenidos. Es importante establecerlo como referencia para evaluar las mejoras del modelo final.
+\end{sugerencia}
+
+\textit{Como baseline se utilizó un clasificador ... Este sistema alcanzó una precisión del 68\% en el dataset de test. Sirvió como punto de comparación para evaluar la mejora introducida por los modelos desarrollados en este trabajo.}
+
+\subsection{Configuración de Entrenamiento}
+
+\begin{sugerencia}
+Detallar la configuración empleada: librerías utilizadas (por ejemplo, \texttt{Trainer} de HuggingFace), número de épocas, valores finales de hiperparámetros, optimizador, regularización (dropout), etc. Indicar también la métrica usada para guardar el mejor modelo.
+\end{sugerencia}
+
+\textit{El entrenamiento se llevó a cabo con la clase \texttt{Trainer} de la librería \texttt{transformers} de HuggingFace. Se utilizó el optimizador \texttt{AdamW} con una tasa de aprendizaje de $2 \cdot 10^{-5}$, un tamaño de batch de 16 y dropout del 0.1. El entrenamiento se realizó durante 4 épocas, y se guardó el modelo con mejor F1-score macro sobre el conjunto de validación.}
+
+\begin{sugerencia}
+Si habéis hecho optimización de hiperparámetors, aquí no debéis repetir el punto ``Ajuste de Hiperparámetros". Anteriormente habéis descrito la estrategia de búsqueda de hiperparámetros, y en esta sección debeís detallar otros aspectos, especialmente los mejores valores de hiperparámetros obtenidos para cada modeo, etc.
+\end{sugerencia}
+
+\subsection{Monitorización del Entrenamiento}
+
+\begin{sugerencia}
+Describir cómo se ha monitorizado el entrenamiento: uso de callbacks, logs, métricas registradas, visualización en herramientas como TensorBoard o la consola de HuggingFace. Incluir capturas o gráficos si es posible.
+\end{sugerencia}
+
+\textit{Se empleó la integración de \texttt{Trainer} con TensorBoard para monitorizar en tiempo real la evolución de la pérdida y la métrica de evaluación. Además, se activó el callback \texttt{EarlyStoppingCallback} para detener el entrenamiento si no había mejora durante 3 épocas consecutivas.}
+
+\textit{En la \autoref{fig:entrenamiento-monitor} se muestra un ejemplo de la evolución del F1-score durante el entrenamiento.}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figuras/AccuracyEntrenamientoValidacion.jpg}
+    \caption{Evolución del entrenamiento monitorizada con TensorBoard.}
+    \label{fig:entrenamiento-monitor}
+\end{figure}
+
+
+\section{Evaluación y Análisis de Resultados}
+\label{sec:evaluacion}
+
+En esta sección se presentan los resultados obtenidos tras evaluar los modelos entrenados sobre vuestro conjunto de test durante la fase de entrenamiento y mejora de los modelos. Se deben incluir todas las métricas relevantes, gráficos y análisis que permitan interpretar el rendimiento de las distintas estrategias y modelos.
+
+\begin{sugerencia}
+Incluye tablas de resultados para todos los modelos evaluados, siguiendo un estilo similar al de los artículos científicos. No olvides añadir títulos claros y destacar los mejores resultados en negrita.
+\end{sugerencia}
+
+\begin{sugerencia}
+Presentar las métricas más relevantes: precisión (accuracy), precisión por clase, recall, F1-score, macro/micro promedio, etc. Utiliza \texttt{classification\_report} o similares y organiza los resultados en tablas bien formateadas.
+\end{sugerencia}
+
+\textit{En la \autoref{tab:resultados} se presentan los resultados obtenidos por los modelos entrenados sobre el conjunto de test antes del proceso de limpieza. Se incluyen las métricas de F1-score, precisión y recall.}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Modelo} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} \\
+        \midrule
+        BERT-base & 0.76 & 0.78 & 0.75 \\
+        RoBERTa-base & \textbf{0.81} & \textbf{0.83} & \textbf{0.80} \\
+        Baseline & 0.65 & 0.66 & 0.64 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Resultados de evaluación sobre el conjunto de test.}
+    \label{tab:resultados}
+\end{table}
+
+\textit{En la \autoref{tab:resultados-por-clase} se presentan los resultados obtenidos por los modelos entrenados sobre el conjunto de test desglosados por clase.}
+
+\begin{table}[h]
+    \centering
+    \caption{Resultados por clase para los modelos evaluados (conjunto de test).}
+    \label{tab:resultados-por-clase}
+    \begin{tabular}{lcccc}
+        \toprule
+        \textbf{Modelo} & \textbf{Clase} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} \\
+        \midrule
+        \multirow{3}{*}{BERT-base} 
+            & Clase 1   & 0.81 & 0.79 & 0.80 \\
+            & Clase 2   & 0.70 & 0.72 & 0.71 \\
+            & Clase 3   & 0.68 & 0.66 & 0.67 \\
+        \midrule
+        \multirow{3}{*}{RoBERTa-base} 
+            & Clase 1       & 0.85 & 0.83 & \textbf{0.84} \\
+            & Clase 2       & 0.76 & 0.77 & \textbf{0.76} \\
+            & Clase 3       & 0.72 & 0.71 & \textbf{0.71} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\subsection*{Matrices de Confusión}
+
+\begin{sugerencia}
+Dibujar las matrices de confusión para los principales modelos, preferiblemente con anotaciones y colores. Explicar lo que se observa: equilibrio en los aciertos, etc.
+\end{sugerencia}
+
+\textit{En la \autoref{fig:matriz-confusion-3clases} se muestra la matriz de confusión del modelo RoBERTa. Se observa que las clases minoritarias son las que peor han sido clasificadas, etc.}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figuras/Confusion_matrix_multi.png}
+    \caption{Matriz de confusión para el modelo RoBERTa.}
+    \label{fig:matriz-confusion-3clases}
+\end{figure}
+
+\textit{En la \autoref{fig:matriz-confusion-6clases} se muestra la matriz de confusión del modelo Llama con las 6 etiquetas. Se observa que se ha comportado muy bien con las clases 1 y 2. Sin embargo, la clase 4 ha obtenido muchos errores, etc.}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figuras/confusion_matrix_multi6.png}
+    \caption{Matriz de confusión para el modelo RoBERTa.}
+    \label{fig:matriz-confusion-6clases}
+\end{figure}
+
+\subsection*{Curvas ROC y AUC}
+
+\begin{sugerencia}
+Incluir las curvas ROC para cada modelo. Si el problema lo permite (clasificación binaria), puede añadirse también la curva Precision-Recall. Explicar su interpretación y qué significan las áreas bajo las curvas (AUC).
+\end{sugerencia}
+
+\textit{La \autoref{fig:roc-curves} muestra las curvas ROC de los modelos evaluados. El modelo RoBERTa alcanza el mayor valor de AUC, superando el 0.90.}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figuras/CurvaRoc.png}
+    \caption{Curvas ROC de los modelos evaluados.}
+    \label{fig:roc-curves}
+\end{figure}
+
+\subsection*{Otras Gráficas Relevantes}
+
+\begin{sugerencia}
+Se pueden añadir otras visualizaciones complementarias: evolución del entrenamiento, análisis de errores, importancia de tokens o atención, etc.
+\end{sugerencia}
+
+\section{Análisis de Errores}
+\label{sec:analisis_errores}
+
+Esta sección tiene como objetivo destallar algunos de los errores cometidos por el sistema, buscando patrones o causas que expliquen los fallos del modelo. No se trata solo de cuantificar los errores, sino de interpretarlos.
+
+\begin{sugerencia}
+El análisis de errores debe centrarse en identificar los casos en los que el modelo falla sistemáticamente: clases que confunde con frecuencia, tipos de entrada especialmente problemáticos (por longitud, ambigüedad, ruido, etc.), o patrones en los errores. 
+\end{sugerencia}
+
+\subsection*{Errores más frecuentes}
+
+\textit{Una revisión manual de los errores cometidos por los modelos  reveló que gran parte de las instancias mal clasificadas pertenecen a la clase ``nombre\_clase1'', que tiende a confundirse con ``nombre\_clase2''. Esto sugiere que la frontera entre estas dos clases no está bien definida en algunos casos.}
+
+\subsection*{Identificación de Errores Comunes}
+
+\begin{sugerencia}
+Describir los tipos de errores más comunes que cometió el modelo y las posibles razones. Proporcionar ejemplos específicos de entradas mal clasificadas y discutir posibles mejoras o ajustes al modelo o al preprocesamiento.
+\end{sugerencia}
+
+\textit{Ejemplo 1:}
+
+\texttt{Texto: ``A las mujeres hay que respetarlas porque son lo más bello del mundo"}
+
+\texttt{Etiqueta real: Sexista \quad Predicción: No sexista}
+
+\textit{Comentario: Este mensaje fue clasificado erróneamente como no sexista, probablemente debido a que el clasificador interpreta el lenguaje positivo como respetuoso, sin captar el sesgo implícito de cosificación. Este tipo de error podría corregirse entrenando con ejemplos que incluyan sexismo sutil o benevolente.}
+
+\textit{Ejemplo 2:}
+
+\texttt{Texto: ``Haz lo que quieras, tú siempre sabes más que todos"}
+
+\texttt{Etiqueta real: Sarcástico \quad Predicción: Literal / Acuerdo}
+
+\textit{Comentario: El modelo no detectó el tono irónico y clasificó el mensaje como afirmativo. Es probable que el sarcasmo indirecto no esté bien representado en los datos de entrenamiento.}
+
+\subsection*{Errores por longitud o tipo de texto}
+
+\begin{sugerencia}
+Analiza si hay correlación entre la longitud del texto y el rendimiento del modelo, o si hay ciertos formatos (mensajes muy cortos, uso de emojis, sarcasmo, etc.) que causan más errores.
+\end{sugerencia}
+
+\textit{Al analizar los errores en función de la longitud de los textos, se observó que los mensajes de menos de 10 palabras presentaban una tasa de error significativamente mayor. Muchos de ellos eran frases irónicas o ambiguas.}
+
+\subsection*{Reflexiones y posibles mejoras}
+
+\begin{sugerencia}
+Cierra esta sección proponiendo mejoras basadas en el análisis de errores.
+\end{sugerencia}
+
+\textit{Una posible mejora utilizar modelos previamente entrenados sobre detección de ironía o sexismo implícito. También se podrían generar más ejemplos sintéticos, etc..}
+
+\section{Resultados Oficiales de la Tarea (opcional)}
+\label{sec:resultadosOficiales}
+
+Esta sección es opcional y está pensada para aquellos trabajos que hayan participado en una competición oficial. El objetivo es mostrar los resultados enviados durante la fase final de la tarea y contextualizarlos dentro del ranking global.
+
+\begin{sugerencia}
+Indicar cuáles fueron las estrategias que mejores resultados ofrecieron durante la fase de desarrollo y que se seleccionaron para ser enviadas como \textit{runs} oficiales a la competición.
+\end{sugerencia}
+
+\textit{Durante la fase de desarrollo, se probaron varias configuraciones. La mejor combinación fue la basada en el modelo RoBERTa con aumento de datos mediante backtranslation. Esta estrategia fue seleccionada como uno de los \textit{runs} oficiales enviados a la competición.}
+
+\begin{sugerencia}
+Describir las características del conjunto de test proporcionado por la competición, si es distinto al de validación. Incluir los resultados oficiales publicados por la organización. Comentar si los resultados fueron similares o no a los esperados.
+\end{sugerencia}
+
+\textit{El conjunto de test oficial incluía 800 ejemplos adicionales, no vistos durante la fase de desarrollo. Los resultados oficiales se muestran en la \autoref{tab:ranking}. Aunque nuestro sistema mantuvo un rendimiento estable, el nivel general de los participantes fue más bajo de lo esperado, lo que pone en valor el resultado alcanzado.}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Participante} & \textbf{F1-score} & \textbf{Ranking} \\
+        \midrule
+        Equipo A & 0.83 & 1 \\
+        Equipo B & 0.81 & 2 \\
+        I2C & \textbf{0.79} & \textbf{3} \\
+        Media & 0.65 & -- \\
+        \bottomrule
+    \end{tabular}
+    \caption{Resultados oficiales publicados por la organización de la tarea.}
+    \label{tab:ranking}
+\end{table}
+
+\textit{El sistema presentado quedó en tercera posición, por encima de la media global de todos los participantes, lo que demuestra la solidez de la metodología seguida durante el desarrollo del trabajo.}
+
+\subsection*{Publicación de los Resultados}
+
+\begin{sugerencia}
+Si se ha contribuido con un artículo científico a las actas del workshop (por ejemplo, IberLEF o CLEF), se debe mencionar aquí y referenciar correctamente. Esto aporta valor académico al trabajo.
+\end{sugerencia}
+
+\textit{Los resultados obtenidos se recogieron en el artículo científico titulado ``Título del artículo'', presentado en el workshop \textit{IberLEF 2024}, y publicado en las actas del evento.}
+
+\textit{El artículo puede consultarse en CEUR-Ws\footnote{\url{http://ceur-ws.org/Vol-XXX}}. y se ha incluido en un Anexo de esta memoria.}
+
+
+
+
+

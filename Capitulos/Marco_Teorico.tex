@@ -1,0 +1,329 @@
+% Capítulo 2 - Marco Teórico 
+\chapter{Marco Teórico}
+\label{cap:MarcoTeorico}
+
+\begin{sugerencia}
+En este capítulo se presentan los conceptos fundamentales, trabajos previos y enfoques relevantes que sustentan el desarrollo del presente Trabajo Fin de Grado-Máster. El objetivo es proporcionar un contexto teórico y técnico que permita comprender tanto el problema abordado como las estrategias adoptadas para su resolución. Se realiza una revisión de la literatura científica más reciente relacionada con la temática del proyecto (especialmente papers), haciendo énfasis en los modelos, técnicas y herramientas que han demostrado ser eficaces en investigaciones similares. Esta revisión permite identificar el estado actual del conocimiento en el área, así como las posibles limitaciones o vacíos que motivan la propuesta realizada en este trabajo.\vspace{1em}
+
+A lo largo del capítulo, debéis introducir los conceptos clave necesarios para entender el funcionamiento del enfoque planteado, incluyendo definiciones, principios teóricos y tecnologías involucradas. Asimismo, se analiza la evolución de dichos enfoques en la literatura, destacando los trabajos más influyentes y las tendencias actuales.
+\vspace{1em}
+
+Esta sección sirve también como justificación técnica del trabajo, ya que permite situarlo dentro del marco de investigación existente y argumentar las decisiones tomadas durante el diseño y desarrollo del mismo.
+
+\end{sugerencia}
+
+\begin{sugerencia}
+\textbf{NOTA IMPORTANTE: recuerda que el marco teórico no es solo una recopilación de definiciones, sino una selección crítica y justificada de la información relevante para tu trabajo. Evita incluir conceptos que no estén directamente relacionados con tu propuesta o que son demasiado conocidos o ``antiguos" }
+\end{sugerencia}
+
+\begin{sugerencia}
+En este capítulo es donde pondremos la mayoría de la bibliografía utilizada.
+\vspace{1em}
+
+Observa que es muy sencillo usando un fichero .bib y el comando \verb|cite| 
+\end{sugerencia}
+
+
+
+\section{Aprendizaje Automático}
+\label{sec:AprendizajeAutomatico}
+
+\textit{(Ejemplo: El aprendizaje automático, también conocido como Machine Learning (ML) en inglés, es una rama de la Inteligencia Artificial que permite a las máquinas identificar patrones y hacer predicciones a través de algoritmos \cite{mitchell1997machine}.}
+
+\textit{Este aprendizaje permite al ordenador realizar tareas específicas de manera autónoma, es decir, sin la necesidad de una programación previa de un humano. Los algoritmos de aprendizaje automático se dividen en tres categorías, las dos primeras de las cuales son las más usadas:
+\begin{itemize}[label=--]
+\item \textbf{Aprendizaje Supervisado} \cite{IBM2023}. En el aprendizaje supervisado, el algoritmo se entrena conociendo los resultados esperados de un conjunto de datos de entrenamiento. Estos se utilizan para crear un modelo que puede predecir una salida utilizando una entrada diferente a la del conjunto de entrenamiento. [Describe un caso de uso específico en clasificación de textos.]
+\item \textbf{Aprendizaje no Supervisado} \cite{IBM2023Unsupervised}. Este tipo de aprendizaje no requiere conocimiento previo. En él se buscan patrones que permitan clasificar una gran cantidad de datos desordenados. [Explica cómo puede ser útil en tareas de agrupación de textos similares sin etiquetas previas.]
+\item \textbf{Aprendizaje por Refuerzo} \cite{IBM2025Reinforcement}. En el aprendizaje por refuerzo no tenemos resultados, por lo que no es supervisado, ni intentamos clasificar grupos según una muestra. El modelo utilizará un sistema de recompensas para ayudarlo a resolver una tarea. Usando prueba-error, logrará realizar las acciones necesarias para encontrar la solución.
+\end{itemize}}
+
+\textit{En este trabajo se ha utilizado Aprendizaje Supervisado ya que la tarea a resolver es una clasificación de textos partiendo de un conjunto etiquetado bla, bla, bla.}
+
+\section{Clasificación de textos e imágenes}
+\label{sec:Clasificacion}
+\textit{La clasificación automática es una de las tareas fundamentales del aprendizaje automático supervisado. Consiste en asignar una o varias categorías a una entrada (por ejemplo, un texto o una imagen) a partir de un conjunto de ejemplos previamente etiquetados. En este trabajo se abordan dos tipos de clasificación: \textbf{binaria}, cuando el sistema debe decidir si un meme es sexista o no, y \textbf{multietiqueta}, cuando un mismo meme puede reflejar múltiples tipos de sexismo al mismo tiempo (por ejemplo, estereotipos de género, violencia simbólica o cosificación).}
+
+
+\textit{Cuando se trabaja con texto, la entrada suele ser una secuencia de palabras que debe ser representada mediante técnicas como embeddings o codificadores (ej., BERT). En el caso de imágenes, se utilizan redes convolucionales o modelos como CLIP para extraer representaciones visuales. La combinación de ambos tipos de información —imagen y texto— da lugar a sistemas \textit{multimodales}, que requieren fusionar estas representaciones para tomar una decisión conjunta.}
+
+
+\begin{sugerencia}
+Puedes incluir aquí una figura esquemática que muestre cómo se recibe el meme (imagen + texto incrustado ) y cómo se procesa por las diferentes fases de la experimentación.
+\end{sugerencia}
+
+\begin{sugerencia}
+\textbf{Podrás comprobar que insertar imágenes en Latex es muy sencillo con el entorno} \verb|figure|.
+\end{sugerencia}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figuras/flujo_clasificacion_meme.jpg}
+    \caption{Flujo de procesamiento multimodal de memes (texto + imagen)}
+    \label{fig:flujo_meme}
+\end{figure}
+
+
+\textit{Como se observa en la \autoref{fig:flujo_meme}, el sistema divide el meme en dos componentes principales: texto e imagen. Cada uno es procesado por modelos especializados antes de combinar sus representaciones para obtener una predicción final. Este esquema resume el enfoque multimodal adoptado en este trabajo para la tarea de clasificación.}
+
+\begin{sugerencia}
+\textbf{NOTA IMPORTANTE: Es fundamental que todas las Figuras, Tablas y Listados estén correctamente numerados, titulados y referenciados en el cuerpo del texto mediante} \verb|autoref|. \textbf{No basta con ``soltar” la figura. Debes explicarla y comentar lo que aporta a tu trabajo. Esto mejora la comprensión del lector y aporta rigor académico.}\vspace{1em}
+
+\textbf{Nunca escribir cosas como: ``Aquí pongo un esquema del modelo"}
+\end{sugerencia}
+
+\section{Aprendizaje Profundo}
+\label{sec:DeepLearning}
+\begin{sugerencia}
+Se trata de dar las definiciones más relevantes y cómo han afectado al trabajo. No hace falta profundizar en exceso.
+\end{sugerencia}
+
+\textit{El aprendizaje profundo es una subdisciplina del aprendizaje automático que emplea redes neuronales artificiales con múltiples capas para aprender representaciones complejas a partir de datos. Este enfoque ha demostrado un rendimiento destacado en tareas como clasificación de imágenes, procesamiento de lenguaje natural o reconocimiento de voz \cite{lecun2015deep}.}
+
+\textit{En este trabajo, se han empleado modelos basados en arquitecturas profundas tanto para la entrada textual (como Transformers o LLMs) como para la visual (como CLIP). Por ello, es necesario comprender cómo se entrenan y ajustan estos modelos, así como los factores que influyen en su rendimiento. Esta sección se estructura en varias subsecciones donde se explican conceptos fundamentales que forman parte del proceso de entrenamiento.}
+
+
+\begin{sugerencia}
+Asegúrate de crear subsecciones para conceptos como \textbf{epoch}, \textbf{tasa de aprendizaje (learning rate)}, \textbf{weight decay}, \textbf{función de pérdida}, \textbf{overfitting}, \textbf{early stopping}, etc. Puedes usar ejemplos breves o esquemas para ilustrar su impacto en los resultados del modelo.
+\end{sugerencia}
+
+\subsection{Epochs y tamaño de lote}
+\label{subsec:EpochsBatch}
+[Define qué es una epoch y un minibatch. Explica cuántas épocas se han usado y por qué.]
+
+\subsection{Tasa de aprendizaje y \textit{weight decay}}
+\label{subsec:LearningRate}
+[Explica qué es el learning rate y cómo afecta a la convergencia del modelo. Menciona si se ha usado weight decay y con qué propósito.]
+
+\subsection{Función de pérdida}
+\label{subsec:LossFunction}
+[Describe la función de pérdida utilizada (por ejemplo, cross-entropy para clasificación) y justifica su elección.]
+
+\subsection{Overfitting y técnicas de regularización}
+\label{subsec:Overfitting}
+[Define qué es el sobreajuste. Comenta si se ha usado dropout, regularización L2, etc.]
+
+\subsection{Early stopping y validación}
+\label{subsec:EarlyStopping}
+[Explica qué es el early stopping y cómo se ha utilizado en el trabajo para evitar el sobreentrenamiento.]
+
+
+\textit{Estos elementos son fundamentales para diseñar modelos robustos y reproducibles. Además, permiten explicar por qué un modelo ha funcionado mejor que otro, más allá de las métricas de evaluación. Como señalan Goodfellow et al. \cite{goodfellow2016deep}, el conocimiento de estos parámetros es clave para mejorar la eficacia de los modelos de aprendizaje profundo.}
+
+\section{Procesamiento del Lenguaje Natural}
+\label{sec:PLN}
+
+\begin{sugerencia}
+Esta es una sección para explicar en qué consiste el PLN y por qué es relevante en el contexto del trabajo. Se pueden introducir los conceptos fundamentales que forman parte del preprocesamiento y análisis de texto.
+\end{sugerencia}
+
+\textit{El Procesamiento del Lenguaje Natural (PLN) es un área de la inteligencia artificial que se ocupa de la interacción entre computadoras y lenguaje humano. Su objetivo es permitir que las máquinas comprendan, interpreten, generen o analicen lenguaje en formato textual o hablado. En el contexto de este trabajo, el PLN se emplea para analizar el texto presente en memes y detectar patrones relacionados con sesgos de género o lenguaje sexista.}
+
+El PLN moderno ha evolucionado rápidamente gracias a los modelos de lenguaje basados en arquitecturas profundas, como Transformers. Estos modelos permiten representar el texto en espacios vectoriales de alta dimensión, conservando tanto información semántica como sintáctica \cite{devlin2018bert}.
+
+\subsection{Preprocesamiento del texto}
+\label{subsec:Preprocesamiento}
+[Aquí se puede explicar en qué consiste la limpieza del texto antes de pasarlo al modelo. Se puede mencionar la tokenización, la eliminación de ciertos caracteres, etc.]
+
+\subsection{Representación del texto}
+\label{subsec:Embeddings}
+\textit{Tradicionalmente, el texto se representaba mediante bolsas de palabras o TF-IDF. Actualmente, se utilizan representaciones densas (embeddings) que capturan mejor el significado. Los modelos como Word2Vec, GloVe y, más recientemente, BERT y sus derivados, permiten obtener representaciones contextuales del texto. En este trabajo, se utilizan embeddings obtenidos mediante modelos como \textit{DistilBERT} o \textit{RoBERTa} para tareas de clasificación.}
+
+\subsection{Clasificación de texto en PLN}
+\label{subsec:ClasificacionPLN}
+\textit{La clasificación de texto es una tarea central en PLN. Puede ser binaria, multiclase o multietiqueta, dependiendo del número y tipo de categorías. En este trabajo, se utiliza para determinar si un meme expresa contenido sexista, y en caso afirmativo, identificar los tipos de sesgo presentes. Este problema se ha abordado en campañas como IberLEF o SemEval, donde se proponen datasets y tareas similares.}
+
+\section{Transformers}
+\label{sec:Transformers}
+\begin{sugerencia}
+En esta sección se puede introducir la arquitectura Transformer, su motivación original y las ventajas que aporta frente a modelos anteriores. Se debe justificar su aplicación al trabajo que se está desarrollando (por ejemplo, clasificación de texto, procesamiento de imágenes o fusión multimodal). 
+\end{sugerencia}
+
+\textit{La arquitectura Transformer fue propuesta por Vaswani et al. en 2017 bajo el lema “Attention is all you need” \cite{vaswani2017attention}. A diferencia de modelos recurrentes tradicionales (RNN, LSTM), los Transformers procesan la información en paralelo y capturan relaciones a largo plazo entre tokens mediante mecanismos de atención.}
+
+\subsection{Modelos de lenguaje basados en Transformers}
+\label{subsec:ModelosTransformer}
+\textit{Los Transformers han dado lugar a una nueva generación de modelos de lenguaje preentrenados, como BERT \cite{devlin2018bert}, RoBERTa y muchos otros. Estos modelos se entrenan con grandes volúmenes de texto mediante tareas de aprendizaje no supervisado y luego se adaptan mediante \textit{fine-tuning} a tareas específicas.}
+
+\begin{sugerencia}
+En esta subsección debes explicar cuáles son modelos que has utilizado (por ejemplo, DistilBERT, RoBERTa, etc.) 
+\end{sugerencia}
+
+\subsection{Transformers para visión por computador}
+\label{subsec:VisionTransformer}
+\textit{Aunque los Transformers fueron diseñados inicialmente para texto, han sido adaptados con éxito al dominio visual. Modelos como ViT (Vision Transformer) y CLIP combinan información de imagen y texto usando atención cruzada o espacios embebidos conjuntos. CLIP, en particular, permite obtener representaciones multimodales alineadas que resultan útiles en tareas como clasificación de memes, búsqueda semántica y detección de contenido.}
+
+\subsection{Ventajas de los Transformers en tareas multimodales}
+\label{subsec:MultimodalTransformer}
+\textit{La capacidad de los Transformers para manejar secuencias de cualquier tipo y capturar dependencias entre elementos los convierte en una herramienta potente para tareas multimodales. En este trabajo se han utilizado arquitecturas que procesan texto e imagen en paralelo y combinan la información para realizar predicciones. Este enfoque permite capturar mejor las relaciones entre el texto de un meme y su componente visual.}
+
+
+\section{Modelos Generativos de Lenguaje}
+\label{sec:LLMs}
+\begin{sugerencia}
+En esta sección podéis explicar qué son los LLMs generativos, en qué se diferencian de los modelos tradicionales de clasificación y cómo pueden aplicarse a tareas como la clasificación de textos o de imágenes. Se pueden dar ejemplos de \textit{prompting} y explicar si se han usado en el trabajo o si se plantean como línea futura.
+\end{sugerencia}
+
+\textit{Los Modelos Generativos de Lenguaje (LLMs, por sus siglas en inglés) son una clase de modelos entrenados para predecir la siguiente palabra en una secuencia, permitiéndoles generar texto coherente y contextualizado. A diferencia de los modelos tradicionales (como BERT, que son discriminativos), los LLMs utilizan arquitecturas autoregresivas y se entrenan sobre grandes volúmenes de datos sin etiquetas explícitas.
+}
+
+Modelos como GPT-3, GPT-4, LLaMA o PaLM han demostrado capacidades sorprendentes en múltiples tareas de PLN, incluyendo clasificación, resumen, traducción o razonamiento. En particular, pueden realizar tareas de clasificación a través de técnicas como el \textbf{zero-shot prompting}, \textbf{few-shot prompting} o \textbf{instruction tuning}, lo que permite aprovechar su conocimiento sin necesidad de reentrenamiento.
+
+\subsection{Zero-shot, Few-shot y Fine-tuning}
+\label{subsec:LLMstrategies}
+
+\begin{sugerencia}
+Explica las tres formas principales de utilizar modelos generativos en tareas supervisadas. Puedes acompañarlo de ejemplos de prompts y aclarar en qué contexto del trabajo se ha usado cada enfoque (si procede).
+\end{sugerencia}
+
+\textit{Una de las ventajas más potentes de los LLMs generativos es su capacidad para realizar tareas sin necesidad de reentrenamiento. Existen tres modos principales de uso:}
+
+\begin{itemize}[label=--]
+    \item \textbf{Zero-shot:} el modelo realiza la tarea directamente con un único prompt, sin ejemplos adicionales. Es útil cuando no se dispone de datos etiquetados o se busca rapidez.  
+    \textit{Ejemplo:} \texttt{¿Este meme contiene contenido sexista? "Las mujeres no deberían opinar de fútbol". Responde: Sí o No.}
+    
+    \item \textbf{Few-shot:} se incluyen algunos ejemplos dentro del prompt para que el modelo "aprenda" a partir de ellos durante la misma interacción.  
+    \textit{Ejemplo:}  
+    \texttt{
+    Ejemplo 1: "Las mujeres no sirven para programar" → Sexista \\
+    Ejemplo 2: "Todos merecen las mismas oportunidades" → No sexista \\
+    Frase: "Las chicas no deberían jugar videojuegos" → 
+    }
+
+    \item \textbf{Fine-tuning:} consiste en ajustar los pesos del modelo entrenándolo con un conjunto de datos específico. Requiere más recursos, pero suele ofrecer mejores resultados. En este trabajo se ha considerado como opción para futuras mejoras del rendimiento.
+\end{itemize}
+
+\begin{sugerencia}
+Si en el trabajo se ha probado alguno de estos enfoques, coméntalo aquí.
+\end{sugerencia}
+
+
+\subsection{Aplicación a tareas de clasificación}
+\label{subsec:LLMsClasificacion}
+
+\textit{En lugar de entrenar un clasificador específico, es posible plantear la tarea como una pregunta directa al modelo. Por ejemplo:}
+
+\begin{quote}
+\texttt{¿Este comentario contiene lenguaje sexista? \\ Texto: "Las mujeres deberían quedarse en casa". \\ Respuesta: Sí.}
+\end{quote}
+
+\textit{Este enfoque permite evaluar memes o textos con un modelo generativo sin necesidad de entrenamiento adicional. Sin embargo, plantea retos como la reproducibilidad, la sensibilidad al prompt, o la variabilidad en la salida.}
+
+\subsection{Ventajas y limitaciones}
+\label{subsec:LLMsVentajas}
+\begin{itemize}[label=--]
+    \item \textbf{Ventajas:} no requieren datasets específicos, pueden adaptarse rápidamente a nuevas tareas, y permiten aprovechar conocimiento general.
+    \item \textbf{Limitaciones:} no siempre son consistentes, pueden ser sensibles al prompt, y su uso masivo implica un coste computacional elevado.
+\end{itemize}
+
+
+\section{Aprendizaje por Transferencia}
+\label{sec:TransferLearning}
+\begin{sugerencia}
+En esta sección debes explicar qué es el aprendizaje por transferencia y por qué se ha vuelto un enfoque estándar en PLN, visión artificial y aprendizaje multimodal.
+\end{sugerencia}
+
+\textit{El aprendizaje por transferencia consiste en reutilizar el conocimiento adquirido por un modelo en una tarea previa (generalmente entrenado sobre grandes volúmenes de datos) para resolver una nueva tarea, normalmente con menos datos disponibles. En lugar de entrenar un modelo desde cero, se parte de uno preentrenado y se adapta a una nueva tarea específica mediante distintas técnicas, como \textit{fine-tuning} o extracción de características.}
+
+\textit{Este enfoque ha sido fundamental para el desarrollo de aplicaciones prácticas en procesamiento del lenguaje natural y visión por computador, especialmente desde la aparición de modelos como BERT \cite{devlin2018bert}, RoBERTa, CLIP o GPT. En lugar de aprender representaciones desde cero, estos modelos aprenden representaciones generales del lenguaje o de la imagen que luego pueden refinarse con una menor cantidad de datos etiquetados \cite{ruder2019transfer}.}
+
+
+---
+
+\subsection{Fine-tuning y optimización de hiperparámetros}
+\label{subsec:FineTuning}
+\textit{Una de las estrategias más utilizadas en transferencia es el \textit{fine-tuning}, que consiste en ajustar los pesos de un modelo preentrenado para que se adapten a una tarea nueva.}
+
+\section{Ensemble de Modelos}
+\label{sec:Ensemble}
+\begin{sugerencia}
+Si se ha utilizado en el trabajo, explicar aquí lo que es y cómo se ha utilizado.
+\end{sugerencia}
+
+\section{Aprendizaje con Desacuerdo (Learning with Desagreement)}
+\label{sec:LWD}
+\begin{sugerencia}
+Si se ha utilizado en el trabajo, debéis explicar lo que es: conceptos como hard y soft label, etc., incluyendo ejemplos de cómo puede ser aplicado en el trabajo.
+\end{sugerencia}
+
+
+\section{Medidas de Evaluación}
+\label{sec:Evaluacion}
+
+\begin{sugerencia}
+En esta sección debes explicar las métricas que vas a utilizar para evaluar los modelos. Es importante que no sólo pongas su definición, sino que también justifiques su elección en función del tipo de tarea: clasificación binaria o multietiqueta, etc. 
+\end{sugerencia}
+
+\textit{Para evaluar los modelos de clasificación desarrollados en este trabajo se utilizan métricas estándar del aprendizaje automático. Estas permiten cuantificar el rendimiento del sistema, especialmente en tareas sensibles como la detección de contenido sexista.}
+
+
+\subsection{Precisión, Exhaustividad y F1-Score}
+\textit{En la clasificación binaria, se emplean métricas como la precisión (\textit{precision}), la exhaustividad (\textit{recall}) y la F1-score, que combinan los aciertos verdaderos positivos con los errores cometidos. Estas métricas son especialmente útiles cuando hay clases desbalanceadas.}
+
+
+\begin{sugerencia}
+Puedes definir fórmulas matemáticas en LaTeX usando el entorno \verb|equation|, que la numera automáticamente.
+\end{sugerencia}
+
+\begin{equation}
+\text{F1-score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
+\label{eq:f1score}
+\end{equation}
+
+
+\textit{Donde la precisión y la exhaustividad se calculan como:}
+
+\[
+\text{Precision} = \frac{TP}{TP + FP}, \quad \text{Recall} = \frac{TP}{TP + FN}
+\]
+
+\textit{y donde \(TP\), \(FP\) y \(FN\) representan los verdaderos positivos, falsos positivos y falsos negativos respectivamente.}
+
+
+\subsection{Evaluación en clasificación multietiqueta}
+\textit{En el caso de la clasificación multietiqueta, donde cada instancia puede tener múltiples etiquetas a la vez, se utilizan variantes como el F1 micro y macro, y métricas específicas como el \textit{exact match ratio}, que indica el porcentaje de ejemplos en los que se predicen exactamente las mismas etiquetas que en los datos reales.}
+
+
+\section{Tecnologías y Recursos Utilizados}
+\label{sec:Tecnologias}
+
+\begin{sugerencia}
+En esta sección podéis enumerar las principales herramientas, bibliotecas y plataformas utilizadas en el desarrollo del trabajo. No se trata de hacer una lista sin más, sino de explicar brevemente para qué se ha utilizado cada tecnología y por qué fue elegida. Puedes incluir logos o iconos pequeños para que quede más visual.
+\end{sugerencia}
+
+
+\textit{El desarrollo de este proyecto se ha llevado a cabo utilizando un conjunto de herramientas ampliamente adoptadas en el ámbito de la inteligencia artificial y el procesamiento de lenguaje natural, como se muestra en la figura \ref{fig:tecnologias}.}
+
+\begin{itemize}
+    \item \textbf{Python 3.10}: Lenguaje de programación principal del proyecto, utilizado para la implementación de scripts de procesamiento, entrenamiento de modelos y análisis de resultados.
+    
+    \item \textbf{Jupyter Notebook}: Entorno interactivo para el desarrollo exploratorio, la visualización de resultados y la ejecución modular del código.
+    
+    \item \textbf{PyTorch}: Framework de aprendizaje profundo utilizado para construir, entrenar y evaluar los modelos basados en Transformers y redes neuronales.
+    
+    \item \textbf{Hugging Face}: Biblioteca clave para cargar y ajustar modelos preentrenados como BERT, RoBERTa, DistilBERT y CLIP.
+    
+    \item \textbf{Google Colab}: Plataforma de ejecución en la nube que ha permitido el entrenamiento de modelos con acceso a GPUs de forma gratuita.
+    
+    \item \textbf{Optuna / Weights \& Biases (W\&B)}: Herramientas de optimización y seguimiento de experimentos utilizadas para ajustar hiperparámetros y visualizar métricas durante el entrenamiento.
+    
+    \item \textbf{GPU del laboratorio I2C}: Parte del entrenamiento final de los modelos se realizó en entornos locales del grupo de investigación, usando recursos computacionales propios para mejorar la velocidad de entrenamiento.
+\end{itemize}
+
+
+\begin{sugerencia}
+Puedes insertar una figura con los logos de estas herramientas organizados en una fila o en bloques, indicando debajo brevemente su rol. Queda muy bien visualmente en este tipo de memorias.
+\end{sugerencia}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Figuras/Logos_Tecnologias.jpg}
+    \caption{Tecnologías y recursos utilizados en el desarrollo del trabajo}
+    \label{fig:tecnologias}
+\end{figure}
+
+
+\begin{sugerencia}
+Se puede terminar el capítulo con un párrafo parecido a este: \vspace{1em}
+
+En resumen, este capítulo presenta los conceptos aprendidos para entender los enfoques adoptados en el desarrollo de este trabajo. Este aprendizaje me ha servido para comprender las decisiones técnicas y metodológicas que se presentan en los capítulos siguientes.
+\end{sugerencia}
