@@ -1,0 +1,16 @@
+# Archivos temporales de compilación de LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.gz
+
+# Archivos de VS Code (opcional)
+.vscode/
