@@ -1,6 +1,6 @@
-PWD c:\Users\adria\Desktop\Plantilla_Latex_I2C_TFGM_UHU
+PWD c:\Users\adria\Desktop\MemoriaTFM
 INPUT C:\Users\adria\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\adria\Desktop\Plantilla_Latex_I2C_TFGM_UHU\principal_I2C_TFGM_UHU.tex
+INPUT c:\Users\adria\Desktop\MemoriaTFM\principal_I2C_TFGM_UHU.tex
 OUTPUT principal_I2C_TFGM_UHU.log
 INPUT .\clase_I2C_TFGM_UHU.cls
 INPUT clase_I2C_TFGM_UHU.cls

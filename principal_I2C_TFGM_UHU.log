@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.6)  20 AUG 2026 15:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.6)  24 AUG 2026 23:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/adria/Desktop/Plantilla_Latex_I2C_TFGM_UHU/principal_I2C_TFGM_UHU.tex
-(c:/Users/adria/Desktop/Plantilla_Latex_I2C_TFGM_UHU/principal_I2C_TFGM_UHU.tex
+**c:/Users/adria/Desktop/MemoriaTFM/principal_I2C_TFGM_UHU.tex
+(c:/Users/adria/Desktop/MemoriaTFM/principal_I2C_TFGM_UHU.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
 (clase_I2C_TFGM_UHU.cls
@@ -1049,12 +1049,12 @@ Package babel Info: Main language set to 'spanish'.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logo_ETSI.jpg, id=318, 202.7575pt x 144.54pt>
+<logo_ETSI.jpg, id=302, 202.7575pt x 144.54pt>
 File: logo_ETSI.jpg Graphic file (type jpg)
 <use logo_ETSI.jpg>
 Package pdftex.def Info: logo_ETSI.jpg  used on input line 56.
 (pdftex.def)             Requested size: 113.81102pt x 81.13371pt.
-<logo_UHU.png, id=319, 118.4425pt x 74.2775pt>
+<logo_UHU.png, id=303, 118.4425pt x 74.2775pt>
 File: logo_UHU.png Graphic file (type png)
 <use logo_UHU.png>
 Package pdftex.def Info: logo_UHU.png  used on input line 58.
@@ -1112,25 +1112,25 @@ LaTeX Info: Redefining \% on input line 1.
  (Capitulos/Introduccion.tex
 Cap\'{\i }tulo 1.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2644) has occurred while \output is active []
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 
+l.25 
       [1
 
 
 
 ]
-LaTeX Info: Redefining \. on input line 48.
-LaTeX Info: Redefining \% on input line 48.
+LaTeX Info: Redefining \. on input line 43.
+LaTeX Info: Redefining \% on input line 43.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported on input line 48.
+(babel)             Reported on input line 43.
  [2]
-LaTeX Info: Redefining \. on input line 84.
-LaTeX Info: Redefining \% on input line 84.
+LaTeX Info: Redefining \. on input line 79.
+LaTeX Info: Redefining \% on input line 79.
  [3])
 LaTeX Info: Redefining \. on input line 114.
 LaTeX Info: Redefining \% on input line 114.
@@ -1148,7 +1148,7 @@ Cap\'{\i }tulo 2.
 LaTeX Info: Redefining \. on input line 48.
 LaTeX Info: Redefining \% on input line 48.
  [6]
-<Figuras/flujo_clasificacion_meme.jpg, id=506, 3322.4125pt x 875.27pt>
+<Figuras/flujo_clasificacion_meme.jpg, id=490, 3322.4125pt x 875.27pt>
 File: Figuras/flujo_clasificacion_meme.jpg Graphic file (type jpg)
 <use Figuras/flujo_clasificacion_meme.jpg>
 Package pdftex.def Info: Figuras/flujo_clasificacion_meme.jpg  used on input line 60.
@@ -1193,7 +1193,7 @@ LaTeX Info: Redefining \% on input line 277.
 LaTeX Info: Redefining \. on input line 308.
 LaTeX Info: Redefining \% on input line 308.
  [15]
-<Figuras/Logos_Tecnologias.jpg, id=565, 1445.4pt x 712.6625pt>
+<Figuras/Logos_Tecnologias.jpg, id=549, 1445.4pt x 712.6625pt>
 File: Figuras/Logos_Tecnologias.jpg Graphic file (type jpg)
 <use Figuras/Logos_Tecnologias.jpg>
 Package pdftex.def Info: Figuras/Logos_Tecnologias.jpg  used on input line 319.
@@ -1215,7 +1215,7 @@ Cap\'{\i }tulo 3.
 LaTeX Info: Redefining \. on input line 62.
 LaTeX Info: Redefining \% on input line 62.
  [18]
-<Figuras/Pipeline.png, id=580, 410.53375pt x 188.705pt>
+<Figuras/Pipeline.png, id=564, 410.53375pt x 188.705pt>
 File: Figuras/Pipeline.png Graphic file (type png)
 <use Figuras/Pipeline.png>
 Package pdftex.def Info: Figuras/Pipeline.png  used on input line 76.
@@ -1251,7 +1251,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 218.
 LaTeX Info: Redefining \% on input line 218.
  [24]
-<Figuras/AccuracyEntrenamientoValidacion.jpg, id=615, 853.1875pt x 566.115pt>
+<Figuras/AccuracyEntrenamientoValidacion.jpg, id=599, 853.1875pt x 566.115pt>
 File: Figuras/AccuracyEntrenamientoValidacion.jpg Graphic file (type jpg)
 <use Figuras/AccuracyEntrenamientoValidacion.jpg>
 Package pdftex.def Info: Figuras/AccuracyEntrenamientoValidacion.jpg  used on input line 225.
@@ -1262,7 +1262,7 @@ Underfull \vbox (badness 2165) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 239.
 LaTeX Info: Redefining \% on input line 239.
  [25 <./Figuras/AccuracyEntrenamientoValidacion.jpg>]
-<Figuras/Confusion_matrix_multi.png, id=623, 462.528pt x 346.896pt>
+<Figuras/Confusion_matrix_multi.png, id=607, 462.528pt x 346.896pt>
 File: Figuras/Confusion_matrix_multi.png Graphic file (type png)
 <use Figuras/Confusion_matrix_multi.png>
 Package pdftex.def Info: Figuras/Confusion_matrix_multi.png  used on input line 295.
@@ -1270,7 +1270,7 @@ Package pdftex.def Info: Figuras/Confusion_matrix_multi.png  used on input line 
 LaTeX Info: Redefining \. on input line 298.
 LaTeX Info: Redefining \% on input line 298.
  [26]
-<Figuras/confusion_matrix_multi6.png, id=629, 541.3023pt x 397.485pt>
+<Figuras/confusion_matrix_multi6.png, id=613, 541.3023pt x 397.485pt>
 File: Figuras/confusion_matrix_multi6.png Graphic file (type png)
 <use Figuras/confusion_matrix_multi6.png>
 Package pdftex.def Info: Figuras/confusion_matrix_multi6.png  used on input line 304.
@@ -1281,7 +1281,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 314.
 LaTeX Info: Redefining \% on input line 314.
  [27 <./Figuras/Confusion_matrix_multi.png> <./Figuras/confusion_matrix_multi6.png>]
-<Figuras/CurvaRoc.png, id=637, 726.715pt x 454.69875pt>
+<Figuras/CurvaRoc.png, id=621, 726.715pt x 454.69875pt>
 File: Figuras/CurvaRoc.png Graphic file (type png)
 <use Figuras/CurvaRoc.png>
 Package pdftex.def Info: Figuras/CurvaRoc.png  used on input line 319.
@@ -1343,24 +1343,34 @@ LaTeX Info: Redefining \% on input line 12.
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
-Package rerunfilecheck Info: File `principal_I2C_TFGM_UHU.out' has not changed.
-(rerunfilecheck)             Checksum: A943105E7E1B0862A0976046E86F19CD;13538.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `principal_I2C_TFGM_UHU.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `principal_I2C_TFGM_UHU.out':
+(rerunfilecheck)             Before: 27F30CFA2B49F39669F08FED4F567D45;13035
+(rerunfilecheck)             After:  A943105E7E1B0862A0976046E86F19CD;13538.
 Package logreq Info: Writing requests to 'principal_I2C_TFGM_UHU.run.xml'.
 \openout1 = `principal_I2C_TFGM_UHU.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38171 strings out of 467510
- 775622 string characters out of 5408795
- 1732921 words of memory out of 5000000
- 66651 multiletter control sequences out of 15000+600000
+ 38165 strings out of 467510
+ 774927 string characters out of 5408795
+ 1732747 words of memory out of 5000000
+ 66645 multiletter control sequences out of 15000+600000
  648807 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,12n,132p,1267b,2332s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,12n,132p,1307b,2312s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecit1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2488.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1728.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on principal_I2C_TFGM_UHU.pdf (47 pages, 4081797 bytes).
+Output written on principal_I2C_TFGM_UHU.pdf (47 pages, 4079828 bytes).
 PDF statistics:
- 1539 PDF objects out of 1728 (max. 8388607)
+ 1522 PDF objects out of 1728 (max. 8388607)
  150 named destinations out of 1000 (max. 500000)
- 754 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 722 words of extra memory for PDF output out of 10000 (max. 10000000)
 
