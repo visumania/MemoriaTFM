@@ -2373,17 +2373,19 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">referencias.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">mitchell1997machine</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">IBM2023</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">IBM2023Unsupervised</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">IBM2025Reinforcement</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">lecun2015deep</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">goodfellow2016deep</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">devlin2018bert</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">vaswani2017attention</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">1</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">2</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">mitchell1997machine</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">IBM2023</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">IBM2023Unsupervised</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">IBM2025Reinforcement</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">lecun2015deep</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">goodfellow2016deep</bcf:citekey>
     <bcf:citekey order="9" intorder="1">devlin2018bert</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">devlin2018bert</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">ruder2019transfer</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">vaswani2017attention</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">devlin2018bert</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">devlin2018bert</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">ruder2019transfer</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

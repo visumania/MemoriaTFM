@@ -1,62 +1,46 @@
 % Capítulo 1 - Introducción
 \chapter{Introducción}
 \label{cap:Introduccion}
-Este primer capítulo constituye el punto de partida del presente Trabajo de Fin de Máster, ofreciendo una visión general y estableciendo las bases del proyecto. La investigación documentada en esta memoria se enmarca en la participación en la tarea internacional \textit{EXIST 2025}, y se centra en el desafío de detectar, analizar y categorizar automáticamente el contenido sexista en plataformas de redes sociales a través de enfoques multimodales (texto, imagen y vídeo). Para contextualizar el problema, en primer lugar, se expone la \textbf{motivación} que impulsa este trabajo, subrayando la urgencia de desarrollar herramientas basadas en Inteligencia Artificial para mitigar la discriminación de género en entornos digitales. A continuación, se definen los \textbf{objetivos} que han guiado el desarrollo técnico del proyecto, así como las \textbf{competencias} académicas y de investigación que se pretenden adquirir con su realización. Finalmente, se detalla la \textbf{estructura de la memoria}, describiendo de forma breve la organización de los capítulos posteriores: el marco teórico, la metodología y experimentación, y las conclusiones finales. 
+Todo proyecto de investigación necesita un contexto claro que justifique su desarrollo. Esta memoria recoge el trabajo realizado durante nuestra participación en la competición internacional \textit{EXIST 2025}, cuyo reto principal es la detección y categorización automática del sexismo en redes sociales a partir del análisis combinado de texto, imágenes y vídeos.
+
+A lo largo de este capítulo introductorio vamos a desglosar los motivos que nos han llevado a elegir este tema, destacando la necesidad urgente de aplicar la Inteligencia Artificial para frenar la discriminación y el odio en las redes sociales. Además, definiremos los objetivos concretos que han marcado el rumbo técnico del proyecto y repasaremos las competencias académicas adquiridas como frutos de la investigación. Como cierre, se presenta un breve itinerario al lector para guiarlo a través de los capítulos posteriores: el marco teórico, la metodología aplicada, la fase de experimentación y las conclusiones finales. 
 
 \section{Motivación}
 \label{sec:Motivacion}
-\begin{sugerencia}
-Este apartado es importante. Debes reflejar el interés del trabajo elegido, detallando razones por las que es necesario investigar en la tarea que estás abordando. Se debe comenzar describiendo la situación actual y terminar diciendo que se proponen técnicas para ayudar a resolver la tarea
-\end{sugerencia}
+El uso masivo de las plataformas sociales ha democratizado la comunicación, pero al mismo tiempo ha facilitado la propagación a gran escala del discurso de odio, debido al anonimato y, en la mayoría de los casos, impunidad. En este contexto digital, el sexismo destaca como un problema estructural que afecta de manera desproporcionada a las mujeres \cite{1}. En redes basadas en texto como \textit{Twitter} (actualmente \textit{X}), la misoginia se hace patente mediante el acoso y la creación de narrativas discriminatorias, mientras que en plataformas de consumo rápido como \textit{TikTok}, las dinámicas de los algoritmos pueden amplificar ideologías machistas y fomentar la hipersexualización. Paralelamente, el uso de formatos multimodales, como los memes, permite camuflar los prejuicios bajo la apariencia de humor o ironía, convirtiéndolos en mecanismos de difusión muy escurridizos. 
 
-\textit{Ejemplo: Uno de los componentes que refuerzan el discurso tóxico y de odio son los estereotipos. Comprender cómo surgen y se difunden es crucial para abordar esta cuestión, ya que los estereotipos no siempre se expresan explícitamente....}
+Uno de los grandes retos para frenar este fenómeno es que el sexismo no siempre se manifiesta de forma explícita o mediante el uso de palabras malsonantes. Frecuentemente, se apoya en estereotipos profundamente arraigados, sesgos implícitos y microagresiones que normalizan la desigualdad. Comprender y detectar estas formas sutiles es crucial para abordar el problema, ya que su impunidad influye negativamente sobre la percepción social y perpetúa la discriminación. Sin embargo, la revisión y moderación manual de este tipo de contenido resulta en la actualidad completamente inviable, debido al inmenso volumen de publicaciones que se generan constantemente, lo cual supera con creces la capacidad humana \cite{2}.
 
-\textit{Mediante este trabajo, buscamos crear modelos de inteligencia artificial que ayuden a clasificar comentarios en función de su toxicidad y la presencia de estereotipos raciales, para ayudar a mitigar estos casos y lograr unas plataformas digitales libres de abusos....}
+Por todo ello, resulta indispensable investigar y desarrollar herramientas automatizadas capaces de entender estas dinámicas tan complejas. Mediante este trabajo, proponemos aplicar y evaluar diversas técnicas de \textit{Deep Learning} para construir modelos mediante un abordaje multimodal que ayuden a clasificar las publicaciones en las redes sociales. El propósito no es únicamente detectar la presencia de sexismo, sino caracterizarlo en función de la intención del mensaje y la categoría del abuso. Con la implementación de estas técnicas, buscamos proporcionar mecanismos escalables que apoyen la moderación de contenido, ayudando a mitigar la violencia de género en la red y contribuyendo a lograr plataformas digitales más inclusivas y libres de abusos. 
 
 \section{Objetivos}
 \label{sec:Objetivos}
-\begin{sugerencia}
-En los TFG-M con un enfoque científico-técnico dentro del ámbito de la inteligencia artificial o el aprendizaje automático, es recomendable comenzar este apartado formulando un objetivo general que exprese con claridad el propósito principal de la investigación.
+El objetivo principal de este proyecto es diseñar, implementar y evaluar un sistema automatizado basado en técnicas de aprendizaje profundo (\textit{Deep Learning}) para la detección, en la Tarea 3.1, y categorización del sexismo, en la Tarea 3.3, en vídeos de la plataforma \textit{TikTok}. Para lograr este propósito, hemos planteado un enfoque multimodal capaz de procesar tanto de forma combinada como de manera independiente la información textual, a partir de las transcripciones de los vídeos, y la información visual y espaciotemporal, mediante la extracción y análisis de sus fotogramas (\textit{frames}), enmarcando la investigación dentro de la competición internacional \textit{EXIST 2025}.
 
-Este objetivo debe situarse en el contexto del problema a resolver, e indicar de forma general qué se busca explorar, mejorar, demostrar o evaluar. A continuación, es conveniente desglosar ese objetivo en objetivos específicos, que representen las distintas tareas que conforman el desarrollo del trabajo. Por ejemplo: recopilar o preprocesar un conjunto de datos, implementar un modelo base, ajustar hiperparámetros, comparar arquitecturas, o analizar los resultados mediante métricas como la precisión o el F1-score.
-
-La redacción de los objetivos debe ser clara y concreta. Se recomienda usar verbos en infinitivo que reflejen acciones observables y medibles (analizar, entrenar, comparar, evaluar, validar...). Además, los objetivos deben ser realistas, estar bien delimitados y alineados con la metodología del trabajo.
-\end{sugerencia}
-
-\begin{sugerencia}
-Observa el uso de las viñetas. Muy sencillo con el entorno \verb|itemize|
-\end{sugerencia}
-
-\textit{Ejemplo: El objetivo principal de este proyecto es diseñar, implementar y evaluar 
-sistemas de clasificación automática de memes utilizando LLMs, considerando diferentes enfoques de aprendizaje: clasificación binaria, multiclase y multietiqueta. Para lograr dicho objetivo, se han planteado una serie de objetivos específicos:}
-\textit{\begin{itemize}
-    \item Estudiar las técnicas utilizadas en el campo de Deep Learning para resolver este tipo de tareas
-    \item Estudiar los modelos del lenguaje más eficaces
-    \item Proponer y desarrollar mejoras para incrementar el rendimiento de modelos pre-entrenados
-    \item Comparar los resultados obtenidos y analizar las ventajas y limitaciones de cada tipo de clasificación en el contexto del análisis automático de memes
-    \item ...
+Para alcanzar dicho objetivo general, se han definido los siguientes objetivos específicos:
+\begin{itemize}
+    \item \textbf{Estudiar} el estado del arte y las técnicas actuales en el campo del \textit{Deep Learning}, el Procesamiento del Lenguaje Natural (PLN) y la Visión Artificial aplicadas a la detección de contenido de odio y sexismo en formato vídeo. 
+    \item \textbf{Preprocesar y adecuar} el conjunto de datos proporcionado por la organización de EXIST 2025. Esto incluye el procesamiento de las transcripciones textuales y el diseño de un canal de extracción de fotogramas para posibilitar el análisis visual, gestionando además el paradigma \textit{Learning with Disagreement} (LeWiDi).
+    \item \textbf{Implementar y ajustar (\textit{fine-tuning})} modelos de estado del arte especializados en las diferentes modalidades trabajadas a partir del vídeo, contrastando arquitecturas de lenguaje con arquitecturas de visión estática y temporal.
+    \item \textbf{Proponer y desarrollar} estrategias de fusión de modelos (\textit{Ensemble}) para combinar las predicciones de las modalidades de texto, imagen y vídeo, con el fin de incrementar el rendimiento general y mitigar las deficiencias individuales de cada modelo. 
+    \item \textbf{Participar} en la tarea 3.1 de la competición \textit{EXIST 2025}, estableciendo líneas base de rendimiento mediante el uso de modelos de lenguaje supervisados (\textit{RoBERTa}) y enfoques \textit{zero-shot} mediante Grandes Modelos de Lenguaje (\textit{LLaMA}).
+    \item \textbf{Desarrollar}, en una fase de experimentación posterior a la competición, un marco de evaluación exhaustivo para las tareas 3.1 y 3.3, optimizando y fusionando (\textit{Ensemble}) los mejores modelos de cada modalidad (texto, imagen y vídeo) para maximizar el rendimiento general. 
+    \item \textbf{Explorar} el impacto del perspectivismo y la subjetividad en la detección del sexismo, evaluando cómo el género de los anotadores influye en el sesgo del entrenamiento de los modelos. 
 \end{itemize}
-}
-
-\textit{IberLEF 2025 es una campaña de evaluación comparativa de sistemas de procesamiento del lenguaje natural en español y otras lenguas ibéricas, donde se encargan de organizar tareas competitivas de procesamiento, comprensión y generación de textos para definir nuevos retos de investigación cuyo objetivo es avanzar en el área de PLN, por lo que en este proyecto se establece como objetivo específico obtener buenos resultados en dichos retos.}
 
 \section{Competencias}
 \label{sec:Competencias}
-\begin{sugerencia}
-    Este apartado es obligatorio con el nuevo reglamento de TFG/TFM. Hay que indicar la competencia que se puso en el Anexo II y otras competencias del plan de estudios que se han adquirido.
-\end{sugerencia}
+La realización de este Trabajo de Fin de Máster ha permitido poner en práctica y consolidar una serie de competencias fundamentales adquiridas durante la titulación, adaptándolas a un problema de investigación real y de alto impacto social. 
 
+De acuerdo con lo establecido en el documento de propuesta (Anexo II), la \textbf{competencia principal} que rige este trabajo es: 
+\begin{itemize}
+    \item \textbf{Capacidad de aplicar métodos matemáticos, estadísticos y de inteligencia artificial para modelar, diseñar y desarrollar aplicaciones, servicios, sistemas inteligentes y sistemas basados en el conocimiento}. Esta competencia se ha alcanzado de manera integral mediante el diseño y desarrollo de un sistema inteligente multimodal. Para ello, se han aplicado métodos avanzados de inteligencia artificial (\textit{Deep Learning}) y estrategias estadísticas (como la agregación de distribuciones de probabilidad en etiquetas \textit{soft} y el diseño de \textit{ensembles}) con el fin de modelar y detectar el comportamiento sexista en la plataforma \textit{TikTok}.
+\end{itemize}
 
-\textit{Ejemplo: La principal competencia adquirida con la realización de este trabajo ha sido \textbf{CE7-C - Capacidad para conocer y desarrollar técnicas de aprendizaje computacional y diseñar e implementar aplicaciones y sistemas que la utilicen.}}
-
-\textit{Además, se han alcanzado otras competencias relacionadas con la línea de este TFG:}
-\textit{\begin{itemize}
-    \item \textbf{Capacidad para conocer y desarrollar técnicas de aprendizaje computacional.} Poner un par de líneas explicando cómo se ha alcanzado esta capacidad.
-    \item \textbf{Capacidad para implementar aplicaciones y sistemas que la utilicen.} Poner un par de líneas explicando cómo se ha alcanzado esta capacidad.
-    \item \textbf{Capacidad para la extracción automática de información. Poner un par de líneas explicando cómo se ha alcanzado esta capacidad.}
-    \item \textbf{Capacidad para adquirir conocimiento a partir de grandes volúmenes de datos.} Poner un par de líneas explicando cómo se ha alcanzado esta capacidad.  
-\end{itemize}}
-
+Además de esta competencia principal, el carácter de investigación de este proyecto nos ha permitido alcanzar las siguientes competencias adicionales vinculadas al plan de estudios: 
+\begin{itemize}
+    \item \textbf{Capacidad para el análisis, procesamiento y extracción automática de información a partir de datos no estructurados y multimodales}. Se ha logrado mediante la construcción de un flujo de trabajo técnico capaz de extraer fo........
+\end{itemize}
 
 \section{Estructura de la Memoria}
 \label{sec:Estructura}

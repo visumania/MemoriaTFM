@@ -8,7 +8,7 @@
 \contentsline {section}{\numberline {1.1}Motivación}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Objetivos}{2}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Competencias}{3}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Estructura de la Memoria}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.4}Estructura de la Memoria}{4}{section.1.4}%
 \contentsline {chapter}{\numberline {2}Marco Teórico}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Aprendizaje Automático}{6}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Clasificación de textos e imágenes}{6}{section.2.2}%
