@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber principal_I2C_TFGM_UHU"] 1787678726.12376 "principal_I2C_TFGM_UHU.bcf" "principal_I2C_TFGM_UHU.bbl" "principal_I2C_TFGM_UHU" 1787679015.28571 0
-  "principal_I2C_TFGM_UHU.bcf" 1787679014 108644 cdfe7f9fcee9b58f4a4662aeee2c67ea "pdflatex"
+["biber principal_I2C_TFGM_UHU"] 1787742687.72741 "principal_I2C_TFGM_UHU.bcf" "principal_I2C_TFGM_UHU.bbl" "principal_I2C_TFGM_UHU" 1787743220.90816 0
+  "principal_I2C_TFGM_UHU.bcf" 1787743220 108644 cdfe7f9fcee9b58f4a4662aeee2c67ea "pdflatex"
   "referencias.bib" 1787670703 5801 ea2146f52e02e6ec8e2a1d1d817b3106 ""
   (generated)
   "principal_I2C_TFGM_UHU.bbl"
   "principal_I2C_TFGM_UHU.blg"
   (rewritten before read)
-["pdflatex"] 1787679010.74953 "c:/Users/adria/Desktop/MemoriaTFM/principal_I2C_TFGM_UHU.tex" "principal_I2C_TFGM_UHU.pdf" "principal_I2C_TFGM_UHU" 1787679015.28667 0
+["pdflatex"] 1787743216.44453 "c:/Users/adria/Desktop/MemoriaTFM/principal_I2C_TFGM_UHU.tex" "principal_I2C_TFGM_UHU.pdf" "principal_I2C_TFGM_UHU" 1787743220.90899 0
   "Anexos/AplicacionWeb.tex" 1743156720 1466 581f5e46cdc0ebf6c9715b57645d6d9c ""
   "C:/Users/adria/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1786030369 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/adria/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1095.pk" 1786030384 38336 40352263150099dd067f9a69a5b61d22 ""
@@ -252,13 +252,13 @@
   "C:/Users/adria/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253169183 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/adria/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/adria/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Capitulos/Conclusiones.aux" 1787679014 5136 441a8c720d31ec8dcb0ee526175a924a "pdflatex"
+  "Capitulos/Conclusiones.aux" 1787743220 5136 536b23bcffe13c3eddc520123bd5ddb9 "pdflatex"
   "Capitulos/Conclusiones.tex" 1743156720 6003 cea1b5546b1bdfeaaf133ec8b0608b8f ""
-  "Capitulos/Introduccion.aux" 1787679013 5191 26f779536270f3ab7661e0269dfabb5d "pdflatex"
-  "Capitulos/Introduccion.tex" 1787679009 9595 e78cdb83579ab904ab5fa5bd3ce75136 ""
-  "Capitulos/Marco_Teorico.aux" 1787679014 11509 750afc58b9137018275fa903c410e0a8 "pdflatex"
+  "Capitulos/Introduccion.aux" 1787743219 5191 ac92ce968f4be5eaa6db40aa86ac181c "pdflatex"
+  "Capitulos/Introduccion.tex" 1787743215 11656 64b42b748cef2406c6e3c586bc0033be ""
+  "Capitulos/Marco_Teorico.aux" 1787743219 11517 842eb7327f66fa5b00987789fa04f0aa "pdflatex"
   "Capitulos/Marco_Teorico.tex" 1743156720 24784 b20cb47c6ef35706b3280d088db96d27 ""
-  "Capitulos/Metodologia.aux" 1787679014 10355 27de8f37ebee8be23743f68d82f40f63 "pdflatex"
+  "Capitulos/Metodologia.aux" 1787743220 10355 ae6fed521f0e8b2f626c785df9f1dd52 "pdflatex"
   "Capitulos/Metodologia.tex" 1743156720 24882 e54e5d9390ee7ccf8c66fcc6b702836b ""
   "Figuras/AccuracyEntrenamientoValidacion.jpg" 1743156720 52216 d75732de1d80d4ea790e0473490aac72 ""
   "Figuras/Confusion_matrix_multi.png" 1743156720 23800 02699c4fefbb6a037d4fed830c1e454f ""
@@ -275,14 +275,14 @@
   "clase_I2C_TFGM_UHU.cls" 1743156720 7847 213d1908a88386b0b1ad2f21d74a4576 ""
   "logo_ETSI.jpg" 1743156720 13450 64e73635019e03cbdc5f646fadc528b3 ""
   "logo_UHU.png" 1743156720 2884227 8e8ff0c2c5d8ea667c3532c55b43a045 ""
-  "principal_I2C_TFGM_UHU.aux" 1787679014 3400 8393fbaacae3bcb38bf69a3363c8c71b "pdflatex"
-  "principal_I2C_TFGM_UHU.bbl" 1787678728 19771 91d663ed7d6930c6c8732207926077fc "biber principal_I2C_TFGM_UHU"
-  "principal_I2C_TFGM_UHU.lof" 1787679014 1005 cde80e16550ceee4134b9b012e7f2609 "pdflatex"
-  "principal_I2C_TFGM_UHU.lot" 1787679014 652 5db58e0a55568c839079432915f82f0d "pdflatex"
-  "principal_I2C_TFGM_UHU.out" 1787679014 13538 a943105e7e1b0862a0976046e86f19cd "pdflatex"
-  "principal_I2C_TFGM_UHU.run.xml" 1787679014 2432 c1f4f81ec57746183df6427308234c18 "pdflatex"
+  "principal_I2C_TFGM_UHU.aux" 1787743220 3400 a6219f8af9f87a1fd0976b46a09bc4cc "pdflatex"
+  "principal_I2C_TFGM_UHU.bbl" 1787742694 19771 91d663ed7d6930c6c8732207926077fc "biber principal_I2C_TFGM_UHU"
+  "principal_I2C_TFGM_UHU.lof" 1787743220 1005 818f843c14f309c5dfaf5a2bd17f2e7c "pdflatex"
+  "principal_I2C_TFGM_UHU.lot" 1787743220 652 47219fe63e8d20077d2772b8be8e798e "pdflatex"
+  "principal_I2C_TFGM_UHU.out" 1787743220 13538 a943105e7e1b0862a0976046e86f19cd "pdflatex"
+  "principal_I2C_TFGM_UHU.run.xml" 1787743220 2432 c1f4f81ec57746183df6427308234c18 "pdflatex"
   "principal_I2C_TFGM_UHU.tex" 1787068709 4357 d68e59750ebda5fdb3ef3987fdb9c344 ""
-  "principal_I2C_TFGM_UHU.toc" 1787679014 6266 71101fa99799c0f8a6032889aeba6e17 "pdflatex"
+  "principal_I2C_TFGM_UHU.toc" 1787743220 6270 e6238ef778b4f3f15d82ae2550d217be "pdflatex"
   (generated)
   "Capitulos/Conclusiones.aux"
   "Capitulos/Introduccion.aux"

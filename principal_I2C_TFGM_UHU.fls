@@ -445,13 +445,13 @@ INPUT C:\Users\adria\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx248
 INPUT C:\Users\adria\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecsx1440.tfm
 INPUT C:\Users\adria\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecsx1095.tfm
 INPUT C:\Users\adria\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbi1095.tfm
-INPUT C:\Users\adria\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
 INPUT .\Capitulos\Marco_Teorico.tex
 INPUT .\Capitulos\Marco_Teorico.tex
 OUTPUT Capitulos\Marco_Teorico.aux
 INPUT .\Capitulos\Marco_Teorico.tex
 INPUT .\Capitulos\Marco_Teorico.tex
 INPUT Capitulos\Marco_Teorico.tex
+INPUT C:\Users\adria\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
 INPUT .\Figuras\flujo_clasificacion_meme.jpg
 INPUT .\Figuras\flujo_clasificacion_meme.jpg
 INPUT .\Figuras\flujo_clasificacion_meme.jpg

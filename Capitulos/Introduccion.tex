@@ -39,34 +39,17 @@ De acuerdo con lo establecido en el documento de propuesta (Anexo II), la \textb
 
 Además de esta competencia principal, el carácter de investigación de este proyecto nos ha permitido alcanzar las siguientes competencias adicionales vinculadas al plan de estudios: 
 \begin{itemize}
-    \item \textbf{Capacidad para el análisis, procesamiento y extracción automática de información a partir de datos no estructurados y multimodales}. Se ha logrado mediante la construcción de un flujo de trabajo técnico capaz de extraer fo........
+    \item \textbf{Capacidad para el análisis, procesamiento y extracción automática de información a partir de datos no estructurados y multimodales}. Se ha logrado mediante la construcción de un flujo de trabajo técnico capaz de extraer fotogramas (\textit{frames}) secuenciales a partir de los archivos de vídeo, así como trabajar con las transcripciones textuales de estos. Esto ha implicado limpiar el ruido implícito del lenguaje de las redes sociales y estructurar información bajo el complejo paradigma de las anotaciones múltiples (\textit{Learning with Disagreement}).
+    \item \textbf{Capacidad para conocer, diseñar y entrenar modelos \textit{Deep Learning} aplicados a Visión Artificial y Procesamiento del Lenguaje Natural}. Esta capacidad se ha consolidado a través de la implementación, adaptación y optimización de diversas arquitecturas expuestas en el capítulo del estado del arte. Entre ellas destacan modelos de lenguaje, como los \textit{Transformers} y \textit{Large Language Model (LLMs)}, y redes avanzadas de visión estática espaciotemporal, como los \textit{Vision Transformers (ViT)} y \textit{Video Vision Transformers (ViViT)}.
+    \item \textbf{Capacidad para evaluar sistemas complejos y adquirir conocimientos a partir de grandes volúmenes de datos}. Esta competencia se ha desarrollado al enfrentar problemas de modelo del mundo real, como el desbalanceo de clases y colapso modal (\textit{Mode Collapse}). La validación del sistema se ha fundamentado en la interpretación de métricas de evaluación avanzadas, como el \textit{Information Contrast Measure (ICM)} o el \textit{F1-score} para determinar los mejores rendimientos de los modelos y, por ende, poder establecer las mejores estrategias de fusión de modelos.
+    \item \textbf{Conciencia ética y capacidad para analizar el impacto social y los sesgos en los sistemas de Inteligencia Artificial}. Se ha adquirido de manera transversal al explorar el perspectivismo y la subjetividad en la detección del sexismo. El análisis de algunos de los factores de los anotadores (como el género) pueden influir en el sesgo de entrenamiento de los modelos, permitiéndonos comprender la importancia crítica de diseñar sistemas de expertos más justos, transparentes y representativos.    
 \end{itemize}
 
 \section{Estructura de la Memoria}
 \label{sec:Estructura}
-\begin{sugerencia}
-    Se trata de describir cómo están estructurados los capítulos de la memoria.
-\end{sugerencia}
-
-\begin{sugerencia}
-    Observa que los Capítulos tienen su hipervínculo. Es muy sencillo usando \verb|label| y \verb|autoref|
-\end{sugerencia}
-
-\begin{sugerencia}
-Esta vez hacemos unas viñetas distintas con el entorno \verb|itemize|
-\end{sugerencia}
-
-
-\textit{Ejemplo: El resto de esta memoria se organiza de la siguiente manera:}
-\begin{itemize}[label=--]
-\item \textit{En el \autoref{cap:MarcoTeorico}, Marco Teórico, se exponen los conceptos fundamentales que se han utilizado en este trabajo, incluyendo las arquitecturas de los modelos BERT y RoBERTa y las técnicas de procesamiento de texto que se emplearon.}
-
-\item \textit{En el \autoref{cap:Metodologia} se describe la metodología propuesta para alcanzar los objetivos planteados. Se detalla la participación en el reto asociado a este trabajo, así como las técnicas y estrategias implementadas durante la experimentación. Finalmente se muestran y analizan los resultados obtenidos.}
-
-\item \textit{En el Capítulo 4 se plantean y se detallan nuevas estrategias y técnicas para mejorar los resultados obtenidos en la competición.}
-
-\item \textit{En el Capítulo 5 se presentan las conclusiones de este trabajo y las direcciones posibles para investigaciones futuras.}
-
-\item \textit{Finalmente, en el Anexo, se presenta el artículo científico que ha sido aceptado y publicado en el "The 17th International Workshop on Semantic Evaluation".}
-
+Los siguientes capítulos de la memoria de estructuran de la siguiente manera:
+\begin{itemize}
+    \item En el \autoref{cap:MarcoTeorico}, Marco Teórico, se exponen los conceptos fundamentales que sustentan este trabajo. Esto incluye los principios del \textit{Deep Learning} y el Procesamiento del Lenguaje Natural, así como las arquitecturas de los modelos de lenguaje y de los modelos de clasificación de imagen y vídeo. También se describen técnicas clave como el aprendizaje por transferencia, estrategias de combinación de modelos, el paradigma del aprendizaje con desacuerdo y las métricas de evaluación empleadas. 
+    \item En el \autoref{cap:Metodologia}, Metodología, Experimentación y Resultados, se describe la metodología propuesta para alcanzar los objetivos planteados. Se detalla la participación en la competición \textit{EXIST 2025} asociada a este trabajo, así como la preparación de los datos y las técnicas implementadas durante el ajuste de hiperparámetros y el entrenamiento de los modelos. Finalmente, se muestran y analizan los resultados obtenidos, incluyendo un análisis de errores y la exploración del perspectivismo. 
+    \item En el \autoref{cap:Conclusiones}, Conclusiones y Trabajo Futuro, se presentan las conclusiones finales extraídas tras la realización de este proyecto, evaluando el grado de cumplimiento de los objetivos. Del mismo modo, se plantean las posibles directrices para investigaciones futuras y se detalla la planificación temporal seguida durante el desarrollo del trabajo. 
 \end{itemize}
