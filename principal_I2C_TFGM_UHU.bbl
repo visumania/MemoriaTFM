@@ -19,7 +19,7 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
-    \entry{1}{inproceedings}{}{}
+    \entry{plaza2025overview}{inproceedings}{}{}
       \name{author}{8}{}{%
         {{hash=e4fb3c1a49b0d7a4d011c2accd16f5a2}{%
            family={Plaza},
@@ -62,11 +62,8 @@
            given={Roser},
            giveni={R\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {Madrid, Spain}%
-      }
-      \list{publisher}{1}{%
-        {Springer-Verlag}%
+      \list{organization}{1}{%
+        {Springer}%
       }
       \strng{namehash}{9f9fe10d36e56f1719f1bcba3f1b9da0}
       \strng{fullhash}{ddc4cf6b546dc49175933632bc50452c}
@@ -80,25 +77,13 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{This paper presents the EXIST 2025 Lab on sexism detection and categorization in social media, which took place at the CLEF 2025 conference and marks the fifth edition of the EXIST Shared Task. Building on the success of previous editions, EXIST 2025 addresses the growing concern over the spread of offensive and discriminatory content targeting women across online platforms, which significantly impacts women’s well-being and freedom of expression. The lab comprises nine tasks in two languages (English and Spanish), organized around three core objectives: sexism identification, source intention detection, and sexism categorization. These tasks are applied across three media types—text (tweets), image (memes), and video (TikToks)—offering a multimodal perspective that allows for a deeper understanding of how sexism manifests across different formats and user interactions. As in previous editions, EXIST 2025 adopts the “Learning With Disagreement” paradigm, using annotations from multiple annotators that reflect diverse and at times conflicting viewpoints. This overview describes the task design, datasets, evaluation methodology, participating systems, and results of EXIST 2025, which has surpassed participation expectations with 244 registered teams from 38 countries, 114 teams from 23 countries submitting runs, a total of 873 runs processed, and 33 working notes published.Warning: Some of the examples included in this paper may contain offensive language and explicit descriptions of sexist behavior, which may be disturbing to the reader.}
-      \field{booktitle}{Experimental IR Meets Multilinguality, Multimodality, and Interaction: 16th International Conference of the CLEF Association, CLEF 2025, Madrid, Spain, September 9–12, 2025, Proceedings}
-      \field{isbn}{978-3-032-04353-5}
-      \field{title}{Overview of EXIST 2025: Learning with Disagreement for Sexism Identification and Characterization in Tweets, Memes, and TikTok Videos}
+      \field{booktitle}{International Conference of the Cross-Language Evaluation Forum for European Languages}
+      \field{title}{Overview of exist 2025: Learning with disagreement for sexism identification and characterization in tweets, memes, and tiktok videos}
       \field{year}{2025}
       \field{pages}{266\bibrangedash 289}
       \range{pages}{24}
-      \verb{doi}
-      \verb 10.1007/978-3-032-04354-2_16
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1007/978-3-032-04354-2_16
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1007/978-3-032-04354-2_16
-      \endverb
-      \keyw{sexism identification,sexism categorization,learning with disagreements,tweets,memes,TikTok videos,human-centric AI}
     \endentry
-    \entry{2}{article}{}{}
+    \entry{tian2025mario}{article}{}{}
       \name{author}{3}{}{%
         {{hash=18c62360ab3bb7b85342bad32feaf0ba}{%
            family={Tian},
@@ -158,92 +143,100 @@
       \field{title}{Machine Learning}
       \field{year}{1997}
     \endentry
-    \entry{IBM2023}{online}{}{}
+    \entry{m2006pattern}{misc}{}{}
       \name{author}{1}{}{%
-        {{hash=cbf44511d041dc6d1dd73cc0c033122c}{%
-           family={IBM},
-           familyi={I\bibinitperiod}}}%
+        {{hash=936e0665d90bfed6e14c72f2cb6c06cf}{%
+           family={M\bibnamedelima Bishop},
+           familyi={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
       }
-      \strng{namehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{fullhash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{fullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{bibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorbibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authornamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorfullhash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorfullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
-      \field{extraname}{1}
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{936e0665d90bfed6e14c72f2cb6c06cf}
+      \strng{fullhash}{936e0665d90bfed6e14c72f2cb6c06cf}
+      \strng{fullhashraw}{936e0665d90bfed6e14c72f2cb6c06cf}
+      \strng{bibnamehash}{936e0665d90bfed6e14c72f2cb6c06cf}
+      \strng{authorbibnamehash}{936e0665d90bfed6e14c72f2cb6c06cf}
+      \strng{authornamehash}{936e0665d90bfed6e14c72f2cb6c06cf}
+      \strng{authorfullhash}{936e0665d90bfed6e14c72f2cb6c06cf}
+      \strng{authorfullhashraw}{936e0665d90bfed6e14c72f2cb6c06cf}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Consultado el 26 de marzo de 2025}
-      \field{title}{¿Qué es el aprendizaje supervisado?}
-      \field{year}{2023}
-      \verb{urlraw}
-      \verb https://www.ibm.com/es-es/topics/supervised-learning
-      \endverb
-      \verb{url}
-      \verb https://www.ibm.com/es-es/topics/supervised-learning
-      \endverb
+      \field{title}{Pattern recognition and machine learning}
+      \field{year}{2006}
     \endentry
-    \entry{IBM2023Unsupervised}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=cbf44511d041dc6d1dd73cc0c033122c}{%
-           family={IBM},
-           familyi={I\bibinitperiod}}}%
+    \entry{hastie2009elements}{misc}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{3}{}{%
+        {{hash=0cb8fe4210baa81c4b0e67913b4d2768}{%
+           family={Hastie},
+           familyi={H\bibinitperiod},
+           given={Trevor},
+           giveni={T\bibinitperiod}}}%
+        {{hash=88eea600247d798f8b2ce0b2dc614492}{%
+           family={Tibshirani},
+           familyi={T\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=971cf69058b64a94326dea0f2a8bbcce}{%
+           family={Friedman},
+           familyi={F\bibinitperiod},
+           given={Jerome},
+           giveni={J\bibinitperiod}}}%
       }
-      \strng{namehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{fullhash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{fullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{bibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorbibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authornamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorfullhash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorfullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
-      \field{extraname}{2}
+      \list{publisher}{1}{%
+        {Springer series in statistics New-York}%
+      }
+      \strng{namehash}{cdbbedf4044180982e7161c9a88f80fe}
+      \strng{fullhash}{cdbbedf4044180982e7161c9a88f80fe}
+      \strng{fullhashraw}{cdbbedf4044180982e7161c9a88f80fe}
+      \strng{bibnamehash}{cdbbedf4044180982e7161c9a88f80fe}
+      \strng{authorbibnamehash}{cdbbedf4044180982e7161c9a88f80fe}
+      \strng{authornamehash}{cdbbedf4044180982e7161c9a88f80fe}
+      \strng{authorfullhash}{cdbbedf4044180982e7161c9a88f80fe}
+      \strng{authorfullhashraw}{cdbbedf4044180982e7161c9a88f80fe}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Consultado el 26 de marzo de 2025}
-      \field{title}{¿Qué es el aprendizaje no supervisado?}
-      \field{year}{2023}
-      \verb{urlraw}
-      \verb https://www.ibm.com/es-es/topics/unsupervised-learning
-      \endverb
-      \verb{url}
-      \verb https://www.ibm.com/es-es/topics/unsupervised-learning
-      \endverb
+      \field{title}{The elements of statistical learning}
+      \field{year}{2009}
     \endentry
-    \entry{IBM2025Reinforcement}{online}{}{}
+    \entry{barto2019reinforcement}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=cbf44511d041dc6d1dd73cc0c033122c}{%
-           family={IBM},
-           familyi={I\bibinitperiod}}}%
+        {{hash=32a0a208f8bcf56a13b0a8e618aa806a}{%
+           family={Barto},
+           familyi={B\bibinitperiod},
+           given={Andrew\bibnamedelima G},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
       }
-      \strng{namehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{fullhash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{fullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{bibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorbibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authornamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorfullhash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorfullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
-      \field{extraname}{3}
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{32a0a208f8bcf56a13b0a8e618aa806a}
+      \strng{fullhash}{32a0a208f8bcf56a13b0a8e618aa806a}
+      \strng{fullhashraw}{32a0a208f8bcf56a13b0a8e618aa806a}
+      \strng{bibnamehash}{32a0a208f8bcf56a13b0a8e618aa806a}
+      \strng{authorbibnamehash}{32a0a208f8bcf56a13b0a8e618aa806a}
+      \strng{authornamehash}{32a0a208f8bcf56a13b0a8e618aa806a}
+      \strng{authorfullhash}{32a0a208f8bcf56a13b0a8e618aa806a}
+      \strng{authorfullhashraw}{32a0a208f8bcf56a13b0a8e618aa806a}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Consultado el 26 de marzo de 2025}
-      \field{title}{¿Qué es el aprendizaje de refuerzo?}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://www.ibm.com/es-es/think/topics/reinforcement-learning
-      \endverb
-      \verb{url}
-      \verb https://www.ibm.com/es-es/think/topics/reinforcement-learning
-      \endverb
+      \field{journaltitle}{AI Magazine}
+      \field{number}{1}
+      \field{title}{Reinforcement learning: Connections, surprises, challenges}
+      \field{volume}{40}
+      \field{year}{2019}
+      \field{pages}{3\bibrangedash 15}
+      \range{pages}{13}
     \endentry
     \entry{lecun2015deep}{article}{}{}
       \name{author}{3}{}{%

@@ -2373,12 +2373,12 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">referencias.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">1</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">2</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">plaza2025overview</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">tian2025mario</bcf:citekey>
     <bcf:citekey order="3" intorder="1">mitchell1997machine</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">IBM2023</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">IBM2023Unsupervised</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">IBM2025Reinforcement</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">m2006pattern</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">hastie2009elements</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">barto2019reinforcement</bcf:citekey>
     <bcf:citekey order="7" intorder="1">lecun2015deep</bcf:citekey>
     <bcf:citekey order="8" intorder="1">goodfellow2016deep</bcf:citekey>
     <bcf:citekey order="9" intorder="1">devlin2018bert</bcf:citekey>

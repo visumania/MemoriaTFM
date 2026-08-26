@@ -1,43 +1,22 @@
 % Capítulo 2 - Marco Teórico 
 \chapter{Marco Teórico}
 \label{cap:MarcoTeorico}
+En este capítulo se describen los conceptos teóricos y el estado del arte necesarios para comprender el desarrollo y las decisiones de arquitectura tomadas para la realización de este Trabajo de Fin de Máster. 
 
-\begin{sugerencia}
-En este capítulo se presentan los conceptos fundamentales, trabajos previos y enfoques relevantes que sustentan el desarrollo del presente Trabajo Fin de Grado-Máster. El objetivo es proporcionar un contexto teórico y técnico que permita comprender tanto el problema abordado como las estrategias adoptadas para su resolución. Se realiza una revisión de la literatura científica más reciente relacionada con la temática del proyecto (especialmente papers), haciendo énfasis en los modelos, técnicas y herramientas que han demostrado ser eficaces en investigaciones similares. Esta revisión permite identificar el estado actual del conocimiento en el área, así como las posibles limitaciones o vacíos que motivan la propuesta realizada en este trabajo.\vspace{1em}
-
-A lo largo del capítulo, debéis introducir los conceptos clave necesarios para entender el funcionamiento del enfoque planteado, incluyendo definiciones, principios teóricos y tecnologías involucradas. Asimismo, se analiza la evolución de dichos enfoques en la literatura, destacando los trabajos más influyentes y las tendencias actuales.
-\vspace{1em}
-
-Esta sección sirve también como justificación técnica del trabajo, ya que permite situarlo dentro del marco de investigación existente y argumentar las decisiones tomadas durante el diseño y desarrollo del mismo.
-
-\end{sugerencia}
-
-\begin{sugerencia}
-\textbf{NOTA IMPORTANTE: recuerda que el marco teórico no es solo una recopilación de definiciones, sino una selección crítica y justificada de la información relevante para tu trabajo. Evita incluir conceptos que no estén directamente relacionados con tu propuesta o que son demasiado conocidos o ``antiguos" }
-\end{sugerencia}
-
-\begin{sugerencia}
-En este capítulo es donde pondremos la mayoría de la bibliografía utilizada.
-\vspace{1em}
-
-Observa que es muy sencillo usando un fichero .bib y el comando \verb|cite| 
-\end{sugerencia}
-
-
+Dada la naturaleza compleja y multimodal del problema abordado (la detección y categorización del sexismo en redes sociales), el marco teórico abarca desde los principios fundamentales del Aprendizaje Automático y Profundo (\textit{Deep Learning}) hasta los enfoques más modernos en Procesamiento del Lenguaje Natural y Visión Artificial. A lo largo de las siguientes secciones, se realiza una revisión crítica de las arquitecturas de estado del arte, prestando especial atención a los modelos basados en Transformers y a los Grandes Modelos de Lenguaje (\textit{LLMs}). Asimismo, se fundamentan de manera teórica las estrategias empleadas para la experimentación, como el aprendizaje por transferencia, la fusión de modelos (\textit{ensembles}) y el novedoso paradigma del aprendizaje con desacuerdo (\textit{LeWiDi}), justificando su idoneidad para modelar la subjetividad y el sesgo en las plataformas digitales. 
 
 \section{Aprendizaje Automático}
 \label{sec:AprendizajeAutomatico}
+El aprendizaje automático, comúnmente conocido como \textit{Machine Learning} (\textit{ML}), es una de las disciplinas fundamentales dentro de la Inteligencia Artificial. Su objetivo principal es el desarrollo de algoritmos y modelos computacionales capaces de identificar patrones complejos y adquirir conocimiento empírico a partir de los datos, permitiendo a los sistemas mejorar su rendimiento en una tarea específica sin necesidad de ser explícitamente programados mediante reglas deterministas \cite{mitchell1997machine}.
 
-\textit{(Ejemplo: El aprendizaje automático, también conocido como Machine Learning (ML) en inglés, es una rama de la Inteligencia Artificial que permite a las máquinas identificar patrones y hacer predicciones a través de algoritmos \cite{mitchell1997machine}.}
+De manera clásica, atendiendo a la naturaleza de los datos de entrenamiento y al tipo de retroalimentación que recibe el sistema, distinguimos entre tres tipos de aprendizaje \cite{m2006pattern}:
+\begin{itemize}
+    \item \underline{Aprendizaje Supervisado}: En este enfoque, el algoritmo se entrena utilizando un conjunto de datos etiquetado, es decir, cada dato de entrada está emparejado de antemano con su resultado correcto o salida esperada. El objetivo del modelo es aprender una función matemática subyacente que relacione de forma generalizada las entradas con las salidas. Una vez entrenado, el sistema es capaz de inferir y predecir resultados con cierto grado de precisión frente a nuevos datos con los que no ha interactuado previamente \cite{hastie2009elements}.
+    \item \underline{Aprendizaje No Supervisado}: A diferencia del tipo de aprendizaje anterior, en este caso el modelo recibe un conjunto de datos que carece por completo de etiquetas o salidas conocidas. El propósito del algoritmo no es predecir un valor en concreto, sino explorar la información para descubrir estructuras, patrones o agrupaciones de manera autónoma. 
+    \item \underline{Aprendizaje por Refuerzo}: En este escenario no se parte de un conjunto de datos estático, sino que un agente aprende a tomar secuencias de decisiones interactuando dinámicamente con un entorno. Mediante un proceso continuo de prueba y error, el modelo ajusta su comportamiento con el objetivo de maximizar una señal de recompensa a largo plazo \cite{barto2019reinforcement}.
+\end{itemize}
 
-\textit{Este aprendizaje permite al ordenador realizar tareas específicas de manera autónoma, es decir, sin la necesidad de una programación previa de un humano. Los algoritmos de aprendizaje automático se dividen en tres categorías, las dos primeras de las cuales son las más usadas:
-\begin{itemize}[label=--]
-\item \textbf{Aprendizaje Supervisado} \cite{IBM2023}. En el aprendizaje supervisado, el algoritmo se entrena conociendo los resultados esperados de un conjunto de datos de entrenamiento. Estos se utilizan para crear un modelo que puede predecir una salida utilizando una entrada diferente a la del conjunto de entrenamiento. [Describe un caso de uso específico en clasificación de textos.]
-\item \textbf{Aprendizaje no Supervisado} \cite{IBM2023Unsupervised}. Este tipo de aprendizaje no requiere conocimiento previo. En él se buscan patrones que permitan clasificar una gran cantidad de datos desordenados. [Explica cómo puede ser útil en tareas de agrupación de textos similares sin etiquetas previas.]
-\item \textbf{Aprendizaje por Refuerzo} \cite{IBM2025Reinforcement}. En el aprendizaje por refuerzo no tenemos resultados, por lo que no es supervisado, ni intentamos clasificar grupos según una muestra. El modelo utilizará un sistema de recompensas para ayudarlo a resolver una tarea. Usando prueba-error, logrará realizar las acciones necesarias para encontrar la solución.
-\end{itemize}}
-
-\textit{En este trabajo se ha utilizado Aprendizaje Supervisado ya que la tarea a resolver es una clasificación de textos partiendo de un conjunto etiquetado bla, bla, bla.}
+Para el desarrollo del presente trabajo, el enfoque central se enmarca dentro del Aprendizaje Supervisado. Dado que el objetivo es la detección y categorización del sexismo en la plataforma \textit{TikTok}, los modelos requieren ser entrenados con colecciones de datos previamente anotados que asocian cada publicación (ya sea el vídeo, la transcripción textual o sus fotogramas) con una clase específica. Sin embargo, dada la alta subjetividad inherente a la interpretación de los discursos de odio en redes sociales, el concepto tradicional de "etiqueta única" del aprendizaje supervisado clásico presenta limitaciones, lo cual motivará la adopción de enfoques más flexibles como el aprendizaje con desacuerdo, que se abordará en secciones posteriores. 
 
 \section{Clasificación de textos e imágenes}
 \label{sec:Clasificacion}
