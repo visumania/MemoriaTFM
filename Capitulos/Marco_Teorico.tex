@@ -42,18 +42,20 @@ Como se ilustra de manera conceptual en la \autoref{fig:flujo_video}, un flujo d
 
 \section{Aprendizaje Profundo}
 \label{sec:DeepLearning}
-\begin{sugerencia}
-Se trata de dar las definiciones más relevantes y cómo han afectado al trabajo. No hace falta profundizar en exceso.
-\end{sugerencia}
+Dentro de la disciplina del aprendizaje automático, el aprendizaje profundo (\textit{Deep Learning}) representa una evolución significativa \cite{goodfellow2016deep}. Esta rama se fundamenta en el uso de redes neuronales artificiales, arquitecturas computacionales inspiradas en cómo el cerebro humano estructura y procesa la información. Al organizar estas neuronas artificiales en múltiples capas sucesivas, el sistema adquiere la capacidad de procesar la información de forma jerárquica, logrando un nivel de abstracción cada vez mayor. A medida que aumenta la profundidad de la red (el número de capas), el algoritmo es capaz de modelar relaciones más complejas y extraer mayor cantidad de información a partir de los datos, incluso si no es perceptible por el ser humano \cite{lecun2015deep}.
 
-\textit{El aprendizaje profundo es una subdisciplina del aprendizaje automático que emplea redes neuronales artificiales con múltiples capas para aprender representaciones complejas a partir de datos. Este enfoque ha demostrado un rendimiento destacado en tareas como clasificación de imágenes, procesamiento de lenguaje natural o reconocimiento de voz \cite{lecun2015deep}.}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figuras/MLvsDL.png}
+    \caption{Principal diferencia entre \textit{Machine} y \textit{Deep Learning}}
+    \label{fig:MLvsDL}
+\end{figure}
 
-\textit{En este trabajo, se han empleado modelos basados en arquitecturas profundas tanto para la entrada textual (como Transformers o LLMs) como para la visual (como CLIP). Por ello, es necesario comprender cómo se entrenan y ajustan estos modelos, así como los factores que influyen en su rendimiento. Esta sección se estructura en varias subsecciones donde se explican conceptos fundamentales que forman parte del proceso de entrenamiento.}
+La principal diferencia entre el aprendizaje automático clásico y el aprendizaje profundo radica en el proceso de extracción de características (\textit{feature extraction}). Como se ilustra en la \autoref{fig:MLvsDL}, en los algoritmos tradicionales de \textit{Machine Learning}, es necesario que un experto humano o un proceso algorítmico previo diseñe y extraiga manualmente las características relevantes de los datos de entrada para que el clasificador pueda tomar decisiones. Por el contrario, los modelos de \textit{Deep Learning} automatizan este proceso por completo, integrando la extracción de características de forma implícita dentro de la propia arquitectura de la red. Esta capacidad de aprendizaje de extremo a extremo (\textit{end-to-end}) permite al modelo descubrir por sí mismo qué patrones son los más instructivos para resolver la tarea\cite{chollet2021deep}.
 
+En el contexto de este Trabajo de Fin de Máster, el aprendizaje profundo constituye el núcleo técnico del sistema propuesto. Se han empleado modelos basados en arquitecturas profundas, tanto para el procesamiento de la información textual, con modelos \textit{Transformers} y Grandes Modelos de Lenguaje, como para el análisis visual, con modelos \textit{Vision Transformers}
 
-\begin{sugerencia}
-Asegúrate de crear subsecciones para conceptos como \textbf{epoch}, \textbf{tasa de aprendizaje (learning rate)}, \textbf{weight decay}, \textbf{función de pérdida}, \textbf{overfitting}, \textbf{early stopping}, etc. Puedes usar ejemplos breves o esquemas para ilustrar su impacto en los resultados del modelo.
-\end{sugerencia}
+Dado el enorme tamaño de estas arquitecturas y la complejidad matemática que entraña su ajuste, resulta indispensable comprender cómo se lleva a cabo su fase de entrenamiento. El éxito de estos modelos no depende únicamente de su estructura interna, sino de la correcta configuración de los factores que guían su aprendizaje. Por ello, en las siguientes subsecciones se detallan los hiperparámetros, mecanismos de control y conceptos fundamentales que controlan el proceso de entrenamiento. 
 
 \subsection{Epochs y tamaño de lote}
 \label{subsec:EpochsBatch}

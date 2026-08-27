@@ -422,47 +422,6 @@
       \field{pages}{423\bibrangedash 443}
       \range{pages}{21}
     \endentry
-    \entry{lecun2015deep}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
-           family={LeCun},
-           familyi={L\bibinitperiod},
-           given={Yann},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=40a8e4774982146adc2688546f54efb2}{%
-           family={Bengio},
-           familyi={B\bibinitperiod},
-           given={Yoshua},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{%
-           family={Hinton},
-           familyi={H\bibinitperiod},
-           given={Geoffrey},
-           giveni={G\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Nature Publishing Group}%
-      }
-      \strng{namehash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{fullhash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{fullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{bibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{authorbibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{authornamehash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{authorfullhash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{authorfullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Nature}
-      \field{number}{7553}
-      \field{title}{Deep learning}
-      \field{volume}{521}
-      \field{year}{2015}
-      \field{pages}{436\bibrangedash 444}
-      \range{pages}{9}
-    \endentry
     \entry{goodfellow2016deep}{book}{}{}
       \name{author}{3}{}{%
         {{hash=5d2585c11210cf1d4512e6e0a03ec315}{%
@@ -504,6 +463,79 @@
       \verb{url}
       \verb https://www.deeplearningbook.org
       \endverb
+    \endentry
+    \entry{lecun2015deep}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{fullhash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{fullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{bibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorbibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authornamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorfullhash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorfullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{number}{7553}
+      \field{title}{Deep learning}
+      \field{volume}{521}
+      \field{year}{2015}
+      \field{pages}{436\bibrangedash 444}
+      \range{pages}{9}
+    \endentry
+    \entry{chollet2021deep}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=5836fc1fa037e340c8b5591da3207608}{%
+           family={Chollet},
+           familyi={C\bibinitperiod},
+           given={Francois},
+           giveni={F\bibinitperiod}}}%
+        {{hash=9d02749fc1d1c1a8bd72ec9581321896}{%
+           family={Watson},
+           familyi={W\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Manning publications Shelter Island, NY, USA}%
+      }
+      \strng{namehash}{d4a57d63443e7e465a2956a1b5e6c09c}
+      \strng{fullhash}{d4a57d63443e7e465a2956a1b5e6c09c}
+      \strng{fullhashraw}{d4a57d63443e7e465a2956a1b5e6c09c}
+      \strng{bibnamehash}{d4a57d63443e7e465a2956a1b5e6c09c}
+      \strng{authorbibnamehash}{d4a57d63443e7e465a2956a1b5e6c09c}
+      \strng{authornamehash}{d4a57d63443e7e465a2956a1b5e6c09c}
+      \strng{authorfullhash}{d4a57d63443e7e465a2956a1b5e6c09c}
+      \strng{authorfullhashraw}{d4a57d63443e7e465a2956a1b5e6c09c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Deep learning with Python}
+      \field{volume}{2}
+      \field{year}{2021}
     \endentry
     \entry{devlin2018bert}{article}{}{}
       \name{author}{4}{}{%
