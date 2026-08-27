@@ -2396,12 +2396,14 @@
     <bcf:citekey order="21" intorder="1">murphy2012machine</bcf:citekey>
     <bcf:citekey order="22" intorder="1">nam2014large</bcf:citekey>
     <bcf:citekey order="23" intorder="1">ying2019overview</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">goodfellow2016deep</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">devlin2018bert</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">vaswani2017attention</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">srivastava2014dropout</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">bejani2021systematic</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">bergstra2012random</bcf:citekey>
     <bcf:citekey order="27" intorder="1">devlin2018bert</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">devlin2018bert</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">ruder2019transfer</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">vaswani2017attention</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">devlin2018bert</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">devlin2018bert</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">ruder2019transfer</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

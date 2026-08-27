@@ -3,12 +3,12 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Flujo de procesamiento multimodal de vídeos (texto + imagen + vídeos)}}{8}{figure.2.1}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Principal diferencia entre \textit {Machine} y \textit {Deep Learning}}}{9}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Tecnologías y recursos utilizados en el desarrollo del trabajo}}{20}{figure.2.3}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Tecnologías y recursos utilizados en el desarrollo del trabajo}}{21}{figure.2.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline general del marco de experimentación.}}{23}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Evolución del entrenamiento monitorizada con TensorBoard.}}{29}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Matriz de confusión para el modelo RoBERTa.}}{31}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Matriz de confusión para el modelo RoBERTa.}}{31}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Curvas ROC de los modelos evaluados.}}{32}{figure.3.5}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline general del marco de experimentación.}}{24}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Evolución del entrenamiento monitorizada con TensorBoard.}}{30}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Matriz de confusión para el modelo RoBERTa.}}{32}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Matriz de confusión para el modelo RoBERTa.}}{32}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Curvas ROC de los modelos evaluados.}}{33}{figure.3.5}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
