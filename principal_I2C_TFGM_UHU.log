@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.6)  26 AUG 2026 19:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.6)  27 AUG 2026 16:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1145,55 +1145,58 @@ Cap\'{\i }tulo 2.
 
 
 ]
-LaTeX Info: Redefining \. on input line 32.
-LaTeX Info: Redefining \% on input line 32.
+LaTeX Info: Redefining \. on input line 31.
+LaTeX Info: Redefining \% on input line 31.
  [7]
-<Figuras/flujo_clasificacion_meme.jpg, id=515, 3322.4125pt x 875.27pt>
-File: Figuras/flujo_clasificacion_meme.jpg Graphic file (type jpg)
-<use Figuras/flujo_clasificacion_meme.jpg>
-Package pdftex.def Info: Figuras/flujo_clasificacion_meme.jpg  used on input line 39.
-(pdftex.def)             Requested size: 384.1096pt x 101.18147pt.
-LaTeX Info: Redefining \. on input line 60.
-LaTeX Info: Redefining \% on input line 60.
- [8 <./Figuras/flujo_clasificacion_meme.jpg>]
-LaTeX Info: Redefining \. on input line 89.
-LaTeX Info: Redefining \% on input line 89.
- [9]
-LaTeX Info: Redefining \. on input line 110.
-LaTeX Info: Redefining \% on input line 110.
- [10]
-LaTeX Info: Redefining \. on input line 133.
-LaTeX Info: Redefining \% on input line 133.
- [11]
-Underfull \vbox (badness 2961) has occurred while \output is active []
+<Figuras/FlujoProcesamientoMultimodal.drawio.png, id=520, 925.4575pt x 313.17pt>
+File: Figuras/FlujoProcesamientoMultimodal.drawio.png Graphic file (type png)
+<use Figuras/FlujoProcesamientoMultimodal.drawio.png>
+Package pdftex.def Info: Figuras/FlujoProcesamientoMultimodal.drawio.png  used on input line 36.
+(pdftex.def)             Requested size: 384.1096pt x 129.98222pt.
 
-LaTeX Info: Redefining \. on input line 156.
-LaTeX Info: Redefining \% on input line 156.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 48.
+LaTeX Info: Redefining \% on input line 48.
+ [8 <./Figuras/FlujoProcesamientoMultimodal.drawio.png>]
+LaTeX Info: Redefining \. on input line 74.
+LaTeX Info: Redefining \% on input line 74.
+ [9]
+LaTeX Info: Redefining \. on input line 99.
+LaTeX Info: Redefining \% on input line 99.
+ [10]
+LaTeX Info: Redefining \. on input line 119.
+LaTeX Info: Redefining \% on input line 119.
+ [11]
+LaTeX Info: Redefining \. on input line 139.
+LaTeX Info: Redefining \% on input line 139.
  [12]
-Overfull \hbox (1.89842pt too wide) in paragraph at lines 160--162
+Overfull \hbox (1.89842pt too wide) in paragraph at lines 150--152
 \T1/cmr/m/it/10.95 Ejem-plo: \T1/cmtt/m/n/10.95 ¾Este meme contiene contenido sexista? "Las mujeres no deberían
  []
 
-LaTeX Info: Redefining \. on input line 194.
-LaTeX Info: Redefining \% on input line 194.
+LaTeX Info: Redefining \. on input line 180.
+LaTeX Info: Redefining \% on input line 180.
 [13]
-Overfull \hbox (6.92693pt too wide) in paragraph at lines 221--221
+Underfull \vbox (badness 1552) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 210.
+LaTeX Info: Redefining \% on input line 210.
+ [14]
+Overfull \hbox (6.92693pt too wide) in paragraph at lines 211--211
 |[]\T1/cmss/bx/n/14.4 Aprendizaje con Des-acuer-do (Lear-ning with Des-agree-ment)| 
  []
 
-LaTeX Info: Redefining \. on input line 226.
-LaTeX Info: Redefining \% on input line 226.
-[14]
-LaTeX Info: Redefining \. on input line 263.
-LaTeX Info: Redefining \% on input line 263.
- [15]
-LaTeX Info: Redefining \. on input line 295.
-LaTeX Info: Redefining \% on input line 295.
+LaTeX Info: Redefining \. on input line 246.
+LaTeX Info: Redefining \% on input line 246.
+[15]
+LaTeX Info: Redefining \. on input line 277.
+LaTeX Info: Redefining \% on input line 277.
  [16]
-<Figuras/Logos_Tecnologias.jpg, id=575, 1445.4pt x 712.6625pt>
+<Figuras/Logos_Tecnologias.jpg, id=584, 1445.4pt x 712.6625pt>
 File: Figuras/Logos_Tecnologias.jpg Graphic file (type jpg)
 <use Figuras/Logos_Tecnologias.jpg>
-Package pdftex.def Info: Figuras/Logos_Tecnologias.jpg  used on input line 298.
+Package pdftex.def Info: Figuras/Logos_Tecnologias.jpg  used on input line 288.
 (pdftex.def)             Requested size: 362.77525pt x 178.86115pt.
 )
 LaTeX Info: Redefining \. on input line 115.
@@ -1212,7 +1215,7 @@ Cap\'{\i }tulo 3.
 LaTeX Info: Redefining \. on input line 62.
 LaTeX Info: Redefining \% on input line 62.
  [19]
-<Figuras/Pipeline.png, id=589, 410.53375pt x 188.705pt>
+<Figuras/Pipeline.png, id=598, 410.53375pt x 188.705pt>
 File: Figuras/Pipeline.png Graphic file (type png)
 <use Figuras/Pipeline.png>
 Package pdftex.def Info: Figuras/Pipeline.png  used on input line 76.
@@ -1248,7 +1251,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 218.
 LaTeX Info: Redefining \% on input line 218.
  [25]
-<Figuras/AccuracyEntrenamientoValidacion.jpg, id=624, 853.1875pt x 566.115pt>
+<Figuras/AccuracyEntrenamientoValidacion.jpg, id=633, 853.1875pt x 566.115pt>
 File: Figuras/AccuracyEntrenamientoValidacion.jpg Graphic file (type jpg)
 <use Figuras/AccuracyEntrenamientoValidacion.jpg>
 Package pdftex.def Info: Figuras/AccuracyEntrenamientoValidacion.jpg  used on input line 225.
@@ -1259,7 +1262,7 @@ Underfull \vbox (badness 2165) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 239.
 LaTeX Info: Redefining \% on input line 239.
  [26 <./Figuras/AccuracyEntrenamientoValidacion.jpg>]
-<Figuras/Confusion_matrix_multi.png, id=632, 462.528pt x 346.896pt>
+<Figuras/Confusion_matrix_multi.png, id=641, 462.528pt x 346.896pt>
 File: Figuras/Confusion_matrix_multi.png Graphic file (type png)
 <use Figuras/Confusion_matrix_multi.png>
 Package pdftex.def Info: Figuras/Confusion_matrix_multi.png  used on input line 295.
@@ -1267,7 +1270,7 @@ Package pdftex.def Info: Figuras/Confusion_matrix_multi.png  used on input line 
 LaTeX Info: Redefining \. on input line 298.
 LaTeX Info: Redefining \% on input line 298.
  [27]
-<Figuras/confusion_matrix_multi6.png, id=638, 541.3023pt x 397.485pt>
+<Figuras/confusion_matrix_multi6.png, id=647, 541.3023pt x 397.485pt>
 File: Figuras/confusion_matrix_multi6.png Graphic file (type png)
 <use Figuras/confusion_matrix_multi6.png>
 Package pdftex.def Info: Figuras/confusion_matrix_multi6.png  used on input line 304.
@@ -1278,7 +1281,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 314.
 LaTeX Info: Redefining \% on input line 314.
  [28 <./Figuras/Confusion_matrix_multi.png> <./Figuras/confusion_matrix_multi6.png>]
-<Figuras/CurvaRoc.png, id=647, 726.715pt x 454.69875pt>
+<Figuras/CurvaRoc.png, id=656, 726.715pt x 454.69875pt>
 File: Figuras/CurvaRoc.png Graphic file (type png)
 <use Figuras/CurvaRoc.png>
 Package pdftex.def Info: Figuras/CurvaRoc.png  used on input line 319.
@@ -1341,23 +1344,23 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
 Package rerunfilecheck Info: File `principal_I2C_TFGM_UHU.out' has not changed.
-(rerunfilecheck)             Checksum: A943105E7E1B0862A0976046E86F19CD;13538.
+(rerunfilecheck)             Checksum: 5CCDCD795DFB29DE591C7A0A2C687C2A;13584.
 Package logreq Info: Writing requests to 'principal_I2C_TFGM_UHU.run.xml'.
 \openout1 = `principal_I2C_TFGM_UHU.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38166 strings out of 467510
- 775138 string characters out of 5408795
- 1733070 words of memory out of 5000000
- 66643 multiletter control sequences out of 15000+600000
+ 38178 strings out of 467510
+ 775889 string characters out of 5408795
+ 1733386 words of memory out of 5000000
+ 66651 multiletter control sequences out of 15000+600000
  648807 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,12n,132p,1249b,2332s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecit1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2488.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1728.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on principal_I2C_TFGM_UHU.pdf (48 pages, 4077001 bytes).
+ <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecit1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2488.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1728.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on principal_I2C_TFGM_UHU.pdf (48 pages, 3859581 bytes).
 PDF statistics:
- 1524 PDF objects out of 1728 (max. 8388607)
- 153 named destinations out of 1000 (max. 500000)
+ 1530 PDF objects out of 1728 (max. 8388607)
+ 157 named destinations out of 1000 (max. 500000)
  754 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -18,37 +18,27 @@ De manera clásica, atendiendo a la naturaleza de los datos de entrenamiento y a
 
 Para el desarrollo del presente trabajo, el enfoque central se enmarca dentro del Aprendizaje Supervisado. Dado que el objetivo es la detección y categorización del sexismo en la plataforma \textit{TikTok}, los modelos requieren ser entrenados con colecciones de datos previamente anotados que asocian cada publicación (ya sea el vídeo, la transcripción textual o sus fotogramas) con una clase específica. Sin embargo, dada la alta subjetividad inherente a la interpretación de los discursos de odio en redes sociales, el concepto tradicional de "etiqueta única" del aprendizaje supervisado clásico presenta limitaciones, lo cual motivará la adopción de enfoques más flexibles como el aprendizaje con desacuerdo, que se abordará en secciones posteriores. 
 
-\section{Clasificación de textos e imágenes}
+\section{Clasificación de textos, imágenes y vídeos}
 \label{sec:Clasificacion}
-\textit{La clasificación automática es una de las tareas fundamentales del aprendizaje automático supervisado. Consiste en asignar una o varias categorías a una entrada (por ejemplo, un texto o una imagen) a partir de un conjunto de ejemplos previamente etiquetados. En este trabajo se abordan dos tipos de clasificación: \textbf{binaria}, cuando el sistema debe decidir si un meme es sexista o no, y \textbf{multietiqueta}, cuando un mismo meme puede reflejar múltiples tipos de sexismo al mismo tiempo (por ejemplo, estereotipos de género, violencia simbólica o cosificación).}
+La clasificación automática es una de las tareas fundamentales del aprendizaje automático supervisado. Consiste en asignar una o varias categorías a un dato de entrada a partir de un conjunto de ejemplos que estaban previamente etiquetados. Atendiendo a la cantidad de categorías y a su exclusividad, los problemas de clasificación pueden dividirse en:
+\begin{itemize}
+    \item \underline{Clasificación binaria}: Cuando el sistema debe discriminar entre dos únicas clases (0 o 1).
+    \item \underline{Clasificación multiclase}: Cuando el sistema debe discriminar entre más de dos clases, siendo éstas discriminantes entre sí. Esto quiere decir que dado un dato de entrada, este puede pertenecer a una de las clases sobre las que se esté clasificando.
+    \item \underline{Clasificación multietiqueta}: Cuando el sistema debe discriminar entre más de dos clases, siendo éstas no discriminantes entre sí. Esto quiere decir que una misma entrada puede no pertenecer a ninguna clase, pertenecer a una exclusivamente o pertenecer a varias simultáneamente \cite{zhang2013review}. 
+\end{itemize}
 
+Tradicionalmente, los modelos de clasificación se han diseñado para procesar una única modalidad de datos. En la clasificación de texto, la entrada consiste en secuencias de caracteres o palabras, requiriendo técnicas de Procesamiento de Lenguaje Natural para extraer la semántica, la sintaxis y el contexto del mensaje \cite{minaee2021deep}. En la clasificación de imágenes, los algoritmos analizan la distribución espacial de los píxeles para identificar formas, texturas y patrones visuales estáticos. Por su parte, la clasificación de vídeo introduce una dimensión adicional y crítica: el tiempo. El procesamiento de este tipo de datos requiere no solo comprender la información visual estática de cada fotograma (\textit{frame}), sino también modelar el movimiento y la evolución espaciotemporal a lo largo de la secuencia \cite{karpathy2014large}. 
 
-\textit{Cuando se trabaja con texto, la entrada suele ser una secuencia de palabras que debe ser representada mediante técnicas como embeddings o codificadores (ej., BERT). En el caso de imágenes, se utilizan redes convolucionales o modelos como CLIP para extraer representaciones visuales. La combinación de ambos tipos de información —imagen y texto— da lugar a sistemas \textit{multimodales}, que requieren fusionar estas representaciones para tomar una decisión conjunta.}
-
-
-\begin{sugerencia}
-Puedes incluir aquí una figura esquemática que muestre cómo se recibe el meme (imagen + texto incrustado ) y cómo se procesa por las diferentes fases de la experimentación.
-\end{sugerencia}
-
-\begin{sugerencia}
-\textbf{Podrás comprobar que insertar imágenes en Latex es muy sencillo con el entorno} \verb|figure|.
-\end{sugerencia}
+No obstante, en entornos reales donde la información es abundante y compleja, el uso de una modalidad suele ser insuficiente. Esto ha impulsado el desarrollo de la clasificación multimodal, un paradigma que integra múltiples fuentes de información de distinta naturaleza (por ejemplo, combinando un texto con una secuencia de imágenes). Para lograrlo, estos sistemas emplean arquitecturas especializadas en cada dominio y, posteriormente, aplican estrategias de fusión que combinan las representaciones extraídas, permitiendo al modelo tomar una decisión conjunta mucho más robusta frente a la ambigüedad \cite{baltruvsaitis2018multimodal}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{Figuras/flujo_clasificacion_meme.jpg}
-    \caption{Flujo de procesamiento multimodal de memes (texto + imagen)}
-    \label{fig:flujo_meme}
+    \includegraphics[width=0.9\textwidth]{Figuras/FlujoProcesamientoMultimodal.drawio.png}
+    \caption{Flujo de procesamiento multimodal de vídeos (texto + imagen + vídeos)}
+    \label{fig:flujo_video}
 \end{figure}
 
-
-\textit{Como se observa en la \autoref{fig:flujo_meme}, el sistema divide el meme en dos componentes principales: texto e imagen. Cada uno es procesado por modelos especializados antes de combinar sus representaciones para obtener una predicción final. Este esquema resume el enfoque multimodal adoptado en este trabajo para la tarea de clasificación.}
-
-\begin{sugerencia}
-\textbf{NOTA IMPORTANTE: Es fundamental que todas las Figuras, Tablas y Listados estén correctamente numerados, titulados y referenciados en el cuerpo del texto mediante} \verb|autoref|. \textbf{No basta con ``soltar” la figura. Debes explicarla y comentar lo que aporta a tu trabajo. Esto mejora la comprensión del lector y aporta rigor académico.}\vspace{1em}
-
-\textbf{Nunca escribir cosas como: ``Aquí pongo un esquema del modelo"}
-\end{sugerencia}
+Como se ilustra de manera conceptual en la \autoref{fig:flujo_video}, un flujo de procesamiento multimodal estándar divide el contenido original en sus componentes básicos. Cada modalidad es procesada de forma independiente y en paralelo por modelos específicos para extraer sus características intrínsecas. Finalmente, estas representaciones convergen en un módulo de fusión, el cual combina la información para emitir la predicción final. Este esquema teórico sirve como pilar fundamental para el diseño de arquitecturas capaces de analizar el complejo contenido multimedia actual. 
 
 \section{Aprendizaje Profundo}
 \label{sec:DeepLearning}

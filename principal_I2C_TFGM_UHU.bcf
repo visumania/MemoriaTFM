@@ -2379,13 +2379,17 @@
     <bcf:citekey order="4" intorder="1">m2006pattern</bcf:citekey>
     <bcf:citekey order="5" intorder="1">hastie2009elements</bcf:citekey>
     <bcf:citekey order="6" intorder="1">barto2019reinforcement</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">lecun2015deep</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">goodfellow2016deep</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">devlin2018bert</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">vaswani2017attention</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">devlin2018bert</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">devlin2018bert</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">ruder2019transfer</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">zhang2013review</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">minaee2021deep</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">karpathy2014large</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">baltruvsaitis2018multimodal</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">lecun2015deep</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">goodfellow2016deep</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">devlin2018bert</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">vaswani2017attention</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">devlin2018bert</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">devlin2018bert</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">ruder2019transfer</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

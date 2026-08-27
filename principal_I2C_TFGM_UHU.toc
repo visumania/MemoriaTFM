@@ -11,16 +11,16 @@
 \contentsline {section}{\numberline {1.4}Estructura de la Memoria}{4}{section.1.4}%
 \contentsline {chapter}{\numberline {2}Marco Teórico}{6}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Aprendizaje Automático}{6}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Clasificación de textos e imágenes}{7}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Aprendizaje Profundo}{8}{section.2.3}%
+\contentsline {section}{\numberline {2.2}Clasificación de textos, imágenes y vídeos}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Aprendizaje Profundo}{9}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Epochs y tamaño de lote}{9}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Tasa de aprendizaje y \textit {weight decay}}{9}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Función de pérdida}{9}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Overfitting y técnicas de regularización}{9}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.4}Overfitting y técnicas de regularización}{10}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Early stopping y validación}{10}{subsection.2.3.5}%
 \contentsline {section}{\numberline {2.4}Procesamiento del Lenguaje Natural}{10}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Preprocesamiento del texto}{10}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Representación del texto}{10}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.2}Representación del texto}{11}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Clasificación de texto en PLN}{11}{subsection.2.4.3}%
 \contentsline {section}{\numberline {2.5}Transformers}{11}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}Modelos de lenguaje basados en Transformers}{11}{subsection.2.5.1}%
@@ -32,7 +32,7 @@
 \contentsline {subsection}{\numberline {2.6.3}Ventajas y limitaciones}{14}{subsection.2.6.3}%
 \contentsline {section}{\numberline {2.7}Aprendizaje por Transferencia}{14}{section.2.7}%
 \contentsline {subsection}{\numberline {2.7.1}Fine-tuning y optimización de hiperparámetros}{14}{subsection.2.7.1}%
-\contentsline {section}{\numberline {2.8}Ensemble de Modelos}{14}{section.2.8}%
+\contentsline {section}{\numberline {2.8}Ensemble de Modelos}{15}{section.2.8}%
 \contentsline {section}{\numberline {2.9}Aprendizaje con Desacuerdo (Learning with Desagreement)}{15}{section.2.9}%
 \contentsline {section}{\numberline {2.10}Medidas de Evaluación}{15}{section.2.10}%
 \contentsline {subsection}{\numberline {2.10.1}Precisión, Exhaustividad y F1-Score}{15}{subsection.2.10.1}%

@@ -238,6 +238,190 @@
       \field{pages}{3\bibrangedash 15}
       \range{pages}{13}
     \endentry
+    \entry{zhang2013review}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=acd98f83dff73c7fb671bbcb6f325ece}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Min-Ling},
+           giveni={M\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=6b1a37e820a730061851a81dcca2d154}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Zhi-Hua},
+           giveni={Z\bibinithyphendelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{41482cb4b83815dc42dd4f5458314b88}
+      \strng{fullhash}{41482cb4b83815dc42dd4f5458314b88}
+      \strng{fullhashraw}{41482cb4b83815dc42dd4f5458314b88}
+      \strng{bibnamehash}{41482cb4b83815dc42dd4f5458314b88}
+      \strng{authorbibnamehash}{41482cb4b83815dc42dd4f5458314b88}
+      \strng{authornamehash}{41482cb4b83815dc42dd4f5458314b88}
+      \strng{authorfullhash}{41482cb4b83815dc42dd4f5458314b88}
+      \strng{authorfullhashraw}{41482cb4b83815dc42dd4f5458314b88}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on knowledge and data engineering}
+      \field{number}{8}
+      \field{title}{A review on multi-label learning algorithms}
+      \field{volume}{26}
+      \field{year}{2013}
+      \field{pages}{1819\bibrangedash 1837}
+      \range{pages}{19}
+    \endentry
+    \entry{minaee2021deep}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=f993317037a8a70ad4d9c6555a09d89a}{%
+           family={Minaee},
+           familyi={M\bibinitperiod},
+           given={Shervin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d2d0778c1cdd451c75b874b58eec7564}{%
+           family={Kalchbrenner},
+           familyi={K\bibinitperiod},
+           given={Nal},
+           giveni={N\bibinitperiod}}}%
+        {{hash=db089768b8819956d932b3c8db18d498}{%
+           family={Cambria},
+           familyi={C\bibinitperiod},
+           given={Erik},
+           giveni={E\bibinitperiod}}}%
+        {{hash=4d149ba87a2d2a021964e70640ae4577}{%
+           family={Nikzad},
+           familyi={N\bibinitperiod},
+           given={Narjes},
+           giveni={N\bibinitperiod}}}%
+        {{hash=b43c56cc12552e1a9f3d0f2ab2aa5603}{%
+           family={Chenaghlu},
+           familyi={C\bibinitperiod},
+           given={Meysam},
+           giveni={M\bibinitperiod}}}%
+        {{hash=159bca5607e3797666654a2e3022978a}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Jianfeng},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY, USA}%
+      }
+      \strng{namehash}{a3762cc0e55ae1f34a9959d542225935}
+      \strng{fullhash}{8c907132bc50ce246f739303768f2e37}
+      \strng{fullhashraw}{8c907132bc50ce246f739303768f2e37}
+      \strng{bibnamehash}{a3762cc0e55ae1f34a9959d542225935}
+      \strng{authorbibnamehash}{a3762cc0e55ae1f34a9959d542225935}
+      \strng{authornamehash}{a3762cc0e55ae1f34a9959d542225935}
+      \strng{authorfullhash}{8c907132bc50ce246f739303768f2e37}
+      \strng{authorfullhashraw}{8c907132bc50ce246f739303768f2e37}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM computing surveys (CSUR)}
+      \field{number}{3}
+      \field{title}{Deep learning--based text classification: a comprehensive review}
+      \field{volume}{54}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 40}
+      \range{pages}{40}
+    \endentry
+    \entry{karpathy2014large}{inproceedings}{}{}
+      \name{author}{6}{}{%
+        {{hash=e91a4c2044bccdbef249eabc886ff988}{%
+           family={Karpathy},
+           familyi={K\bibinitperiod},
+           given={Andrej},
+           giveni={A\bibinitperiod}}}%
+        {{hash=61782a3924be97d5dc42427bfd963c92}{%
+           family={Toderici},
+           familyi={T\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=80447d80622f52e6a11d35ede2ff3160}{%
+           family={Shetty},
+           familyi={S\bibinitperiod},
+           given={Sanketh},
+           giveni={S\bibinitperiod}}}%
+        {{hash=909cc514625b20b174a78f5dcd8e558a}{%
+           family={Leung},
+           familyi={L\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=4df216303596d3f13ec1677ee7718dca}{%
+           family={Sukthankar},
+           familyi={S\bibinitperiod},
+           given={Rahul},
+           giveni={R\bibinitperiod}}}%
+        {{hash=cd00ce5bc45f687c432e52e0fa1a7aa6}{%
+           family={Fei-Fei},
+           familyi={F\bibinithyphendelim F\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{66b96c710eb5c440c8d6cd3c52cb0528}
+      \strng{fullhash}{9a16f277a516dbef5f366670cef2658e}
+      \strng{fullhashraw}{9a16f277a516dbef5f366670cef2658e}
+      \strng{bibnamehash}{66b96c710eb5c440c8d6cd3c52cb0528}
+      \strng{authorbibnamehash}{66b96c710eb5c440c8d6cd3c52cb0528}
+      \strng{authornamehash}{66b96c710eb5c440c8d6cd3c52cb0528}
+      \strng{authorfullhash}{9a16f277a516dbef5f366670cef2658e}
+      \strng{authorfullhashraw}{9a16f277a516dbef5f366670cef2658e}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE conference on Computer Vision and Pattern Recognition}
+      \field{title}{Large-scale video classification with convolutional neural networks}
+      \field{year}{2014}
+      \field{pages}{1725\bibrangedash 1732}
+      \range{pages}{8}
+    \endentry
+    \entry{baltruvsaitis2018multimodal}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=66df84f9a5b3fb42b542824373ee39f5}{%
+           family={Baltrušaitis},
+           familyi={B\bibinitperiod},
+           given={Tadas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=93a92cb2f2018320f5fe203d00ae1cc3}{%
+           family={Ahuja},
+           familyi={A\bibinitperiod},
+           given={Chaitanya},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2b23af9d24a98a5912d3b7c941b08ed7}{%
+           family={Morency},
+           familyi={M\bibinitperiod},
+           given={Louis-Philippe},
+           giveni={L\bibinithyphendelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{061e120b3a83987b6b5ae04e43009d83}
+      \strng{fullhash}{061e120b3a83987b6b5ae04e43009d83}
+      \strng{fullhashraw}{061e120b3a83987b6b5ae04e43009d83}
+      \strng{bibnamehash}{061e120b3a83987b6b5ae04e43009d83}
+      \strng{authorbibnamehash}{061e120b3a83987b6b5ae04e43009d83}
+      \strng{authornamehash}{061e120b3a83987b6b5ae04e43009d83}
+      \strng{authorfullhash}{061e120b3a83987b6b5ae04e43009d83}
+      \strng{authorfullhashraw}{061e120b3a83987b6b5ae04e43009d83}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on pattern analysis and machine intelligence}
+      \field{number}{2}
+      \field{title}{Multimodal machine learning: A survey and taxonomy}
+      \field{volume}{41}
+      \field{year}{2018}
+      \field{pages}{423\bibrangedash 443}
+      \range{pages}{21}
+    \endentry
     \entry{lecun2015deep}{article}{}{}
       \name{author}{3}{}{%
         {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
@@ -267,8 +451,8 @@
       \strng{authornamehash}{c6c75bd00ce5a488e91a749d8383b3df}
       \strng{authorfullhash}{c6c75bd00ce5a488e91a749d8383b3df}
       \strng{authorfullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nature}
@@ -308,8 +492,8 @@
       \strng{authornamehash}{3ae53fe582e8a815b118d26947eaa326}
       \strng{authorfullhash}{3ae53fe582e8a815b118d26947eaa326}
       \strng{authorfullhashraw}{3ae53fe582e8a815b118d26947eaa326}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Deep Learning}
@@ -352,8 +536,8 @@
       \strng{authornamehash}{ad8e2e2a80d28ade21e86852b804fc9b}
       \strng{authorfullhash}{e8bccd48302a14eeba57d9dce2f49ef4}
       \strng{authorfullhashraw}{e8bccd48302a14eeba57d9dce2f49ef4}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:1810.04805}
