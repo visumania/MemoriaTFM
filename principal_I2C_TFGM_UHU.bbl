@@ -963,6 +963,226 @@
       \field{volume}{13}
       \field{year}{2012}
     \endentry
+    \entry{li2022survey}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=9885f16be76c4e68e9c2aaf363a53600}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Qian},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=a7a55881cb261787fefdc7f2311dab03}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=221d23a1cc1702c31044af688c0b7c39}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Jianxin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f7ed3faac4d91973292caae805eeaa3e}{%
+           family={Xia},
+           familyi={X\bibinitperiod},
+           given={Congying},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bd1a7f88ec7d4f6f29d6096e8253f801}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Renyu},
+           giveni={R\bibinitperiod}}}%
+        {{hash=48972a9b89e478f69f1b1e95205c6278}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Lichao},
+           giveni={L\bibinitperiod}}}%
+        {{hash=ed7b2de2f08bfa6638d5d174d55d839b}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Philip\bibnamedelima S},
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=8bc1c2c96c880e5bde99cc1aab8ec6ef}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Lifang},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY}%
+      }
+      \strng{namehash}{ccc14e5f8134b4693620e899bbc01e0d}
+      \strng{fullhash}{53a8d5a0c2e37dd28916d2bd97142226}
+      \strng{fullhashraw}{53a8d5a0c2e37dd28916d2bd97142226}
+      \strng{bibnamehash}{ccc14e5f8134b4693620e899bbc01e0d}
+      \strng{authorbibnamehash}{ccc14e5f8134b4693620e899bbc01e0d}
+      \strng{authornamehash}{ccc14e5f8134b4693620e899bbc01e0d}
+      \strng{authorfullhash}{53a8d5a0c2e37dd28916d2bd97142226}
+      \strng{authorfullhashraw}{53a8d5a0c2e37dd28916d2bd97142226}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Transactions on Intelligent Systems and Technology (TIST)}
+      \field{number}{2}
+      \field{title}{A survey on text classification: From traditional to deep learning}
+      \field{volume}{13}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 41}
+      \range{pages}{41}
+    \endentry
+    \entry{min2023recent}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=053ae51ebf315fd5998c29dac42f4fbf}{%
+           family={Min},
+           familyi={M\bibinitperiod},
+           given={Bonan},
+           giveni={B\bibinitperiod}}}%
+        {{hash=f8419d9fbde162b5ca0991729b4eb9a5}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={Hayley},
+           giveni={H\bibinitperiod}}}%
+        {{hash=59cb509416ef4fe7b3a05d97711bb885}{%
+           family={Sulem},
+           familyi={S\bibinitperiod},
+           given={Elior},
+           giveni={E\bibinitperiod}}}%
+        {{hash=87c72085768a0d3e54e33fbea736ae41}{%
+           family={Veyseh},
+           familyi={V\bibinitperiod},
+           given={Amir\bibnamedelimb Pouran\bibnamedelima Ben},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=d564830b6141d6a2ed2ca2afebd5cb3b}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Thien\bibnamedelima Huu},
+           giveni={T\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=97461aed93f912772706f338178669a0}{%
+           family={Sainz},
+           familyi={S\bibinitperiod},
+           given={Oscar},
+           giveni={O\bibinitperiod}}}%
+        {{hash=39f0a6a48ac08d60ef7340dad900caa8}{%
+           family={Agirre},
+           familyi={A\bibinitperiod},
+           given={Eneko},
+           giveni={E\bibinitperiod}}}%
+        {{hash=60f9d05b02027d83725d28709c516903}{%
+           family={Heintz},
+           familyi={H\bibinitperiod},
+           given={Ilana},
+           giveni={I\bibinitperiod}}}%
+        {{hash=71dbeb61d23cc95a9613d414856523fe}{%
+           family={Roth},
+           familyi={R\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY}%
+      }
+      \strng{namehash}{2061711787301a184442b1a0ea8ee42b}
+      \strng{fullhash}{c08e5c6058e04ea269f88f4d89711629}
+      \strng{fullhashraw}{c08e5c6058e04ea269f88f4d89711629}
+      \strng{bibnamehash}{2061711787301a184442b1a0ea8ee42b}
+      \strng{authorbibnamehash}{2061711787301a184442b1a0ea8ee42b}
+      \strng{authornamehash}{2061711787301a184442b1a0ea8ee42b}
+      \strng{authorfullhash}{c08e5c6058e04ea269f88f4d89711629}
+      \strng{authorfullhashraw}{c08e5c6058e04ea269f88f4d89711629}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Computing Surveys}
+      \field{number}{2}
+      \field{title}{Recent advances in natural language processing via large pre-trained language models: A survey}
+      \field{volume}{56}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 40}
+      \range{pages}{40}
+    \endentry
+    \entry{khurana2023natural}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=00c398487189dcaf1dcee130ed215ccf}{%
+           family={Khurana},
+           familyi={K\bibinitperiod},
+           given={Diksha},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ad8525b8eb2f769874e4c72fad9492bc}{%
+           family={Koli},
+           familyi={K\bibinitperiod},
+           given={Aditya},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2ddc74846f7902baefa908f120711b52}{%
+           family={Khatter},
+           familyi={K\bibinitperiod},
+           given={Kiran},
+           giveni={K\bibinitperiod}}}%
+        {{hash=e988a0eadd27b7c2f54324c8288ccb27}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Sukhdev},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{1d88725f52f61140c4a3651c982a6bf0}
+      \strng{fullhash}{b703d1a3bc3353e8317de0e19e9f44a8}
+      \strng{fullhashraw}{b703d1a3bc3353e8317de0e19e9f44a8}
+      \strng{bibnamehash}{1d88725f52f61140c4a3651c982a6bf0}
+      \strng{authorbibnamehash}{1d88725f52f61140c4a3651c982a6bf0}
+      \strng{authornamehash}{1d88725f52f61140c4a3651c982a6bf0}
+      \strng{authorfullhash}{b703d1a3bc3353e8317de0e19e9f44a8}
+      \strng{authorfullhashraw}{b703d1a3bc3353e8317de0e19e9f44a8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Multimedia tools and applications}
+      \field{number}{3}
+      \field{title}{Natural language processing: state of the art, current trends and challenges}
+      \field{volume}{82}
+      \field{year}{2023}
+      \field{pages}{3713\bibrangedash 3744}
+      \range{pages}{32}
+    \endentry
+    \entry{vaswani2017attention}{inproceedings}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{3}{}{%
+        {{hash=7f28e84700536646dd6620a0db07ad09}{%
+           family={Vaswani},
+           familyi={V\bibinitperiod},
+           given={Ashish},
+           giveni={A\bibinitperiod}}}%
+        {{hash=62efade83d70f0323fe248755e6c90c5}{%
+           family={Shazeer},
+           familyi={S\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod}}}%
+        {{hash=06649ebab1ea5cac0250746a19764975}{%
+           family={Parmar},
+           familyi={P\bibinitperiod},
+           given={Niki},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{7cc810834e9ba19dd5f8b0a37be3172d}
+      \strng{fullhash}{7cc810834e9ba19dd5f8b0a37be3172d}
+      \strng{fullhashraw}{7cc810834e9ba19dd5f8b0a37be3172d}
+      \strng{bibnamehash}{7cc810834e9ba19dd5f8b0a37be3172d}
+      \strng{authorbibnamehash}{7cc810834e9ba19dd5f8b0a37be3172d}
+      \strng{authornamehash}{7cc810834e9ba19dd5f8b0a37be3172d}
+      \strng{authorfullhash}{7cc810834e9ba19dd5f8b0a37be3172d}
+      \strng{authorfullhashraw}{7cc810834e9ba19dd5f8b0a37be3172d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems}
+      \field{title}{Attention is all you need}
+      \field{volume}{30}
+      \field{year}{2017}
+    \endentry
     \entry{devlin2018bert}{article}{}{}
       \name{author}{4}{}{%
         {{hash=13202969e372bc82318f9629cbdd199b}{%
@@ -994,50 +1214,13 @@
       \strng{authornamehash}{ad8e2e2a80d28ade21e86852b804fc9b}
       \strng{authorfullhash}{e8bccd48302a14eeba57d9dce2f49ef4}
       \strng{authorfullhashraw}{e8bccd48302a14eeba57d9dce2f49ef4}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:1810.04805}
       \field{title}{BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding}
       \field{year}{2018}
-    \endentry
-    \entry{vaswani2017attention}{inproceedings}{}{}
-      \true{moreauthor}
-      \true{morelabelname}
-      \name{author}{3}{}{%
-        {{hash=7f28e84700536646dd6620a0db07ad09}{%
-           family={Vaswani},
-           familyi={V\bibinitperiod},
-           given={Ashish},
-           giveni={A\bibinitperiod}}}%
-        {{hash=62efade83d70f0323fe248755e6c90c5}{%
-           family={Shazeer},
-           familyi={S\bibinitperiod},
-           given={Noam},
-           giveni={N\bibinitperiod}}}%
-        {{hash=06649ebab1ea5cac0250746a19764975}{%
-           family={Parmar},
-           familyi={P\bibinitperiod},
-           given={Niki},
-           giveni={N\bibinitperiod}}}%
-      }
-      \strng{namehash}{7cc810834e9ba19dd5f8b0a37be3172d}
-      \strng{fullhash}{7cc810834e9ba19dd5f8b0a37be3172d}
-      \strng{fullhashraw}{7cc810834e9ba19dd5f8b0a37be3172d}
-      \strng{bibnamehash}{7cc810834e9ba19dd5f8b0a37be3172d}
-      \strng{authorbibnamehash}{7cc810834e9ba19dd5f8b0a37be3172d}
-      \strng{authornamehash}{7cc810834e9ba19dd5f8b0a37be3172d}
-      \strng{authorfullhash}{7cc810834e9ba19dd5f8b0a37be3172d}
-      \strng{authorfullhashraw}{7cc810834e9ba19dd5f8b0a37be3172d}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Advances in Neural Information Processing Systems}
-      \field{title}{Attention is all you need}
-      \field{volume}{30}
-      \field{year}{2017}
     \endentry
     \entry{ruder2019transfer}{article}{}{}
       \name{author}{1}{}{%

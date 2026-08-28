@@ -19,51 +19,51 @@
 \contentsline {subsection}{\numberline {2.3.4}Overfitting y técnicas de regularización}{12}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Early stopping y validación}{13}{subsection.2.3.5}%
 \contentsline {section}{\numberline {2.4}Procesamiento del Lenguaje Natural}{14}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Preprocesamiento del texto}{14}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Representación del texto}{14}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Clasificación de texto en PLN}{15}{subsection.2.4.3}%
-\contentsline {section}{\numberline {2.5}Transformers}{15}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Modelos de lenguaje basados en Transformers}{15}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Transformers para visión por computador}{15}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Ventajas de los Transformers en tareas multimodales}{16}{subsection.2.5.3}%
-\contentsline {section}{\numberline {2.6}Modelos Generativos de Lenguaje}{16}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Zero-shot, Few-shot y Fine-tuning}{16}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}Aplicación a tareas de clasificación}{17}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}Ventajas y limitaciones}{17}{subsection.2.6.3}%
-\contentsline {section}{\numberline {2.7}Aprendizaje por Transferencia}{18}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Fine-tuning y optimización de hiperparámetros}{18}{subsection.2.7.1}%
-\contentsline {section}{\numberline {2.8}Ensemble de Modelos}{18}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Aprendizaje con Desacuerdo (Learning with Desagreement)}{18}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Medidas de Evaluación}{19}{section.2.10}%
-\contentsline {subsection}{\numberline {2.10.1}Precisión, Exhaustividad y F1-Score}{19}{subsection.2.10.1}%
-\contentsline {subsection}{\numberline {2.10.2}Evaluación en clasificación multietiqueta}{19}{subsection.2.10.2}%
-\contentsline {section}{\numberline {2.11}Tecnologías y Recursos Utilizados}{20}{section.2.11}%
-\contentsline {chapter}{\numberline {3}Metodología, Experimentación y Resultados}{22}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Participación en una tarea (si es el caso)}{22}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Descripción General de la Metodología}{23}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Preparación de los Datos}{24}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Descripción de los Datos}{25}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Balanceo de Datos}{25}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Limpieza y Normalización}{26}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Tokenización y Codificación}{26}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}División de Datos}{26}{subsection.3.3.5}%
-\contentsline {section}{\numberline {3.4}Selección de los Modelos}{27}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Ajuste de Hiperparámetros}{27}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Métodos de Búsqueda}{27}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Hiperparámetros Evaluados}{28}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Tamaño del Conjunto de Datos Utilizado}{28}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Criterios de Selección}{28}{subsection.3.5.4}%
-\contentsline {section}{\numberline {3.6}Entrenamiento de los Modelos}{28}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Baselines}{29}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Configuración de Entrenamiento}{29}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}Monitorización del Entrenamiento}{30}{subsection.3.6.3}%
-\contentsline {section}{\numberline {3.7}Evaluación y Análisis de Resultados}{30}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Análisis de Errores}{33}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Resultados Oficiales de la Tarea (opcional)}{35}{section.3.9}%
-\contentsline {chapter}{\numberline {4}Conclusiones y Trabajo Futuro}{37}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Conclusiones}{37}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Trabajo Futuro}{38}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Planificación Temporal del Trabajo Realizado}{39}{section.4.3}%
-\contentsline {chapter}{Referencias}{41}{chapter*.13}%
-\contentsline {chapter}{\numberline {A}Anexos}{43}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Aplicación Web para la Visualización y Prueba del Modelo}{43}{appendix.A.1}%
+\contentsline {subsection}{\numberline {2.4.1}Preprocesamiento del texto}{15}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Representación del texto}{15}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Clasificación de texto en PLN}{16}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Transformers}{16}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Modelos de lenguaje basados en Transformers}{16}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Transformers para visión por computador}{17}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Ventajas de los Transformers en tareas multimodales}{17}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}Modelos Generativos de Lenguaje}{17}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Zero-shot, Few-shot y Fine-tuning}{18}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Aplicación a tareas de clasificación}{18}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Ventajas y limitaciones}{19}{subsection.2.6.3}%
+\contentsline {section}{\numberline {2.7}Aprendizaje por Transferencia}{19}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Fine-tuning y optimización de hiperparámetros}{19}{subsection.2.7.1}%
+\contentsline {section}{\numberline {2.8}Ensemble de Modelos}{19}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Aprendizaje con Desacuerdo (Learning with Desagreement)}{20}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Medidas de Evaluación}{20}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Precisión, Exhaustividad y F1-Score}{20}{subsection.2.10.1}%
+\contentsline {subsection}{\numberline {2.10.2}Evaluación en clasificación multietiqueta}{21}{subsection.2.10.2}%
+\contentsline {section}{\numberline {2.11}Tecnologías y Recursos Utilizados}{21}{section.2.11}%
+\contentsline {chapter}{\numberline {3}Metodología, Experimentación y Resultados}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Participación en una tarea (si es el caso)}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Descripción General de la Metodología}{24}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Preparación de los Datos}{25}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Descripción de los Datos}{26}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Balanceo de Datos}{26}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Limpieza y Normalización}{27}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Tokenización y Codificación}{27}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}División de Datos}{27}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4}Selección de los Modelos}{28}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Ajuste de Hiperparámetros}{28}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Métodos de Búsqueda}{28}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Hiperparámetros Evaluados}{29}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Tamaño del Conjunto de Datos Utilizado}{29}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Criterios de Selección}{29}{subsection.3.5.4}%
+\contentsline {section}{\numberline {3.6}Entrenamiento de los Modelos}{29}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Baselines}{30}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Configuración de Entrenamiento}{30}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Monitorización del Entrenamiento}{31}{subsection.3.6.3}%
+\contentsline {section}{\numberline {3.7}Evaluación y Análisis de Resultados}{31}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Análisis de Errores}{34}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Resultados Oficiales de la Tarea (opcional)}{36}{section.3.9}%
+\contentsline {chapter}{\numberline {4}Conclusiones y Trabajo Futuro}{38}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Conclusiones}{38}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Trabajo Futuro}{39}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Planificación Temporal del Trabajo Realizado}{40}{section.4.3}%
+\contentsline {chapter}{Referencias}{42}{chapter*.13}%
+\contentsline {chapter}{\numberline {A}Anexos}{44}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Aplicación Web para la Visualización y Prueba del Modelo}{44}{appendix.A.1}%
