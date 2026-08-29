@@ -2402,10 +2402,33 @@
     <bcf:citekey order="27" intorder="1">li2022survey</bcf:citekey>
     <bcf:citekey order="28" intorder="1">min2023recent</bcf:citekey>
     <bcf:citekey order="29" intorder="1">khurana2023natural</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">vaswani2017attention</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">devlin2018bert</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">jurafsky2014speech</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">vaswani2017attention</bcf:citekey>
     <bcf:citekey order="32" intorder="1">devlin2018bert</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">ruder2019transfer</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">liu2019roberta</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">zhao2023survey</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">dettmers2023qlora</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">carreira2017quo</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">dosovitskiy2020image</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">liu2021swin</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">liu2022convnet</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">he2016deep</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">bertasius2021space</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">arnab2021vivit</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">tong2022videomae</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">pan2009survey</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">qiu2020pre</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">howard2018universal</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">dodge2020fine</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">akiba2019optuna</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">sagi2018ensemble</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">baltrusaitis2018multimodal</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">plank2022problem</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">basile2021we</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">deshpande2023toxicity</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">sokolova2009systematic</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">tsoumakas2007multi</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">plaza2023overview</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
