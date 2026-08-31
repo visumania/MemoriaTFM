@@ -12,10 +12,21 @@
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Arquitectura de \textit {VideoMAE}}}{27}{figure.2.9}%
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Tecnologías usadas para el desarrollo del TFM}}{35}{figure.2.10}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline general del marco de experimentación.}}{39}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Evolución del entrenamiento monitorizada con TensorBoard.}}{45}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Matriz de confusión para el modelo RoBERTa.}}{47}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Matriz de confusión para el modelo RoBERTa.}}{47}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Curvas ROC de los modelos evaluados.}}{48}{figure.3.5}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline general del marco de experimentación}}{40}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de un registro del dataset original}}{42}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Dataset transformado para la tarea 3.1}}{43}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Resultados del \textit {Ensemble} Multimodal contra el \textit {test} estático}}{56}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Resultados de la estrategia \textit {Hard Consensus} en hombres}}{60}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Resultados de la estrategia \textit {Hard Consensus} en mujeres}}{60}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Resultados de la estrategia \textit {Pessimistic} en hombres}}{60}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Resultados de la estrategia \textit {Pessimistic} en mujeres}}{61}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Resultados de la estrategia \textit {Optimistic} en hombres}}{61}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Resultados de la estrategia \textit {Optimistic} en mujeres}}{61}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Resultados de la estrategia \textit {Unrolling} en hombres}}{62}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Resultados de la estrategia \textit {Unrolling} en mujeres}}{62}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Evolución del entrenamiento monitorizada con TensorBoard.}}{68}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Matriz de confusión para el modelo RoBERTa.}}{69}{figure.3.14}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Matriz de confusión para el modelo RoBERTa.}}{70}{figure.3.15}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Curvas ROC de los modelos evaluados.}}{70}{figure.3.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
