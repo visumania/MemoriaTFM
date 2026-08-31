@@ -1,101 +1,76 @@
 \chapter{Conclusiones y Trabajo Futuro}
 \label{cap:Conclusiones}
 
-Este capítulo debe ofrecer una síntesis clara del trabajo realizado, valorando los resultados obtenidos y proponiendo posibles trabajos para continuar la investigación. También debe justificarse aquí el esfuerzo temporal invertido.
+Este capítulo ofrece una síntesis de la investigación realizada, valorando el grado de cumplimiento de los objetivos iniciales y destacando los hallazgos más relevantes obtenidos tras la extensa variedad de experimentos. Asimismo, se exponen las limitaciones encontradas, se proponen líneas de investigación futuras par dar continuidad al proyecto, y se detalla y justifica el esfuerzo temporal y computacional invertido en su desarrollo.
 
 \section{Conclusiones}
-
-\begin{sugerencia}
-Describir cómo se han alcanzado los objetivos planteados, cuáles han sido los principales hallazgos, sus implicaciones, posibles limitaciones y la contribución del trabajo dentro del área de estudio.
-\end{sugerencia}
-
 \subsection*{Consecución de Objetivos}
-
-\textit{Los objetivos definidos al inicio del trabajo han sido alcanzados satisfactoriamente. Se ha desarrollado un sistema de clasificación basado en Transformers y se ha evaluado en el marco de una competición oficial con buenos resultados.}
+Los objetivos definidos al principio de este trabajo han sido alcanzados de manera satisfactoria. Se ha diseñado, implementado y evaluado un sistema de clasificación multimodal complejo, capaz de procesar texto, imágenes estáticas y vídeo temporal para la detección de discurso sexista en la red social \textit{TikTok}, utilizando como marco de evaluación el conjunto de datos oficial de la competición \textit{EXIST 2025}. Aunque las entregas iniciales a la competición sirvieron como punto de partida, el núcleo duro de la investigación y la consecución del mayor rendimiento se han logrado mediante una extensa experimentación a posteriori. 
 
 \subsection*{Resumen de los Hallazgos}
+La experimentación ha demostrado que el sexismo es un fenómeno multimodal. Ningún modelo unimodal logró igualar el rendimiento del sistema unificado mediante \textit{Late Fusion} (\textit{F1-Score de 0.7261}). El análisis detallado demostró que el texto es dominante para detectar la carga ideológica, mientras que el análisis temporal del vídeo es imprescindible para capturar fenómenos visuales complejos como la cosificación. 
 
-\textit{El modelo RoBERTa, combinado con técnicas de aumento de datos, ha logrado una mejora del 25\% en F1-score respecto al baseline. El análisis de errores ha revelado que los errores más comunes están relacionados con el lenguaje irónico y ambiguo.}
+Además, los experimentos de perspectivismo han arrojado una conclusión empírica de gran valor: la anotación del discurso de odio realizada desde una perspectiva femenina genera fronteras de decisión más coherentes para los algoritmos, mientras que la simulación de una perspectiva masculina aumenta significativamente la tasa de falsos negativos ante el sexismo sutil. 
 
 \subsection*{Implicaciones}
-
-\textit{Los resultados obtenidos demuestran la viabilidad de usar modelos de lenguaje preentrenados para tareas de clasificación de texto en contextos sensibles como la detección de discursos sesgados o polarizados.}
+Los resultados obtenidos validan la eficacia de combinar \textit{LLMs} ajustados mediante \textit{PEFT} (\textit{QLoRA}) con \textit{Vision Transformers}. Queda claro que, para moderar plataformas modernas de vídeos cortos, el análisis de texto aislado es insuficiente, debiendo hibridarse con la semántica del movimiento y la disposición espacial para comprender el tono real del contenido. 
 
 \subsection*{Limitaciones}
-
-\textit{Una limitación importante ha sido el desequilibrio de clases y la falta de ejemplos anotados con ironía sutil o sexismo benevolente, lo que ha dificultado el entrenamiento del modelo.}
+La principal limitación técnica encontrada ha sido el desbalanceo extremo en las clases minoritarias del \textit{dataset} multietiqueta (especialmente en \textit{Sexual Violence} y \textit{Misogyny and Non-Sexual Violence}). Esta carencia de ejemplos positivos provocó un colapso predictivo en todas las familias de modelos, que optaron por predecir la clase mayoritaria. Por otro lado, la extracción del texto incrustado en el vídeo que nos aportó la competición introdujo ruido y ``basura algorítmica'', como metadatos de emojis, que dificultó la comprensión semántica.  
 
 \subsection*{Contribuciones}
-
-\textit{Este trabajo ha contribuido con una metodología reproducible para el tratamiento de datos textuales en español, ha evaluado distintas arquitecturas y ha participado activamente en una tarea competitiva, generando un artículo científico.}
+Este trabajo aporta una metodología reproducible y exhaustiva para el tratamiento multimodal de datos en español e inglés. Se ha documentado el comportamiento comparativo de modelos discriminativos y generativos, se han evaluado distintas lógicas de agregación de frames (\textit{Mean-Pooling, Majority-Vote}), y se ha demostrado el impacto de los sesgos demográficos en el entrenamiento de la inteligencia artificial. 
 
 \subsection*{Consideraciones Éticas}
-
-\textit{Es importante tener en cuenta las posibles implicaciones éticas del uso de modelos automáticos para clasificar lenguaje humano, especialmente en contextos como el discurso sexista. Las decisiones automatizadas deben siempre contextualizarse y acompañarse de revisión humana.}
+El uso de modelos de inteligencia artificial para la moderación de contenido humano conlleva profundas implicaciones éticas. Como ha demostrado el análisis de errores y de perspectivismo de este documento, los modelos heredan e incluso amplifican los sesgos de sus datos de entrenamiento. Las decisiones de censura o bloqueo automatizadas en redes sociales no deben ser tomadas como verdades absolutas, sino que deben contextualizarse y contar con supervisión humana para evitar la discriminación sistémica. 
 
 \section{Trabajo Futuro}
+\subsection*{Mejoras Metodológicas y Preprocesamiento}
+A corto plazo, una línea de trabajo esencial consiste en implementar filtros de limpieza de texto mucho más agresivos para mitigar el ruido introducido por el \textit{OCR} y las transcripciones de audio automáticas, traduciendo los metadatos visuales a un formato puramente semántico. Asimismo, sería interesante aplicar técnicas de \textit{Oversampling} o penalización de pesos funcionales (\textit{Class Weights}) para solventar el colapso de los modelos ante el desbalanceo de las categorías más graves. 
 
-\begin{sugerencia}
-Proponer líneas de trabajo que den continuidad al proyecto, ya sea en forma de mejoras técnicas, nuevas preguntas de investigación, aplicaciones prácticas o ampliaciones del estudio.
-\end{sugerencia}
-
-\subsection*{Extensiones del Estudio}
-
-\textit{Una posible extensión sería aplicar el mismo enfoque a otros dominios del lenguaje subjetivo, como la detección de odio o polarización en redes sociales.}
-
-\subsection*{Investigaciones Adicionales}
-
-\textit{Podría investigarse la eficacia de modelos multilingües o adaptativos en tareas con clases ambiguas o poco representadas.}
+\subsection*{Extensiones del Estudio Multimodal}
+Aunque este trabajo ha fusionado con éxito texto, imagen y vídeo, el sonido aporta información crítica (tono de voz, sarcasmo acústico, risas). Una extensión natural del sistema consistirá en integrar modelos especializados en características acústicas, como \textit{Wav2Vec} o \textit{Audio Spectogram Transformers}, añadiendo una nueva dimensión a la ecuación del \textit{Ensemble}. Además, sería interesante investigar técnicas de \textit{Early Fusion} o arquitecturas de atención cruzada (\textit{Cross-Attention}) que permitan a los modelos evaluar texto e imagen de forma simultánea, y no en etapas separadas. 
 
 \subsection*{Aplicaciones Prácticas}
-
-\textit{Los resultados podrían utilizarse para desarrollar herramientas de apoyo a la moderación de contenido o de análisis sociolingüístico en medios digitales.}
-
-\subsection*{Mejoras Metodológicas}
-
-\textit{Se propone explorar técnicas de aprendizaje activo para mejorar la eficiencia de la anotación de datos y reducir el sesgo en los conjuntos de entrenamiento.}
-
+A nivel aplicado, la arquitectura híbrida documentada podría integrarse en una herramienta de software capaz de asistir a los equipos de \textit{Trust \& Safety} de plataformas digitales, priorizando y marcando de forma automática aquellos contenidos que, por su combinación de factores textuales y visuales, presenten una alta probabilidad de albergar discursos de odio o sexistas. 
 
 \section{Planificación Temporal del Trabajo Realizado}
+En este apartado se detalla el tiempo y los recursos empleados en la investigación y redacción del presente Trabajo de Fin de Máster. Dada la magnitud de la experimentación requerida, el mayor esfuerzo no recayó en las entregas iniciales de la competición, sino en el análisis avanzado, entrenamiento y depuración de modelos a posteriori. Las horas globales estimadas se resumen en la \autoref{tab:PlanificationTemporal}.
 
-En este apartado se muestra el tiempo empleado en el estudio y resolución de las diferentes partes de nuestro TFG/TFM, detallando así las tareas más complejas y las horas globales empleadas en ellas en la \autoref{tab:planificacion}.
-
-\begin{table}[h]
+\begin{table}[H]
     \centering
-    \caption{Planificación temporal del trabajo realizado.}
-    \label{tab:planificacion}
     \begin{tabularx}{\textwidth}{Xr}
         \toprule
-        \textbf{Tarea} & \textbf{Horas} \\
+        \textbf{Tarea} & \textbf{Horas Estimadas} \\
         \midrule
-        Estudio de la Tarea \textit{Semeval 2024} & 5 \\
+        \textbf{Revisión del Estado del Arte e Investigación Teórica:} & \textbf{50} \\
+        \quad - Análisis del discurso de odio, \textit{Transformers}, y \textit{LLMs}. & \\
+        \quad - Estudio del Perspectivismo (\textit{LeWiDi}) y métricas de evaluación. & \\
         \addlinespace[0.2em]
-        \textbf{Aprendizaje de los conceptos necesarios para abordar el TFG:} & \textbf{70} \\
-        \quad - Aprendizaje automático, redes neuronales, Transformers & \\
-        \quad - Transfer Learning, Fine Tuning, PLN, métricas de evaluación & \\
+        \textbf{Familiarización con el Entorno y Tecnologías:} & \textbf{50} \\
+        \quad - Despliegue en \textit{Google Colab}, librerías (\textit{PyTorch}, \textit{Hugging Face}). & \\
+        \quad - Lógicas de extracción multimedia (\textit{OpenCV}, \textit{Decord}). & \\
         \addlinespace[0.2em]
-        \textbf{Aprendizaje de la tecnología necesaria:} & \textbf{80} \\
-        \quad - PyTorch, modelos de Transfer Learning para NLP & \\
-        \quad - Librerías como NLTK, modelos multimodales, \LaTeX{} & \\
+        \textbf{Tratamiento de Datos y Entregas Preliminares (EXIST 2025):} & \textbf{70} \\
+        \quad - Limpieza de \textit{datasets}, gestión de nulos y estructuración de \textit{frames}. & \\
+        \quad - \textit{Splits} estratificados para la tarea binaria y multietiqueta. & \\
         \addlinespace[0.2em]
-        \textbf{Realización de la tarea de \textit{Semeval 2024}:} & \textbf{100} \\
-        \quad - Descarga y estudio de datasets, tratamiento de datos & \\
-        \quad - Diseño de experimentos, implementación, entrenamiento & \\
+        \textbf{Experimentación Avanzada \textit{a posteriori} y Desarrollo:} & \textbf{140} \\
+        \quad - Ejecución y entrenamiento intensivo en GPUs (entorno L4 de Colab). & \\
+        \quad - \textit{Debugging}, resolución de errores de memoria (OOM), HPO. & \\
+        \quad - Algoritmos de \textit{Late Fusion} y \textit{Persona Prompting} en \textit{Mistral}. & \\
         \addlinespace[0.2em]
-        Elaboración del \textit{paper} y correcciones & 50 \\
-        Elaboración de la memoria del proyecto & 35 \\
+        \textbf{Elaboración de la Memoria y Formato:} & \textbf{70} \\
+        \quad - Análisis cruzado de resultados, extracción de gráficas y conclusiones. & \\
+        \quad - Redacción intensiva, maquetación en \LaTeX{} y revisión final. & \\
         \midrule
-        \textbf{Total} & \textbf{340} \\
+        \textbf{Total} & \textbf{380} \\
         \bottomrule
     \end{tabularx}
+    \caption{Estimación de la planificación temporal del trabajo realizado.}
+    \label{tab:PlanificationTemporal}
 \end{table}
 
+Como se refleja en la tabla, el proyecto ha requerido una inversión aproximada de 380 horas. Cabe destacar el elevado coste computacional de la fase de Experimentación Avanzada. Durante esta etapa, se consumieron más de 320 unidades de cómputo en la plataforma \textit{Google Colab} utilizando hardware de alto rendimiento (\textit{GPUs NVIDIA L4}) para poder procesar los grandes volúmenes de datos de imágenes y vídeo, y realizar el \textit{Fine-Tuning} de arquitecturas pesadas como \textit{ConvNeXt}, \textit{TimeSFormer} y el modelo de lenguaje \textit{Mistral-7B}.
 
-En esta tabla se refleja el número de horas que se ha dedicado a cada tarea, siendo el desarrollo de la tarea \textit{Semeval 2024} la que más tiempo nos ha llevado, con una diferencia de 20 horas respecto a la siguiente más costosa. 
-
-Se han invertido también unas 70 horas en la etapa de formación, estudio de la teoría y los conceptos necesarios para abordar eficazmente la tarea y alcanzar los objetivos del trabajo. La mayor parte de estos conceptos no se abordan en el plan de estudios habitual, lo que nos llevó a buscar material adicional en fuentes especializadas y recursos online.
-
-Se han empleado unas 80 horas en el aprendizaje de las tecnologías necesarias para desarrollar el proyecto. El desarrollo del software necesario para resolver el problema planteado en la competición ha supuesto unas 100 horas.
-
-Una vez completado el plazo de participación, se elaboró el artículo científico y se revisó, lo que supuso unas 50 horas adicionales. Finalmente, para la elaboración y revisión de la memoria del proyecto se dedicaron unas 35 horas.
-
+Las entregas preliminares a la competición oficial sentaron las bases del problema, pero al no alcanzar los niveles de excelencia deseados, se tomó la decisión estratégica de prescindir de la publicación de un artículo científico en el taller, canalizando todo el esfuerzo, el tiempo y la capacidad de cómputo en expandir masivamente los experimentos. Este esfuerzo se ha terminado materializando con todo lo que hemos expuesto en este trabajo, culminando con una fase de redacción altamente intensiva durante la última semana de trabajo.  
