@@ -24,9 +24,7 @@
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Resultados de la estrategia \textit {Optimistic} en mujeres}}{61}{figure.3.10}%
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Resultados de la estrategia \textit {Unrolling} en hombres}}{62}{figure.3.11}%
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Resultados de la estrategia \textit {Unrolling} en mujeres}}{62}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Evolución del entrenamiento monitorizada con TensorBoard.}}{68}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Matriz de confusión para el modelo RoBERTa.}}{69}{figure.3.14}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Matriz de confusión para el modelo RoBERTa.}}{70}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Curvas ROC de los modelos evaluados.}}{70}{figure.3.16}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Resultados de la técnica \textit {Persona Prompting} dando el rol de hombre}}{63}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Resultados de la técnica \textit {Persona Prompting} dando el rol de mujer}}{63}{figure.3.14}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

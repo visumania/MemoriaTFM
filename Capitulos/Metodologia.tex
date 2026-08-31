@@ -672,9 +672,9 @@ En las secciones anteriores, los modelos se entrenaron mediante ``Consenso Mayor
 
 \subsection{Segmentación demográfica en \textit{Transformers}}
 \label{subsec:SegmentacionDemograficaEnTransformers}
-La primera aproximación al perspectivismo consistió en entrenar modelos discriminativos independientes basados en los datos demográficos de los anotadores humanos. A partir del conjunto de entrenamiento maestro, se extrajeron de forma aislada los votos emitidos exclusivamente por los anotadores masculinos y, en paralelo, los emitidos por las anotadores femeninas. 
+La primera aproximación al perspectivismo consistió en entrenar modelos discriminativos independientes basados en los datos demográficos de los anotadores humanos. A partir del conjunto de entrenamiento maestro, se extrajeron de forma aislada los votos emitidos exclusivamente por los anotadores masculinos y, en paralelo, los emitidos por las anotadoras femeninas. 
 
-Dado que un mismo vídeo podía ser evaluado por varios anotadores del mismo género (por ejemplo, dos hombres), surgieron casos de empate o ``disidencia interna'' (un hombre etiquetando como 1 y otro como 0). Para abordar este desacuerdo interno de manera metodológica y utilizando la arquitectura \texttt{RoBERTa-base}, se entrenaron 8 conjuntos de datos distintos (4 estrategias x 2 géneros).: 
+Dado que un mismo vídeo podía ser evaluado por varios anotadores del mismo género (por ejemplo, dos hombres), surgieron casos de empate o ``disidencia interna'' (un hombre etiquetando como 1 y otro como 0). Para abordar este desacuerdo interno de manera metodológica y utilizando la arquitectura \texttt{RoBERTa-base}, se entrenaron 8 conjuntos de datos distintos (4 estrategias x 2 géneros): 
 \begin{itemize}
     \item \textbf{Descartes (\textit{Hard Consensus})}: Se eliminaron del entrenamiento aquellos vídeos en los que los anotadores del mismo género no lograron ponerse de acuerdo, en la \autoref{fig:ResultadosTransformersPerspectivismoHombreDiscard} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerDiscard} se pueden ver los resultados obtenidos para hombres y mujeres respectivamente. 
     \item \textbf{Ante la duda, Machismo (\textit{Pessimistic})}: En caso de empate interno, el video se etiquetó como sexista (1), en la \autoref{fig:ResultadosTransformersPerspectivismoHombrePessimistic} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerPessimistic} se pueden ver los resultados obtenidos para hombres y mujeres respectivamente.
@@ -738,7 +738,7 @@ Dado que un mismo vídeo podía ser evaluado por varios anotadores del mismo gé
 \label{subsec:InyeccionDeRolesEnLLMs}
 Mientras que el enfoque anterior alteraba los datos de origen para sesgar matemáticamente a un modelo discriminativo, la segunda estrategia abordó el perspectivismo desde un modelo generativo utilizando \textit{Prompting Engineering}.
 
-Aprovechando la capacidad de los \textit{LLMs} para simular roles y adaptar tu tono, se aplicó la técnica de \textit{Persona Prompting} sobre el modelo \texttt{Mistral-7B-Instruct-v0.3}. En lugar de pedirle una clasificación neutral, se diseñaron dos \textit{prompts} que inyectaron la identidad de género directamente en el contexto del modelo. 
+Aprovechando la capacidad de los \textit{LLMs} para simular roles y adaptar su tono, se aplicó la técnica de \textit{Persona Prompting} sobre el modelo \texttt{Mistral-7B-Instruct-v0.3}. En lugar de pedirle una clasificación neutral, se diseñaron dos \textit{prompts} que inyectaron la identidad de género directamente en el contexto del modelo. 
 
 El \textit{prompt} diseñado para la perspectiva masculina fue:
 
@@ -747,342 +747,163 @@ El \textit{prompt} diseñado para la perspectiva masculina fue:
     Etiqueta:
 \end{tcolorbox}
 
-De manera simétrica, el \textit{prompt} diseñado para la perspectiva femenina fué idéntico, sustituyendo las referencias de género:
+De manera simétrica, el \textit{prompt} diseñado para la perspectiva femenina fue idéntico, sustituyendo las referencias de género:
 
 \begin{tcolorbox}[colback=gray!10, colframe=gray!40, arc=4pt, boxrule=0.5pt]
     \texttt{[INST]} Actúa como una mujer. Eres una experta analizando redes sociales. Clasifica el siguiente texto en una de estas dos categorías: 'Misógino' o 'No misógino'. Devuelve ÚNICAMENTE la etiqueta correspondiente, sin explicaciones adicionales. Texto: \{texto\} \texttt{[/INST]} 
     Etiqueta:
 \end{tcolorbox}
 
-Esta aproximación permite observar cómo el sesgo latente intrínseco en los miles de millones de parámetros del modelo preentrenado altera su juicio semántico al verse forzado a ``pensar'' como un hombre o como una mujer frente a los mismo 502 registros del \textit{Test} estático. 
+En las \autoref{fig:ResultadosPromptHombre} y \autoref{fig:ResultadosPromptMujer} se puede observar cómo el sesgo latente intrínseco en los miles de millones de parámetros del modelo preentrenado altera su juicio semántico al verse forzado a ``pensar'' como un hombre o como una mujer frente a los mismos 502 registros del \textit{Test} estático. 
 
-// TO DO --> insertar resultados 
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figuras/ResultadosPromptHombre.png}
+    \caption{Resultados de la técnica \textit{Persona Prompting} dando el rol de hombre}
+    \label{fig:ResultadosPromptHombre}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figuras/ResultadosPromptMujer.png}
+    \caption{Resultados de la técnica \textit{Persona Prompting} dando el rol de mujer}
+    \label{fig:ResultadosPromptMujer}
+\end{figure}
 
 \subsection{Análisis de los Resultados de Perspectivismo}
 \label{subsec:AnalisisDeLosResultadosDePerspectivismo}
-hola mundo
+Los resultados derivados de ambas aproximaciones arrojan conclusiones fundamentales sobre el modelado de la subjetividad y el género en el PLN.
 
-\subsection{Limpieza y Normalización}
+En primer lugar, los modelos Transformers entrenados exclusivamente bajo la perspectiva \textbf{femenina} obtuvieron de manera consistente métricas más altas (alcanzando un \textit{F1-Score} de \textbf{0.6720}) que sus contrapartes entrenadas bajo la \textbf{perspectiva masculina} (cuyo techo se situó en \textbf{0.6509}). Esto sugiere de forma empírica que la anotación realizada por las mujeres sobre el discurso de odio dirigido hacia ellas mismas posee una mayor coherencia interna, creando ``fronteras de decisión'' matemáticas mucho más nítidas y consistentes para el aprendizaje de la red neuronal. 
 
-\begin{sugerencia}
-Describir los pasos de limpieza y normalización aplicados al texto, como la conversión a minúsculas, eliminación de signos de puntuación, tratamiento de emojis, corrección de caracteres erróneos, etc. También puede mencionarse el paso de json a csv o la transformación de estructuras.
-\end{sugerencia}
+En segundo lugar, el análisis de las estrategias de resolución de empates reveló que forzar el consenso elimina información valiosa. En las mujeres, la estrategia de presunción de inocencia (\textit{Optimistic}) fue la que mejor capturó su perspectiva, mientras que, en los hombres, mantener el empate en la red (\textit{Unrolling}) y forzar la sospecha (\textit{Pessimistic}) obtuvieron los mejores rendimientos.
 
-\textit{Se eliminaron los caracteres especiales no alfabéticos, se convirtieron los textos a minúsculas y se estandarizaron emoticonos comunes. El conjunto original estaba en formato JSON y fue convertido a CSV para facilitar el procesamiento posterior.}
+Finalmente, el experimento de \textit{Persona Prompting} con \textit{Mistral} en un entorno \textit{Zero-Shot} confirmó esta misma tendencia estructural. Tal y como muestran las matrices de confusión, el modelo instruido con el \textbf{rol femenino} logró un \textit{F1-Score} de \textbf{0.5655}, superando al \textbf{rol masculino} (\textbf{0.5417}). Un análisis profundo de las inferencias revela que el rol masculino generó una tasa significativamente mayor de Falsos Negativos (148 instancias de machismo real que fueron catalogadas como inofensivas), frente a los 135 Falsos Negativos del rol femenino. Esto demuestra que, aunque el \textit{LLM} carecía de un ajuste fino específico para esta tarea, la inyección de rol activó sesgos latentes en el modelo preentrenado que simulan la tendencia humana: una mayor permisividad o ceguera hacia el sexismo sutil desde la perspectiva masculina simulada. 
 
-\subsection{Tokenización y Codificación}
+En definitiva, esta fase demuestra que el género del anotador impacta de manera directa e incontrovertible en el rendimiento y la sensibilidad de los modelos de Detección de Discurso de Odio, haciendo imprescindible que las futuras investigaciones adopten esquemas de evaluación interseccionales y plurales (\textit{LeWiDi}) en lugar de perseguir un consenso o una objetividad absoluta inexistente. 
 
-\begin{sugerencia}
-Explicar cómo se han tokenizado los textos y cómo se convierten en índices o vectores de entrada. Se recomienda incluir un ejemplo sencillo mostrando los tokens generados y sus códigos (input\_ids).
-\end{sugerencia}
+\section{Experimentación Multietiqueta (Tarea 3.3)}
+\label{sec:ExperimentacionMultietiqueta}
+La Tarea 3.3 del desafío \textit{EXIST 2025} plantea un problema de clasificación mucho más específico y complejo que la mera detección binaria. El objetivo consiste en categorizar los vídeos misóginos en cinco tipologías concretas e independientes, permitiendo que un mismo vídeo pertenezca a múltiples categorías simultáneamente, lo que se conoce en el mundo del PLN como una clasificación multietiqueta.
 
-\textit{Para tokenizar los textos se utilizaron los tokenizadores correspondientes a cada modelo. Por ejemplo, el texto ``I totally agree'' se tokeniza como [``i'', ``totally'', ``agree''] y se codifica como [1045,  totally\_id, agree\_id].}
+Las cinco categorías evaluadas son:
+\begin{itemize}
+    \item \textbf{\textit{Ideological and Inequality}}: El texto desacredita el movimiento feminista, rechaza la desigualdad de género o victimiza a un hombre. 
+    \item \textbf{\textit{Stereotyping and Dominance}}: Expresa ideas falsas sobre los roles de la mujer (sumisa o cuidadora) o tareas inadecuadas, afirmando la superioridad masculina. 
+    \item \textbf{\textit{Objectification}}: Presenta a la mujer como un objeto, describiendo cualidades físicas obligatorias para cumplir cánones de belleza o hipersexualización.
+    \item \textbf{\textit{Sexual Violence}}: Sugerencias sexuales, petición de favores o acoso explícito de naturaleza sexual (violación o agresión).
+    \item \textbf{\textit{Misogyny and Non-Sexual Violence}}: Expresión de odio puro y violencia no sexual hacia las mujeres. 
+\end{itemize}
 
+Para abordar esta tarea, se replicó la metodología de experimentación unimodal utilizada en la Tarea 3.1. Se seleccionó el modelo con mejor rendimiento de cada familia arquitectónica para entrenarlo de manera independiente frente a cada una de las 5 etiquetas:
+\begin{itemize}
+    \item \textbf{\textit{Transformers}}: \texttt{roberta-base}.
+    \item \textbf{\textit{LLM}}: \texttt{Mistral-7B-Instruct}. 
+    \item \textbf{Visión Estática}: \texttt{ConvNeXt}, entrenado sobre secuencias de 4 \textit{frames}.
+    \item \textbf{Visión Temporal}: \texttt{TimeSFormer}, procesando 16 \textit{frames} por inferencia.
+\end{itemize}
 
-\subsection{División de Datos}
+\subsection{Preparación del Dataset Multietiqueta}
+\label{subsec:PreparacionDelDatasetMultietiqueta}
+A diferencia de la Tarea 3.1, la naturaleza multietiqueta del problema requiere un tratamiento especial de los datos. A partir del \textit{JSON} original, se filtraron exclusivamente aquellos vídeos catalogados previamente como misóginos (etiqueta 1). Para unificar las discrepancias entre anotadores, se aplicó una lógica \textit{OR}: si al menos un anotador marcaba una de las cinco etiquetas, el vídeo se consideraba positivo para dicha clase. 
 
-\begin{sugerencia}
-Describir cómo se han dividido los datos en conjuntos de entrenamiento, validación y test. Indicar proporciones y criterios. Acompañar con gráficas de barras o de otro tipo que muestren visualmente las proporciones y el equilibrio de clases en cada subconjunto.
-\end{sugerencia}
+Dado el fuerte desbalance intrínseco en la distribución de las subcategorías, la división del conjunto original en \textit{Train} (80\%) y \textit{Test} (20\%) se ejecutó mediante la función \texttt{iterative\_train\_test\_split} de la librería \texttt{skmultilearn}. Este enfoque garantiza un particionado estratificado, asegurando que las proporciones de las clases minoritarias se mantengan estables en ambos subconjuntos. A partir de este \textit{CSV} maestro, se generaron las réplicas correspondientes para el entrenamiento de visión estática y temporal. 
 
-\textit{Los datos se dividieron en 80\% para entrenamiento, 20\% para validación y 20\% para test. Se garantizó el equilibrio de clases en cada subconjunto mediante muestreo estratificado.}
-
-\section{Selección de los Modelos}
-\label{sec:Modelos}
-
-En esta sección se debe justificar la elección de los modelos empleados para resolver la tarea. Es importante mencionar tanto los modelos que finalmente se han utilizado como aquellos que fueron considerados durante el análisis inicial.
-
-\begin{sugerencia}
-Listar los modelos de Transformers evaluados (como \textit{BERT}, \textit{RoBERTa}, \textit{GPT}, \textit{LLaMA}, \textit{Mistral}, etc.) y explicar brevemente las razones por las que se seleccionaron o descartaron. Es obligatorio referenciar los modelos en la bibliografía o mediante notas a pie de página.
-\end{sugerencia}
-
-\textit{Durante la fase de estudio de la tarea se evaluaron varios modelos preentrenados de Transformers. Entre ellos, destacaron \texttt{bert-base-uncased}, \texttt{roberta-base} y \texttt{mistral-7b-instruct}.}
-
-\textit{La elección final del modelo \texttt{roberta-base} se basó en su buen rendimiento en tareas similares y en la disponibilidad de recursos computacionales adecuados.}
-
-\textit{También se consideró  el uso de modelos de mayor tamaño, como \texttt{LLaMA 2 13B}, pero fueron descartados por las limitaciones de memoria en los entornos disponibles.}
-
-\section{Ajuste de Hiperparámetros}
-\label{sec:Hiper}
-
-En esta sección se debe detallar el proceso seguido para ajustar los hiperparámetros del modelo. Es importante justificar las decisiones tomadas y explicar los métodos utilizados para optimizar el rendimiento del sistema.
-
-\subsection{Métodos de Búsqueda}
-
-\begin{sugerencia}
-Describir los métodos utilizados para explorar combinaciones de hiperparámetros: búsqueda exhaustiva (\textit{grid search}), búsqueda aleatoria (\textit{random search}), frameworks como \textit{Optuna}, \textit{Wandb}, etc.
-\end{sugerencia}
-
-\textit{Para el ajuste de hiperparámetros se utilizó una estrategia de búsqueda aleatoria empleando el framework \texttt{Optuna}, que permitió explorar eficientemente combinaciones relevantes sin necesidad de evaluar todas las posibles.}
-
-\subsection{Hiperparámetros Evaluados}
-
-\begin{sugerencia}
-Enumerar los hiperparámetros que se han ajustado y especificar el espacio de búsqueda de cada uno.
-\end{sugerencia}
-
-\textit{Se ajustaron los siguientes hiperparámetros: tasa de aprendizaje (\texttt{learning\_rate}) en el rango [1e-5, 5e-5], número de épocas entre 2 y 6, tamaño de batch entre 8 y 32, etc.}
-
-\begin{sugerencia}
-En lugar de escribir los valores en un párrafo, es conveniente hacer una tabla con el espacio de búsqueda
-\end{sugerencia}
-
-\subsection{Tamaño del Conjunto de Datos Utilizado}
-
-\begin{sugerencia}
-Indicar si se ha utilizado el conjunto completo de entrenamiento o solo una partición para la búsqueda de hiperparámetros. Justificar la decisión.
-\end{sugerencia}
-
-\textit{Dado el coste computacional del ajuste, se utilizó el 30\% del conjunto de entrenamiento para la búsqueda de hiperparámetros. Se mantuvo una distribución estratificada para preservar el equilibrio entre clases.}
-
-\subsection{Criterios de Selección}
-
-\begin{sugerencia}
-Explicar qué métrica se ha utilizado para determinar la combinación de hiperparámetros óptima (por ejemplo, accuracy, F1-score, etc.), y en qué conjunto se evaluó.
-\end{sugerencia}
-
-\textit{La selección del mejor conjunto de hiperparámetros se basó en la F1-score macro obtenida en el conjunto de validación. Esta métrica fue priorizada al tratarse de un problema con clases desbalanceadas.}
-
-\section{Entrenamiento de los Modelos}
-\label{sec:entrenamiento}
-
-Esta sección debe detallar cómo habéis realizado el entrenamiento de los modelos seleccionados, incluyendo las configuraciones, baselines (si se han utilizado) y el seguimiento del proceso de entrenamiento.
-
-\subsection{Baselines}
-
-\begin{sugerencia}
-Si se ha utilizado un sistema baseline, describirlo brevemente: tipo de modelo, hiperparámetros empleados, resultados obtenidos. Es importante establecerlo como referencia para evaluar las mejoras del modelo final.
-\end{sugerencia}
-
-\textit{Como baseline se utilizó un clasificador ... Este sistema alcanzó una precisión del 68\% en el dataset de test. Sirvió como punto de comparación para evaluar la mejora introducida por los modelos desarrollados en este trabajo.}
-
-\subsection{Configuración de Entrenamiento}
-
-\begin{sugerencia}
-Detallar la configuración empleada: librerías utilizadas (por ejemplo, \texttt{Trainer} de HuggingFace), número de épocas, valores finales de hiperparámetros, optimizador, regularización (dropout), etc. Indicar también la métrica usada para guardar el mejor modelo.
-\end{sugerencia}
-
-\textit{El entrenamiento se llevó a cabo con la clase \texttt{Trainer} de la librería \texttt{transformers} de HuggingFace. Se utilizó el optimizador \texttt{AdamW} con una tasa de aprendizaje de $2 \cdot 10^{-5}$, un tamaño de batch de 16 y dropout del 0.1. El entrenamiento se realizó durante 4 épocas, y se guardó el modelo con mejor F1-score macro sobre el conjunto de validación.}
-
-\begin{sugerencia}
-Si habéis hecho optimización de hiperparámetors, aquí no debéis repetir el punto ``Ajuste de Hiperparámetros". Anteriormente habéis descrito la estrategia de búsqueda de hiperparámetros, y en esta sección debeís detallar otros aspectos, especialmente los mejores valores de hiperparámetros obtenidos para cada modeo, etc.
-\end{sugerencia}
-
-\subsection{Monitorización del Entrenamiento}
-
-\begin{sugerencia}
-Describir cómo se ha monitorizado el entrenamiento: uso de callbacks, logs, métricas registradas, visualización en herramientas como TensorBoard o la consola de HuggingFace. Incluir capturas o gráficos si es posible.
-\end{sugerencia}
-
-\textit{Se empleó la integración de \texttt{Trainer} con TensorBoard para monitorizar en tiempo real la evolución de la pérdida y la métrica de evaluación. Además, se activó el callback \texttt{EarlyStoppingCallback} para detener el entrenamiento si no había mejora durante 3 épocas consecutivas.}
-
-\textit{En la \autoref{fig:entrenamiento-monitor} se muestra un ejemplo de la evolución del F1-score durante el entrenamiento.}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Figuras/AccuracyEntrenamientoValidacion.jpg}
-    \caption{Evolución del entrenamiento monitorizada con TensorBoard.}
-    \label{fig:entrenamiento-monitor}
-\end{figure}
-
-
-\section{Evaluación y Análisis de Resultados}
-\label{sec:evaluacion}
-
-En esta sección se presentan los resultados obtenidos tras evaluar los modelos entrenados sobre vuestro conjunto de test durante la fase de entrenamiento y mejora de los modelos. Se deben incluir todas las métricas relevantes, gráficos y análisis que permitan interpretar el rendimiento de las distintas estrategias y modelos.
-
-\begin{sugerencia}
-Incluye tablas de resultados para todos los modelos evaluados, siguiendo un estilo similar al de los artículos científicos. No olvides añadir títulos claros y destacar los mejores resultados en negrita.
-\end{sugerencia}
-
-\begin{sugerencia}
-Presentar las métricas más relevantes: precisión (accuracy), precisión por clase, recall, F1-score, macro/micro promedio, etc. Utiliza \texttt{classification\_report} o similares y organiza los resultados en tablas bien formateadas.
-\end{sugerencia}
-
-\textit{En la \autoref{tab:resultados} se presentan los resultados obtenidos por los modelos entrenados sobre el conjunto de test antes del proceso de limpieza. Se incluyen las métricas de F1-score, precisión y recall.}
+\subsection{Resultados y Análisis Cruzado por Tipología}
+\label{subsec:ResultadosYAnalisisCruzadoPorTipologia}
+El entrenamiento aislado de los cuatro mejores modelos contra las cinco etiquetas reveló un comportamiento altamente dependiente de la modalidad de los datos (texto frente a imagen/movimiento) y de la distribución estadística de cada clase. En la \autoref{tab:ResultadosEntrenamientosMultietiqueta} se resumen las métricas \textit{F1-Score (Macro)} y \textit{Accuracy} obtenidas sobre el conjunto de \textit{Test} estático multietiqueta:
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{lccc}
+    \begin{tabular}{lllcc}
         \toprule
-        \textbf{Modelo} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} \\
-        \midrule
-        BERT-base & 0.76 & 0.78 & 0.75 \\
-        RoBERTa-base & \textbf{0.81} & \textbf{0.83} & \textbf{0.80} \\
-        Baseline & 0.65 & 0.66 & 0.64 \\
+        \textbf{Etiqueta} & \textbf{Modelo} & \textbf{Inferencia} & \textbf{Accuracy} & \textbf{F1-score} \\
+        \midrule        
+        \multirow{6}{*}{Ideological-Inequality} 
+            & roberta-base & - & 0.7130 & \textbf{0.7050} \\
+            & mistral & - & 0.4957 & 0.4473 \\
+            & \multirow{3}{*}{convnext 4 frames} 
+                & max-pooling & 0.5391 & 0.5391 \\
+            &   & mean-pooling  & 0.6087 & 0.5859 \\
+            &   & majority vote  & 0.6000 & 0.5911 \\
+            & timesformer & - & 0.5957 & 0.5908 \\
+        \cmidrule{2-5}
+        \multirow{6}{*}{Stereotyping-Dominance} 
+            & roberta-base & - & 0.6609 & \textbf{0.5963} \\
+            & mistral & - & 0.6435 & 0.4429 \\            
+            & \multirow{3}{*}{convnext 4 frames} 
+                & max-pooling & 0.7522 & 0.4758 \\
+            &   & mean-pooling  & 0.7304 & 0.5114 \\
+            &   & majority vote  & 0.7391 & 0.5271 \\
+            & timesformer & - & 0.7087 & 0.5624 \\
+        \cmidrule{2-5}
+        \multirow{6}{*}{Objectification} 
+            & roberta-base & - & 0.7435 & 0.5087 \\
+            & mistral & - & 0.7478 & 0.5114 \\            
+            & \multirow{3}{*}{convnext 4 frames} 
+                & max-pooling & 0.6043 & 0.5098 \\
+            &   & mean-pooling  & 0.6957 & 0.5082 \\
+            &   & majority vote  & 0.6652 & 0.5116 \\
+            & timesformer & - & 0.7304 & \textbf{0.5399} \\
+        \cmidrule{2-5}
+        \multirow{6}{*}{Sexual Violence} 
+            & roberta-base & - & 0.8522 & \textbf{0.4601} \\
+            & mistral & - & 0.8522 & \textbf{0.4601} \\            
+            & \multirow{3}{*}{convnext 4 frames} 
+                & max-pooling & 0.8522 & \textbf{0.4601} \\
+            &   & mean-pooling  & 0.8522 & \textbf{0.4601} \\
+            &   & majority vote  & 0.8522 & \textbf{0.4601} \\
+            & timesformer & - & 0.8522 & \textbf{0.4601} \\
+        \cmidrule{2-5}
+        \multirow{6}{*}{\begin{tabular}[c]{@{}l@{}}Misogyny and \\ Non-Sexual Violence\end{tabular}}            
+            & roberta-base & - & 0.8217 & 0.4511 \\
+            & mistral & - & 0.8043 & \textbf{0.4861} \\            
+            & \multirow{3}{*}{convnext 4 frames} 
+                & max-pooling & 0.8217 & 0.4511 \\
+            &   & mean-pooling  & 0.8217 & 0.4511 \\
+            &   & majority vote  & 0.8217 & 0.4511 \\
+            & timesformer & - & 0.7913 & 0.4615 \\
         \bottomrule
     \end{tabular}
-    \caption{Resultados de evaluación sobre el conjunto de test.}
-    \label{tab:resultados}
+    \caption{Resultados de \textit{Accuracy} y \textit{F1-score} de cada una de las etiquetas}
+    \label{tab:ResultadosEntrenamientosMultietiqueta}
 \end{table}
 
-\textit{En la \autoref{tab:resultados-por-clase} se presentan los resultados obtenidos por los modelos entrenados sobre el conjunto de test desglosados por clase.}
+El análisis comparativo de las métricas de rendimiento (\textit{F1-Score} y \textit{Accuracy}) arroja tres conclusiones fundamentales que explican el comportamiento de las redes neuronales frente al tipo de sexismo:
+\begin{enumerate}
+    \item \textbf{El dominio del Texto en la Ideología y el Estereotipo}: Para la etiqueta \textit{Ideological and Inequality}, el modelo puramente textual \texttt{RoBERTa-base} dominó la clasificación con un F1 de \textbf{0.7050}, muy superior al resto de modelos, incluyendo a \textit{Mistral} que obtuvo un pobre 0.4473. El contenido ideológico y político en plataformas como \textit{TikTok} recae casi exclusivamente en el discurso hablado o escrito, haciendo que las modalidades visuales (\texttt{ConvNeXt}: 0.5911, \texttt{TimeSFormer}: 0.5908) queden relegadas a un papel secundario. En la categoría \textit{Stereotyping and Dominance}, \texttt{RoBERTa} volvió a liderar (F1: 0.5963), seguido de cerca por la visión temporal (0.5624), demostrando que los estereotipos sí poseen una carga visual de acciones o roles que el modelo de vídeo logra captar mejor que el de imagen estática.
+    \item \textbf{La necesidad de movimiento para detectar la Cosificación}: El hallazgo más revelador de esta experimentación se encuentra en la etiqueta \textit{Objectification}. Los modelos de texto (\texttt{RoBERTa}: 0.5087) y de imagen estática (\texttt{ConvNeXt}: 0.5116) fracasaron al intentar detectar la cosificación, obteniendo métricas que rozan la clasificación aleatoria. Sin embargo, la arquitectura de visión temporal \texttt{TimeSFormer} logró despuntar (F1: \textbf{0.5399}), demostrando una mayor capacidad de generalización para esta categoría. Esto indica que la cosificación en formato vídeo no se capta de forma efectiva en un fotograma congelado o en un texto, sino en el movimiento, las poses, el enfoque de la cámara o acciones sugerentes a lo largo del tiempo. 
+    \item \textbf{El colapso matemático ante el Desbalanceo Extremo}: Para las categorías más graves pero menos frecuentes en el \textit{dataset} (\textit{Sexual Violence} y \textit{Misogyny and Non-Sexual Violence}), los cuatro modelos, sin excepción, sufrieron un colapso predictivo. Las métricas \textit{F1-Score} rondaron sistemáticamente los valores de \textbf{0.45}-\textbf{0.46} para todas las arquitecturas. El diagnóstico de este fallo se hace evidente al cruzar estos datos con el \textit{Accuracy}: los modelos obtuvieron una exactitud engañosamente alta (superior al 80\%). Debido a la extrema escasez de ejemplos positivos en la fase de entrenamiento, la red neuronal ``aprende'' que el camino más rápido para minimizar el error es predecir sistemáticamente la clase mayoritaria. Ninguna modalidad pudo sobreponerse a esta barrera estadística sin la aplicación previa de técnicas agresivas de \textit{Oversampling} o penalización de pesos. 
+\end{enumerate}
+
+\section{Resumen Global de Resultados}
+\label{sec:ResumenGlobalDeResultados}
+
+A lo largo de este capítulo, se ha desplegado una extensa batería de experimentos que abarca múltiples modalidades (texto, imagen y vídeo) y enfoques arquitectónicos (modelos discriminativos y generativos). Dada la gran cantidad de combinaciones de hiperparámetros, técnicas de \textit{Data Augmentation} y lógicas de consolidación evaluadas, resulta importante destacar los hitos más relevantes de la investigación antes de extraer las conclusiones finales.
+
+En la \autoref{tab:ResumenGlobalMejoresModelos} se consolida exclusivamente el modelo con mejor rendimiento de cada fase experimental para la clasificación binaria de sexismo (Tarea 3.1). Esta visión panorámica permite apreciar de un vistazo la evolución de las métricas desde los \textit{baselines} iniciales hasta llegar a la solución multimodal definitiva.
 
 \begin{table}[H]
     \centering
-    \caption{Resultados por clase para los modelos evaluados (conjunto de test).}
-    \label{tab:resultados-por-clase}
-    \begin{tabular}{lcccc}
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llccc}
         \toprule
-        \textbf{Modelo} & \textbf{Clase} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} \\
+        \textbf{Modalidad} & \textbf{Mejor Arquitectura} & \textbf{Técnica Destacada} & \textbf{Accuracy} & \textbf{F1-score (Macro)} \\
         \midrule
-        \multirow{3}{*}{BERT-base} 
-            & Clase 1   & 0.81 & 0.79 & 0.80 \\
-            & Clase 2   & 0.70 & 0.72 & 0.71 \\
-            & Clase 3   & 0.68 & 0.66 & 0.67 \\
+        Texto (\textit{Baseline}) & \texttt{bert-base-multilingual} & \textit{Fine-Tuning} estándar & 0.6275 & 0.6215 \\
+        Texto (Discriminativo) & \texttt{roberta-base} & \textit{Fine-Tuning} estándar & 0.6972 & 0.6934 \\
+        Texto (Generativo) & \texttt{Mistral-7B-Instruct} & \textit{PEFT (QLoRA)} & 0.7171 & 0.7141 \\
         \midrule
-        \multirow{3}{*}{RoBERTa-base} 
-            & Clase 1       & 0.85 & 0.83 & \textbf{0.84} \\
-            & Clase 2       & 0.76 & 0.77 & \textbf{0.76} \\
-            & Clase 3       & 0.72 & 0.71 & \textbf{0.71} \\
+        Visión Estática & \texttt{ConvNeXt} & 4 \textit{frames} + \textit{Mean-Pooling} & 0.6275 & 0.6245 \\
+        Visión Temporal & \texttt{TimeSformer} & \textit{Data Augmentation} 10\% etiqueta 1 & 0.5956 & 0.5956 \\
+        \midrule
+        \textbf{Fusión Multimodal} & \textbf{\textit{Ensemble} (Mistral + ConvNeXt + TimeSformer)} & \textbf{\textit{Late Fusion} (0.35 / 0.55 / 0.10)} & \textbf{0.7291} & \textbf{0.7261} \\
         \bottomrule
     \end{tabular}
+    }
+    \caption{Resumen de los mejores modelos obtenidos por modalidad para la Tarea 3.1.}
+    \label{tab:ResumenGlobalMejoresModelos}
 \end{table}
 
+Como se evidencia empíricamente en la tabla, ninguna modalidad aislada fue capaz de superar la barrera del \texttt{Mistral-7B-Instruct} en la métrica \textit{F1-Score}. El salto cualitativo definitivo se produjo al fusionar la comprensión semántica de los grandes modelos de lenguaje con la extracción de características espaciales de la visión estática y temporal, validando así la hipótesis principal de este proyecto: el sexismo en redes sociales modernas es un fenómeno ineludiblemente multimodal.
 
-\subsection*{Matrices de Confusión}
-
-\begin{sugerencia}
-Dibujar las matrices de confusión para los principales modelos, preferiblemente con anotaciones y colores. Explicar lo que se observa: equilibrio en los aciertos, etc.
-\end{sugerencia}
-
-\textit{En la \autoref{fig:matriz-confusion-3clases} se muestra la matriz de confusión del modelo RoBERTa. Se observa que las clases minoritarias son las que peor han sido clasificadas, etc.}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{Figuras/Confusion_matrix_multi.png}
-    \caption{Matriz de confusión para el modelo RoBERTa.}
-    \label{fig:matriz-confusion-3clases}
-\end{figure}
-
-\textit{En la \autoref{fig:matriz-confusion-6clases} se muestra la matriz de confusión del modelo Llama con las 6 etiquetas. Se observa que se ha comportado muy bien con las clases 1 y 2. Sin embargo, la clase 4 ha obtenido muchos errores, etc.}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{Figuras/confusion_matrix_multi6.png}
-    \caption{Matriz de confusión para el modelo RoBERTa.}
-    \label{fig:matriz-confusion-6clases}
-\end{figure}
-
-\subsection*{Curvas ROC y AUC}
-
-\begin{sugerencia}
-Incluir las curvas ROC para cada modelo. Si el problema lo permite (clasificación binaria), puede añadirse también la curva Precision-Recall. Explicar su interpretación y qué significan las áreas bajo las curvas (AUC).
-\end{sugerencia}
-
-\textit{La \autoref{fig:roc-curves} muestra las curvas ROC de los modelos evaluados. El modelo RoBERTa alcanza el mayor valor de AUC, superando el 0.90.}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Figuras/CurvaRoc.png}
-    \caption{Curvas ROC de los modelos evaluados.}
-    \label{fig:roc-curves}
-\end{figure}
-
-\subsection*{Otras Gráficas Relevantes}
-
-\begin{sugerencia}
-Se pueden añadir otras visualizaciones complementarias: evolución del entrenamiento, análisis de errores, importancia de tokens o atención, etc.
-\end{sugerencia}
-
-\section{Análisis de Errores}
-\label{sec:analisis_errores}
-
-Esta sección tiene como objetivo destallar algunos de los errores cometidos por el sistema, buscando patrones o causas que expliquen los fallos del modelo. No se trata solo de cuantificar los errores, sino de interpretarlos.
-
-\begin{sugerencia}
-El análisis de errores debe centrarse en identificar los casos en los que el modelo falla sistemáticamente: clases que confunde con frecuencia, tipos de entrada especialmente problemáticos (por longitud, ambigüedad, ruido, etc.), o patrones en los errores. 
-\end{sugerencia}
-
-\subsection*{Errores más frecuentes}
-
-\textit{Una revisión manual de los errores cometidos por los modelos  reveló que gran parte de las instancias mal clasificadas pertenecen a la clase ``nombre\_clase1'', que tiende a confundirse con ``nombre\_clase2''. Esto sugiere que la frontera entre estas dos clases no está bien definida en algunos casos.}
-
-\subsection*{Identificación de Errores Comunes}
-
-\begin{sugerencia}
-Describir los tipos de errores más comunes que cometió el modelo y las posibles razones. Proporcionar ejemplos específicos de entradas mal clasificadas y discutir posibles mejoras o ajustes al modelo o al preprocesamiento.
-\end{sugerencia}
-
-\textit{Ejemplo 1:}
-
-\texttt{Texto: ``A las mujeres hay que respetarlas porque son lo más bello del mundo"}
-
-\texttt{Etiqueta real: Sexista \quad Predicción: No sexista}
-
-\textit{Comentario: Este mensaje fue clasificado erróneamente como no sexista, probablemente debido a que el clasificador interpreta el lenguaje positivo como respetuoso, sin captar el sesgo implícito de cosificación. Este tipo de error podría corregirse entrenando con ejemplos que incluyan sexismo sutil o benevolente.}
-
-\textit{Ejemplo 2:}
-
-\texttt{Texto: ``Haz lo que quieras, tú siempre sabes más que todos"}
-
-\texttt{Etiqueta real: Sarcástico \quad Predicción: Literal / Acuerdo}
-
-\textit{Comentario: El modelo no detectó el tono irónico y clasificó el mensaje como afirmativo. Es probable que el sarcasmo indirecto no esté bien representado en los datos de entrenamiento.}
-
-\subsection*{Errores por longitud o tipo de texto}
-
-\begin{sugerencia}
-Analiza si hay correlación entre la longitud del texto y el rendimiento del modelo, o si hay ciertos formatos (mensajes muy cortos, uso de emojis, sarcasmo, etc.) que causan más errores.
-\end{sugerencia}
-
-\textit{Al analizar los errores en función de la longitud de los textos, se observó que los mensajes de menos de 10 palabras presentaban una tasa de error significativamente mayor. Muchos de ellos eran frases irónicas o ambiguas.}
-
-\subsection*{Reflexiones y posibles mejoras}
-
-\begin{sugerencia}
-Cierra esta sección proponiendo mejoras basadas en el análisis de errores.
-\end{sugerencia}
-
-\textit{Una posible mejora utilizar modelos previamente entrenados sobre detección de ironía o sexismo implícito. También se podrían generar más ejemplos sintéticos, etc..}
-
-\section{Resultados Oficiales de la Tarea (opcional)}
-\label{sec:resultadosOficiales}
-
-Esta sección es opcional y está pensada para aquellos trabajos que hayan participado en una competición oficial. El objetivo es mostrar los resultados enviados durante la fase final de la tarea y contextualizarlos dentro del ranking global.
-
-\begin{sugerencia}
-Indicar cuáles fueron las estrategias que mejores resultados ofrecieron durante la fase de desarrollo y que se seleccionaron para ser enviadas como \textit{runs} oficiales a la competición.
-\end{sugerencia}
-
-\textit{Durante la fase de desarrollo, se probaron varias configuraciones. La mejor combinación fue la basada en el modelo RoBERTa con aumento de datos mediante backtranslation. Esta estrategia fue seleccionada como uno de los \textit{runs} oficiales enviados a la competición.}
-
-\begin{sugerencia}
-Describir las características del conjunto de test proporcionado por la competición, si es distinto al de validación. Incluir los resultados oficiales publicados por la organización. Comentar si los resultados fueron similares o no a los esperados.
-\end{sugerencia}
-
-\textit{El conjunto de test oficial incluía 800 ejemplos adicionales, no vistos durante la fase de desarrollo. Los resultados oficiales se muestran en la \autoref{tab:ranking}. Aunque nuestro sistema mantuvo un rendimiento estable, el nivel general de los participantes fue más bajo de lo esperado, lo que pone en valor el resultado alcanzado.}
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lcc}
-        \toprule
-        \textbf{Participante} & \textbf{F1-score} & \textbf{Ranking} \\
-        \midrule
-        Equipo A & 0.83 & 1 \\
-        Equipo B & 0.81 & 2 \\
-        I2C & \textbf{0.79} & \textbf{3} \\
-        Media & 0.65 & -- \\
-        \bottomrule
-    \end{tabular}
-    \caption{Resultados oficiales publicados por la organización de la tarea.}
-    \label{tab:ranking}
-\end{table}
-
-\textit{El sistema presentado quedó en tercera posición, por encima de la media global de todos los participantes, lo que demuestra la solidez de la metodología seguida durante el desarrollo del trabajo.}
-
-\subsection*{Publicación de los Resultados}
-
-\begin{sugerencia}
-Si se ha contribuido con un artículo científico a las actas del workshop (por ejemplo, IberLEF o CLEF), se debe mencionar aquí y referenciar correctamente. Esto aporta valor académico al trabajo.
-\end{sugerencia}
-
-\textit{Los resultados obtenidos se recogieron en el artículo científico titulado ``Título del artículo'', presentado en el workshop \textit{IberLEF 2024}, y publicado en las actas del evento.}
-
-\textit{El artículo puede consultarse en CEUR-Ws\footnote{\url{http://ceur-ws.org/Vol-XXX}}. y se ha incluido en un Anexo de esta memoria.}
-
-
-
-
-
+Adicionalmente, los experimentos complementarios de la Tarea 3.3 revelaron que la detección de tipologías específicas requiere enfoques especializados (por ejemplo, el movimiento temporal para captar la cosificación, o el texto puro para el sesgo ideológico), mientras que la experimentación con \textit{LeWiDi} confirmó que la identidad demográfica del anotador altera sistemáticamente la detección del discurso de odio.

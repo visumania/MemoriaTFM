@@ -2,8 +2,8 @@
 \contentsline {chapter}{Resumen}{\es@scroman {ii}}{section*.1}%
 \contentsline {chapter}{Abstract}{\es@scroman {iii}}{section*.3}%
 \contentsline {chapter}{Agradecimientos}{\es@scroman {iv}}{chapter*.6}%
-\contentsline {chapter}{Índice de Figuras}{\es@scroman {viii}}{section*.9}%
-\contentsline {chapter}{Índice de Tablas}{\es@scroman {ix}}{section*.11}%
+\contentsline {chapter}{Índice de Figuras}{\es@scroman {vii}}{section*.9}%
+\contentsline {chapter}{Índice de Tablas}{\es@scroman {viii}}{section*.11}%
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivación}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Objetivos}{2}{section.1.2}%
@@ -69,26 +69,14 @@
 \contentsline {subsection}{\numberline {3.8.1}Segmentación demográfica en \textit {Transformers}}{59}{subsection.3.8.1}%
 \contentsline {subsection}{\numberline {3.8.2}Inyección de Roles en \textit {LLMs} (\textit {Persona Prompting})}{62}{subsection.3.8.2}%
 \contentsline {subsection}{\numberline {3.8.3}Análisis de los Resultados de Perspectivismo}{63}{subsection.3.8.3}%
-\contentsline {subsection}{\numberline {3.8.4}Limpieza y Normalización}{63}{subsection.3.8.4}%
-\contentsline {subsection}{\numberline {3.8.5}Tokenización y Codificación}{63}{subsection.3.8.5}%
-\contentsline {subsection}{\numberline {3.8.6}División de Datos}{64}{subsection.3.8.6}%
-\contentsline {section}{\numberline {3.9}Selección de los Modelos}{64}{section.3.9}%
-\contentsline {section}{\numberline {3.10}Ajuste de Hiperparámetros}{65}{section.3.10}%
-\contentsline {subsection}{\numberline {3.10.1}Métodos de Búsqueda}{65}{subsection.3.10.1}%
-\contentsline {subsection}{\numberline {3.10.2}Hiperparámetros Evaluados}{65}{subsection.3.10.2}%
-\contentsline {subsection}{\numberline {3.10.3}Tamaño del Conjunto de Datos Utilizado}{65}{subsection.3.10.3}%
-\contentsline {subsection}{\numberline {3.10.4}Criterios de Selección}{66}{subsection.3.10.4}%
-\contentsline {section}{\numberline {3.11}Entrenamiento de los Modelos}{66}{section.3.11}%
-\contentsline {subsection}{\numberline {3.11.1}Baselines}{66}{subsection.3.11.1}%
-\contentsline {subsection}{\numberline {3.11.2}Configuración de Entrenamiento}{67}{subsection.3.11.2}%
-\contentsline {subsection}{\numberline {3.11.3}Monitorización del Entrenamiento}{67}{subsection.3.11.3}%
-\contentsline {section}{\numberline {3.12}Evaluación y Análisis de Resultados}{67}{section.3.12}%
-\contentsline {section}{\numberline {3.13}Análisis de Errores}{71}{section.3.13}%
-\contentsline {section}{\numberline {3.14}Resultados Oficiales de la Tarea (opcional)}{72}{section.3.14}%
-\contentsline {chapter}{\numberline {4}Conclusiones y Trabajo Futuro}{75}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Conclusiones}{75}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Trabajo Futuro}{76}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Planificación Temporal del Trabajo Realizado}{77}{section.4.3}%
-\contentsline {chapter}{Referencias}{79}{chapter*.13}%
-\contentsline {chapter}{\numberline {A}Anexos}{83}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Aplicación Web para la Visualización y Prueba del Modelo}{83}{appendix.A.1}%
+\contentsline {section}{\numberline {3.9}Experimentación Multietiqueta (Tarea 3.3)}{64}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Preparación del Dataset Multietiqueta}{65}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Resultados y Análisis Cruzado por Tipología}{65}{subsection.3.9.2}%
+\contentsline {section}{\numberline {3.10}Resumen Global de Resultados}{67}{section.3.10}%
+\contentsline {chapter}{\numberline {4}Conclusiones y Trabajo Futuro}{69}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Conclusiones}{69}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Trabajo Futuro}{70}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Planificación Temporal del Trabajo Realizado}{71}{section.4.3}%
+\contentsline {chapter}{Referencias}{73}{chapter*.13}%
+\contentsline {chapter}{\numberline {A}Anexos}{77}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Aplicación Web para la Visualización y Prueba del Modelo}{77}{appendix.A.1}%

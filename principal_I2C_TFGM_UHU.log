@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.6)  31 AUG 2026 03:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.6)  31 AUG 2026 23:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1058,12 +1058,12 @@ Package babel Info: Main language set to 'spanish'.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logo_ETSI.jpg, id=418, 202.7575pt x 144.54pt>
+<logo_ETSI.jpg, id=370, 202.7575pt x 144.54pt>
 File: logo_ETSI.jpg Graphic file (type jpg)
 <use logo_ETSI.jpg>
 Package pdftex.def Info: logo_ETSI.jpg  used on input line 56.
 (pdftex.def)             Requested size: 113.81102pt x 81.13371pt.
-<logo_UHU.png, id=419, 118.4425pt x 74.2775pt>
+<logo_UHU.png, id=371, 118.4425pt x 74.2775pt>
 File: logo_UHU.png Graphic file (type png)
 <use logo_UHU.png>
 Package pdftex.def Info: logo_UHU.png  used on input line 58.
@@ -1096,11 +1096,11 @@ LaTeX Info: Redefining \% on input line 1.
  [5
 
 
-] [6])
+])
 \tf@toc=\write6
 \openout6 = `principal_I2C_TFGM_UHU.toc'.
 
- [7] (principal_I2C_TFGM_UHU.lof
+ [6] (principal_I2C_TFGM_UHU.lof
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -1108,7 +1108,7 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lof=\write7
 \openout7 = `principal_I2C_TFGM_UHU.lof'.
 
- [8
+ [7
 
 
 ] (principal_I2C_TFGM_UHU.lot
@@ -1119,7 +1119,7 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lot=\write8
 \openout8 = `principal_I2C_TFGM_UHU.lot'.
 
-) [9
+) [8
 
 
 ]
@@ -1164,7 +1164,7 @@ Cap\'{\i }tulo 2.
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
  [7]
-<Figuras/FlujoProcesamientoMultimodal.drawio.png, id=710, 925.4575pt x 313.17pt>
+<Figuras/FlujoProcesamientoMultimodal.drawio.png, id=640, 925.4575pt x 313.17pt>
 File: Figuras/FlujoProcesamientoMultimodal.drawio.png Graphic file (type png)
 <use Figuras/FlujoProcesamientoMultimodal.drawio.png>
 Package pdftex.def Info: Figuras/FlujoProcesamientoMultimodal.drawio.png  used on input line 36.
@@ -1172,7 +1172,7 @@ Package pdftex.def Info: Figuras/FlujoProcesamientoMultimodal.drawio.png  used o
 LaTeX Info: Redefining \. on input line 46.
 LaTeX Info: Redefining \% on input line 46.
  [8 <./Figuras/FlujoProcesamientoMultimodal.drawio.png>]
-<Figuras/MLvsDL.png, id=723, 730.73pt x 378.41376pt>
+<Figuras/MLvsDL.png, id=653, 730.73pt x 378.41376pt>
 File: Figuras/MLvsDL.png Graphic file (type png)
 <use Figuras/MLvsDL.png>
 Package pdftex.def Info: Figuras/MLvsDL.png  used on input line 49.
@@ -1205,7 +1205,7 @@ LaTeX Info: Redefining \% on input line 129.
 LaTeX Info: Redefining \. on input line 143.
 LaTeX Info: Redefining \% on input line 143.
  [16]
-<Figuras/ArquitecturaTransformer.png, id=801, 484.30937pt x 621.32124pt>
+<Figuras/ArquitecturaTransformer.png, id=731, 484.30937pt x 621.32124pt>
 File: Figuras/ArquitecturaTransformer.png Graphic file (type png)
 <use Figuras/ArquitecturaTransformer.png>
 Package pdftex.def Info: Figuras/ArquitecturaTransformer.png  used on input line 158.
@@ -1216,7 +1216,7 @@ Underfull \vbox (badness 5119) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 162.
 LaTeX Info: Redefining \% on input line 162.
  [17]
-<Figuras/MecanismosAtencionTransformers.png, id=808, 548.80031pt x 260.47313pt>
+<Figuras/MecanismosAtencionTransformers.png, id=738, 548.80031pt x 260.47313pt>
 File: Figuras/MecanismosAtencionTransformers.png Graphic file (type png)
 <use Figuras/MecanismosAtencionTransformers.png>
 Package pdftex.def Info: Figuras/MecanismosAtencionTransformers.png  used on input line 167.
@@ -1227,7 +1227,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 171.
 LaTeX Info: Redefining \% on input line 171.
  [18 <./Figuras/ArquitecturaTransformer.png>]
-<Figuras/BERTEncoder.png, id=817, 1431.3475pt x 710.655pt>
+<Figuras/BERTEncoder.png, id=747, 1431.3475pt x 710.655pt>
 File: Figuras/BERTEncoder.png Graphic file (type png)
 <use Figuras/BERTEncoder.png>
 Package pdftex.def Info: Figuras/BERTEncoder.png  used on input line 176.
@@ -1257,7 +1257,7 @@ Overfull \hbox (8.21649pt too wide) in paragraph at lines 215--216
 LaTeX Info: Redefining \. on input line 227.
 LaTeX Info: Redefining \% on input line 227.
 [21]
-<Figuras/ViT.png, id=845, 644.4075pt x 489.83pt>
+<Figuras/ViT.png, id=774, 644.4075pt x 489.83pt>
 File: Figuras/ViT.png Graphic file (type png)
 <use Figuras/ViT.png>
 Package pdftex.def Info: Figuras/ViT.png  used on input line 243.
@@ -1271,7 +1271,7 @@ LaTeX Info: Redefining \% on input line 256.
 LaTeX Info: Redefining \. on input line 276.
 LaTeX Info: Redefining \% on input line 276.
  [24]
-<Figuras/TimeSFormer.png, id=867, 400.49625pt x 414.04688pt>
+<Figuras/TimeSFormer.png, id=797, 400.49625pt x 414.04688pt>
 File: Figuras/TimeSFormer.png Graphic file (type png)
 <use Figuras/TimeSFormer.png>
 Package pdftex.def Info: Figuras/TimeSFormer.png  used on input line 279.
@@ -1279,12 +1279,12 @@ Package pdftex.def Info: Figuras/TimeSFormer.png  used on input line 279.
 LaTeX Info: Redefining \. on input line 288.
 LaTeX Info: Redefining \% on input line 288.
  [25 <./Figuras/TimeSFormer.png>]
-<Figuras/ViViT.png, id=879, 1061.9675pt x 582.175pt>
+<Figuras/ViViT.png, id=809, 1061.9675pt x 582.175pt>
 File: Figuras/ViViT.png Graphic file (type png)
 <use Figuras/ViViT.png>
 Package pdftex.def Info: Figuras/ViViT.png  used on input line 292.
 (pdftex.def)             Requested size: 384.1096pt x 210.56888pt.
-<Figuras/videoMAE.png, id=882, 926.46124pt x 239.89626pt>
+<Figuras/videoMAE.png, id=812, 926.46124pt x 239.89626pt>
 File: Figuras/videoMAE.png Graphic file (type png)
 <use Figuras/videoMAE.png>
 Package pdftex.def Info: Figuras/videoMAE.png  used on input line 307.
@@ -1316,7 +1316,7 @@ LaTeX Info: Redefining \% on input line 438.
 LaTeX Info: Redefining \. on input line 462.
 LaTeX Info: Redefining \% on input line 462.
  [34]
-<Figuras/TecnologiasUsadas.png, id=965, 963.6pt x 542.025pt>
+<Figuras/TecnologiasUsadas.png, id=895, 963.6pt x 542.025pt>
 File: Figuras/TecnologiasUsadas.png Graphic file (type png)
 <use Figuras/TecnologiasUsadas.png>
 Package pdftex.def Info: Figuras/TecnologiasUsadas.png  used on input line 465.
@@ -1340,7 +1340,7 @@ Cap\'{\i }tulo 3.
 LaTeX Info: Redefining \. on input line 51.
 LaTeX Info: Redefining \% on input line 51.
  [38]
-<Figuras/PipelineSeguida.png, id=997, 510.40688pt x 578.91281pt>
+<Figuras/PipelineSeguida.png, id=927, 510.40688pt x 578.91281pt>
 File: Figuras/PipelineSeguida.png Graphic file (type png)
 <use Figuras/PipelineSeguida.png>
 Package pdftex.def Info: Figuras/PipelineSeguida.png  used on input line 60.
@@ -1357,7 +1357,7 @@ LaTeX Info: Redefining \% on input line 71.
 LaTeX Info: Redefining \. on input line 86.
 LaTeX Info: Redefining \% on input line 86.
  [41]
-<Figuras/DatasetOriginal.png, id=1019, 400.49625pt x 370.38374pt>
+<Figuras/DatasetOriginal.png, id=949, 400.49625pt x 370.38374pt>
 File: Figuras/DatasetOriginal.png Graphic file (type png)
 <use Figuras/DatasetOriginal.png>
 Package pdftex.def Info: Figuras/DatasetOriginal.png  used on input line 91.
@@ -1365,7 +1365,7 @@ Package pdftex.def Info: Figuras/DatasetOriginal.png  used on input line 91.
 LaTeX Info: Redefining \. on input line 101.
 LaTeX Info: Redefining \% on input line 101.
  [42 <./Figuras/DatasetOriginal.png>]
-<Figuras/Dataset3.1Transformado.png, id=1027, 694.09312pt x 301.8778pt>
+<Figuras/Dataset3.1Transformado.png, id=957, 694.09312pt x 301.8778pt>
 File: Figuras/Dataset3.1Transformado.png Graphic file (type png)
 <use Figuras/Dataset3.1Transformado.png>
 Package pdftex.def Info: Figuras/Dataset3.1Transformado.png  used on input line 108.
@@ -1426,7 +1426,7 @@ LaTeX Info: Redefining \% on input line 585.
 LaTeX Info: Redefining \. on input line 614.
 LaTeX Info: Redefining \% on input line 614.
  [55]
-<Figuras/ResultadosEnsemble.png, id=1103, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosEnsemble.png, id=1033, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosEnsemble.png Graphic file (type png)
 <use Figuras/ResultadosEnsemble.png>
 Package pdftex.def Info: Figuras/ResultadosEnsemble.png  used on input line 620.
@@ -1445,12 +1445,12 @@ LaTeX Info: Redefining \% on input line 658.
 LaTeX Info: Redefining \. on input line 672.
 LaTeX Info: Redefining \% on input line 672.
  [58]
-<Figuras/ResultadosHombreDiscard.png, id=1126, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosHombreDiscard.png, id=1056, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosHombreDiscard.png Graphic file (type png)
 <use Figuras/ResultadosHombreDiscard.png>
 Package pdftex.def Info: Figuras/ResultadosHombreDiscard.png  used on input line 687.
 (pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
-<Figuras/ResultadosMujerDiscard.png, id=1127, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosMujerDiscard.png, id=1057, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosMujerDiscard.png Graphic file (type png)
 <use Figuras/ResultadosMujerDiscard.png>
 Package pdftex.def Info: Figuras/ResultadosMujerDiscard.png  used on input line 693.
@@ -1461,12 +1461,12 @@ Underfull \vbox (badness 7308) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 696.
 LaTeX Info: Redefining \% on input line 696.
  [59]
-<Figuras/ResultadosHombrePessimistic.png, id=1132, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosHombrePessimistic.png, id=1062, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosHombrePessimistic.png Graphic file (type png)
 <use Figuras/ResultadosHombrePessimistic.png>
 Package pdftex.def Info: Figuras/ResultadosHombrePessimistic.png  used on input line 700.
 (pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
-<Figuras/ResultadosMujerPessimistic.png, id=1133, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosMujerPessimistic.png, id=1063, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosMujerPessimistic.png Graphic file (type png)
 <use Figuras/ResultadosMujerPessimistic.png>
 Package pdftex.def Info: Figuras/ResultadosMujerPessimistic.png  used on input line 706.
@@ -1477,22 +1477,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 710.
 LaTeX Info: Redefining \% on input line 710.
  [60 <./Figuras/ResultadosHombreDiscard.png> <./Figuras/ResultadosMujerDiscard.png> <./Figuras/ResultadosHombrePessimistic.png>]
-<Figuras/ResultadosHombreOptimistic.png, id=1141, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosHombreOptimistic.png, id=1071, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosHombreOptimistic.png Graphic file (type png)
 <use Figuras/ResultadosHombreOptimistic.png>
 Package pdftex.def Info: Figuras/ResultadosHombreOptimistic.png  used on input line 713.
 (pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
-<Figuras/ResultadosMujerOptimistic.png, id=1142, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosMujerOptimistic.png, id=1072, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosMujerOptimistic.png Graphic file (type png)
 <use Figuras/ResultadosMujerOptimistic.png>
 Package pdftex.def Info: Figuras/ResultadosMujerOptimistic.png  used on input line 719.
 (pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
-<Figuras/ResultadosHombreUnrolling.png, id=1143, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosHombreUnrolling.png, id=1073, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosHombreUnrolling.png Graphic file (type png)
 <use Figuras/ResultadosHombreUnrolling.png>
 Package pdftex.def Info: Figuras/ResultadosHombreUnrolling.png  used on input line 726.
 (pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
-<Figuras/ResultadosMujerUnrolling.png, id=1144, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosMujerUnrolling.png, id=1074, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosMujerUnrolling.png Graphic file (type png)
 <use Figuras/ResultadosMujerUnrolling.png>
 Package pdftex.def Info: Figuras/ResultadosMujerUnrolling.png  used on input line 732.
@@ -1506,94 +1506,39 @@ LaTeX Info: Redefining \% on input line 735.
 LaTeX Info: Redefining \. on input line 751.
 LaTeX Info: Redefining \% on input line 751.
  [62 <./Figuras/ResultadosHombreUnrolling.png> <./Figuras/ResultadosMujerUnrolling.png>]
-LaTeX Info: Redefining \. on input line 781.
-LaTeX Info: Redefining \% on input line 781.
- [63]
-Overfull \hbox (43.3577pt too wide) in paragraph at lines 800--801
-\T1/cmr/m/it/10.95 Trans-for-mers. En-tre ellos, des-ta-ca-ron \T1/cmtt/m/it/10.95 bert-base-uncased\T1/cmr/m/it/10.95 , \T1/cmtt/m/it/10.95 roberta-base \T1/cmr/m/it/10.95 y \T1/cmtt/m/it/10.95 mistral-7b-instruct\T1/cmr/m/it/10.95 . 
- []
-
-
-Underfull \vbox (badness 1997) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 810.
-LaTeX Info: Redefining \% on input line 810.
+<Figuras/ResultadosPromptHombre.png, id=1090, 1000.2168pt x 380.8629pt>
+File: Figuras/ResultadosPromptHombre.png Graphic file (type png)
+<use Figuras/ResultadosPromptHombre.png>
+Package pdftex.def Info: Figuras/ResultadosPromptHombre.png  used on input line 761.
+(pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
+<Figuras/ResultadosPromptMujer.png, id=1091, 1000.2168pt x 380.8629pt>
+File: Figuras/ResultadosPromptMujer.png Graphic file (type png)
+<use Figuras/ResultadosPromptMujer.png>
+Package pdftex.def Info: Figuras/ResultadosPromptMujer.png  used on input line 767.
+(pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
+LaTeX Info: Redefining \. on input line 777.
+LaTeX Info: Redefining \% on input line 777.
+ [63 <./Figuras/ResultadosPromptHombre.png> <./Figuras/ResultadosPromptMujer.png>]
+LaTeX Info: Redefining \. on input line 792.
+LaTeX Info: Redefining \% on input line 792.
  [64]
-LaTeX Info: Redefining \. on input line 838.
-LaTeX Info: Redefining \% on input line 838.
+LaTeX Info: Redefining \. on input line 814.
+LaTeX Info: Redefining \% on input line 814.
  [65]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 865.
-LaTeX Info: Redefining \% on input line 865.
+LaTeX Info: Redefining \. on input line 874.
+LaTeX Info: Redefining \% on input line 874.
  [66]
-<Figuras/AccuracyEntrenamientoValidacion.jpg, id=1177, 853.1875pt x 566.115pt>
-File: Figuras/AccuracyEntrenamientoValidacion.jpg Graphic file (type jpg)
-<use Figuras/AccuracyEntrenamientoValidacion.jpg>
-Package pdftex.def Info: Figuras/AccuracyEntrenamientoValidacion.jpg  used on input line 884.
-(pdftex.def)             Requested size: 341.43437pt x 226.55428pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 897.
-LaTeX Info: Redefining \% on input line 897.
-[67]
-LaTeX Info: Redefining \. on input line 941.
-LaTeX Info: Redefining \% on input line 941.
- [68 <./Figuras/AccuracyEntrenamientoValidacion.jpg>]
-<Figuras/Confusion_matrix_multi.png, id=1190, 462.528pt x 346.896pt>
-File: Figuras/Confusion_matrix_multi.png Graphic file (type png)
-<use Figuras/Confusion_matrix_multi.png>
-Package pdftex.def Info: Figuras/Confusion_matrix_multi.png  used on input line 954.
-(pdftex.def)             Requested size: 256.07741pt x 192.06905pt.
-<Figuras/confusion_matrix_multi6.png, id=1192, 541.3023pt x 397.485pt>
-File: Figuras/confusion_matrix_multi6.png Graphic file (type png)
-<use Figuras/confusion_matrix_multi6.png>
-Package pdftex.def Info: Figuras/confusion_matrix_multi6.png  used on input line 963.
-(pdftex.def)             Requested size: 256.07741pt x 188.04312pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 3803) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 973.
-LaTeX Info: Redefining \% on input line 973.
- [69 <./Figuras/Confusion_matrix_multi.png>]
-<Figuras/CurvaRoc.png, id=1200, 726.715pt x 454.69875pt>
-File: Figuras/CurvaRoc.png Graphic file (type png)
-<use Figuras/CurvaRoc.png>
-Package pdftex.def Info: Figuras/CurvaRoc.png  used on input line 978.
-(pdftex.def)             Requested size: 298.75264pt x 186.92723pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 988.
-LaTeX Info: Redefining \% on input line 988.
- [70 <./Figuras/confusion_matrix_multi6.png> <./Figuras/CurvaRoc.png>]
-Overfull \hbox (20.24484pt too wide) in paragraph at lines 1010--1011
-[]\T1/cmtt/m/n/10.95 Texto: ``A las mujeres hay que respetarlas porque son lo más bello del mundo" 
- []
-
-LaTeX Info: Redefining \. on input line 1015.
-LaTeX Info: Redefining \% on input line 1015.
-[71]
-LaTeX Info: Redefining \. on input line 1048.
-LaTeX Info: Redefining \% on input line 1048.
- [72]
-LaTeX Info: Redefining \. on input line 1084.
-LaTeX Info: Redefining \% on input line 1084.
- [73])
+LaTeX Info: Redefining \. on input line 906.
+LaTeX Info: Redefining \% on input line 906.
+ [67])
 LaTeX Info: Redefining \. on input line 116.
 LaTeX Info: Redefining \% on input line 116.
- [74]
+ [68]
 \openout2 = `Capitulos/Conclusiones.aux'.
 
  (Capitulos/Conclusiones.tex
 Cap\'{\i }tulo 4.
-[75
+[69
 
 
 
@@ -1601,13 +1546,13 @@ Cap\'{\i }tulo 4.
 ]
 LaTeX Info: Redefining \. on input line 54.
 LaTeX Info: Redefining \% on input line 54.
- [76]
+ [70]
 LaTeX Info: Redefining \. on input line 99.
 LaTeX Info: Redefining \% on input line 99.
- [77])
+ [71])
 LaTeX Info: Redefining \. on input line 117.
 LaTeX Info: Redefining \% on input line 117.
- [78] [79
+ [72] [73
 
 
 
@@ -1618,20 +1563,20 @@ Overfull \hbox (1.03186pt too wide) in paragraph at lines 120--120
 
 LaTeX Info: Redefining \. on input line 120.
 LaTeX Info: Redefining \% on input line 120.
-[80]
+[74]
 LaTeX Info: Redefining \. on input line 120.
 LaTeX Info: Redefining \% on input line 120.
- [81]
+ [75]
 LaTeX Info: Redefining \. on input line 124.
 LaTeX Info: Redefining \% on input line 124.
- [82]
+ [76]
 Ap\'{e}ndice A.
-(Anexos/AplicacionWeb.tex [83
+(Anexos/AplicacionWeb.tex [77
 
 ])
 LaTeX Info: Redefining \. on input line 130.
 LaTeX Info: Redefining \% on input line 130.
- [84] (principal_I2C_TFGM_UHU.aux
+ [78] (principal_I2C_TFGM_UHU.aux
 LaTeX Info: Redefining \sptext on input line 12.
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
@@ -1641,23 +1586,23 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
 Package rerunfilecheck Info: File `principal_I2C_TFGM_UHU.out' has not changed.
-(rerunfilecheck)             Checksum: 5276A4D24468B10906C42710CF0C077D;21350.
+(rerunfilecheck)             Checksum: 36B47A625969A7697F8D57316C8DB3BA;19177.
 Package logreq Info: Writing requests to 'principal_I2C_TFGM_UHU.run.xml'.
 \openout1 = `principal_I2C_TFGM_UHU.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39218 strings out of 467510
- 798656 string characters out of 5408795
- 1754843 words of memory out of 5000000
- 67504 multiletter control sequences out of 15000+600000
- 653887 words of font info for 95 fonts, out of 8000000 for 9000
+ 39127 strings out of 467510
+ 797026 string characters out of 5408795
+ 1754598 words of memory out of 5000000
+ 67434 multiletter control sequences out of 15000+600000
+ 653571 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,12n,132p,1249b,2312s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecit1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2488.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1728.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on principal_I2C_TFGM_UHU.pdf (94 pages, 5586000 bytes).
+ 113i,14n,132p,1249b,2312s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2488.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1728.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on principal_I2C_TFGM_UHU.pdf (87 pages, 5505121 bytes).
 PDF statistics:
- 2241 PDF objects out of 2487 (max. 8388607)
- 321 named destinations out of 1000 (max. 500000)
- 1049 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2077 PDF objects out of 2487 (max. 8388607)
+ 301 named destinations out of 1000 (max. 500000)
+ 943 words of extra memory for PDF output out of 10000 (max. 10000000)
 
