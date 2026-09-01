@@ -1,38 +1,58 @@
 \section{Aplicación Web para la Visualización y Prueba del Modelo}
+\label{ap:AplicacionWeb}
 
-Como parte complementaria del trabajo, se ha desarrollado una aplicación web que permite cargar el modelo entrenado y utilizarlo para clasificar nuevas instancias de texto.
+Como parte complementaria de este Trabajo de Fin de Máster, se ha desarrollado y desplegado una aplicación web interactiva que permite cargar uno de los modelos entrenados durante la fase de experimentación y utilizarlo para clasificar nuevas instancias de texto en tiempo real.
 
-Esta aplicación proporciona una interfaz sencilla e intuitiva para que cualquier usuario pueda interactuar con el modelo sin necesidad de conocimientos técnicos.
+Debido a las limitaciones de memoria computacional de los entornos de despliegue gratuitos, no ha sido posible alojar el sistema \textit{Ensemble} multimodal al completo. En su lugar, se ha desplegado el modelo discriminativo textual \texttt{roberta-base}, el cual demostró una altísima capacidad de generalización para la detección de lenguaje sexista a lo largo de este proyecto.
 
-\subsection*{Tecnologías Utilizadas}
+Esta aplicación proporciona una interfaz gráfica sencilla e intuitiva para que cualquier usuario, incluyendo los miembros del tribunal, pueda interactuar con la inteligencia artificial desarrollada sin necesidad de conocimientos técnicos de programación o configuración de entornos.
 
+\section*{Tecnologías Utilizadas}
+
+El desarrollo y puesta en producción de la interfaz se ha llevado a cabo empleando el siguiente marco tecnológico:
 \begin{itemize}
-    \item \textbf{Backend:} Python con \texttt{FastAPI}, modelo cargado con \texttt{transformers}.
-    \item \textbf{Frontend:} HTML, CSS y JavaScript con \texttt{Bootstrap}.
-    \item \textbf{Despliegue:} Aplicación alojada en \textit{HuggingFace Spaces}.
+    \item \textbf{Backend e Inferencia:} \textit{Python} como lenguaje principal, utilizando la biblioteca \texttt{transformers} de \textit{Hugging Face} para la carga de los pesos del modelo y la tokenización del texto de entrada.
+    \item \textbf{Frontend:} \texttt{Gradio}, un \textit{framework} de código abierto en Python que permite construir interfaces de usuario web (UI) orientadas específicamente a modelos de \textit{Machine Learning} de forma ágil.
+    \item \textbf{Despliegue y Alojamiento:} La aplicación se encuentra contenerizada y alojada de forma pública y gratuita en la plataforma \textit{Hugging Face Spaces}.
 \end{itemize}
 
-\subsection*{Acceso a la Aplicación}
+\section*{Acceso a la Aplicación}
 
-La aplicación puede accederse desde la siguiente URL:
+La herramienta se encuentra en producción y puede ser evaluada accediendo a la siguiente URL desde cualquier navegador web estándar (ya sea en ordenadores de escritorio o dispositivos móviles):
 
 \begin{center}
-\textbf{\url{https://miPagina.es}}
+\textbf{\url{https://huggingface.co/spaces/TU-USUARIO/TU-SPACE}}
 \end{center}
 
-\subsection*{Manual de Usuario}
+\section*{Manual de Usuario}
 
+El uso de la aplicación consta de un flujo extremadamente simplificado:
 \begin{enumerate}
-    \item Acceder a la URL anterior desde cualquier navegador.
-    \item Introducir el texto que se desea clasificar en el campo correspondiente.
-    \item Pulsar el botón “Clasificar”.
-    \item Se mostrará la predicción del modelo y, opcionalmente, las probabilidades asociadas a cada clase.
+    \item Acceder a la URL indicada anteriormente.
+    \item En el cuadro de texto principal, introducir la frase, comentario o transcripción que se desea someter a evaluación por parte del modelo.
+    \item Pulsar el botón de envío (``\textit{Submit}'' o ``Clasificar'').
+    \item Tras unos segundos de procesamiento (\textit{inferencia}), el sistema devolverá en el panel de salida la etiqueta predicha (``Sexista'' o ``No Sexista''), acompañada opcionalmente del porcentaje de confianza o probabilidad matemática calculada por la red neuronal.
 \end{enumerate}
 
-\subsection*{Ejemplo de uso}
+\section*{Ejemplo de uso}
 
-\textit{Texto introducido:} “No me parece bien lo que estás diciendo.”  
-\textit{Salida del modelo:} \texttt{Clase: Desacuerdo}
+A continuación, se detalla un caso de uso práctico simulando el comportamiento del sistema:
 
-\subsection*{Capturas de pantalla}
+\bigskip
+\noindent \textit{Texto introducido:} ``Deberías dejar de opinar de estas cosas y volver a fregar los platos.'' \\
+\textit{Salida del modelo:} \texttt{Clase: Sexista (1) | Probabilidad: 98.4\%}
 
+\bigskip
+\noindent \textit{Texto introducido:} ``La brecha salarial es un problema que debemos combatir juntos.'' \\
+\textit{Salida del modelo:} \texttt{Clase: No Sexista (0) | Probabilidad: 92.1\%}
+
+\section*{Capturas de Pantalla}
+
+A continuación se muestra el aspecto visual de la aplicación web en funcionamiento:
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{Figuras/CapturaGradio.png}
+    \caption{Interfaz web desarrollada con Gradio alojada en Hugging Face Spaces.}
+    \label{fig:CapturaGradio}
+\end{figure}
