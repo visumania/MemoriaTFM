@@ -1,21 +1,23 @@
 \begin{resumen}
-Este apartado es muy importante, ya que es lo primero que se lee. Su redacción debe ser muy correcta y reflejar, de forma sintética, todo el trabajo realizado.
+La proliferación de las redes sociales basadas en vídeos cortos, como \textit{TikTok}, ha traído consigo un aumento exponencial del discurso de odio y la misoginia en entornos digitales. La detección automática de este contenido es un desafío crítico, ya que el sexismo rara vez se manifiesta de forma explícita porque a menudo se oculta tras el sarcasmo, los estereotipos o el contexto visual de la escena. Este Trabajo de Fin de Máster aborda el problema proponiendo un sistema de clasificación multimodal avanzado, diseñado y evaluado bajo el marco de la competición oficial \textit{EXIST 2025}.
 
-En una página como máximo, el resumen explica de modo conciso lo que intenta resolver el trabajo (¿Qué?), la metodología para abordar su solución (¿Cómo?), así como los principales resultados y conclusiones del trabajo. 
+A nivel metodológico, la investigación abandona el enfoque clásico unimodal basado únicamente en el texto. Se extraen y procesan las tres dimensiones fundamentales del contenido multimedia: el discurso verbal (transcripción), la disposición espacial (imágenes estáticas) y el movimiento a lo largo del tiempo (secuencia de vídeo). Para ello, se entrenan arquitecturas de estado del arte de forma independiente, aplicando técnicas de \textit{Fine-Tuning} y cuantización (\textit{QLoRA}) sobre modelos discriminativos (\textit{RoBERTa}), modelos de lenguaje generativos masivos (\textit{Mistral-7B}), y arquitecturas de visión (\textit{ConvNeXt} y \textit{TimeSFormer}). Las predicciones de los mejores modelos expertos se unifican posteriormente mediante una estrategia de fusión tardía (\textit{Late Fusion}). Además, la investigación explora el paradigma del Perspectivismo (\textit{Learning with Disagreement}), modelando cómo la identidad de género del anotador afecta matemáticamente a la definición de sexismo. 
 
+Los resultados empíricos demuestran la superioridad indiscutible de la arquitectura híbrida frente a los enfoques aislados, logrando un \textit{F1-Score} de 0.7261. El análisis multietiqueta revela que el texto es la modalidad óptima para detectar sesgos ideológicos, mientras que la visión temporal resulta imprescindible para identificar dinámicas físicas como la cosificación. Finalmente, los experimentos de perspectivismo confirman que el género condiciona la detección del discurso de odio, demostrando que la anotación femenina genera fronteras de decisión más robustas para el aprendizaje de las redes neuronales, sentando un precedente valioso para la moderación justa en plataformas digitales. 
 
 \bigskip
-\noindent\textbf{Palabras clave}: listado de palabras clave, separadas por coma, que representan el trabajo
+\noindent\textbf{Palabras clave}: Inteligencia Artificial, Aprendizaje Profundo, Procesamiento del Lenguaje Natural, Visión Artificial, Multimodalidad, Análisis del Discurso de Odio, Sexismo, Transformers, LLM, Perspectivismo.
 \end{resumen}
 
 \clearpage
 
 \begin{abstract}
+The proliferation of short-video social networks, such as \textit{TikTok}, has led to an exponential increase in hate speech and misogyny in digital environments. The automatic detection of this content is a critical challenge, as sexism rarely manifests itself explicitly, because it often hides behind sarcasm, stereotypes, or the visual context of the scene. This Master's Thesis addresses the problem by proposing an advanced multimodal classification system, designed and evaluated under the framework of the official \textit{EXIST 2025} competition. 
 
-This section is very important, since it is the first thing that is read. Its wording must be very correct and reflect, in a synthetic way, all the work done.
+Methodologically, the research moves away from the classic unimodal approach based only on text. The three fundamental dimensions of multimedia content are extracted and processed: verbal discourse (transcription), spatial arrangement (static images), and movement over time (video sequences). To this end, state-of-the-art architectures are trained independently, applying \textit{Fine-Tuning} and quantization (\textit{QLoRA}) techniques on discriminative models (\textit{RoBERTa}), massive generative language models (\textit{Mistral-7B}), and vision architectures (\textit{ConvNeXt} and \textit{TimeSFormer}). The predictions of the best expert models are subsequently unified using a \textit{Late Fusion} strategy. Furthermore, the research explores the Perspectivism paradigm (\textit{Learning with Disagreement}), modeling how the gender identity of the annotator mathematically affects the definition of sexism. 
 
-In a maximum of one page, the abstract explains in a concise way what the work tries to solve (What?), the methodology to approach its solution (How?), as well as the main results and conclusions of the work. 
+Empirical results demonstrate the undisputed superiority of the hybrid architecture over isolated approaches, achieving an \textit{F1-Score} of 0.7261. Multi-label analysis reveals that text is the optimal modality for detecting ideological biases, while temporal vision is essential for identifying physical dynamics such as objectification. Finally, perspectivism experiments confirms that gender conditions the detection of hate speech, proving that female annotation generates more robust decision boundaries for neural network learning, setting a valuable precedent for fair moderation on digital platforms.   
 
 \bigskip
-\noindent\textbf{Keywords}: list of keywords, separated by comma, representing the work
+\noindent\textbf{Keywords}: Artificial Intelligence, Deep Learning, Natural Language Processing, Computer Vision, Multimodality, Hate Speech Analysis, Sexism, Transformers, LLM, Perspectivism.  
 \end{abstract}
