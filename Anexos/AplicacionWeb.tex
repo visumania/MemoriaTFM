@@ -1,52 +1,48 @@
 \section{Aplicación Web para la Visualización y Prueba del Modelo}
 \label{ap:AplicacionWeb}
+Como culminación del presente Trabajo de Fin de Máster, se ha desarrollado y desplegado una aplicación web interactiva que ejecuta el sistema multimodal completo (\textit{Ensemble} mediante \textit{Late Fusion}). Esta herramienta permite clasificar nuevas instancias de vídeo en tiempo real. 
 
-Como parte complementaria de este Trabajo de Fin de Máster, se ha desarrollado y desplegado una aplicación web interactiva que permite cargar uno de los modelos entrenados durante la fase de experimentación y utilizarlo para clasificar nuevas instancias de texto en tiempo real.
-
-Debido a las limitaciones de memoria computacional de los entornos de despliegue gratuitos, no ha sido posible alojar el sistema \textit{Ensemble} multimodal al completo. En su lugar, se ha desplegado el modelo discriminativo textual \texttt{roberta-base}, el cual demostró una altísima capacidad de generalización para la detección de lenguaje sexista a lo largo de este proyecto.
-
-Esta aplicación proporciona una interfaz gráfica sencilla e intuitiva para que cualquier usuario, incluyendo los miembros del tribunal, pueda interactuar con la inteligencia artificial desarrollada sin necesidad de conocimientos técnicos de programación o configuración de entornos.
+Para superar las limitaciones de memoria VRAM (15 GB) de los entornos gratuitos y evitar el colapso del sistema, se ha diseñado una arquitectura inteligente de carga secuencial y liberación dinámica de memoria. Esto permite ejecutar iterativamente modelos masivos que, en un despliegue estático tradicional, requerirían infraestructura de alto coste.  
 
 \section*{Tecnologías Utilizadas}
-
-El desarrollo y puesta en producción de la interfaz se ha llevado a cabo empleando el siguiente marco tecnológico:
-\subsection*{Tecnologías Utilizadas}
-
+El desarrollo de la interfaz y su puesta en producción emplean el siguiente marco tecnológico:
 \begin{itemize}
-    \item \textbf{Backend:} API de Inferencia Serverless de \textit{Hugging Face} comunicándose directamente con el modelo \texttt{RoBERTa}.
-    \item \textbf{Frontend:} Interfaz web pura desarrollada con HTML, CSS y \textit{JavaScript}, utilizando el marco de trabajo \texttt{Bootstrap} para un diseño responsivo.
-    \item \textbf{Despliegue:} Aplicación alojada de forma estática y gratuita en \textit{Hugging Face Spaces}.
+    \item \textbf{Frontend}: web interactiva generada íntegramente con el \textit{framework Gradio} en \textit{Python}.
+    \item \textbf{Backend y Cómputo}: Entorno de ejecución en \textit{Google Colab} equipado con \textit{GPU T4}, montando \textit{Google Drive} como almacenamiento persistente para la lectura de los pesos de los modelos. 
+    \item \textbf{Procesamiento Multimedia}: Empleo de librerías como \textit{OpenCV}, \textit{MoviePY} y \textit{PyAv} para el troceado de audio, extracción de fotogramas estáticos y lectura de vídeo bruto. 
+    \item \textbf{Modelos Multimodales}: Integración de librería \textit{Transformers} (\textit{OpenAI Whisper}, \textit{ConvNeXt}, \textit{TimeSFormer}) y \textit{bitsandbytes} para la cuantización y ejecución eficiente del modelo textual \textit{Mistral-7B} en 4-bits (\textit{QLoRA}).
 \end{itemize}
 
 \section*{Acceso a la Aplicación}
-
-La herramienta se encuentra en producción y puede ser evaluada accediendo a la siguiente URL desde cualquier navegador web estándar (ya sea en ordenadores de escritorio o dispositivos móviles):
+La herramienta se encuentra vinculada para su visualización desde cualquier navegador web estándar en la siguiente URL:
 
 \begin{center}
 \textbf{\url{https://huggingface.co/spaces/visumania2/DeepSexist-App}}
 \end{center}
 
 \section*{Manual de Usuario}
+El uso de la aplicación consta del siguiente flujo simplificado:
 
-El uso de la aplicación consta de un flujo extremadamente simplificado:
 \begin{enumerate}
-    \item Acceder a la URL indicada anteriormente.
-    \item En el cuadro de texto principal, introducir la frase, comentario o transcripción que se desea someter a evaluación por parte del modelo.
-    \item Pulsar el botón de envío (``\textit{Submit}'' o ``Clasificar'').
-    \item Tras unos segundos de procesamiento (\textit{inferencia}), el sistema devolverá en el panel de salida la etiqueta predicha (``Sexista'' o ``No Sexista''), acompañada opcionalmente del porcentaje de confianza o probabilidad matemática calculada por la red neuronal.
+    \item Acceder a la URL habilitada.
+    \item Cargar un archivo de vídeo (\texttt{.mp4}, \texttt{.avi}) en el componente principal de la pantalla. 
+    \item Pulsar el botón ``Ejecutar Pipeline Multimodal''
+    \item El sistema procesará de forma automatizada las tres vías: transcripción de audio a texto, \textit{mean-pooling} de 4 fotogramas y análisis de movimiento. 
+    \item Tras el procesado, se visualizarán las probabilidades de sexismo independientes de cada modelo y el resultado final calculado por la suma ponderada de los pesos de cada modelo (35\% texto, 55\% imagen y 10\% vídeo).
 \end{enumerate}
 
 \section*{Ejemplo de uso}
 
-A continuación, se detalla un caso de uso práctico simulando el comportamiento del sistema:
+A continuación, se detalla un caso de uso práctico extraído del dataset de experimentación:
 
-\bigskip
-\noindent \textit{Texto introducido:} ``Deberías dejar de opinar de estas cosas y volver a fregar los platos.'' \\
-\textit{Salida del modelo:} \texttt{Clase: Sexista (1) | Probabilidad: 98.4\%}
-
-\bigskip
-\noindent \textit{Texto introducido:} ``La brecha salarial es un problema que debemos combatir juntos.'' \\
-\textit{Salida del modelo:} \texttt{Clase: No Sexista (0) | Probabilidad: 92.1\%}
+\begin{itemize}
+    \item \textbf{Vídeo introducido}: Clip de 15 segundos con un discurso basado en roles tradicionales. 
+    \item \textbf{Transcripción automática (\textit{Whisper})}: ``\textit{El lugar de las mujeres está en casa, no en una oficina dirigiendo empresas}''. 
+    \item \textbf{Modelo Texto (\textit{Mistral}-35\%)}: Probabilidad de Sexismo: 98.20\%.
+    \item \textbf{Modelo Imagen (\textit{ConvNeXt}-55\%)}: Probabilidad de Sexismo: 62.40\%.
+    \item \textbf{Modelo Vídeo (\textit{TimeSFormer}-10\%)}: Probabilidad de Sexismo: 71.00\%.
+    \item \textbf{Resultado Final (\textit{Ensemble})}: Probabilidad del \textit{Ensemble}:75.79\%. Resultado final: \textbf{SEXISTA}
+\end{itemize}
 
 \section*{Capturas de Pantalla}
 
@@ -54,7 +50,7 @@ A continuación se muestra el aspecto visual de la aplicación web en funcionami
 
 \begin{figure}[H]
     \centering
-    % \includegraphics[width=0.8\textwidth]{Figuras/CapturaGradio.png}
+    \includegraphics[width=1\textwidth]{Figuras/CapturaGradio.png}
     \caption{Interfaz web desarrollada con Gradio alojada en Hugging Face Spaces.}
     \label{fig:CapturaGradio}
 \end{figure}
