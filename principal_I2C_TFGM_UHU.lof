@@ -15,17 +15,17 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline general del marco de experimentación}}{40}{figure.3.1}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de un registro del dataset original}}{42}{figure.3.2}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Dataset transformado para la tarea 3.1}}{43}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Resultados del \textit {Ensemble} Multimodal contra el \textit {test} estático}}{56}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Resultados de la estrategia \textit {Hard Consensus} en hombres}}{60}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Resultados de la estrategia \textit {Hard Consensus} en mujeres}}{60}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Resultados de la estrategia \textit {Pessimistic} en hombres}}{60}{figure.3.7}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Resultados de la estrategia \textit {Pessimistic} en mujeres}}{61}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Resultados de la estrategia \textit {Optimistic} en hombres}}{61}{figure.3.9}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Resultados de la estrategia \textit {Optimistic} en mujeres}}{61}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Resultados de la estrategia \textit {Unrolling} en hombres}}{62}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Resultados de la estrategia \textit {Unrolling} en mujeres}}{62}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Resultados de la técnica \textit {Persona Prompting} dando el rol de hombre}}{63}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Resultados de la técnica \textit {Persona Prompting} dando el rol de mujer}}{63}{figure.3.14}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Resultados del \textit {Ensemble} Multimodal contra el \textit {test} estático}}{57}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Resultados de la estrategia \textit {Hard Consensus} en hombres}}{61}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Resultados de la estrategia \textit {Hard Consensus} en mujeres}}{61}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Resultados de la estrategia \textit {Pessimistic} en hombres}}{62}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Resultados de la estrategia \textit {Pessimistic} en mujeres}}{62}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Resultados de la estrategia \textit {Optimistic} en hombres}}{63}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Resultados de la estrategia \textit {Optimistic} en mujeres}}{63}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Resultados de la estrategia \textit {Unrolling} en hombres}}{64}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Resultados de la estrategia \textit {Unrolling} en mujeres}}{64}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Resultados de la técnica \textit {Persona Prompting} dando el rol de hombre}}{65}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Resultados de la técnica \textit {Persona Prompting} dando el rol de mujer}}{66}{figure.3.14}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Interfaz web desarrollada con Gradio alojada en Hugging Face Spaces.}}{79}{figure.Alph1.1}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Interfaz web desarrollada con Gradio alojada en Hugging Face Spaces.}}{82}{figure.Alph1.1}%

@@ -199,9 +199,43 @@ Estos resultados locales actúan como el umbral a batir y evidencian el margen d
 \label{subsec:ArquitecturasDiscriminativasTransformers}
 El \textit{baseline} para esta fase fue el modelo multilingüe \texttt{bert-base-multilingual-cased}, utilizado en la entrega oficial de la tarea. A partir de este, se planteó una etapa de experimentación cruzada para evaluar el comportamiento de diferentes modelos \textit{Transformers} preentrenados. El objetivo era comprobar qué tipo de conocimiento base se adaptaba mejor al lenguaje de la plataforma \textit{TikTok}: se evaluaron arquitecturas preentrenadas específicamente en inglés, modelos preentrenados en español y modelos multilingües, todos ellos ajustados sobre el corpus completo del proyecto. 
 
-Tras una primera iteración de entrenamientos con las configuraciones por defecto, la arquitectura \texttt{RoBERTa-base} se consolidó como el modelo con mejor capacidad de generalización para esta tarea específica. 
+Tras una primera iteración de entrenamientos, con los hiperparámetros que se observan en la \autoref{tab:HiperparametrosPorDefectoTransformers}, la arquitectura \texttt{RoBERTa-base} se consolidó como el modelo con mejor capacidad de generalización para esta tarea específica. 
 
-Con el objetivo de maximizar sus métricas y extraer su máximo potencial, \texttt{roberta-} \texttt{base} fue el elegido para someterse a un proceso de optimización de hiperparámetros. Mediante técnicas de búsqueda sistemática, se ajustaron variables críticas del algoritmo tales como el \textit{learning rate}, el \textit{weight decay}, el \textit{warmup ratio}, el \textit{batch size}, el \textit{lr scheduler} y el \textit{maximum gradient norm}. A pesar de esto, no se consiguió mejorar el rendimiento del modelo con respecto a su \textit{baseline}.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lc}
+        \toprule
+        \textbf{Hiperparámetro} & \textbf{Valor} \\
+        \midrule
+        \textit{batch\_size} & 16 \\
+        \textit{num\_train\_epochs} & 15 \\
+        \textit{learning\_rate} & 1e-5 \\
+        \textit{weight\_decay} & 0.1 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Hiperparámetros con los que fueron entrenados los \textit{Transformers}}.
+    \label{tab:HiperparametrosPorDefectoTransformers}
+\end{table}
+
+Con el objetivo de maximizar sus métricas y extraer su máximo potencial, \texttt{roberta-} \texttt{base} fue el elegido para someterse a un proceso de optimización de hiperparámetros. Mediante técnicas de búsqueda sistemática, se ajustaron variables críticas del algoritmo tales como el \textit{learning rate}, el \textit{weight decay}, el \textit{warmup ratio}, el \textit{batch size}, el \textit{lr scheduler} y el \textit{maximum gradient norm}, las cuáles pueden apreciarse en la \autoref{tab:HiperparametrosOptimizadosTransformers}. A pesar de esto, no se consiguió mejorar el rendimiento del modelo con respecto a su \textit{baseline}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lc}
+        \toprule
+        \textbf{Hiperparámetro} & \textbf{Valor} \\
+        \midrule
+        \textit{batch\_size} & 16 \\
+        \textit{learning\_rate} & 2e-5 \\
+        \textit{weight\_decay} & 0.05 \\
+        \textit{warmup\_ratio} & 0.1 \\
+        \textit{lr\_scheduler} & cosine \\
+        \textit{max\_grad\_norm} & 0.75 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Hiperparámetros optimizados para el modelo  \textit{RoBERTa-base}}.
+    \label{tab:HiperparametrosOptimizadosTransformers}
+\end{table}
 
 En la \autoref{tab:TablaResultadosTransformers} se presentan los resultados comparativos de los distintos modelos \textit{Transformers} evaluados, así como el rendimiento final de \texttt{RoBERTa-base} tras la optimización de sus hiperparámetros. 
 
@@ -242,7 +276,7 @@ Dado el inmenso tamaño paramétrico de estas arquitecturas y las restricciones 
 
 Bajo esta configuración, se entrenaron diferentes variantes de modelos utilizando la librería \textit{TRL} y su clase \texttt{SFTTrainer} durante 3 épocas de entrenamiento. Tras evaluar los modelos resultantes con el conjunto estático de \textit{Test}, \textbf{\textit{Mistral}} demostró el mejor desempeño en la clasificación de narrativas sexistas.
 
-Los resultados conseguidos por los \textit{LLMs} tras la aplicación de estas técnicas se muestran en la \autoref{tab:TablaResultadosLLMs}.
+Los resultados conseguidos por los \textit{LLMs} tras la aplicación de estas técnicas se muestran en la \autoref{tab:TablaResultadosLLMs}. Como podemos observar, ya hemos conseguido una mejoría con respecto al mejor resultado obtenido en los \textit{Transformers} (0.6934).
 
 \begin{table}[H]
     \centering
@@ -283,7 +317,12 @@ El proceso de entrenamiento evaluaba el modelo fotograma a fotograma. Sin embarg
     \item \textbf{\textit{Majority vote}}: El vídeo se etiqueta como sexista solo si la mitad o más de sus fotogramas individuales superan el umbral de decisión. 
 \end{enumerate}
 
-Tras iterar las tres arquitecturas sobre los cinco \textit{datasets} de \textit{frames} y como podemos observar en la \autoref{tab:ResultadosModelosVisionEstatica}, la arquitectura \textbf{\textit{ConvNeXt} entrenada sobre el conjunto de 4 fotogramas} utilizando la estrategia de \textbf{\textit{Mean-Pooling}} emergió como la combinación con mejor rendimiento. 
+Observando los resultados obtenidos en la \autoref{tab:ResultadosModelosVisionEstatica}, la combinación de la arquitectura \textit{ConvNeXt} sobre el \textit{dataset} de 4 \textit{frames} utilizando \textit{Mean-Pooling} demostró ser la estrategia más robusta, alcanzando un \textit{F1-score} de 0.6245. Este rendimiento se fundamenta en tres factores claves:
+\begin{itemize}
+    \item \textbf{Eficiencia convolucional}: A diferencia de los \textit{Vision Transformers} (\textit{ViT} y \textit{Swin}), que requieren volúmenes masivos de datos para generalizar correctamente, \textit{ConvNeXt} aprovecha los sesgos propios inductivos propios de las redes convolucionales. Esto le permite aprender patrones visuales complejos (como gestos o texto en pantalla) de manera mucho más eficiente en \textit{datasets} de tamaño moderado. 
+    \item \textbf{Equilibrio de información (\textit{4 frames})}: Este volumen representa el punto óptimo de contexto. Extraer menos \textit{frames} eleva el riesgo de perder el instante clave de la acción, mientras que procesar 8 o 10 introduce un exceso de planos neutros que terminan añadiendo ruido a la señal discriminativa del sesgo sexista. 
+    \item \textbf{Robustez del \textit{Mean-Pooling}}: Frente al \textit{Max-Pooling} (altamente sensible a falsos positivos por ruido visual puntual) y al \textit{Majority-Vote} (demasiado conservador), el promedio actúa como un regularizador eficaz. Mitiga las predicciones dudosas, pero permite que un solo fotograma con alto grado de seguridad determina en la clasificación final. 
+\end{itemize}
 
 \begin{table}[H]
     \centering
@@ -419,7 +458,7 @@ Tras iterar las tres arquitecturas sobre los cinco \textit{datasets} de \textit{
 \label{subsec:OptimizacionDeHiperparametrosYDataAugmentation}
 Una vez fijado el modelo \textit{ConvNeXt} sobre el escenario de 4 \textit{frames} como la arquitectura base, se procedió a intentar superar sus métricas iniciales mediante estrategias de regularización.
 
-Como se puede apreciar en \autoref{tab:EstrategiasHiperparametrosConvnext} aplicamos las estrategias de hiperparámetros definidas en la \autoref{subsubsec:EstrategiasAvanzadasDeOptimizacion} que no consiguieron mejorar el \textit{baseline} obtenido anteriormente. 
+Como se puede apreciar en \autoref{tab:EstrategiasHiperparametrosConvnext} aplicamos las estrategias de hiperparámetros definidas en la \autoref{subsubsec:EstrategiasAvanzadasDeOptimizacion}.
 
 \begin{table}[H]
     \centering
@@ -446,6 +485,8 @@ Como se puede apreciar en \autoref{tab:EstrategiasHiperparametrosConvnext} aplic
     \caption{Resultados de las estrategias de hiperparámetros aplicadas al \textit{baseline} de \textit{ConvNeXt} de 4 \textit{frames}}
     \label{tab:EstrategiasHiperparametrosConvnext}
 \end{table}
+
+Al evaluar las estrategias de optimización avanzadas (\textit{Slow Cooker}, \textit{Gradient Accumulation} y \textit{Sprint Final}), observamos que ninguna logró superar la barrera del 0.60 en el \textit{F1-score}, quedando notablemente por debajo del 0.6245 obtenido por el modelo original. Esto nos dice que la arquitectura preentrenada de \textit{ConvNeXt} ya posee mapas de características muy optimizados. Forzar dinámicas de actualización de pesos más agresivas o conservadoras sobre un conjunto de datos reducido no ha favorecido la generalización, sino que ha frenado la convergencia natural del modelo, provocando un pequeño sobreajuste sobre el conjunto de entrenamiento.  
 
 De forma simultánea, y para mitigar el sobreajuste al que tienden los modelos de visión cuando el volumen de datos no es masivo, se aplicaron varias técnicas de \textit{Data Augmentation}. A los datos usados para el entrenamiento se le aplicaron transformaciones geométricas y de color (volteo horizontal aleatorio, rotación de hasta 10 grados y variaciones del 15\% en el brillo, contraste y saturación). Las estrategias definidas fueron las siguientes:
 \begin{itemize}
@@ -490,6 +531,12 @@ En la \autoref{tab:DataAugmentationConvNext4Frames} se muestran los resultados f
     \label{tab:DataAugmentationConvNext4Frames}
 \end{table}
 
+Al analizar las estrategias de \textit{Data Augmentation}, vemos que la degradación de rendimiento es aún más notoria. El intento de balancear o enriquecer los datos provocó un colapso en la métrica \textit{F1-Score}, llegando a caer hasta un 0.3421 en el \textit{Mean-Pooling} de la estrategia de aumentar un 10\% la clase 1.
+
+La justificación principal radica en la naturaleza de los vídeos analizados (extraídos de la plataforma \textit{TikTok}). A diferencia de un conjunto de imágenes ``naturales'' (donde un perro sigue siendo un perro aunque se rote 15 grados), los vídeos de redes sociales poseen una fuerte dependencia espacial y contextual: voltear horizontalmente la imagen destruye la legibilidad de los textos superpuestos, y alterar la saturación puede eliminar el foco de atención visual del modelo. Por lo tanto, llegamos a la conclusión de que, estas técnicas, en lugar de regularizar, han inyectado ruido semántico. 
+
+En conclusión, la experimentación empírica nos dictamina que la arquitectura en su estado más puro y simple es la que mejor se adapta a este dominio de datos. En el mundo de la Inteligencia Artificial, este tipo de arquitecturas se conoce como \textbf{modelos vainilla} \cite{chen2023vanillanet}.
+
 \section{Experimentación con Modelos de Visión Temporal}
 \label{sec:ExperimentacionConModelosDeVisionTemporal}
 A pesar de los resultados obtenidos mediante la extracción de \textit{frames} estáticos, esta aproximación tiene una limitación fundamental: la pérdida del eje temporal. El discurso sexista en plataformas como \textit{TikTok} a menudo no se manifiesta en una única imagen congelada, sino a través de una secuencia de acciones, expresiones faciales o gestos corporales que requieren del contexto del tiempo para ser interpretados correctamente. 
@@ -511,8 +558,6 @@ Se seleccionaron tres modelos fundacionales para la clasificación de vídeo:
 
 Tras someter a los tres modelos a un proceso de \textit{fine-tuning} (utilizando el mismo \textit{split} de validación del 10\% para monitorizar el aprendizaje), las inferencias se proyectaron directamente sobre el conjunto de \textit{Test} estático. A diferencia del enfoque por \textit{frames} de la sección anterior, estos modelos emiten una única probabilidad unificada para todo el vídeo, eliminando la necesidad de aplicar algoritmos de \textit{pooling} posteriores. 
 
-La \autoref{tab:ResultadosModelosVisionTemporal} muestra las métricas obtenidas por las tres arquitecturas evaluadas.
-
 \begin{table}[H]
     \centering
     \begin{tabular}{lcc}
@@ -527,6 +572,12 @@ La \autoref{tab:ResultadosModelosVisionTemporal} muestra las métricas obtenidas
     \caption{Rendimiento de los modelos de Visión Temporal}
     \label{tab:ResultadosModelosVisionTemporal}
 \end{table}
+
+Como se puede observar en la \autoref{tab:ResultadosModelosVisionTemporal}, la arquitectura \textit{TimeSFormer} obtiene el mejor rendimiento general, alcanzando un \textit{F1-score} macro de 0.5837 y superando a los otros dos modelos por un margen de casi 5 puntos porcentuales. 
+
+Este resultado puede atribuirse a su arquitectura subyacente. Dadas las estrictas limitaciones de memoria computacional (\textit{VRAM}) y el tamaño fijo de \textit{frames} establecidos en este experimento (16), el mecanismo de Atención Dividida Espaciotemporal del \textit{TimeSFormer} demuestra ser el más eficiente. El modelo lograr modelar la evolución temporal del vídeo sin sufrir el colapso computacional que enfrentan otros enfoques más densos. 
+
+Por el contrario, estrategias como la extracción simultánea de \textit{tubelets} tridimensionales (\textit{ViViT}) o la agresiva reconstrucción mediante máscaras al 90\% (\textit{VideoMAE}) parecen verse penalizadas al trabajar con un contexto temporal restringido, dificultando su capacidad de generalización y reduciendo su precisión final en este escenario de clasificación. 
 
 \subsection{Optimización de Hiperparámetros y Data Augmentation Temporal}
 \label{subsec:OptimizacionDeHiperparametrosYDataAugmentationTemporal}
@@ -559,8 +610,6 @@ Adicionalmente, se exploró el impacto del \textit{Data Augmentation} directamen
     \item Duplicar el 10\% de los datos de entrenamiento catalogados como sexistas.
 \end{itemize}
 
-Los resultados derivados de la aplicación de estas técnicas avanzadas sobre el modelo temporal \textit{TimeSFormer} se pueden apreciar en la \autoref{tab:ResultadosModelosVisionTemporalDataAugmentation}, y aquí sí que conseguimos mejorar el \textit{baseline} del modelo con la estrategia de equilibrar la distribución de las clases. 
-
 \begin{table}[H]
     \centering
     \begin{tabular}{lcc}
@@ -577,6 +626,12 @@ Los resultados derivados de la aplicación de estas técnicas avanzadas sobre el
     \caption{Rendimiento del \textit{TimeSFormer} con las estrategias de \textit{data augmentation}}
     \label{tab:ResultadosModelosVisionTemporalDataAugmentation}
 \end{table}
+
+Como se evidencia en la \autoref{tab:ResultadosModelosVisionTemporalDataAugmentation}, la estrategia que logra una mejora en el rendimiento del \textit{TimeSFormer} es la duplicación del 10\% de las muestras pertenecientes a la clase 1 (contenido sexista), alcanzando un \textit{Accuracy} y un \textit{F1-score} idénticos de 0.5956. 
+
+Este incremento en el rendimiento respecto al \textit{baseline} se explica por la corrección del desbalanceo original presente en el conjunto de entrenamiento. Partiendo de una distribución inicial sesgada, donde la clase mayoritaria (etiqueta 0) representaba aproximadamente el 60\% de los datos frente al 40\% de la clase minoritaria (etiqueta 1), la inyección estratégica de este de 10\% de secuencias aumentadas permite igualar matemáticamente las proporciones de ambas categorías. 
+
+Al exponer a la red neuronal a un \textit{dataset} equilibrado (50/50), se mitiga el sesgo hacia la clase mayoritaria. Esto evita que el modelo priorice la etiqueta predominante, forzándole a aprender características visuales robustas y equitativas para ambas clases. Por el contrario, la aplicación de estrategias más agresivas (como duplicar la totalidad de la etiqueta 1) genera un sobreajuste o un desbalanceo inverso que termina penalizando la capacidad de generalización del sistema.  
 
 \section{Fusión Multimodal (\textit{Ensemble})}
 \label{sec:FusionMultimodalEnsemble}
@@ -664,6 +719,10 @@ El análisis cualitativo de estos fallos permite trazar líneas claras de trabaj
 
 Asimismo, se podrían generar más ejemplos de sexismo benevolente, humor sarcástico e incidentes violentos no relacionados con el género, para que el sistema aprenda a definir las fronteras o límites de la misoginia. Finalmente, el uso de modelos auxiliares previamente entrenados en la detección exclusiva de ironía podría añadirse al \textit{Ensemble} como una característica de entrada adicional, ayudando a mitigar la alta tasa de Falsos Negativos detectada.
 
+A modo de conclusión general, la evaluación del sistema \textit{Ensemble} demuestra una capacidad notable para la clasificación complejo contenido, alcanzando un \textit{Accuracy} global de 0.7291 y un \textit{F1-score} de 0.7261. Sin embargo, sus métricas nos revelan sesgos importantes. Si observamos el rendimiento detallado por clase, el modelo exhibe un comportamiento notoriamente conservador: es más robusto al identificar instancias inofensivas (\textit{Recall} de 0.80 para clase \textit{No Misógino}) que al detectar agresiones reales (\textit{Recall de 0.65 para la clase \textit{Misógino}}).
+
+Esta discrepancia de 15 puntos porcentuales es la causa directa de la acumulación de Falsos Negativos. En la práctica, el sistema prioriza no penalizar a usuarios inocentes (manteniendo bajo los Falsos Positivos), a costa de permitir que discursos de odio sutiles o enmascarados bajo ironía eludan el filtro.
+
 \section{Perspectivismo en \textit{LeWiDi}}
 \label{sec:PerspectivismoEnLewidi}
 El reto \textit{EXIST 2025} introduce un desafío pionero en el campo de la detección del sexismo: la noción de que el sexismo, especialmente en sus formas más sutiles (como micromachismos y paternalismos), no siempre goza de un consenso absoluto. La percepción de si un comentario es misógino o inofensivo puede variar significativamente dependiendo de los sesgos culturales, las vivencias personales y, particularmente, el género del individuo que lo evalúa. Este concepto, conocido como Perspectivismo (\textit{Learning with Disagreement} o \textit{LeWiDi}), defiende que el desacuerdo entre anotadores no es un ``ruido'' que deba limpiarse, sino una señal rica en información que debe modelarse. 
@@ -695,6 +754,12 @@ Dado que un mismo vídeo podía ser evaluado por varios anotadores del mismo gé
     \label{fig:ResultadosTransformersPerspectivismoMujerDiscard}
 \end{figure}
 
+Al descartar los casos donde el modelo base no tiene un alto grado de confianza, evaluamos pureza de cada género ante los casos restantes:
+\begin{itemize}
+    \item \textbf{Perspectiva Femenina}: Se muestra mucho más sólida y coherente, logrando un \textit{F1-score} de 0.6771. Destaca especialmente su capacidad para identificar la misoginia (164 verdaderos positivos frente a los 124 del modelo masculino), manteniendo im \textit{Recall} de 0.68.
+    \item \textbf{Perspectiva Masculina}: Resulta ser el perfil más débil al aplicar descartes (F1: 0.6462). Su \textit{Recall} para la clase misógina se desploma a 0.51, lo que significa que prácticamente lanza una moneda al aire (acierta casi las mismas veces que falla: 124 frente 117) cuando se trata de detectar agresiones claras que han superado el filtro de descarte.
+\end{itemize}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{Figuras/ResultadosHombrePessimistic.png}
@@ -707,6 +772,12 @@ Dado que un mismo vídeo podía ser evaluado por varios anotadores del mismo gé
     \caption{Resultados de la estrategia \textit{Pessimistic} en mujeres}
     \label{fig:ResultadosTransformersPerspectivismoMujerPessimistic}
 \end{figure}
+
+Al forzar al modelo a penalizar en caso de duda, los resultados se invierten y revelan el mejor escenario para el perfil femenino:
+\begin{itemize}
+    \item \textbf{Perspectiva Femenina}: Alcanza aquí su mejor rendimiento global, con un \textit{F1-score} 0.6860. Curiosamente, forzar la ``sospecha'' no dispara sus Falsos Positivos de forma descontrolada (mantiene un \textit{Accuracy} de 0.72 en la clase Misógino), lo que indica un equilibrio excelente entre sensibilidad y precisión.
+    \item \textbf{Perspectiva Masculina}: Por el contrario, el perfil masculino sufre con esta directriz. Su rendimiento cae a un \textit{F1-score} de 0.6453. Al obligarle a etiquetar como machista en caso de duda, el modelo masculino como muchos más errores al clasificar instancias inofensivas, bajando su \textit{Accuracy} al 0.66.
+\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -721,6 +792,12 @@ Dado que un mismo vídeo podía ser evaluado por varios anotadores del mismo gé
     \label{fig:ResultadosTransformersPerspectivismoMujerOptimistic}
 \end{figure}
 
+En esta estrategia, donde el modelo asume que no hay machismo en caso de duda, se observa una clara diferencia en el comportamiento de ambos perfiles:
+\begin{itemize}
+    \item \textbf{Perspectiva Masculina}: Tiende a ser mucho más conservadora. Logra un \textit{Accuracy} general ligeramente superior (0.673), pero a costa de ignorar muchos casos reales de agresión. Su \textit{Recall} en la clase Misógino cae hasta 0.54 (110 Falsos Negativos).
+    \item \textbf{Perspectiva Femenina}: Demuestra una sensibilidad mucho mayor ante el discurso de odio. Aunque su \textit{Accuracy} baja (0.6534), su \textit{Recall} para la clase Misógino se dispara hasta 0.71. Es decir, ante la instrucción ``optimista'', el perfil femenino es mucho menos propenso a dejar pasar agresiones sutiles, reduciendo drásticamente los Falsos Negativos (de 110 a solo 71).
+\end{itemize}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{Figuras/ResultadosHombreUnrolling.png}
@@ -733,6 +810,12 @@ Dado que un mismo vídeo podía ser evaluado por varios anotadores del mismo gé
     \caption{Resultados de la estrategia \textit{Unrolling} en mujeres}
     \label{fig:ResultadosTransformersPerspectivismoMujerUnrolling}
 \end{figure}
+
+Esta es posiblemente la estrategia más interesante desde el punto de vista del comportamiento algorítmico, ya que produce una similitud en ambos perfiles. 
+\begin{itemize}
+    \item \textbf{Convergencia de sesgos}: Al aplicar el \textit{Unrolling} sobre los textos, las diferentes entre el perfil de hombre (F1: 0.6687) y el de mujer (F1: 0.6654) prácticamente desaparecen.
+    \item \textbf{Análisis}: Ambos modelos calcan sus métricas de \textit{Recall} para la clase Misógino (0.56). Esto sugiere que, al ``desenrollar'' la semántica del mensaje, se elimina la ambigüedad que el modelo utilizaba para proyectar sus sesgos de género. El modelo deja de interpretar el texto basándose en si actúa como hombre o mujer, y pasa a hacer una evaluación puramente sintáctica. 
+\end{itemize}
 
 \subsection{Inyección de Roles en \textit{LLMs} (\textit{Persona Prompting})}
 \label{subsec:InyeccionDeRolesEnLLMs}
@@ -779,7 +862,7 @@ En segundo lugar, el análisis de las estrategias de resolución de empates reve
 
 Finalmente, el experimento de \textit{Persona Prompting} con \textit{Mistral} en un entorno \textit{Zero-Shot} confirmó esta misma tendencia estructural. Tal y como muestran las matrices de confusión, el modelo instruido con el \textbf{rol femenino} logró un \textit{F1-Score} de \textbf{0.5655}, superando al \textbf{rol masculino} (\textbf{0.5417}). Un análisis profundo de las inferencias revela que el rol masculino generó una tasa significativamente mayor de Falsos Negativos (148 instancias de machismo real que fueron catalogadas como inofensivas), frente a los 135 Falsos Negativos del rol femenino. Esto demuestra que, aunque el \textit{LLM} carecía de un ajuste fino específico para esta tarea, la inyección de rol activó sesgos latentes en el modelo preentrenado que simulan la tendencia humana: una mayor permisividad o ceguera hacia el sexismo sutil desde la perspectiva masculina simulada. 
 
-En definitiva, esta fase demuestra que el género del anotador impacta de manera directa e incontrovertible en el rendimiento y la sensibilidad de los modelos de Detección de Discurso de Odio, haciendo imprescindible que las futuras investigaciones adopten esquemas de evaluación interseccionales y plurales (\textit{LeWiDi}) en lugar de perseguir un consenso o una objetividad absoluta inexistente. 
+Como conclusión de esta fase, queda plasmado que el género de los anotadores afecta a la capacidad de los modelos para detectar el discurso de odio. Visto esto, empeñarse en buscar un consenso único o una objetividad absoluta resulta contraproducente, ya que nos hace perder matices muy valiosos. Por ello, de cara a futuras investigaciones, cobra mucho más sentido apostar por esquemas de evaluación interseccionales y plurales, apoyándonos en marcos como \textit{LeWiDi}, para que los modelos reflejen la complejidad y subjetividad real del lenguaje humano. 
 
 \section{Experimentación Multietiqueta (Tarea 3.3)}
 \label{sec:ExperimentacionMultietiqueta}

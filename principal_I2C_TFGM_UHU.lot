@@ -1,21 +1,24 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Rendimiento de los modelos de Visión Temporal}}{29}{table.2.1}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Resultados oficiales obtenidos en la Subtarea 3.1 de EXIST 2025}}{39}{table.3.1}%
 \contentsline {table}{\numberline {3.2}{\ignorespaces Distribuciones del fichero \text {Train} y \textit {Test} para la tarea 3.1}}{43}{table.3.2}%
 \contentsline {table}{\numberline {3.3}{\ignorespaces Tamaños de los ficheros \text {Train} y \textit {Test} en función de los \textit {frames} extraídos}}{45}{table.3.3}%
 \contentsline {table}{\numberline {3.4}{\ignorespaces Rendimiento de los modelos \textit {baseline} sobre el conjunto de \textit {Test} estático local}}{46}{table.3.4}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Rendimiento de los modelos \textit {Transformers}}}{47}{table.3.5}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces Rendimiento de los modelos \textit {LLMs}}}{48}{table.3.6}%
-\contentsline {table}{\numberline {3.7}{\ignorespaces Rendimiento de los modelos de Visión Estática con las diferentes combinaciones de \textit {datasets} de \textit {frames} y técnicas de \textit {pooling}}}{50}{table.3.7}%
-\contentsline {table}{\numberline {3.8}{\ignorespaces Resultados de las estrategias de hiperparámetros aplicadas al \textit {baseline} de \textit {ConvNeXt} de 4 \textit {frames}}}{51}{table.3.8}%
-\contentsline {table}{\numberline {3.9}{\ignorespaces Resultados de las estrategias de \textit {data augmentation} aplicadas al \textit {baseline} de \textit {ConvNeXt} de 4 \textit {frames}}}{52}{table.3.9}%
-\contentsline {table}{\numberline {3.10}{\ignorespaces Rendimiento de los modelos de Visión Temporal}}{53}{table.3.10}%
-\contentsline {table}{\numberline {3.11}{\ignorespaces Rendimiento del \textit {TimeSFormer} con las estrategias de hiperparámetros}}{54}{table.3.11}%
-\contentsline {table}{\numberline {3.12}{\ignorespaces Rendimiento del \textit {TimeSFormer} con las estrategias de \textit {data augmentation}}}{54}{table.3.12}%
-\contentsline {table}{\numberline {3.13}{\ignorespaces Resultados de \textit {Accuracy} y \textit {F1-score} de cada una de las etiquetas}}{66}{table.3.13}%
-\contentsline {table}{\numberline {3.14}{\ignorespaces Resumen de los mejores modelos obtenidos por modalidad para la Tarea 3.1.}}{68}{table.3.14}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Hiperparámetros con los que fueron entrenados los \textit {Transformers}}}{46}{table.3.5}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Hiperparámetros optimizados para el modelo \textit {RoBERTa-base}}}{47}{table.3.6}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces Rendimiento de los modelos \textit {Transformers}}}{47}{table.3.7}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces Rendimiento de los modelos \textit {LLMs}}}{48}{table.3.8}%
+\contentsline {table}{\numberline {3.9}{\ignorespaces Rendimiento de los modelos de Visión Estática con las diferentes combinaciones de \textit {datasets} de \textit {frames} y técnicas de \textit {pooling}}}{50}{table.3.9}%
+\contentsline {table}{\numberline {3.10}{\ignorespaces Resultados de las estrategias de hiperparámetros aplicadas al \textit {baseline} de \textit {ConvNeXt} de 4 \textit {frames}}}{51}{table.3.10}%
+\contentsline {table}{\numberline {3.11}{\ignorespaces Resultados de las estrategias de \textit {data augmentation} aplicadas al \textit {baseline} de \textit {ConvNeXt} de 4 \textit {frames}}}{52}{table.3.11}%
+\contentsline {table}{\numberline {3.12}{\ignorespaces Rendimiento de los modelos de Visión Temporal}}{54}{table.3.12}%
+\contentsline {table}{\numberline {3.13}{\ignorespaces Rendimiento del \textit {TimeSFormer} con las estrategias de hiperparámetros}}{55}{table.3.13}%
+\contentsline {table}{\numberline {3.14}{\ignorespaces Rendimiento del \textit {TimeSFormer} con las estrategias de \textit {data augmentation}}}{55}{table.3.14}%
+\contentsline {table}{\numberline {3.15}{\ignorespaces Resultados de \textit {Accuracy} y \textit {F1-score} de cada una de las etiquetas}}{69}{table.3.15}%
+\contentsline {table}{\numberline {3.16}{\ignorespaces Resumen de los mejores modelos obtenidos por modalidad para la Tarea 3.1.}}{71}{table.3.16}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Estimación de la planificación temporal del trabajo realizado.}}{72}{table.4.1}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Estimación de la planificación temporal del trabajo realizado.}}{75}{table.4.1}%
 \addvspace {10\p@ }

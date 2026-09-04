@@ -2429,6 +2429,7 @@
     <bcf:citekey order="54" intorder="1">sokolova2009systematic</bcf:citekey>
     <bcf:citekey order="55" intorder="1">tsoumakas2007multi</bcf:citekey>
     <bcf:citekey order="56" intorder="1">plaza2023overview</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">chen2023vanillanet</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

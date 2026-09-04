@@ -118,29 +118,36 @@
       \field{year}{2025}
     \endentry
     \entry{mitchell1997machine}{book}{}{}
-      \name{author}{1}{}{%
+      \name{author}{2}{}{%
         {{hash=d331eeb7f00e650950ccadcb9c47efec}{%
            family={Mitchell},
            familyi={M\bibinitperiod},
-           given={Tom\bibnamedelima M.},
+           given={Tom\bibnamedelima M},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=d331eeb7f00e650950ccadcb9c47efec}{%
+           family={Mitchell},
+           familyi={M\bibinitperiod},
+           given={Tom\bibnamedelima M},
            giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {McGraw-Hill}%
+        {McGraw-hill New York}%
       }
-      \strng{namehash}{d331eeb7f00e650950ccadcb9c47efec}
-      \strng{fullhash}{d331eeb7f00e650950ccadcb9c47efec}
-      \strng{fullhashraw}{d331eeb7f00e650950ccadcb9c47efec}
-      \strng{bibnamehash}{d331eeb7f00e650950ccadcb9c47efec}
-      \strng{authorbibnamehash}{d331eeb7f00e650950ccadcb9c47efec}
-      \strng{authornamehash}{d331eeb7f00e650950ccadcb9c47efec}
-      \strng{authorfullhash}{d331eeb7f00e650950ccadcb9c47efec}
-      \strng{authorfullhashraw}{d331eeb7f00e650950ccadcb9c47efec}
+      \strng{namehash}{981f98ec7dde75a9c32f3d75250a98c1}
+      \strng{fullhash}{981f98ec7dde75a9c32f3d75250a98c1}
+      \strng{fullhashraw}{981f98ec7dde75a9c32f3d75250a98c1}
+      \strng{bibnamehash}{981f98ec7dde75a9c32f3d75250a98c1}
+      \strng{authorbibnamehash}{981f98ec7dde75a9c32f3d75250a98c1}
+      \strng{authornamehash}{981f98ec7dde75a9c32f3d75250a98c1}
+      \strng{authorfullhash}{981f98ec7dde75a9c32f3d75250a98c1}
+      \strng{authorfullhashraw}{981f98ec7dde75a9c32f3d75250a98c1}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Machine Learning}
+      \field{number}{9}
+      \field{title}{Machine learning}
+      \field{volume}{1}
       \field{year}{1997}
     \endentry
     \entry{m2006pattern}{misc}{}{}
@@ -424,7 +431,7 @@
       \range{pages}{21}
     \endentry
     \entry{goodfellow2016deep}{book}{}{}
-      \name{author}{3}{}{%
+      \name{author}{4}{}{%
         {{hash=5d2585c11210cf1d4512e6e0a03ec315}{%
            family={Goodfellow},
            familyi={G\bibinitperiod},
@@ -440,30 +447,31 @@
            familyi={C\bibinitperiod},
            given={Aaron},
            giveni={A\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {MIT Press}%
+        {MIT press Cambridge}%
       }
-      \strng{namehash}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{fullhash}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{fullhashraw}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{bibnamehash}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{authorbibnamehash}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{authornamehash}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{authorfullhash}{3ae53fe582e8a815b118d26947eaa326}
-      \strng{authorfullhashraw}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{namehash}{d17e6557c5836d2d978179999ea1037f}
+      \strng{fullhash}{d84b0b9d19401c079b1a67dd4962d9e0}
+      \strng{fullhashraw}{d84b0b9d19401c079b1a67dd4962d9e0}
+      \strng{bibnamehash}{d17e6557c5836d2d978179999ea1037f}
+      \strng{authorbibnamehash}{d17e6557c5836d2d978179999ea1037f}
+      \strng{authornamehash}{d17e6557c5836d2d978179999ea1037f}
+      \strng{authorfullhash}{d84b0b9d19401c079b1a67dd4962d9e0}
+      \strng{authorfullhashraw}{d84b0b9d19401c079b1a67dd4962d9e0}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Deep Learning}
+      \field{number}{2}
+      \field{title}{Deep learning}
+      \field{volume}{1}
       \field{year}{2016}
-      \verb{urlraw}
-      \verb https://www.deeplearningbook.org
-      \endverb
-      \verb{url}
-      \verb https://www.deeplearningbook.org
-      \endverb
     \endentry
     \entry{lecun2015deep}{article}{}{}
       \name{author}{3}{}{%
@@ -484,7 +492,7 @@
            giveni={G\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {Nature Publishing Group}%
+        {Nature Publishing Group UK London}%
       }
       \strng{namehash}{c6c75bd00ce5a488e91a749d8383b3df}
       \strng{fullhash}{c6c75bd00ce5a488e91a749d8383b3df}
@@ -498,7 +506,7 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Nature}
+      \field{journaltitle}{nature}
       \field{number}{7553}
       \field{title}{Deep learning}
       \field{volume}{521}
@@ -2400,6 +2408,48 @@
       \field{booktitle}{Experimental IR Meets Multilinguality, Multimodality, and Interaction: 14th International Conference of the CLEF Association, CLEF 2023}
       \field{title}{Overview of EXIST 2023: learning with disagreement for sexism identification and characterization}
       \field{year}{2023}
+    \endentry
+    \entry{chen2023vanillanet}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=0788229458d6d258de0c9e5a02f5f359}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Hanting},
+           giveni={H\bibinitperiod}}}%
+        {{hash=2d4af83bc7b452c7129f47b07bbe1997}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yunhe},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=8027bfd111c547b3d709a3a8934c3daf}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Jianyuan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f15b34a2bc944a9f055fd6e2e3a7c460}{%
+           family={Tao},
+           familyi={T\bibinitperiod},
+           given={Dacheng},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ca6ad84e842641acf4e9a9579261427}
+      \strng{fullhash}{aa3428c91a1ee23a0e16321d454886df}
+      \strng{fullhashraw}{aa3428c91a1ee23a0e16321d454886df}
+      \strng{bibnamehash}{2ca6ad84e842641acf4e9a9579261427}
+      \strng{authorbibnamehash}{2ca6ad84e842641acf4e9a9579261427}
+      \strng{authornamehash}{2ca6ad84e842641acf4e9a9579261427}
+      \strng{authorfullhash}{aa3428c91a1ee23a0e16321d454886df}
+      \strng{authorfullhashraw}{aa3428c91a1ee23a0e16321d454886df}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Neural Information Processing Systems}
+      \field{title}{Vanillanet: the power of minimalism in deep learning}
+      \field{volume}{36}
+      \field{year}{2023}
+      \field{pages}{7050\bibrangedash 7064}
+      \range{pages}{15}
     \endentry
   \enddatalist
 \endrefsection

@@ -340,6 +340,30 @@ En la práctica empírica de entrenamiento de modelos masivos como los de visió
     \item \textbf{Ajuste agresivo o \textit{Sprint Final}}: Se utiliza una combinación de \textit{learning rate} y regularización moderadas, pero aplicando un planificador tipo coseno (\textit{Cosine Scheduler}). Tras un calentamiento inicial, la tasa de aprendizaje se mantiene estable para luego decaer rápida y suavemente hacia el final, exprimiendo el máximo rendimiento de la red en las últimas iteraciones.
 \end{itemize}
 
+Los valores de los hiperparámetros en cada una de las estrategias se pueden apreciar en la \autoref{tab:ValoresHiperparametrosEstrategias}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Hiperparámetro} & 
+        \textbf{\textit{\begin{tabular}[c]{@{}c@{}}Slow \\ Cooker\end{tabular}}} & 
+        \textbf{\textit{\begin{tabular}[c]{@{}c@{}}Gradient \\ Accumulation\end{tabular}}} & 
+        \textbf{\textit{\begin{tabular}[c]{@{}c@{}}Sprint \\ Final\end{tabular}}} \\
+        \midrule 
+            \textit{learning\_rate}  & 3e-5 & 5e-5 & 5e-5 \\
+            \textit{weight\_decay}  & 0.1 & 0.01 & 0.05 \\
+            \textit{num\_train\_epochs}  & 8 & 7 & 6 \\
+            \textit{warmup\_ratio}  & 0.1 & 0 & 0.1 \\
+            \textit{gradient\_accumulation\_steps}  & 2 & 4 & 2 \\
+            \textit{lr\_scheduler\_type}  & \textit{linear} & \textit{linear} & \textit{cosine} \\
+
+        \bottomrule
+    \end{tabular}
+    \caption{Rendimiento de los modelos de Visión Temporal}
+    \label{tab:ValoresHiperparametrosEstrategias}
+\end{table}
+
 \section{Ensemble de Modelos y Fusión multimodal}
 \label{sec:Ensemble}
 En el ámbito del aprendizaje automático, la técnica de \textit{ensemble} (conjunto de modelos) consiste en combinar las predicciones de múltiples algoritmos diversos para generar una única decisión final más robusta, estable y precisa \cite{sagi2018ensemble}. La premisa matemática detrás de esta técnica es que, al agregar diferentes perspectivas, los errores individuales de cada modelo se compensan mutuamente, reduciendo la varianza y mitigando los sesgos específicos de cada arquitectura. 
