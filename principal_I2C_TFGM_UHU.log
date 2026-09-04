@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.6)  4 SEP 2026 08:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.6)  4 SEP 2026 09:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1445,51 +1445,54 @@ LaTeX Info: Redefining \% on input line 707.
 LaTeX Info: Redefining \. on input line 725.
 LaTeX Info: Redefining \% on input line 725.
  [59]
-LaTeX Info: Redefining \. on input line 740.
-LaTeX Info: Redefining \% on input line 740.
+LaTeX Info: Redefining \. on input line 741.
+LaTeX Info: Redefining \% on input line 741.
  [60]
-<Figuras/ResultadosHombreDiscard.png, id=1077, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosHombreDiscard.png, id=1069, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosHombreDiscard.png Graphic file (type png)
 <use Figuras/ResultadosHombreDiscard.png>
 Package pdftex.def Info: Figuras/ResultadosHombreDiscard.png  used on input line 746.
 (pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
-<Figuras/ResultadosMujerDiscard.png, id=1078, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosMujerDiscard.png, id=1070, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosMujerDiscard.png Graphic file (type png)
 <use Figuras/ResultadosMujerDiscard.png>
 Package pdftex.def Info: Figuras/ResultadosMujerDiscard.png  used on input line 752.
 (pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
-LaTeX Info: Redefining \. on input line 760.
-LaTeX Info: Redefining \% on input line 760.
- [61 <./Figuras/ResultadosHombreDiscard.png> <./Figuras/ResultadosMujerDiscard.png>]
-<Figuras/ResultadosHombrePessimistic.png, id=1085, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosHombrePessimistic.png, id=1073, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosHombrePessimistic.png Graphic file (type png)
 <use Figuras/ResultadosHombrePessimistic.png>
 Package pdftex.def Info: Figuras/ResultadosHombrePessimistic.png  used on input line 765.
 (pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
-<Figuras/ResultadosMujerPessimistic.png, id=1086, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosMujerPessimistic.png, id=1074, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosMujerPessimistic.png Graphic file (type png)
 <use Figuras/ResultadosMujerPessimistic.png>
 Package pdftex.def Info: Figuras/ResultadosMujerPessimistic.png  used on input line 771.
 (pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
-LaTeX Info: Redefining \. on input line 780.
-LaTeX Info: Redefining \% on input line 780.
- [62 <./Figuras/ResultadosHombrePessimistic.png> <./Figuras/ResultadosMujerPessimistic.png>]
-<Figuras/ResultadosHombreOptimistic.png, id=1093, 1000.2168pt x 380.8629pt>
+LaTeX Info: Redefining \. on input line 774.
+LaTeX Info: Redefining \% on input line 774.
+ [61 <./Figuras/ResultadosHombreDiscard.png> <./Figuras/ResultadosMujerDiscard.png>]
+<Figuras/ResultadosHombreOptimistic.png, id=1083, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosHombreOptimistic.png Graphic file (type png)
 <use Figuras/ResultadosHombreOptimistic.png>
 Package pdftex.def Info: Figuras/ResultadosHombreOptimistic.png  used on input line 784.
 (pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
-<Figuras/ResultadosMujerOptimistic.png, id=1094, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosMujerOptimistic.png, id=1084, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosMujerOptimistic.png Graphic file (type png)
 <use Figuras/ResultadosMujerOptimistic.png>
 Package pdftex.def Info: Figuras/ResultadosMujerOptimistic.png  used on input line 790.
 (pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
-<Figuras/ResultadosHombreUnrolling.png, id=1095, 1000.2168pt x 380.8629pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 793.
+LaTeX Info: Redefining \% on input line 793.
+ [62 <./Figuras/ResultadosHombrePessimistic.png> <./Figuras/ResultadosMujerPessimistic.png>]
+<Figuras/ResultadosHombreUnrolling.png, id=1093, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosHombreUnrolling.png Graphic file (type png)
 <use Figuras/ResultadosHombreUnrolling.png>
 Package pdftex.def Info: Figuras/ResultadosHombreUnrolling.png  used on input line 803.
 (pdftex.def)             Requested size: 384.1096pt x 146.26363pt.
-<Figuras/ResultadosMujerUnrolling.png, id=1096, 1000.2168pt x 380.8629pt>
+<Figuras/ResultadosMujerUnrolling.png, id=1094, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosMujerUnrolling.png Graphic file (type png)
 <use Figuras/ResultadosMujerUnrolling.png>
 Package pdftex.def Info: Figuras/ResultadosMujerUnrolling.png  used on input line 809.
@@ -1500,8 +1503,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 812.
 LaTeX Info: Redefining \% on input line 812.
  [63 <./Figuras/ResultadosHombreOptimistic.png> <./Figuras/ResultadosMujerOptimistic.png>]
-LaTeX Info: Redefining \. on input line 825.
-LaTeX Info: Redefining \% on input line 825.
+LaTeX Info: Redefining \. on input line 824.
+LaTeX Info: Redefining \% on input line 824.
  [64 <./Figuras/ResultadosHombreUnrolling.png> <./Figuras/ResultadosMujerUnrolling.png>]
 <Figuras/ResultadosPromptHombre.png, id=1112, 1000.2168pt x 380.8629pt>
 File: Figuras/ResultadosPromptHombre.png Graphic file (type png)
@@ -1625,7 +1628,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  113i,14n,132p,1249b,2312s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2488.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1728.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on principal_I2C_TFGM_UHU.pdf (91 pages, 5555330 bytes).
+Output written on principal_I2C_TFGM_UHU.pdf (91 pages, 5555233 bytes).
 PDF statistics:
  2104 PDF objects out of 2487 (max. 8388607)
  311 named destinations out of 1000 (max. 500000)

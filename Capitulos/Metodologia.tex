@@ -735,10 +735,10 @@ La primera aproximación al perspectivismo consistió en entrenar modelos discri
 
 Dado que un mismo vídeo podía ser evaluado por varios anotadores del mismo género (por ejemplo, dos hombres), surgieron casos de empate o ``disidencia interna'' (un hombre etiquetando como 1 y otro como 0). Para abordar este desacuerdo interno de manera metodológica y utilizando la arquitectura \texttt{RoBERTa-base}, se entrenaron 8 conjuntos de datos distintos (4 estrategias x 2 géneros): 
 \begin{itemize}
-    \item \textbf{Descartes (\textit{Hard Consensus})}: Se eliminaron del entrenamiento aquellos vídeos en los que los anotadores del mismo género no lograron ponerse de acuerdo, en la \autoref{fig:ResultadosTransformersPerspectivismoHombreDiscard} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerDiscard} se pueden ver los resultados obtenidos para hombres y mujeres respectivamente. 
-    \item \textbf{Ante la duda, Machismo (\textit{Pessimistic})}: En caso de empate interno, el video se etiquetó como sexista (1), en la \autoref{fig:ResultadosTransformersPerspectivismoHombrePessimistic} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerPessimistic} se pueden ver los resultados obtenidos para hombres y mujeres respectivamente.
-    \item \textbf{Ante la duda, No Machismo (\textit{Optimistic})}: En caso de empate interno, prevaleció la presunción de inocencia y se etiquetó como no sexista (0), en la \autoref{fig:ResultadosTransformersPerspectivismoHombreOptimistic} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerOptimistic} se pueden ver los resultados obtenidos para hombres y mujeres respectivamente.
-    \item \textbf{Desenrollado (\textit{Unrolling})}: No se forzó ningún consenso. Si un vídeo presentaba empate, se introdujo dos veces en el dataset: una fila con etiqueta 1 y otra fila idéntica con etiqueta 0, obligando al modelo a lidiar con la dualidad. En la \autoref{fig:ResultadosTransformersPerspectivismoHombreUnrolling} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerUnrolling} se pueden ver los resultados obtenidos para hombres y mujeres respectivamente.
+    \item \textbf{Descartes (\textit{Hard Consensus})}: Se eliminaron del entrenamiento aquellos vídeos en los que los anotadores del mismo género no lograron ponerse de acuerdo. 
+    \item \textbf{Ante la duda, Machismo (\textit{Pessimistic})}: En caso de empate interno, el video se etiquetó como sexista (1).
+    \item \textbf{Ante la duda, No Machismo (\textit{Optimistic})}: En caso de empate interno, prevaleció la presunción de inocencia y se etiquetó como no sexista (0).
+    \item \textbf{Desenrollado (\textit{Unrolling})}: No se forzó ningún consenso. Si un vídeo presentaba empate, se introdujo dos veces en el dataset: una fila con etiqueta 1 y otra fila idéntica con etiqueta 0, obligando al modelo a lidiar con la dualidad.
 \end{itemize}
 
 \begin{figure}[H]
@@ -754,7 +754,7 @@ Dado que un mismo vídeo podía ser evaluado por varios anotadores del mismo gé
     \label{fig:ResultadosTransformersPerspectivismoMujerDiscard}
 \end{figure}
 
-Al descartar los casos donde el modelo base no tiene un alto grado de confianza, evaluamos pureza de cada género ante los casos restantes:
+En la \autoref{fig:ResultadosTransformersPerspectivismoHombreDiscard} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerDiscard} descartamos los casos donde el modelo base no tiene un alto grado de confianza, evaluamos pureza de cada género ante los casos restantes:
 \begin{itemize}
     \item \textbf{Perspectiva Femenina}: Se muestra mucho más sólida y coherente, logrando un \textit{F1-score} de 0.6771. Destaca especialmente su capacidad para identificar la misoginia (164 verdaderos positivos frente a los 124 del modelo masculino), manteniendo im \textit{Recall} de 0.68.
     \item \textbf{Perspectiva Masculina}: Resulta ser el perfil más débil al aplicar descartes (F1: 0.6462). Su \textit{Recall} para la clase misógina se desploma a 0.51, lo que significa que prácticamente lanza una moneda al aire (acierta casi las mismas veces que falla: 124 frente 117) cuando se trata de detectar agresiones claras que han superado el filtro de descarte.
@@ -773,7 +773,7 @@ Al descartar los casos donde el modelo base no tiene un alto grado de confianza,
     \label{fig:ResultadosTransformersPerspectivismoMujerPessimistic}
 \end{figure}
 
-Al forzar al modelo a penalizar en caso de duda, los resultados se invierten y revelan el mejor escenario para el perfil femenino:
+En la \autoref{fig:ResultadosTransformersPerspectivismoHombrePessimistic} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerPessimistic}, al forzar al modelo a penalizar en caso de duda, los resultados se invierten y revelan el mejor escenario para el perfil femenino:
 \begin{itemize}
     \item \textbf{Perspectiva Femenina}: Alcanza aquí su mejor rendimiento global, con un \textit{F1-score} 0.6860. Curiosamente, forzar la ``sospecha'' no dispara sus Falsos Positivos de forma descontrolada (mantiene un \textit{Accuracy} de 0.72 en la clase Misógino), lo que indica un equilibrio excelente entre sensibilidad y precisión.
     \item \textbf{Perspectiva Masculina}: Por el contrario, el perfil masculino sufre con esta directriz. Su rendimiento cae a un \textit{F1-score} de 0.6453. Al obligarle a etiquetar como machista en caso de duda, el modelo masculino como muchos más errores al clasificar instancias inofensivas, bajando su \textit{Accuracy} al 0.66.
@@ -792,7 +792,7 @@ Al forzar al modelo a penalizar en caso de duda, los resultados se invierten y r
     \label{fig:ResultadosTransformersPerspectivismoMujerOptimistic}
 \end{figure}
 
-En esta estrategia, donde el modelo asume que no hay machismo en caso de duda, se observa una clara diferencia en el comportamiento de ambos perfiles:
+En la \autoref{fig:ResultadosTransformersPerspectivismoHombreOptimistic} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerOptimistic}, donde el modelo asume que no hay machismo en caso de duda, se observa una clara diferencia en el comportamiento de ambos perfiles:
 \begin{itemize}
     \item \textbf{Perspectiva Masculina}: Tiende a ser mucho más conservadora. Logra un \textit{Accuracy} general ligeramente superior (0.673), pero a costa de ignorar muchos casos reales de agresión. Su \textit{Recall} en la clase Misógino cae hasta 0.54 (110 Falsos Negativos).
     \item \textbf{Perspectiva Femenina}: Demuestra una sensibilidad mucho mayor ante el discurso de odio. Aunque su \textit{Accuracy} baja (0.6534), su \textit{Recall} para la clase Misógino se dispara hasta 0.71. Es decir, ante la instrucción ``optimista'', el perfil femenino es mucho menos propenso a dejar pasar agresiones sutiles, reduciendo drásticamente los Falsos Negativos (de 110 a solo 71).
@@ -811,7 +811,7 @@ En esta estrategia, donde el modelo asume que no hay machismo en caso de duda, s
     \label{fig:ResultadosTransformersPerspectivismoMujerUnrolling}
 \end{figure}
 
-Esta es posiblemente la estrategia más interesante desde el punto de vista del comportamiento algorítmico, ya que produce una similitud en ambos perfiles. 
+Como podemos observar en la \autoref{fig:ResultadosTransformersPerspectivismoHombreUnrolling} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerUnrolling}, es posiblemente la estrategia más interesante desde el punto de vista del comportamiento algorítmico, ya que produce una similitud en ambos perfiles. 
 \begin{itemize}
     \item \textbf{Convergencia de sesgos}: Al aplicar el \textit{Unrolling} sobre los textos, las diferentes entre el perfil de hombre (F1: 0.6687) y el de mujer (F1: 0.6654) prácticamente desaparecen.
     \item \textbf{Análisis}: Ambos modelos calcan sus métricas de \textit{Recall} para la clase Misógino (0.56). Esto sugiere que, al ``desenrollar'' la semántica del mensaje, se elimina la ambigüedad que el modelo utilizaba para proyectar sus sesgos de género. El modelo deja de interpretar el texto basándose en si actúa como hombre o mujer, y pasa a hacer una evaluación puramente sintáctica. 
