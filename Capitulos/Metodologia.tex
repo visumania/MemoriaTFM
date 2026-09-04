@@ -139,7 +139,7 @@ El proceso de tokenización varió drásticamente en función de la familia de m
 
 \subsection{Extracción de Características Visuales}
 \label{subsec:ExtraccionDeCaracteristicasVisuales}
-Para que los modelos de visión por computador pudieran analizar el contenido de \textit{TikTok}, fué necesario transformar los archivos temporales de vídeo (.mp4) en fotogramas estáticos legibles por redes convolucionales. Este proceso se llevó a cabo utilizando la biblioteca de visión artificial \textit{OpenCV}.
+Para que los modelos de visión por computador pudieran analizar el contenido de \textit{TikTok}, fue necesario transformar los archivos temporales de vídeo (.mp4) en fotogramas estáticos legibles por redes convolucionales. Este proceso se llevó a cabo utilizando la biblioteca de visión artificial \textit{OpenCV}.
 
 Con el objetivo de evaluar la cantidad óptima de información visual requerida, se construyeron múltiples \textit{datasets} extrayendo un número variable de fotogramas por vídeo: $N \in \{2, 4, 6, 8, 10\}$, en la \autoref{tab:TamañosFicherosFrames} podemos apreciar los tamaños y distribuciones de los nuevos \textit{datasets} generados en comparación con el que habíamos preparado previamente. Para garantizar que las imágenes fueran verdaderamente representativas del contenido global y evitar capturar pantallas en negro al inicio o al final del vídeo, se diseñó un algoritmo de muestreo equidistante. La frecuencia o paso de extracción (\textit{step}) se calculó matemáticamente mediante la siguiente ecuación:
 
@@ -458,7 +458,7 @@ Observando los resultados obtenidos en la \autoref{tab:ResultadosModelosVisionEs
 \label{subsec:OptimizacionDeHiperparametrosYDataAugmentation}
 Una vez fijado el modelo \textit{ConvNeXt} sobre el escenario de 4 \textit{frames} como la arquitectura base, se procedió a intentar superar sus métricas iniciales mediante estrategias de regularización.
 
-Como se puede apreciar en \autoref{tab:EstrategiasHiperparametrosConvnext} aplicamos las estrategias de hiperparámetros definidas en la \autoref{subsubsec:EstrategiasAvanzadasDeOptimizacion}.
+Como se puede apreciar en la \autoref{tab:EstrategiasHiperparametrosConvnext} aplicamos las estrategias de hiperparámetros definidas en la \autoref{subsubsec:EstrategiasAvanzadasDeOptimizacion}.
 
 \begin{table}[H]
     \centering
@@ -665,7 +665,7 @@ Quedando entonces la probabilidad final de la siguiente forma:
     \label{eq:PesosEnsembleMetodologia}
 \end{equation}
 
-Esta distribución revela un hallazgo empírico fascinante: aunque el texto es crucial para el contexto (35\%), el modelo estático de imágenes requirió la mayor ponderación (55\%) para alcanzar las métricas más altas. Esto evidencia que gran parte de la información determinante se encuentra en la disposición espacial de la escena y, posiblemente, en los textos incrustados visualmente en pantalla por los propios usuarios de \textit{TikTok}. Por su parte, el modelo temporal refinó las predicciones aportando un 10\% a la decisión. 
+Esta distribución revela un hallazgo empírico relevante: aunque el texto es crucial para el contexto (35\%), el modelo estático de imágenes requirió la mayor ponderación (55\%) para alcanzar las métricas más altas. Esto evidencia que gran parte de la información determinante se encuentra en la disposición espacial de la escena y, posiblemente, en los textos incrustados visualmente en pantalla por los propios usuarios de \textit{TikTok}. Por su parte, el modelo temporal refinó las predicciones aportando un 10\% a la decisión. 
 
 La aplicación de estos pesos óptimos sobre el sistema \textit{Ensemble} logró batir todos los récords individuales de los modelos aislados, demostrando la superioridad del enfoque multimodal. Las métricas al completo obtenidas por el sistema final se detallan en la \autoref{fig:ResultadosEnsemble}.
 
@@ -754,9 +754,9 @@ Dado que un mismo vídeo podía ser evaluado por varios anotadores del mismo gé
     \label{fig:ResultadosTransformersPerspectivismoMujerDiscard}
 \end{figure}
 
-En la \autoref{fig:ResultadosTransformersPerspectivismoHombreDiscard} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerDiscard} descartamos los casos donde el modelo base no tiene un alto grado de confianza, evaluamos pureza de cada género ante los casos restantes:
+En la \autoref{fig:ResultadosTransformersPerspectivismoHombreDiscard} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerDiscard} descartamos los casos donde el modelo base no tiene un alto grado de confianza, se evaluó pureza de cada género ante los casos restantes:
 \begin{itemize}
-    \item \textbf{Perspectiva Femenina}: Se muestra mucho más sólida y coherente, logrando un \textit{F1-score} de 0.6771. Destaca especialmente su capacidad para identificar la misoginia (164 verdaderos positivos frente a los 124 del modelo masculino), manteniendo im \textit{Recall} de 0.68.
+    \item \textbf{Perspectiva Femenina}: Se muestra mucho más sólida y coherente, logrando un \textit{F1-score} de 0.6771. Destaca especialmente su capacidad para identificar la misoginia (164 verdaderos positivos frente a los 124 del modelo masculino), manteniendo un \textit{Recall} de 0.68.
     \item \textbf{Perspectiva Masculina}: Resulta ser el perfil más débil al aplicar descartes (F1: 0.6462). Su \textit{Recall} para la clase misógina se desploma a 0.51, lo que significa que prácticamente lanza una moneda al aire (acierta casi las mismas veces que falla: 124 frente 117) cuando se trata de detectar agresiones claras que han superado el filtro de descarte.
 \end{itemize}
 
@@ -854,7 +854,7 @@ En las \autoref{fig:ResultadosPromptHombre} y \autoref{fig:ResultadosPromptMujer
 
 \subsection{Análisis de los Resultados de Perspectivismo}
 \label{subsec:AnalisisDeLosResultadosDePerspectivismo}
-Los resultados derivados de ambas aproximaciones arrojan conclusiones fundamentales sobre el modelado de la subjetividad y el género en el PLN.
+Los resultados de ambas aproximaciones permiten extraer varias conclusiones sobre el modelado y el género en el PLN.
 
 En primer lugar, los modelos Transformers entrenados exclusivamente bajo la perspectiva \textbf{femenina} obtuvieron de manera consistente métricas más altas (alcanzando un \textit{F1-Score} de \textbf{0.6720}) que sus contrapartes entrenadas bajo la \textbf{perspectiva masculina} (cuyo techo se situó en \textbf{0.6509}). Esto sugiere de forma empírica que la anotación realizada por las mujeres sobre el discurso de odio dirigido hacia ellas mismas posee una mayor coherencia interna, creando ``fronteras de decisión'' matemáticas mucho más nítidas y consistentes para el aprendizaje de la red neuronal. 
 
@@ -955,7 +955,7 @@ El análisis comparativo de las métricas de rendimiento (\textit{F1-Score} y \t
 \begin{enumerate}
     \item \textbf{El dominio del Texto en la Ideología y el Estereotipo}: Para la etiqueta \textit{Ideological and Inequality}, el modelo puramente textual \texttt{RoBERTa-base} dominó la clasificación con un F1 de \textbf{0.7050}, muy superior al resto de modelos, incluyendo a \textit{Mistral} que obtuvo un pobre 0.4473. El contenido ideológico y político en plataformas como \textit{TikTok} recae casi exclusivamente en el discurso hablado o escrito, haciendo que las modalidades visuales (\texttt{ConvNeXt}: 0.5911, \texttt{TimeSFormer}: 0.5908) queden relegadas a un papel secundario. En la categoría \textit{Stereotyping and Dominance}, \texttt{RoBERTa} volvió a liderar (F1: 0.5963), seguido de cerca por la visión temporal (0.5624), demostrando que los estereotipos sí poseen una carga visual de acciones o roles que el modelo de vídeo logra captar mejor que el de imagen estática.
     \item \textbf{La necesidad de movimiento para detectar la Cosificación}: El hallazgo más revelador de esta experimentación se encuentra en la etiqueta \textit{Objectification}. Los modelos de texto (\texttt{RoBERTa}: 0.5087) y de imagen estática (\texttt{ConvNeXt}: 0.5116) fracasaron al intentar detectar la cosificación, obteniendo métricas que rozan la clasificación aleatoria. Sin embargo, la arquitectura de visión temporal \texttt{TimeSFormer} logró despuntar (F1: \textbf{0.5399}), demostrando una mayor capacidad de generalización para esta categoría. Esto indica que la cosificación en formato vídeo no se capta de forma efectiva en un fotograma congelado o en un texto, sino en el movimiento, las poses, el enfoque de la cámara o acciones sugerentes a lo largo del tiempo. 
-    \item \textbf{El colapso matemático ante el Desbalanceo Extremo}: Para las categorías más graves pero menos frecuentes en el \textit{dataset} (\textit{Sexual Violence} y \textit{Misogyny and Non-Sexual Violence}), los cuatro modelos, sin excepción, sufrieron un colapso predictivo. Las métricas \textit{F1-Score} rondaron sistemáticamente los valores de \textbf{0.45}-\textbf{0.46} para todas las arquitecturas. El diagnóstico de este fallo se hace evidente al cruzar estos datos con el \textit{Accuracy}: los modelos obtuvieron una exactitud engañosamente alta (superior al 80\%). Debido a la extrema escasez de ejemplos positivos en la fase de entrenamiento, la red neuronal ``aprende'' que el camino más rápido para minimizar el error es predecir sistemáticamente la clase mayoritaria. Ninguna modalidad pudo sobreponerse a esta barrera estadística sin la aplicación previa de técnicas agresivas de \textit{Oversampling} o penalización de pesos. 
+    \item \textbf{Caída de rendimiento ante el desbalanceo de clases}: Para las categorías más graves pero menos frecuentes en el \textit{dataset} (\textit{Sexual Violence} y \textit{Misogyny and Non-Sexual Violence}), los cuatro modelos, sin excepción, sufrieron una caída predictiva. Las métricas \textit{F1-Score} rondaron sistemáticamente los valores de \textbf{0.45}-\textbf{0.46} para todas las arquitecturas. El diagnóstico de este fallo se hace evidente al cruzar estos datos con el \textit{Accuracy}: los modelos obtuvieron una exactitud engañosamente alta (superior al 80\%). Debido a la extrema escasez de ejemplos positivos en la fase de entrenamiento, la red neuronal ``aprende'' que el camino más rápido para minimizar el error es predecir sistemáticamente la clase mayoritaria. Ninguna modalidad pudo sobreponerse a esta barrera estadística sin la aplicación previa de técnicas agresivas de \textit{Oversampling} o penalización de pesos. 
 \end{enumerate}
 
 \section{Resumen Global de Resultados}
@@ -987,6 +987,6 @@ En la \autoref{tab:ResumenGlobalMejoresModelos} se consolida exclusivamente el m
     \label{tab:ResumenGlobalMejoresModelos}
 \end{table}
 
-Como se evidencia empíricamente en la tabla, ninguna modalidad aislada fue capaz de superar la barrera del \texttt{Mistral-7B-Instruct} en la métrica \textit{F1-Score}. El salto cualitativo definitivo se produjo al fusionar la comprensión semántica de los grandes modelos de lenguaje con la extracción de características espaciales de la visión estática y temporal, validando así la hipótesis principal de este proyecto: el sexismo en redes sociales modernas es un fenómeno ineludiblemente multimodal.
+Como se evidencia empíricamente en la tabla, ninguna modalidad aislada fue capaz de superar la barrera del \texttt{Mistral-7B-Instruct} en la métrica \textit{F1-Score}. La mejora más significativa se produjo al fusionar los grandes modelos de lenguaje con la extracción de características espaciales de la visión estática y temporal, validando así la hipótesis principal de este proyecto: el sexismo en redes sociales modernas es un fenómeno ineludiblemente multimodal.
 
 Adicionalmente, los experimentos complementarios de la Tarea 3.3 revelaron que la detección de tipologías específicas requiere enfoques especializados (por ejemplo, el movimiento temporal para captar la cosificación, o el texto puro para el sesgo ideológico), mientras que la experimentación con \textit{LeWiDi} confirmó que la identidad demográfica del anotador altera sistemáticamente la detección del discurso de odio.
