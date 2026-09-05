@@ -68,7 +68,7 @@ La \autoref{fig:PipelineSeguida} muestra el \textit{pipeline} del marco de exper
 
 De forma estructurada, la secuencia completa de procesos abordada para resolver la detección y categorización del discurso sexista se divide en las siguientes fases principales:
 \begin{enumerate}
-    \item \textbf{Preparación y Tratamiento de Datos}: Esta fase inicial engloba la limpieza del corpus textual, la estandarización del conjunto de datos mediante una división estratificada (conjuntos de \textit{Train} y \textit{Test} fijos para garantizar la reproducibilidad) y la extracción automatizada de características visuales. Para esto último, se procesaron los archivos multimedia generando diferentes conjuntos de \textit{frames}.
+    \item \textbf{Preparación y Tratamiento de Datos}: Esta fase inicial engloba la limpieza del corpus textual, la estandarización del conjunto de datos mediante una división estratificada (conjuntos de \textit{Train} y \textit{Test} de desarrollo para garantizar la reproducibilidad) y la extracción automatizada de características visuales. Para esto último, se procesaron los archivos multimedia generando diferentes conjuntos de \textit{frames}.
     \item \textbf{Selección y Entrenamiento Unimodal}: Ante la complejidad del formato vídeo, se optó por la estrategia de ``divide y vencerás'', seleccionando y entrenando arquitecturas expertas para cada modalidad de forma aislada:
     \begin{itemize}
         \item \textit{Modalidad de texto}: Experimentación con modelos discriminativos multilingües (familia \textit{Transformer}) y modelos generativos masivos (\textit{LLMs}).
@@ -95,13 +95,15 @@ El rendimiento de los modelos de \textit{deep learning} depende de la calidad y 
 
 El conjunto de datos original proporcionado por la organización para la Tarea 3 estaba compuesto por 2524 vídeos extraídos de la plataforma \textit{TikTok}, de los cuales 1524 vídeos eran en español y 1000 en inglés. Al basarse en el paradigma de \textit{LeWiDi}, los vídeos no contaban con una etiqueta única, sino que presentaban las decisiones individuales de 2 o 3 anotadores distintos, tal y como se puede observar en la \autoref{fig:DatasetOriginal}.
 
-Para adaptar este conjunto a los requisitos de la Tarea 3.1 (clasificación binaria \textit{Hard} en ``YES'' o ``NO''), se aplicó una heurística de unificación por consenso: 
+Para adaptar este conjunto a los requisitos de la Tarea 3.1 (clasificación binaria \textit{Hard} en ``YES'' o ``NO'') era necesario fusionar las múltiples opiniones en una única etiqueta. De acuerdo con el protocolo oficial de la competición \textit{EXIST 2025}, el proceso de anotación base contemplaba la participación de dos anotadores independientes. En caso de producirse un desacuerdo, un miembro experto del equipo de investigación intervenía para resolver el conflicto y establecer la etiqueta definitiva. 
+
+No obstante, al procesar los datos brutos proporcionados (que incluían las matrices exactas de votación individual), se optó por reconstruir estas etiquetas \textit{Hard} mediante una heurística de unificación para asegurar la coherencia del conjunto de entrenamiento:
 \begin{itemize}
-    \item \textbf{Voto por mayoría}: En aquellas instancias evaluadas por 3 anotadores, se asignó la etiqueta mayoritaria (por ejemplo: un registro con votos \texttt{[YES, NO, YES]}) se catalogó como sexista.
-    \item \textbf{Descarte por conflicto}: En los casos evaluados por 2 anotadores donde existía un empate absoluto (1 voto a favor y 1 en contra), se tomó la decisión metodológica de descartar la muestra para evitar introducir ruido y confusión durante el entrenamiento base de los modelos. 
+    \item \textbf{Voto por mayoría}: En la inmensa mayoría de las instancias, que contaban con 3 anotadores (lo que refleja la intervención del investigador para el desempate),se asignó directamente la etiqueta mayoritaria. Por ejemplo: un registro con los votos \texttt{[YES, NO, YES]} se catalogó de forma automática como sexista.
+    \item \textbf{Descarte por conflicto}: Durante la extracción, se identificaron casos residuales evaluados únicamente por 2 anotadores en lo que existía un empate absoluto (1 voto a favor y 1 en contra), sin constancia de un tercer voto de resolución en la matriz de datos. En lugar de forzar una etiqueta manual, se tomó la decisión de descartar estas muestras. 
 \end{itemize}
 
-Tras aplicar este filtro y eliminar algunas columnas que no nos aportaban ninguna información útil para realizar el entrenamiento, como se puede apreciar en la \autoref{fig:Dataset3.1Transformado} se eliminaron 16 registros conflictivos, resultando en un conjunto consolidado de 2508 vídeos (1306 no sexistas y 1202 sexistas). 
+Tras aplicar este filtro y eliminar las columnas irrelevantes para el entrenamiento, suprimieron 16 registros conflictivos. Como se puede apreciar en la \autoref{fig:Dataset3.1Transformado}, este proceso resultó en un conjunto de 2508 vídeo (1306 no sexistas y 1202 sexistas), garantizando que los modelos se entrenaran exclusivamente sobre instancias con un consenso humano verificable.  
 
 \begin{figure}[H]
     \centering
@@ -110,7 +112,7 @@ Tras aplicar este filtro y eliminar algunas columnas que no nos aportaban ningun
     \label{fig:Dataset3.1Transformado}
 \end{figure}
 
-Para garantizar un marco de experimentación robusto y reproducible, el conjunto consolidado se dividió en dos subconjuntos manteniendo una proporción del 80\% para \textit{Train} y un 20\% para \textit{Test}. Se utilizó una técnica de muestreo estratificado (\textit{stratify}) para asegurar que la proporción de clases se mantuviera idéntica en ambos bloques. Como se puede observar en la \autoref{tab:distribucionesFichero3.1}, el conjunto de \textit{Train} final quedó conformado por 2006 instancias (1045 negativas, 961 positivas), mientras que el conjunto de \textit{Test} estático constó de 502 instancias (261 negativas, 241 positivas). 
+Para garantizar un marco de experimentación robusto y reproducible, el conjunto consolidado se dividió en dos subconjuntos manteniendo una proporción del 80\% para \textit{Train} y un 20\% para \textit{Test}. Se utilizó una técnica de muestreo estratificado (\textit{stratify}) para asegurar que la proporción de clases se mantuviera idéntica en ambos bloques. Como se puede observar en la \autoref{tab:distribucionesFichero3.1}, el conjunto de \textit{Train} final quedó conformado por 2006 instancias (1045 negativas, 961 positivas), mientras que el conjunto de \textit{Test} de desarrollo constó de 502 instancias (261 negativas, 241 positivas). 
 
 \begin{table}[H]
     \centering
@@ -175,7 +177,7 @@ La primera fase de la metodología empírica se centró de manera exclusiva en e
 En todos los experimentos de esta fase, se partió del conjunto maestro de entrenamiento (2006 instancias), el cual fue subdividido internamente en un 90\% para \textit{Train} (1805 instancias) y un 10\% para \textit{Validation} (201 instancias), fijando la semilla aleatoria para garantizar un marco comparativo justo entre arquitecturas. 
 
 \subsection*{Establecimiento del \textit{Baseline} Local}
-Para poder medir objetivamente el impacto de las nuevas estrategias y modelos que se detallarán en las siguientes secciones, resultó indispensable establecer un punto de referencia o \textit{baseline} local. Para ello, se evaluaron los dos modelos originales enviados a la competición oficial sobre el conjunto de \textit{Test} estático (20\%) definido en la fase de preprocesamiento. 
+Para poder medir objetivamente el impacto de las nuevas estrategias y modelos que se detallarán en las siguientes secciones, resultó indispensable establecer un punto de referencia o \textit{baseline} local. Para ello, se evaluaron los dos modelos originales enviados a la competición oficial sobre el conjunto de \textit{Test} de desarrollo (20\%) definido en la fase de preprocesamiento. 
 
 En la \autoref{tab:BaselineLocal} se exponen las métricas obtenidas por la arquitectura discriminativa multilingüe y el modelo generativo \textit{Zero-Shot} ante este conjunto de datos de prueba:
 
@@ -189,7 +191,7 @@ En la \autoref{tab:BaselineLocal} se exponen las métricas obtenidas por la arqu
         Llama-3.2-1B-Instruct (\textit{Zero-Shot}) & 0.6135 & 0.4748 \\
         \bottomrule
     \end{tabular}
-    \caption{Rendimiento de los modelos \textit{baseline} sobre el conjunto de \textit{Test} estático local}
+    \caption{Rendimiento de los modelos \textit{baseline} sobre el conjunto de \textit{Test} de desarrollo local}
     \label{tab:BaselineLocal}
 \end{table}
 
@@ -274,7 +276,7 @@ El preprocesamiento para esta familia de modelos requirió estructurar los datos
 
 Dado el inmenso tamaño paramétrico de estas arquitecturas y las restricciones de memoria \textit{VRAM}, el entrenamiento se llevó a cabo utilizando la técnica \textbf{\textit{QLoRA}} (\textit{Quantized Low-Rank Adaptation}). Específicamente, se cargaron los modelos base con una precisión reducida de 4 bits (formato \texttt{nf4} mediante \texttt{BitsAndBytes}) y se congeló la red principal. El aprendizaje se proyectó exclusivamente sobre unas matrices adaptadoras de bajo rango insertadas en las capas de atención, configuradas con un rango ($r$) de 8, un factor de escalado ($\alpha$) de 16 y un \textit{dropout} del 0.05 para prevenir el sobreajuste. 
 
-Bajo esta configuración, se entrenaron diferentes variantes de modelos utilizando la librería \textit{TRL} y su clase \texttt{SFTTrainer} durante 3 épocas de entrenamiento. Tras evaluar los modelos resultantes con el conjunto estático de \textit{Test}, \textbf{\textit{Mistral}} demostró el mejor desempeño en la clasificación de narrativas sexistas.
+Bajo esta configuración, se entrenaron diferentes variantes de modelos utilizando la librería \textit{TRL} y su clase \texttt{SFTTrainer} durante 3 épocas de entrenamiento. Tras evaluar los modelos resultantes con el conjunto de desarrollo de \textit{Test}, \textbf{\textit{Mistral}} demostró el mejor desempeño en la clasificación de narrativas sexistas.
 
 Los resultados conseguidos por los \textit{LLMs} tras la aplicación de estas técnicas se muestran en la \autoref{tab:TablaResultadosLLMs}. Como podemos observar, ya hemos conseguido una mejoría con respecto al mejor resultado obtenido en los \textit{Transformers} (0.6934).
 
@@ -310,7 +312,7 @@ Para evaluar qué arquitectura extraía mejores características espaciales, se 
     \item \textbf{ConvNeXt} (\texttt{facebook/convnext-tiny-224}): Arquitectura puramente convolucional modernizada para competir con los \textit{Vision Transformers}. 
 \end{itemize}
 
-El proceso de entrenamiento evaluaba el modelo fotograma a fotograma. Sin embargo, dado que el objetivo de la Tarea 3.1 es clasificar el vídeo en su conjunto, durante la fase de inferencia sobre el conjunto de \textit{Test} estático se implementaron tres estrategias de \textit{pooling}:
+El proceso de entrenamiento evaluaba el modelo fotograma a fotograma. Sin embargo, dado que el objetivo de la Tarea 3.1 es clasificar el vídeo en su conjunto, durante la fase de inferencia sobre el conjunto de \textit{Test} de desarrollo se implementaron tres estrategias de \textit{pooling}:
 \begin{enumerate}
     \item \textbf{\textit{Max-Pooling}}: Si al menos un fotograma del vídeo es clasificado como sexista (probabilidad > 0.5), el vídeo completo se cataloga como sexista.
     \item \textbf{\textit{Mean-Pooling}}: Se calcula la media aritmética de las probabilidades de todos los fotogramas del vídeo. Si la media supera el 50\%, se clasifica como sexista.
@@ -556,7 +558,7 @@ Se seleccionaron tres modelos fundacionales para la clasificación de vídeo:
     \item \textbf{ViViT (\texttt{google/vivit-b-16x2-kinetics400})}: Evolución directa del modelo \textit{ViT} estático. Extrae bloques de píxeles tridimensionales (\textit{tubelets}) que atraviesan múltiples \textit{frames} simultáneamente, capturando el movimiento desde la primera capa de la red. 
 \end{itemize}
 
-Tras someter a los tres modelos a un proceso de \textit{fine-tuning} (utilizando el mismo \textit{split} de validación del 10\% para monitorizar el aprendizaje), las inferencias se proyectaron directamente sobre el conjunto de \textit{Test} estático. A diferencia del enfoque por \textit{frames} de la sección anterior, estos modelos emiten una única probabilidad unificada para todo el vídeo, eliminando la necesidad de aplicar algoritmos de \textit{pooling} posteriores. 
+Tras someter a los tres modelos a un proceso de \textit{fine-tuning} (utilizando el mismo \textit{split} de validación del 10\% para monitorizar el aprendizaje), las inferencias se proyectaron directamente sobre el conjunto de \textit{Test} de desarrollo. A diferencia del enfoque por \textit{frames} de la sección anterior, estos modelos emiten una única probabilidad unificada para todo el vídeo, eliminando la necesidad de aplicar algoritmos de \textit{pooling} posteriores. 
 
 \begin{table}[H]
     \centering
@@ -575,7 +577,7 @@ Tras someter a los tres modelos a un proceso de \textit{fine-tuning} (utilizando
 
 Como se puede observar en la \autoref{tab:ResultadosModelosVisionTemporal}, la arquitectura \textit{TimeSFormer} obtiene el mejor rendimiento general, alcanzando un \textit{F1-score} macro de 0.5837 y superando a los otros dos modelos por un margen de casi 5 puntos porcentuales. 
 
-Este resultado puede atribuirse a su arquitectura subyacente. Dadas las estrictas limitaciones de memoria computacional (\textit{VRAM}) y el tamaño fijo de \textit{frames} establecidos en este experimento (16), el mecanismo de Atención Dividida Espaciotemporal del \textit{TimeSFormer} demuestra ser el más eficiente. El modelo lograr modelar la evolución temporal del vídeo sin sufrir el colapso computacional que enfrentan otros enfoques más densos. 
+Este resultado puede atribuirse a su arquitectura subyacente. Dadas las estrictas limitaciones de memoria computacional (\textit{VRAM}) y el tamaño fijo de \textit{frames} establecidos en este experimento (16), el mecanismo de Atención Dividida Espaciotemporal del \textit{TimeSFormer} sugiere ser el más eficiente. El modelo lograr modelar la evolución temporal del vídeo sin sufrir el colapso computacional que enfrentan otros enfoques más densos. 
 
 Por el contrario, estrategias como la extracción simultánea de \textit{tubelets} tridimensionales (\textit{ViViT}) o la agresiva reconstrucción mediante máscaras al 90\% (\textit{VideoMAE}) parecen verse penalizadas al trabajar con un contexto temporal restringido, dificultando su capacidad de generalización y reduciendo su precisión final en este escenario de clasificación. 
 
@@ -650,7 +652,7 @@ Tal y como se fundamentó en la \autoref{subsec:FusionTempranaVsFusionTardia}, s
 
 \subsection{Optimización de Pesos y Resultados Finales}
 \label{subsec:OptimizacionDePesosYResultadosFinales}
-Para hallar la combinación ideal, se programó un algoritmo de búsqueda exhaustiva (\textit{Grid search}) sobre el conjunto de \textit{Test} estático. El algoritmo iteró a través de todas las combinaciones posibles en intervalos del 5\% (0.05), calculando en cada ciclo la predicción binaria y evaluando el \textit{F1-score (Macro)} resultante. 
+Para hallar la combinación ideal, se programó un algoritmo de búsqueda exhaustiva (\textit{Grid search}) sobre el conjunto de \textit{Test} de desarrollo. El algoritmo iteró a través de todas las combinaciones posibles en intervalos del 5\% (0.05), calculando en cada ciclo la predicción binaria y evaluando el \textit{F1-score (Macro)} resultante. Cabe destacar que, al utilizar este subconjunto de 502 instancias para la selección y ajuste de los pesos ponderados, dicho conjunto actúa como partición de validación, por lo que las métricas resultantes reflejarán el techo de rendimiento interno del sistema. 
 
 Tras completar la búsqueda iterativa, la distribución óptima de pesos que maximizó el rendimiento global del sistema fue: 
 \begin{itemize}
@@ -667,13 +669,13 @@ Quedando entonces la probabilidad final de la siguiente forma:
 
 Esta distribución revela un hallazgo empírico relevante: aunque el texto es crucial para el contexto (35\%), el modelo estático de imágenes requirió la mayor ponderación (55\%) para alcanzar las métricas más altas. Esto evidencia que gran parte de la información determinante se encuentra en la disposición espacial de la escena y, posiblemente, en los textos incrustados visualmente en pantalla por los propios usuarios de \textit{TikTok}. Por su parte, el modelo temporal refinó las predicciones aportando un 10\% a la decisión. 
 
-La aplicación de estos pesos óptimos sobre el sistema \textit{Ensemble} logró batir todos los récords individuales de los modelos aislados, demostrando la superioridad del enfoque multimodal. Las métricas al completo obtenidas por el sistema final se detallan en la \autoref{fig:ResultadosEnsemble}.
+La aplicación de estos pesos óptimos sobre el sistema \textit{Ensemble} logró superar todas las marcas individuales de los modelos aislado dentro de este entorno de desarrollo, sugiriendo la superioridad del enfoque multimodal. Las métricas obtenidas por este sistema unificado se detallan en la \autoref{fig:ResultadosEnsemble}.
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{Figuras/ResultadosEnsemble.png}
-    \caption{Resultados del \textit{Ensemble} Multimodal contra el \textit{test} estático}
+    \caption{Resultados del \textit{Ensemble} Multimodal contra el \textit{test} de desarrollo}
     \label{fig:ResultadosEnsemble}
 \end{figure}
 
@@ -681,7 +683,7 @@ La aplicación de estos pesos óptimos sobre el sistema \textit{Ensemble} logró
 \label{subsec:AnalisisDeErrores}
 Esta subsección tiene como objetivo detallar los errores cometidos por el sistema \textit{Ensemble} multimodal, buscando patrones o causas subyacentes que expliquen los fallos del modelo. No se trata únicamente de cuantificar las equivocaciones, sino de interpretarlas, comprendiendo en qué escenarios la inteligencia artificial encuentra dificultades para procesar la complejidad, el sarcasmo o la ambigüedad del lenguaje humano en las redes sociales. 
 
-Sobre el conjunto de \textit{Test} estático (502 instancias), el sistema generó un total de 136 predicciones erróneas. La contabilización de estas instancias reveló un claro desbalance en el tipo de equivocación: 84 correspondieron a Falsos Negativos (el sistema no detectó el sexismo presente) y 52 a Falsos Positivos (el sistema generó una alarma falsa en un contenido inofensivo). Esta distribución sugiere que el modelo adoptó una postura ligeramente conservadora, tendiendo a pasar por alto el sexismo cuando este se presenta de forma implícita o sutil. 
+Sobre el conjunto de \textit{Test} de desarrollo (502 instancias), el sistema generó un total de 136 predicciones erróneas. La contabilización de estas instancias reveló un claro desbalance en el tipo de equivocación: 84 correspondieron a Falsos Negativos (el sistema no detectó el sexismo presente) y 52 a Falsos Positivos (el sistema generó una alarma falsa en un contenido inofensivo). Esta distribución sugiere que el modelo adoptó una postura ligeramente conservadora, tendiendo a pasar por alto el sexismo cuando este se presenta de forma implícita o sutil. 
 
 \subsubsection*{Identificación de errores comunes y ejemplos}
 \label{subsubsec:IdentificacionDeErroresComunesYEjemplos}
@@ -719,9 +721,11 @@ El análisis cualitativo de estos fallos permite trazar líneas claras de trabaj
 
 Asimismo, se podrían generar más ejemplos de sexismo benevolente, humor sarcástico e incidentes violentos no relacionados con el género, para que el sistema aprenda a definir las fronteras o límites de la misoginia. Finalmente, el uso de modelos auxiliares previamente entrenados en la detección exclusiva de ironía podría añadirse al \textit{Ensemble} como una característica de entrada adicional, ayudando a mitigar la alta tasa de Falsos Negativos detectada.
 
-A modo de conclusión general, la evaluación del sistema \textit{Ensemble} demuestra una capacidad notable para la clasificación complejo contenido, alcanzando un \textit{Accuracy} global de 0.7291 y un \textit{F1-score} de 0.7261. Sin embargo, sus métricas nos revelan sesgos importantes. Si observamos el rendimiento detallado por clase, el modelo exhibe un comportamiento notoriamente conservador: es más robusto al identificar instancias inofensivas (\textit{Recall} de 0.80 para clase \textit{No Misógino}) que al detectar agresiones reales (\textit{Recall de 0.65 para la clase \textit{Misógino}}).
+A modo de conclusión general, la optimización del sistema \textit{Ensemble} indica una capacidad notable para la clasificación de este complejo contenido, alcanzando un pico de \textit{Accuracy} global de 0.7291 y un \textit{F1-score} de 0.7261. Es fundamental interpretar este valor de 0.7261 no como una evaluación final independiente, sino como la métrica de calibración interna, ya que las 502 instancias locales se utilizaron activamente para seleccionar la ponderación ideal del sistema. 
 
-Esta discrepancia de 15 puntos porcentuales es la causa directa de la acumulación de Falsos Negativos. En la práctica, el sistema prioriza no penalizar a usuarios inocentes (manteniendo bajo los Falsos Positivos), a costa de permitir que discursos de odio sutiles o enmascarados bajo ironía eludan el filtro.
+De hecho, un análisis más profundo revela sesgos predictivos importantes inherentes a esta calibración. Si observamos el rendimiento detallado por clase, el modelo muestra un comportamiento notoriamente conservador: es más robusto al identificar instancias inofensivas (\textit{Recall} de 0.80 para clase No Misógino) que al detectar agresiones reales (\textit{Recall} de 0.65 para la clase Misógino). 
+
+Esta diferencia de 15 puntos porcentuales es la causa directa de la acumulación de Falsos Negativos. En la práctica, el ajuste del sistema priorizó no penalizar a usuarios inocentes (manteniendo bajos los Falsos Positivos), a costa de permitir que discursos de odio sutiles o enmascarados bajo ironía eludan el filtro. 
 
 \section{Perspectivismo en \textit{LeWiDi}}
 \label{sec:PerspectivismoEnLewidi}
@@ -754,7 +758,7 @@ Dado que un mismo vídeo podía ser evaluado por varios anotadores del mismo gé
     \label{fig:ResultadosTransformersPerspectivismoMujerDiscard}
 \end{figure}
 
-En la \autoref{fig:ResultadosTransformersPerspectivismoHombreDiscard} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerDiscard} descartamos los casos donde el modelo base no tiene un alto grado de confianza, se evaluó pureza de cada género ante los casos restantes:
+En la \autoref{fig:ResultadosTransformersPerspectivismoHombreDiscard} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerDiscard}, al descartar los casos donde el modelo base no tiene un alto grado de confianza, se evaluó la pureza de cada género ante los casos restantes:
 \begin{itemize}
     \item \textbf{Perspectiva Femenina}: Se muestra mucho más sólida y coherente, logrando un \textit{F1-score} de 0.6771. Destaca especialmente su capacidad para identificar la misoginia (164 verdaderos positivos frente a los 124 del modelo masculino), manteniendo un \textit{Recall} de 0.68.
     \item \textbf{Perspectiva Masculina}: Resulta ser el perfil más débil al aplicar descartes (F1: 0.6462). Su \textit{Recall} para la clase misógina se desploma a 0.51, lo que significa que prácticamente lanza una moneda al aire (acierta casi las mismas veces que falla: 124 frente 117) cuando se trata de detectar agresiones claras que han superado el filtro de descarte.
@@ -775,8 +779,8 @@ En la \autoref{fig:ResultadosTransformersPerspectivismoHombreDiscard} y en la \a
 
 En la \autoref{fig:ResultadosTransformersPerspectivismoHombrePessimistic} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerPessimistic}, al forzar al modelo a penalizar en caso de duda, los resultados se invierten y revelan el mejor escenario para el perfil femenino:
 \begin{itemize}
-    \item \textbf{Perspectiva Femenina}: Alcanza aquí su mejor rendimiento global, con un \textit{F1-score} 0.6860. Curiosamente, forzar la ``sospecha'' no dispara sus Falsos Positivos de forma descontrolada (mantiene un \textit{Accuracy} de 0.72 en la clase Misógino), lo que indica un equilibrio excelente entre sensibilidad y precisión.
-    \item \textbf{Perspectiva Masculina}: Por el contrario, el perfil masculino sufre con esta directriz. Su rendimiento cae a un \textit{F1-score} de 0.6453. Al obligarle a etiquetar como machista en caso de duda, el modelo masculino como muchos más errores al clasificar instancias inofensivas, bajando su \textit{Accuracy} al 0.66.
+    \item \textbf{Perspectiva Femenina}: Alcanza aquí su mejor rendimiento global, con un \textit{F1-score} de 0.6860. Curiosamente, forzar la ``sospecha'' no dispara sus Falsos Positivos de forma descontrolada (mantiene una \textit{Precisión} de 0.72 en la clase Misógino), lo que indica un equilibrio excelente entre sensibilidad y precisión.
+    \item \textbf{Perspectiva Masculina}: Por el contrario, el perfil masculino sufre con esta directriz. Su rendimiento cae a un \textit{F1-score} de 0.6453. Al obligarle a etiquetar como machista en caso de duda, el modelo masculino comete muchos más errores al clasificar instancias inofensivas, bajando su \textit{Accuracy} al 0.6494.
 \end{itemize}
 
 \begin{figure}[H]
@@ -794,8 +798,8 @@ En la \autoref{fig:ResultadosTransformersPerspectivismoHombrePessimistic} y en l
 
 En la \autoref{fig:ResultadosTransformersPerspectivismoHombreOptimistic} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerOptimistic}, donde el modelo asume que no hay machismo en caso de duda, se observa una clara diferencia en el comportamiento de ambos perfiles:
 \begin{itemize}
-    \item \textbf{Perspectiva Masculina}: Tiende a ser mucho más conservadora. Logra un \textit{Accuracy} general ligeramente superior (0.673), pero a costa de ignorar muchos casos reales de agresión. Su \textit{Recall} en la clase Misógino cae hasta 0.54 (110 Falsos Negativos).
-    \item \textbf{Perspectiva Femenina}: Demuestra una sensibilidad mucho mayor ante el discurso de odio. Aunque su \textit{Accuracy} baja (0.6534), su \textit{Recall} para la clase Misógino se dispara hasta 0.71. Es decir, ante la instrucción ``optimista'', el perfil femenino es mucho menos propenso a dejar pasar agresiones sutiles, reduciendo drásticamente los Falsos Negativos (de 110 a solo 71).
+    \item \textbf{Perspectiva Masculina}: Tiende a ser mucho más conservadora. Logra un \textit{Accuracy} general ligeramente superior (0.6713), pero a costa de ignorar muchos casos reales de agresión. Su \textit{Recall} en la clase Misógino cae hasta 0.54 (110 Falsos Negativos).
+    \item \textbf{Perspectiva Femenina}: Se observa que tiene una sensibilidad mucho mayor ante el discurso de odio. Aunque su \textit{Accuracy} baja (0.6534), su \textit{Recall} para la clase Misógino se dispara hasta 0.71. Es decir, ante la instrucción ``optimista'', el perfil femenino es mucho menos propenso a dejar pasar agresiones sutiles, reduciendo drásticamente los Falsos Negativos (de 110 a solo 71).
 \end{itemize}
 
 \begin{figure}[H]
@@ -813,17 +817,15 @@ En la \autoref{fig:ResultadosTransformersPerspectivismoHombreOptimistic} y en la
 
 Como podemos observar en la \autoref{fig:ResultadosTransformersPerspectivismoHombreUnrolling} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerUnrolling}, es posiblemente la estrategia más interesante desde el punto de vista del comportamiento algorítmico, ya que produce una similitud en ambos perfiles. 
 \begin{itemize}
-    \item \textbf{Convergencia de sesgos}: Al aplicar el \textit{Unrolling} sobre los textos, las diferentes entre el perfil de hombre (F1: 0.6687) y el de mujer (F1: 0.6654) prácticamente desaparecen.
+    \item \textbf{Convergencia de sesgos}: Al aplicar el \textit{Unrolling} sobre los textos, las diferencias entre el perfil de hombre (F1: 0.6687) y el de mujer (F1: 0.6654) prácticamente desaparecen.
     \item \textbf{Análisis}: Ambos modelos calcan sus métricas de \textit{Recall} para la clase Misógino (0.56). Esto sugiere que, al ``desenrollar'' la semántica del mensaje, se elimina la ambigüedad que el modelo utilizaba para proyectar sus sesgos de género. El modelo deja de interpretar el texto basándose en si actúa como hombre o mujer, y pasa a hacer una evaluación puramente sintáctica. 
 \end{itemize}
 
-\subsection{Inyección de Roles en \textit{LLMs} (\textit{Persona Prompting})}
+\subsection{Análisis de Sensibilidad al \textit{Prompt} en \textit{LLMs} (\textit{Persona Prompting})}
 \label{subsec:InyeccionDeRolesEnLLMs}
-Mientras que el enfoque anterior alteraba los datos de origen para sesgar matemáticamente a un modelo discriminativo, la segunda estrategia abordó el perspectivismo desde un modelo generativo utilizando \textit{Prompting Engineering}.
+Mientras que el enfoque anterior alteraba los datos de origen para aislar las perspectivas humanas reales, la segunda estrategia evaluó la sensibilidad de los modelos generativos ante variaciones semánticas en la instrucción (\textit{Prompt Engineering}). El objetivo de este experimento no es validar perspectivas humanas reales, sino cuantificar cómo la alteración explícita de la palabra clave de género en el \textit{prompt} activa diferentes sesgos adquiridos por la inteligencia artificial durante su entrenamiento. 
 
-Aprovechando la capacidad de los \textit{LLMs} para simular roles y adaptar su tono, se aplicó la técnica de \textit{Persona Prompting} sobre el modelo \texttt{Mistral-7B-Instruct-v0.3}. En lugar de pedirle una clasificación neutral, se diseñaron dos \textit{prompts} que inyectaron la identidad de género directamente en el contexto del modelo. 
-
-El \textit{prompt} diseñado para la perspectiva masculina fue:
+Aprovechando la capacidad de los \textit{LLMs} para simular roles y adaptar su tono, se aplicó la técnica de \textit{Persona Prompting} sobre el modelo \texttt{Mistral-7B-Instruct-v0.3} en un entorno \textit{Zero-Shot}. En lugar de pedirle una clasificación neutral, se diseñaron dos \textit{prompts} que inyectaron la identidad de género directamente en el contexto del modelo. El \textit{prompt} diseñado para la perspectiva masculina fue:
 
 \begin{tcolorbox}[colback=gray!10, colframe=gray!40, arc=4pt, boxrule=0.5pt]
     \texttt{[INST]} Actúa como un hombre. Eres un experto analizando redes sociales. Clasifica el siguiente texto en una de estas dos categorías: 'Misógino' o 'No misógino'. Devuelve ÚNICAMENTE la etiqueta correspondiente, sin explicaciones adicionales. Texto: \{texto\} \texttt{[/INST]} 
@@ -837,7 +839,7 @@ De manera simétrica, el \textit{prompt} diseñado para la perspectiva femenina 
     Etiqueta:
 \end{tcolorbox}
 
-En las \autoref{fig:ResultadosPromptHombre} y \autoref{fig:ResultadosPromptMujer} se puede observar cómo el sesgo latente intrínseco en los miles de millones de parámetros del modelo preentrenado altera su juicio semántico al verse forzado a ``pensar'' como un hombre o como una mujer frente a los mismos 502 registros del \textit{Test} estático. 
+En las \autoref{fig:ResultadosPromptHombre} y \autoref{fig:ResultadosPromptMujer} se puede observar cómo la inyección del rol altera la distribución de las predicciones del modelo frente a los mismos 502 registros del \textit{Test} de desarrollo, evidenciando la enorme sensibilidad ante las variaciones del \textit{prompt}. 
 
 \begin{figure}[H]
     \centering
@@ -854,21 +856,56 @@ En las \autoref{fig:ResultadosPromptHombre} y \autoref{fig:ResultadosPromptMujer
 
 \subsection{Análisis de los Resultados de Perspectivismo}
 \label{subsec:AnalisisDeLosResultadosDePerspectivismo}
-Los resultados de ambas aproximaciones permiten extraer varias conclusiones sobre el modelado y el género en el PLN.
 
-En primer lugar, los modelos Transformers entrenados exclusivamente bajo la perspectiva \textbf{femenina} obtuvieron de manera consistente métricas más altas (alcanzando un \textit{F1-Score} de \textbf{0.6720}) que sus contrapartes entrenadas bajo la \textbf{perspectiva masculina} (cuyo techo se situó en \textbf{0.6509}). Esto sugiere de forma empírica que la anotación realizada por las mujeres sobre el discurso de odio dirigido hacia ellas mismas posee una mayor coherencia interna, creando ``fronteras de decisión'' matemáticas mucho más nítidas y consistentes para el aprendizaje de la red neuronal. 
+Para ofrecer una visión consolidada y facilitar la comparativa de los impactos demográficos detallados en las secciones anteriores, en la \autoref{tab:ResumenPerspectivismo} se aglutinan los resultados globales obtenidos por todas las arquitecturas y estrategias por género.
 
-En segundo lugar, el análisis de las estrategias de resolución de empates reveló que forzar el consenso elimina información valiosa. En las mujeres, la estrategia de presunción de inocencia (\textit{Optimistic}) fue la que mejor capturó su perspectiva, mientras que, en los hombres, mantener el empate en la red (\textit{Unrolling}) y forzar la sospecha (\textit{Pessimistic}) obtuvieron los mejores rendimientos.
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llccc}
+        \toprule
+        \textbf{Arquitectura / Enfoque} & \textbf{Estrategia de \textit{LeWiDi}} & \textbf{Género / Rol} & \textbf{\textit{Accuracy}} & \textbf{\textit{F1-score} (Macro)} \\
+        \midrule
+        \texttt{RoBERTa-base} & Descartes (\textit{Hard Consensus}) & Femenino & 0.6773 & 0.6771 \\
+        \texttt{RoBERTa-base} & Descartes (\textit{Hard Consensus}) & Masculino & 0.6554 & 0.6462 \\
+        \midrule
+        \texttt{RoBERTa-base} & \textit{Pessimistic} (Duda = Machismo) & Femenino & 0.6912 & \textbf{0.6860} \\
+        \texttt{RoBERTa-base} & \textit{Pessimistic} (Duda = Machismo) & Masculino & 0.6494 & 0.6453 \\
+        \midrule
+        \texttt{RoBERTa-base} & \textit{Optimistic} (Duda = Inocencia) & Femenino & 0.6534 & 0.6532 \\
+        \texttt{RoBERTa-base} & \textit{Optimistic} (Duda = Inocencia) & Masculino & 0.6713 & 0.6638 \\
+        \midrule
+        \texttt{RoBERTa-base} & Desenrollado (\textit{Unrolling}) & Femenino & 0.6713 & 0.6654 \\
+        \texttt{RoBERTa-base} & Desenrollado (\textit{Unrolling}) & Masculino & 0.6753 & \textbf{0.6687} \\
+        \midrule
+        \texttt{Mistral-7B-Instruct} & \textit{Persona Prompting} & Rol Femenino & 0.5757 & 0.5655 \\
+        \texttt{Mistral-7B-Instruct} & \textit{Persona Prompting} & Rol Masculino & 0.5578 & 0.5417 \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{Rendimiento comparativo de las estrategias de Perspectivismo por género.}
+    \label{tab:ResumenPerspectivismo}
+\end{table}
 
-Finalmente, el experimento de \textit{Persona Prompting} con \textit{Mistral} en un entorno \textit{Zero-Shot} confirmó esta misma tendencia estructural. Tal y como muestran las matrices de confusión, el modelo instruido con el \textbf{rol femenino} logró un \textit{F1-Score} de \textbf{0.5655}, superando al \textbf{rol masculino} (\textbf{0.5417}). Un análisis profundo de las inferencias revela que el rol masculino generó una tasa significativamente mayor de Falsos Negativos (148 instancias de machismo real que fueron catalogadas como inofensivas), frente a los 135 Falsos Negativos del rol femenino. Esto demuestra que, aunque el \textit{LLM} carecía de un ajuste fino específico para esta tarea, la inyección de rol activó sesgos latentes en el modelo preentrenado que simulan la tendencia humana: una mayor permisividad o ceguera hacia el sexismo sutil desde la perspectiva masculina simulada. 
+El análisis de estos resultados permite extraer varias conclusiones sobre el modelado y el género en el PLN:
 
-Como conclusión de esta fase, queda plasmado que el género de los anotadores afecta a la capacidad de los modelos para detectar el discurso de odio. Visto esto, empeñarse en buscar un consenso único o una objetividad absoluta resulta contraproducente, ya que nos hace perder matices muy valiosos. Por ello, de cara a futuras investigaciones, cobra mucho más sentido apostar por esquemas de evaluación interseccionales y plurales, apoyándonos en marcos como \textit{LeWiDi}, para que los modelos reflejen la complejidad y subjetividad real del lenguaje humano. 
+En primer lugar, los modelos \textit{Transformers} entrenados bajo la perspectiva \textbf{femenina} demostraron picos de rendimiento más altos (alcanzando un \textit{F1-Score} máximo de \textbf{0.6860}) que sus contrapartes instruidas bajo la \textbf{perspectiva masculina} (cuyo techo se situó en \textbf{0.6687}). Esto sugiere que la anotación realizada por las mujeres sobre el discurso de odio posee una mayor coherencia interna, creando ``fronteras de decisión'' matemáticas más nítidas para el aprendizaje de la red. 
+
+En segundo lugar, el análisis de las estrategias reveló diferencias fundamentales en el comportamiento ante la duda. En el caso de las mujeres, la estrategia de forzar la sospecha (\textit{Pessimistic}) fue la que mejor capturó su perspectiva, logrando un equilibrio excelente entre sensibilidad y precisión. Por el contrario, en los hombres, mantener el empate en la red (\textit{Unrolling}) o la presunción de inocencia (\textit{Optimistic}) fueron las únicas que evitaron el colapso del modelo.
+
+Finalmente, el experimento de \textit{Persona Prompting} con \textit{Mistral} debe interpretarse como un análisis de sensibilidad, no como un reflejo directo del comportamiento humano. Los resultados nos muestran que el modelo es muy sensible a la palabra clave del género introducida en la instrucción. El modelo instruido con el rol femenino logró un \textit{F1-Score} de 0.5655, superando al rol masculino (0.5417). El análisis de sus matrices revela que el \textit{prompt} masculino generó una tasa mayor de Falsos Negativos (148 instancias frente a las 135 del rol femenino). Esto sugiere que la inyección de la palabra ``hombre'' activa representaciones y estereotipos en el modelo preentrenado (sesgos estadísticos heredados de internet) que derivan en una evaluación más permisiva del discurso de odio, corroborando la necesidad de diseñar instrucciones neutras en los sistemas de moderación automatizada. 
+
+Como conclusión de esta fase, queda plasmado que el género de los anotadores afecta a la capacidad de los modelos para detectar el discurso de odio. Visto esto, empeñarse en buscar un consenso único resulta contraproducente, ya que nos hace perder matices muy valiosos, cobrando sentido apostar por marcos de evaluación interseccionales como \textit{LeWiDi} para que los modelos reflejen la complejidad real del lenguaje humano.
 
 \section{Experimentación Multietiqueta (Tarea 3.3)}
 \label{sec:ExperimentacionMultietiqueta}
-La Tarea 3.3 del desafío \textit{EXIST 2025} plantea un problema de clasificación mucho más específico y complejo que la mera detección binaria. El objetivo consiste en categorizar los vídeos misóginos en cinco tipologías concretas e independientes, permitiendo que un mismo vídeo pertenezca a múltiples categorías simultáneamente, lo que se conoce en el mundo del PLN como una clasificación multietiqueta.
+La Tarea 3.3 del desafío \textit{EXIST 2025} plantea un problema de clasificación mucho más específico y complejo que la mera detección binaria, estructurándose como un reto jerárquico y multietiqueta. En su formulación original, el sistema debe primero discriminar si un contenido es sexista o inofensivo (primer nivel de la jerarquía) y, únicamente en caso afirmativo, categorizarlo en una o varias de cinco tipologías concretas simultáneamente (clasificación multietiqueta en el segundo nivel).
 
-Las cinco categorías evaluadas son:
+Cabe matizar explícitamente que la experimentación detallada en esta sección constituye un análisis parcial y exploratorio de las capacidades de los modelos, por lo que no equivale a evaluar la subtarea oficial en su totalidad. Para acotar el alcance de este Trabajo de Fin de Máster, se ha asumido que el primer nivel jerárquico ya está resuelto, filtrando el conjunto de datos para evaluar a los modelos exclusivamente sobre los vídeos que ya estaban catalogados previamente como misóginos. 
+
+Asimismo, en lugar de desplegar una única arquitectura compleja con una capa de salida multietiqueta, el problema se ha abordado de forma simplificada aislando cada categoría y entrenando clasificadores binarios independientes para cada tipología. 
+
+Bajo este entorno controlado, las cinco categorías evaluadas son:
 \begin{itemize}
     \item \textbf{\textit{Ideological and Inequality}}: El texto desacredita el movimiento feminista, rechaza la desigualdad de género o victimiza a un hombre. 
     \item \textbf{\textit{Stereotyping and Dominance}}: Expresa ideas falsas sobre los roles de la mujer (sumisa o cuidadora) o tareas inadecuadas, afirmando la superioridad masculina. 
@@ -893,7 +930,7 @@ Dado el fuerte desbalance intrínseco en la distribución de las subcategorías,
 
 \subsection{Resultados y Análisis Cruzado por Tipología}
 \label{subsec:ResultadosYAnalisisCruzadoPorTipologia}
-El entrenamiento aislado de los cuatro mejores modelos contra las cinco etiquetas reveló un comportamiento altamente dependiente de la modalidad de los datos (texto frente a imagen/movimiento) y de la distribución estadística de cada clase. En la \autoref{tab:ResultadosEntrenamientosMultietiqueta} se resumen las métricas \textit{F1-Score (Macro)} y \textit{Accuracy} obtenidas sobre el conjunto de \textit{Test} estático multietiqueta:
+El entrenamiento aislado de los cuatro mejores modelos contra las cinco etiquetas reveló un comportamiento altamente dependiente de la modalidad de los datos (texto frente a imagen/movimiento) y de la distribución estadística de cada clase. En la \autoref{tab:ResultadosEntrenamientosMultietiqueta} se resumen las métricas \textit{F1-Score (Macro)} y \textit{Accuracy} obtenidas sobre el conjunto de \textit{Test} de desarrollo multietiqueta:
 
 \begin{table}[H]
     \centering

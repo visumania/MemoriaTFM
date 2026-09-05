@@ -67,11 +67,11 @@
 \contentsline {subsection}{\numberline {3.7.3}Análisis de Errores}{57}{subsection.3.7.3}%
 \contentsline {section}{\numberline {3.8}Perspectivismo en \textit {LeWiDi}}{60}{section.3.8}%
 \contentsline {subsection}{\numberline {3.8.1}Segmentación demográfica en \textit {Transformers}}{60}{subsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.8.2}Inyección de Roles en \textit {LLMs} (\textit {Persona Prompting})}{64}{subsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.8.2}Análisis de Sensibilidad al \textit {Prompt} en \textit {LLMs} (\textit {Persona Prompting})}{64}{subsection.3.8.2}%
 \contentsline {subsection}{\numberline {3.8.3}Análisis de los Resultados de Perspectivismo}{66}{subsection.3.8.3}%
 \contentsline {section}{\numberline {3.9}Experimentación Multietiqueta (Tarea 3.3)}{67}{section.3.9}%
 \contentsline {subsection}{\numberline {3.9.1}Preparación del Dataset Multietiqueta}{68}{subsection.3.9.1}%
-\contentsline {subsection}{\numberline {3.9.2}Resultados y Análisis Cruzado por Tipología}{68}{subsection.3.9.2}%
+\contentsline {subsection}{\numberline {3.9.2}Resultados y Análisis Cruzado por Tipología}{69}{subsection.3.9.2}%
 \contentsline {section}{\numberline {3.10}Resumen Global de Resultados}{70}{section.3.10}%
 \contentsline {chapter}{\numberline {4}Conclusiones y Trabajo Futuro}{72}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Conclusiones}{72}{section.4.1}%

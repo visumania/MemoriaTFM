@@ -15,7 +15,7 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline general del marco de experimentación}}{40}{figure.3.1}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de un registro del dataset original}}{42}{figure.3.2}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Dataset transformado para la tarea 3.1}}{43}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Resultados del \textit {Ensemble} Multimodal contra el \textit {test} estático}}{57}{figure.3.4}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Resultados del \textit {Ensemble} Multimodal contra el \textit {test} de desarrollo}}{57}{figure.3.4}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Resultados de la estrategia \textit {Hard Consensus} en hombres}}{61}{figure.3.5}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Resultados de la estrategia \textit {Hard Consensus} en mujeres}}{61}{figure.3.6}%
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Resultados de la estrategia \textit {Pessimistic} en hombres}}{62}{figure.3.7}%
