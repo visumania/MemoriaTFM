@@ -1,26 +1,26 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Hiperparámetros de las estrategias avanzadas de optimización}}{29}{table.2.1}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Hiperparámetros de las estrategias avanzadas de optimización}}{28}{table.2.1}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Resultados oficiales obtenidos en la Subtarea 3.1 de EXIST 2025}}{39}{table.3.1}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Distribuciones del fichero \text {Train} y \textit {Test} para la tarea 3.1}}{44}{table.3.2}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Tamaños de los ficheros \text {Train} y \textit {Test} en función de los \textit {frames} extraídos}}{45}{table.3.3}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Rendimiento de los modelos \textit {baseline} sobre el conjunto de \textit {Test} de desarrollo local}}{46}{table.3.4}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Hiperparámetros con los que fueron entrenados los \textit {Transformers}}}{46}{table.3.5}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces Hiperparámetros optimizados para el modelo \textit {RoBERTa-base}}}{47}{table.3.6}%
-\contentsline {table}{\numberline {3.7}{\ignorespaces Rendimiento de los modelos \textit {Transformers}}}{47}{table.3.7}%
-\contentsline {table}{\numberline {3.8}{\ignorespaces Rendimiento de los modelos \textit {LLMs}}}{48}{table.3.8}%
-\contentsline {table}{\numberline {3.9}{\ignorespaces Rendimiento de los modelos de Visión Estática con las diferentes combinaciones de \textit {datasets} de \textit {frames} y técnicas de \textit {pooling}}}{51}{table.3.9}%
-\contentsline {table}{\numberline {3.10}{\ignorespaces Resultados de las estrategias de hiperparámetros aplicadas al \textit {baseline} de \textit {ConvNeXt} de 4 \textit {frames}}}{52}{table.3.10}%
-\contentsline {table}{\numberline {3.11}{\ignorespaces Resultados de las estrategias de \textit {data augmentation} aplicadas al \textit {baseline} de \textit {ConvNeXt} de 4 \textit {frames}}}{53}{table.3.11}%
-\contentsline {table}{\numberline {3.12}{\ignorespaces Rendimiento de los modelos de Visión Temporal}}{55}{table.3.12}%
-\contentsline {table}{\numberline {3.13}{\ignorespaces Rendimiento del \textit {TimeSFormer} con las estrategias de hiperparámetros}}{56}{table.3.13}%
-\contentsline {table}{\numberline {3.14}{\ignorespaces Rendimiento del \textit {TimeSFormer} con las estrategias de \textit {data augmentation}}}{56}{table.3.14}%
-\contentsline {table}{\numberline {3.15}{\ignorespaces Resultados oficiales obtenidos en la Subtarea 3.1 de \textit {EXIST 2025} con el modelo \textit {Ensemble}}}{61}{table.3.15}%
-\contentsline {table}{\numberline {3.16}{\ignorespaces Rendimiento comparativo de las estrategias de Perspectivismo por género.}}{68}{table.3.16}%
-\contentsline {table}{\numberline {3.17}{\ignorespaces Resultados de \textit {Accuracy} y \textit {F1-score} de cada una de las etiquetas}}{71}{table.3.17}%
-\contentsline {table}{\numberline {3.18}{\ignorespaces Resumen de los mejores modelos obtenidos por modalidad para la Tarea 3.1.}}{73}{table.3.18}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Resultados oficiales obtenidos en la Subtarea 3.1 de EXIST 2025}}{38}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Distribuciones del fichero \text {Train} y \textit {Test} para la tarea 3.1}}{43}{table.3.2}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Tamaños de los ficheros \text {Train} y \textit {Test} en función de los \textit {frames} extraídos}}{44}{table.3.3}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Rendimiento de los modelos \textit {baseline} sobre el conjunto de \textit {Test} de desarrollo local}}{45}{table.3.4}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Hiperparámetros con los que fueron entrenados los \textit {Transformers}}}{45}{table.3.5}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Hiperparámetros optimizados para el modelo \textit {RoBERTa-base}}}{46}{table.3.6}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces Rendimiento de los modelos \textit {Transformers}}}{46}{table.3.7}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces Rendimiento de los modelos \textit {LLMs}}}{47}{table.3.8}%
+\contentsline {table}{\numberline {3.9}{\ignorespaces Rendimiento de los modelos de Visión Estática con las diferentes combinaciones de \textit {datasets} de \textit {frames} y técnicas de \textit {pooling}}}{50}{table.3.9}%
+\contentsline {table}{\numberline {3.10}{\ignorespaces Resultados de las estrategias de hiperparámetros aplicadas al \textit {baseline} de \textit {ConvNeXt} de 4 \textit {frames}}}{51}{table.3.10}%
+\contentsline {table}{\numberline {3.11}{\ignorespaces Resultados de las estrategias de \textit {data augmentation} aplicadas al \textit {baseline} de \textit {ConvNeXt} de 4 \textit {frames}}}{52}{table.3.11}%
+\contentsline {table}{\numberline {3.12}{\ignorespaces Rendimiento de los modelos de Visión Temporal}}{54}{table.3.12}%
+\contentsline {table}{\numberline {3.13}{\ignorespaces Rendimiento del \textit {TimeSFormer} con las estrategias de hiperparámetros}}{55}{table.3.13}%
+\contentsline {table}{\numberline {3.14}{\ignorespaces Rendimiento del \textit {TimeSFormer} con las estrategias de \textit {data augmentation}}}{55}{table.3.14}%
+\contentsline {table}{\numberline {3.15}{\ignorespaces Resultados oficiales obtenidos en la Subtarea 3.1 de \textit {EXIST 2025} con el modelo \textit {Ensemble}}}{60}{table.3.15}%
+\contentsline {table}{\numberline {3.16}{\ignorespaces Rendimiento comparativo de las estrategias de Perspectivismo por género.}}{67}{table.3.16}%
+\contentsline {table}{\numberline {3.17}{\ignorespaces Resultados de \textit {Accuracy} y \textit {F1-score} de cada una de las etiquetas}}{70}{table.3.17}%
+\contentsline {table}{\numberline {3.18}{\ignorespaces Resumen de los mejores modelos obtenidos por modalidad para la Tarea 3.1.}}{72}{table.3.18}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Estimación de la planificación temporal del trabajo realizado.}}{77}{table.4.1}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Estimación de la planificación temporal del trabajo realizado.}}{76}{table.4.1}%
 \addvspace {10\p@ }
