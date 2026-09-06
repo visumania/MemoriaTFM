@@ -182,9 +182,9 @@ Esta innovación dio lugar a una nueva generación de modelos de lenguaje preent
 \label{subsubsec:ModelosTransformers}
 Para abordar la complejidad de esta tarea y asegurar una evaluación exhaustiva, en el desarrollo empírico de este Trabajo de Fin de Máster se ha implementado una amplia batería de arquitecturas discriminativas basadas en \textit{Transformers}, adaptadas a diferentes dominios lingüísticos:
 \begin{itemize}
-    \item \textbf{Modelos Multilingües}: Se han utilizado \texttt{mmBERT}, \texttt{xlm-roberta-base} y \texttt{TwHIN-BERT}, idóneos para captar estructuras semánticas universales y transferir conocimiento entre idiomas.
-    \item \textbf{Modelos específicos para Español}: Se han evaluado \texttt{BETO}, \texttt{BERTin} y \texttt{RoBERTuito}, siendo este último optimizado para el lenguaje informal de redes sociales. 
-    \item \textbf{Modelos específicos para Inglés}: Se ha experimentado con \texttt{RoBERTa-Base}, \texttt{BERTweet} (preentrenado en mensajes cortos y jerga digital) y \texttt{Electra-base-discriminator} (que introduce un paradigma de reemplazo de tokens más eficiente computacionalmente). 
+    \item \textbf{Modelos Multilingües}: Se han utilizado \texttt{mmBERT} \cite{marone2025mmbert}, \texttt{xlm-roberta-base} \cite{mehta2023llm} y \texttt{TwHIN-BERT} \cite{zhang2023twhin}, idóneos para captar estructuras semánticas universales y transferir conocimiento entre idiomas.
+    \item \textbf{Modelos específicos para Español}: Se han evaluado \texttt{BETO} \cite{garrido2024maria}, \texttt{BERTin} \cite{de2022bertin} y \texttt{RoBERTuito} \cite{perez2022robertuito}, siendo este último optimizado para el lenguaje informal de redes sociales. 
+    \item \textbf{Modelos específicos para Inglés}: Se ha experimentado con \texttt{RoBERTa-Base}, \texttt{BERTweet} \cite{nguyen2020bertweet} (preentrenado en mensajes cortos y jerga digital) y \texttt{Electra-base-discriminator} \cite{clark2020electra} (que introduce un paradigma de reemplazo de tokens más eficiente computacionalmente). 
 \end{itemize}
 
 
@@ -192,7 +192,7 @@ Para abordar la complejidad de esta tarea y asegurar una evaluación exhaustiva,
 \label{sec:LLMs}
 Paralelamente a la consolidación de modelos discriminativos como \textit{BERT}, la evolución del aprendizaje profundo ha propiciado la explosión de los Modelos Generativos de Lenguaje (\textit{Large Language Models}) \cite{zhao2023survey}. A diferencia de los enfoques anteriores, los cuales están entrenados para comprender y clasificar, los \textit{LLMs} utilizan arquitecturas autorregresivas fundamentadas habitualmente en la parte decodificadora del \textit{Transformer}. Su objetivo matemático principal es predecir el siguiente token de una secuencia para generar texto altamente coherente y contextualizado.
 
-Modelos como \texttt{GPT-3}, \texttt{GPT-4}, \texttt{LLaMA} o \texttt{PaLM} se entrenan sobre volúmenes masivos de datos no estructurados. Gracias a este vasto conocimiento subyacente, han demostrado capacidades de generalización sorprendentes. Una de las ventajas más potentes de los \textit{LLMs} es su capacidad para ejecutar tareas supervisadas a través del diseño de instrucciones o \textit{prompting}. Existen tres estrategias principales de aplicación: 
+Modelos como \texttt{GPT-3}, \texttt{GPT-4} \cite{kalyan2024survey}, \texttt{LLaMA} \cite{inan2023llama} o \texttt{PaLM} \cite{peng2019palm} se entrenan sobre volúmenes masivos de datos no estructurados. Gracias a este gran conocimiento subyacente, han demostrado capacidades de generalización sorprendentes. Una de las ventajas más potentes de los \textit{LLMs} es su capacidad para ejecutar tareas supervisadas a través del diseño de instrucciones o \textit{prompting}. Existen tres estrategias principales de aplicación: 
 \begin{itemize}
     \item \textbf{Zero-shot}: El modelo realiza la tarea directamente con una única instrucción, sin recibir ejemplos previos. Es idóneo cuando se busca rapidez o no se dispone de datos etiquetados. 
     \begin{itemize}
@@ -212,7 +212,7 @@ Modelos como \texttt{GPT-3}, \texttt{GPT-4}, \texttt{LLaMA} o \texttt{PaLM} se e
 
 \subsubsection*{Aplicación práctica en este trabajo: \textit{PEFT} y \textit{QLoRA}}
 \label{subsubsec:ModelosLLMs}
-En el marco experimental de este proyecto se ha apostado firmemente por el ajuste fino. Sin embargo, debido al masivo número de parámetros de los \textit{LLMs} modernos, el reentrenamiento completo resulta computacionalmente inviable. Para solucionar este obstáculo, se ha implementado una técnica \textbf{QLoRA} (\textit{Quantized Low-Rank Adaptation}) \cite{dettmers2023qlora} sobre tres modelos generativos de última generación: \texttt{Mistral-7B-Instruct-v0.3}, \texttt{meta-llama/Llama-3.1-8B-} \texttt{Instruct} y \texttt{google/gemma-2-2b-it}. Esta metodología ha permitido cuantizar los pesos base de los modelos a una precisión de 4 bits, congelarlos, y entrenar únicamente matrices de bajo rango insertadas en las proyecciones matemáticas de atención. 
+En el marco experimental de este proyecto se ha apostado firmemente por el ajuste fino. Sin embargo, debido al masivo número de parámetros de los \textit{LLMs} modernos, el reentrenamiento completo resulta computacionalmente inviable. Para solucionar este obstáculo, se ha implementado una técnica \textbf{QLoRA} (\textit{Quantized Low-Rank Adaptation}) \cite{dettmers2023qlora} sobre tres modelos generativos de última generación: \texttt{Mistral-7B-Instruct-v0.3} \cite{thakkar2023comprehensive}, \texttt{meta-llama/Llama-3.1-8B-} \texttt{Instruct} y \texttt{google/gemma-2-2b-it} \cite{team2024gemma}. Esta metodología ha permitido cuantizar los pesos base de los modelos a una precisión de 4 bits, congelarlos, y entrenar únicamente matrices de bajo rango insertadas en las proyecciones matemáticas de atención. 
 
 Para adaptar estos modelos a la clasificación binaria de las transcripciones de vídeo, se han desarrollado dos estrategias arquitectónicas distintas: 
 \begin{itemize}
@@ -360,7 +360,7 @@ Los valores de los hiperparámetros en cada una de las estrategias se pueden apr
 
         \bottomrule
     \end{tabular}
-    \caption{Rendimiento de los modelos de Visión Temporal}
+    \caption{Hiperparámetros de las estrategias avanzadas de optimización}
     \label{tab:ValoresHiperparametrosEstrategias}
 \end{table}
 
@@ -376,7 +376,7 @@ La capacidad de los \textit{Transformers} y de las modernas arquitecturas convol
 
 \subsection{Fusión Temprana vs Fusión Tardía}
 \label{subsec:FusionTempranaVsFusionTardia}
-A nivel teórico, la integración de múltiples modalidades de datos se divide principalmente en dos tipos \cite{baltrusaitis2018multimodal}: 
+A nivel teórico, la integración de múltiples modalidades de datos se divide principalmente en dos tipos \cite{ramachandram2017deep}: 
 \begin{itemize}
     \item \textbf{Fusión Temprana (\textit{Early Fusion})}: Los datos o características extraídas de diferentes modalidades se combinan en las primeras etapas de la red neuronal, creando un vector unificado que es procesado por un único clasificador final. Aunque permite que el modelo aprenda interacciones cruzadas desde el principio, es computacionalmente muy costoso y propenso al \textit{overfitting} si una modalidad domina sobre las demás.
     \item \textbf{Fusión Tardía (\textit{Late Fusion})}: Cada modalidad es procesada por un modelo experto independiente hasta generar una predicción final (una probabilidad matemática). Posteriormente, estas probabilidades aisladas se combinan mediante algoritmos estadísticos para emitir el veredicto definitivo. 

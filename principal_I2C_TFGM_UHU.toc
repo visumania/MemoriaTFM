@@ -56,28 +56,28 @@
 \contentsline {subsection}{\numberline {3.4.1}Arquitecturas Discriminativas (\textit {Transformers})}{46}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Arquitecturas Generativas (\textit {LLMs})}{47}{subsection.3.4.2}%
 \contentsline {section}{\numberline {3.5}Experimentación con Modelos de Visión Estática}{48}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Selección de Arquitectura y Volumen de Fotogramas}{48}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Optimización de Hiperparámetros y Data Augmentation}{51}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Experimentación con Modelos de Visión Temporal}{53}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Selección de la Arquitectura Temporal}{53}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Optimización de Hiperparámetros y Data Augmentation Temporal}{54}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7}Fusión Multimodal (\textit {Ensemble})}{56}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Estrategia de \textit {Late Fusion}}{56}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Optimización de Pesos y Resultados Finales}{56}{subsection.3.7.2}%
-\contentsline {subsection}{\numberline {3.7.3}Análisis de Errores}{57}{subsection.3.7.3}%
-\contentsline {subsection}{\numberline {3.7.4}Evaluación Final sobre el Conjunto de \textit {Test Ciego}}{60}{subsection.3.7.4}%
-\contentsline {section}{\numberline {3.8}Perspectivismo en \textit {LeWiDi}}{61}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}Segmentación demográfica en \textit {Transformers}}{61}{subsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.8.2}Análisis de Sensibilidad al \textit {Prompt} en \textit {LLMs} (\textit {Persona Prompting})}{65}{subsection.3.8.2}%
-\contentsline {subsection}{\numberline {3.8.3}Análisis de los Resultados de Perspectivismo}{67}{subsection.3.8.3}%
-\contentsline {section}{\numberline {3.9}Experimentación Multietiqueta (Tarea 3.3)}{68}{section.3.9}%
-\contentsline {subsection}{\numberline {3.9.1}Preparación del Dataset Multietiqueta}{69}{subsection.3.9.1}%
-\contentsline {subsection}{\numberline {3.9.2}Resultados y Análisis Cruzado por Tipología}{70}{subsection.3.9.2}%
-\contentsline {section}{\numberline {3.10}Resumen Global de Resultados}{71}{section.3.10}%
-\contentsline {chapter}{\numberline {4}Conclusiones y Trabajo Futuro}{73}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Conclusiones}{73}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Trabajo Futuro}{75}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Planificación Temporal del Trabajo Realizado}{75}{section.4.3}%
-\contentsline {chapter}{Referencias}{77}{chapter*.13}%
-\contentsline {chapter}{\numberline {A}Anexos}{81}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Aplicación Web para la Visualización y Prueba del Modelo}{81}{appendix.A.1}%
+\contentsline {subsection}{\numberline {3.5.1}Selección de Arquitectura y Volumen de Fotogramas}{49}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Optimización de Hiperparámetros y Data Augmentation}{52}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Experimentación con Modelos de Visión Temporal}{54}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Selección de la Arquitectura Temporal}{54}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Optimización de Hiperparámetros y Data Augmentation Temporal}{55}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}Fusión Multimodal (\textit {Ensemble})}{57}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Estrategia de \textit {Late Fusion}}{57}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Optimización de Pesos y Resultados Finales}{57}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}Análisis de Errores}{58}{subsection.3.7.3}%
+\contentsline {subsection}{\numberline {3.7.4}Evaluación Final sobre el Conjunto de \textit {Test Ciego}}{61}{subsection.3.7.4}%
+\contentsline {section}{\numberline {3.8}Perspectivismo en \textit {LeWiDi}}{62}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Segmentación demográfica en \textit {Transformers}}{62}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Análisis de Sensibilidad al \textit {Prompt} en \textit {LLMs} (\textit {Persona Prompting})}{66}{subsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.8.3}Análisis de los Resultados de Perspectivismo}{68}{subsection.3.8.3}%
+\contentsline {section}{\numberline {3.9}Experimentación Multietiqueta (Tarea 3.3)}{69}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Preparación del Dataset Multietiqueta}{70}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Resultados y Análisis Cruzado por Tipología}{71}{subsection.3.9.2}%
+\contentsline {section}{\numberline {3.10}Resumen Global de Resultados}{72}{section.3.10}%
+\contentsline {chapter}{\numberline {4}Conclusiones y Trabajo Futuro}{74}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Conclusiones}{74}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Trabajo Futuro}{76}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Planificación Temporal del Trabajo Realizado}{76}{section.4.3}%
+\contentsline {chapter}{Referencias}{78}{chapter*.13}%
+\contentsline {chapter}{\numberline {A}Anexos}{83}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Aplicación Web para la Visualización y Prueba del Modelo}{83}{appendix.A.1}%
