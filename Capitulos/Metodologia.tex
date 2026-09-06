@@ -727,6 +727,33 @@ De hecho, un análisis más profundo revela sesgos predictivos importantes inher
 
 Esta diferencia de 15 puntos porcentuales es la causa directa de la acumulación de Falsos Negativos. En la práctica, el ajuste del sistema priorizó no penalizar a usuarios inocentes (manteniendo bajos los Falsos Positivos), a costa de permitir que discursos de odio sutiles o enmascarados bajo ironía eludan el filtro. 
 
+\subsection{Evaluación Final sobre el Conjunto de \textit{Test Ciego}}
+\label{subsec:EvaluacionFinalTestCiego}
+Tras la calibración interna del sistema explicada en las secciones anteriores, se procedió a la fase de evaluación definitiva. Con el objetivo de validar la capacidad de generalización del modelo s, se ejecutó la inferencia completa sobre el conjunto de \textit{Test} ciego oficial proporcionado por la organización del reto \textit{EXIST 2025} (compuesto por 674 vídeos sin etiquetar). 
+
+Las predicciones binarias generadas por el \textit{Ensemble} fueron enviadas a la plataforma oficial de evaluación de la competición \footnote{\url{https://evall.uned.es/}}. En la \autoref{tab:ResultadosOficialesEnsemble} se presentan las métricas finales emitidas por el sistema \textit{PyEvALL}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcccc}
+        \toprule
+        \textbf{Envío Oficial} & 
+        \textbf{\begin{tabular}[c]{@{}c@{}}Ranking \\ Hipotético\end{tabular}} & 
+        \textbf{ICM-Hard} & 
+        \textbf{\begin{tabular}[c]{@{}c@{}}ICM-Hard \\ Norm\end{tabular}} & 
+        \textbf{F1 (Clase YES)} \\
+        \midrule
+        \begin{tabular}[c]{@{}l@{}}\textit{Ensemble Multimodal} \\ (\textit{Late Fusion})\end{tabular} & 34 & -0.1008 & 0.4491 & 0.6311 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Resultados oficiales obtenidos en la Subtarea 3.1 de \textit{EXIST 2025} con el modelo \textit{Ensemble}}
+    \label{tab:ResultadosOficialesEnsemble}
+\end{table}
+
+Al contrastar esta evaluación independiente con las métricas de las entregas unimodales iniciales de la competición (detalladas previamente en la \autoref{tab:ResultadosOficialesEXIST}), se observa una mejora en el rendimiento del sistema. El \textit{Ensemble} alcanza un \textit{ICM Norm} de 0.4491, superando el 0.4355 de nuestro mejor envío oficial (\textit{BERT}) y distanciándose significativamente del 0.2874 obtenido por el modelo generativo \textit{LLaMA}.
+
+Como es habitual en este tipo de investigaciones, se registra una caída lógica en el rendimiento al pasar del entorno de selección local (\textit{F1}: 0.7261) al entorno ciego (\textit{F1}: 0.6311), evidenciando la dificultad que presentan las nuevas distribuciones de datos. Sin embargo, la evolución positiva respecto a los \textit{baselines} oficiales sugiere que la estrategia de fusión multimodal aporta una mayor robustez general. La combinación del análisis espacial de la imagen con la transcripción textual resulta de gran utilidad para contextualizar el mensaje, mitigando parte de la ambigüedad presente en las redes sociales y estableciendo una base más sólida para la moderación automática. 
+
 \section{Perspectivismo en \textit{LeWiDi}}
 \label{sec:PerspectivismoEnLewidi}
 El reto \textit{EXIST 2025} introduce un desafío pionero en el campo de la detección del sexismo: la noción de que el sexismo, especialmente en sus formas más sutiles (como micromachismos y paternalismos), no siempre goza de un consenso absoluto. La percepción de si un comentario es misógino o inofensivo puede variar significativamente dependiendo de los sesgos culturales, las vivencias personales y, particularmente, el género del individuo que lo evalúa. Este concepto, conocido como Perspectivismo (\textit{Learning with Disagreement} o \textit{LeWiDi}), defiende que el desacuerdo entre anotadores no es un ``ruido'' que deba limpiarse, sino una señal rica en información que debe modelarse. 
@@ -1016,7 +1043,8 @@ En la \autoref{tab:ResumenGlobalMejoresModelos} se consolida exclusivamente el m
         Visión Estática & \texttt{ConvNeXt} & 4 \textit{frames} + \textit{Mean-Pooling} & 0.6275 & 0.6245 \\
         Visión Temporal & \texttt{TimeSformer} & \textit{Data Augmentation} 10\% etiqueta 1 & 0.5956 & 0.5956 \\
         \midrule
-        \textbf{Fusión Multimodal} & \textbf{\textit{Ensemble} (Mistral + ConvNeXt + TimeSformer)} & \textbf{\textit{Late Fusion} (0.35 / 0.55 / 0.10)} & \textbf{0.7291} & \textbf{0.7261} \\
+        \textbf{Fusión Multimodal (Desarrollo)} & \textbf{\textit{Ensemble} (Local)} & \textbf{\textit{Late Fusion} (0.35 / 0.55 / 0.10)} & \textbf{0.7291} & \textbf{0.7261} \\
+        \textbf{Fusión Multimodal (\textit{Test} Ciego)} & \textbf{\textit{Ensemble} (Oficial)} & \textbf{Evaluación PyEvALL} & \textbf{0.6418} & \textbf{0.6311} \\
         \bottomrule
     \end{tabular}
     }
@@ -1024,6 +1052,6 @@ En la \autoref{tab:ResumenGlobalMejoresModelos} se consolida exclusivamente el m
     \label{tab:ResumenGlobalMejoresModelos}
 \end{table}
 
-Como se evidencia empíricamente en la tabla, ninguna modalidad aislada fue capaz de superar la barrera del \texttt{Mistral-7B-Instruct} en la métrica \textit{F1-Score}. La mejora más significativa se produjo al fusionar los grandes modelos de lenguaje con la extracción de características espaciales de la visión estática y temporal, validando así la hipótesis principal de este proyecto: el sexismo en redes sociales modernas es un fenómeno ineludiblemente multimodal.
+Como se observa empíricamente en la tabla, dentro del entorno de desarrollo ninguna modalidad aislada fue capaz de superar al \texttt{Mistral-7B-Instruct} en la métrica \textit{F1-Score}. La mejora más significativa a nivel interno se produjo al fusionar los grandes modelos de lenguaje con la extracción de características espaciales de la visión estática y temporal, respaldando así la hipótesis inicial de este proyecto: el sexismo en redes sociales modernas es un fenómeno multimodal. Si bien la evaluación independiente sobre el conjunto ciego oficial ajusta el rendimiento real del sistema a un \textit{F1-Score} de 0.6311, la arquitectura unificada logra una mejora frente a los envíos unimodales originales de la competición. 
 
-Adicionalmente, los experimentos complementarios de la Tarea 3.3 revelaron que la detección de tipologías específicas requiere enfoques especializados (por ejemplo, el movimiento temporal para captar la cosificación, o el texto puro para el sesgo ideológico), mientras que la experimentación con \textit{LeWiDi} confirmó que la identidad demográfica del anotador altera sistemáticamente la detección del discurso de odio.
+Adicionalmente, los experimentos complementarios de la Tarea 3.3 sugirieron que la detección de tipologías específicas requiere enfoques especializados (por ejemplo, el movimiento temporal para captar la cosificación, o el texto puro para el sesgo ideológico), mientras que la experimentación con \textit{LeWiDi} indicó que la identidad demográfica del anotador altera la detección del discurso de odio. 

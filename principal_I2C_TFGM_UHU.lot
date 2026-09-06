@@ -17,9 +17,10 @@
 \contentsline {table}{\numberline {3.12}{\ignorespaces Rendimiento de los modelos de Visión Temporal}}{54}{table.3.12}%
 \contentsline {table}{\numberline {3.13}{\ignorespaces Rendimiento del \textit {TimeSFormer} con las estrategias de hiperparámetros}}{55}{table.3.13}%
 \contentsline {table}{\numberline {3.14}{\ignorespaces Rendimiento del \textit {TimeSFormer} con las estrategias de \textit {data augmentation}}}{55}{table.3.14}%
-\contentsline {table}{\numberline {3.15}{\ignorespaces Rendimiento comparativo de las estrategias de Perspectivismo por género.}}{66}{table.3.15}%
-\contentsline {table}{\numberline {3.16}{\ignorespaces Resultados de \textit {Accuracy} y \textit {F1-score} de cada una de las etiquetas}}{69}{table.3.16}%
-\contentsline {table}{\numberline {3.17}{\ignorespaces Resumen de los mejores modelos obtenidos por modalidad para la Tarea 3.1.}}{71}{table.3.17}%
+\contentsline {table}{\numberline {3.15}{\ignorespaces Resultados oficiales obtenidos en la Subtarea 3.1 de \textit {EXIST 2025} con el modelo \textit {Ensemble}}}{60}{table.3.15}%
+\contentsline {table}{\numberline {3.16}{\ignorespaces Rendimiento comparativo de las estrategias de Perspectivismo por género.}}{67}{table.3.16}%
+\contentsline {table}{\numberline {3.17}{\ignorespaces Resultados de \textit {Accuracy} y \textit {F1-score} de cada una de las etiquetas}}{70}{table.3.17}%
+\contentsline {table}{\numberline {3.18}{\ignorespaces Resumen de los mejores modelos obtenidos por modalidad para la Tarea 3.1.}}{72}{table.3.18}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Estimación de la planificación temporal del trabajo realizado.}}{75}{table.4.1}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Estimación de la planificación temporal del trabajo realizado.}}{76}{table.4.1}%
 \addvspace {10\p@ }
