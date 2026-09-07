@@ -43,7 +43,7 @@ En la \autoref{tab:ResultadosOficialesEXIST} se detallan las métricas obtenidas
         \textbf{Envío Oficial} & \textbf{Ranking} & \textbf{ICM-Hard} & \textbf{ICM-Hard Norm} & \textbf{F1 (Clase YES)} \\
         \midrule
         (\textit{BERT}) & 31 & -0.1278 & 0.4355 & 0.5768 \\
-        (\textit{LLaMA}) & 39 & -0.4212 & 0.2874 & 0.1379 \\
+        (\textit{Llama}) & 39 & -0.4212 & 0.2874 & 0.1379 \\
         \bottomrule
     \end{tabular}
     \caption{Resultados oficiales obtenidos en la Subtarea 3.1 de EXIST 2025}
@@ -131,12 +131,12 @@ Para garantizar un marco de experimentación robusto y reproducible, el conjunto
 
 \subsection{Preprocesado de texto, limpieza y tokenización}
 \label{PreprocesadoDeTextoLimpiezaYTokenizacion}
-Las transcripciones automáticas de los vídeos suelen presentar irregularidades gramaticales. Por ello, el texto fue estandarizado transformando los valores nulos, eliminando caracteres residuales y forzando la compatibilidad de tipos (\textit{string}) para evitar fallos de ejecución. 
+Las transcripciones automáticas de los vídeos suelen presentar irregularidades gramaticales. Por ello, en primer lugar, el texto fue estandarizado transformando los valores nulos y forzando la compatibilidad de \textit{string} para evitar fallos de ejecución. A continuación, tal y como se describió en el marco teórico, se aplicó un proceso de limpieza mediante expresiones irregulares (\textit{regex}). Este proceso convirtió el texto a minúsculas y eliminó sistemáticamente enlaces webs (\textit{URLs}), menciones directas a usuarios, etiquetas (\textit{hashtags}), emoticonos (\textit{emojis}) y prefijos estructurales de la transcripción (como \texttt{``AUDIO:''} o \texttt{``VIDEO:''}).
 
 El proceso de tokenización varió drásticamente en función de la familia de modelos utilizados: 
 \begin{itemize}
     \item \textbf{\textit{Transformers}}: Se emplearon los tokenizadores nativos de cada arquitectura. Los textos fueron truncados y rellenados dinámicamente (\textit{padding}) para igualar las longitudes de los tensores. A nivel interno, una frase como ``\textit{El machismo no existe}'' se descompone en tokens elementales y se traduce a un vector numérico estructurado (por ejemplo: \texttt{[101, 235, 14234, 156, ...]}) denominado \texttt{input\_ids}, acompañado de una máscara de atención (\texttt{attention\_mask}).    
-    \item \textbf{\textit{LLMs}}: Para el \textit{fine-tuning} de modelos como \textit{LLaMA} o \textit{Mistral}, el preprocesamiento exigió la implementación de una técnica de \textit{Prompt Engineering}. Cada transcripción se envolvió en una plantilla estructurada que indicaba explícitamente al modelo su tarea, restringiendo su vocabulario de salida exclusivamente a las palabras ``YES'' o ``NO''.
+    \item \textbf{\textit{LLMs}}: Para el \textit{fine-tuning} de modelos como \textit{Llama} o \textit{Mistral}, el preprocesamiento exigió la implementación de una técnica de \textit{Prompt Engineering}. Cada transcripción se envolvió en una plantilla estructurada que indicaba explícitamente al modelo su tarea, restringiendo su vocabulario de salida exclusivamente a las palabras ``YES'' o ``NO''.
 \end{itemize}
 
 \subsection{Extracción de Características Visuales}
@@ -705,7 +705,7 @@ Una revisión manual de los casos en los que el modelo mostró mayor ``confianza
     \begin{itemize}
         \item \textbf{Texto}: ``\textit{reply to stay smiling friends replying to yourmommaluvsthed's comment, i find chicks with jacked up teeth attractive. you must be in kentucky...}''
         \item \textbf{Etiqueta real}: Sexista (1) | \textbf{Predicción}: No sexista (0)
-        \item \textbf{Comentario}: El mensaje contiene una clara cosificación y un uso despectivo hacia las mujeres (``\textit{chicks}''), pero el modelo no logró captar el sesgo implícito. Esto se debe a que la ofensa es sutil, se presenta como una falsa preferencia estética y está altamente diluida por el ruido de las transcripciones de la red social (``\textit{replying to... comment}'').
+        \item \textbf{Comentario}: El mensaje contiene una clara cosificación y un uso despectivo hacia las mujeres (``\textit{chicks}''), pero el modelo no logró captar el sesgo implícito. Esto se debe a que la ofensa es sutil, se presenta como una falsa preferencia estética y está altamente diluida por el ruido de las transcripciones de la red social (``\textit{replying to... comment}''), un formato de metadato conversacional extraño de \textit{TikTok} que evadió los filtros de limpieza de expresiones regulares, confundiendo a la red neuronal.
     \end{itemize}
 \end{itemize}
 
@@ -750,7 +750,7 @@ Las predicciones binarias generadas por el \textit{Ensemble} fueron enviadas a l
     \label{tab:ResultadosOficialesEnsemble}
 \end{table}
 
-Al contrastar esta evaluación independiente con las métricas de las entregas unimodales iniciales de la competición (detalladas previamente en la \autoref{tab:ResultadosOficialesEXIST}), se observa una mejora en el rendimiento del sistema. El \textit{Ensemble} alcanza un \textit{ICM Norm} de 0.4491, superando el 0.4355 de nuestro mejor envío oficial (\textit{BERT}) y distanciándose significativamente del 0.2874 obtenido por el modelo generativo \textit{LLaMA}.
+Al contrastar esta evaluación independiente con las métricas de las entregas unimodales iniciales de la competición (detalladas previamente en la \autoref{tab:ResultadosOficialesEXIST}), se observa una mejora en el rendimiento del sistema. El \textit{Ensemble} alcanza un \textit{ICM Norm} de 0.4491, superando el 0.4355 de nuestro mejor envío oficial (\textit{BERT}) y distanciándose significativamente del 0.2874 obtenido por el modelo generativo \textit{Llama}.
 
 Como es habitual en este tipo de investigaciones, se registra una caída lógica en el rendimiento al pasar del entorno de selección local (\textit{F1}: 0.7261) al entorno ciego (\textit{F1}: 0.6311), evidenciando la dificultad que presentan las nuevas distribuciones de datos. Sin embargo, la evolución positiva respecto a los \textit{baselines} oficiales sugiere que la estrategia de fusión multimodal aporta una mayor robustez general. La combinación del análisis espacial de la imagen con la transcripción textual resulta de gran utilidad para contextualizar el mensaje, mitigando parte de la ambigüedad presente en las redes sociales y estableciendo una base más sólida para la moderación automática. 
 
