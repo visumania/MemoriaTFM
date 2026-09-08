@@ -16,7 +16,7 @@ En su edición de 2025, la organización ha dado un salto cualitativo hacia la m
     \item \textbf{Tarea 3 (Vídeos)}: Basada en archivos multimedia extraídos de la plataforma \textit{TikTok}.
 \end{itemize}
 
-Esta aproximación completamente multimedia resulta esencial para evaluar la capacidad real de los sistemas a la hora de detectar la subjetividad y la ofensa en fuentes de datos complejas.
+Esta aproximación multimodal resulta esencial para evaluar la capacidad real de los sistemas a la hora de detectar la subjetividad y la ofensa en fuentes de datos complejas.
 
 \subsection*{Participación global y datos del reto}
 \label{subsec:ParticipacionGlobalYDatosDelReto}
@@ -40,10 +40,10 @@ En la \autoref{tab:ResultadosOficialesEXIST} se detallan las métricas oficiales
     \centering
     \begin{tabular}{lcccc}
         \toprule
-        \textbf{Envío Oficial} & \textbf{Ranking} & \textbf{ICM-Hard} & \textbf{ICM-Hard Norm} & \textbf{F1 (Clase YES)} \\
+        \textbf{Envío Oficial} & \textbf{Ranking} & \textbf{ICM-Hard} & \textbf{ICM-Hard Norm} & \textbf{F1 Macro} \\
         \midrule
         (\textit{BERT}) & 31 & -0.1278 & 0.4355 & 0.5768 \\
-        (\textit{Llama}) & 39 & -0.4212 & 0.2874 & 0.1379 \\
+        (\textit{LLaMA}) & 39 & -0.4212 & 0.2874 & 0.1379 \\
         \bottomrule
     \end{tabular}
     \caption{Resultados oficiales obtenidos en la Subtarea 3.1 de EXIST 2025}
@@ -68,7 +68,7 @@ La \autoref{fig:PipelineSeguida} muestra el \textit{pipeline} del marco de exper
 
 De forma estructurada, la secuencia completa de procesos abordada para resolver la detección y categorización del discurso sexista se divide en las siguientes fases principales:
 \begin{enumerate}
-    \item \textbf{Preparación y Tratamiento de Datos}: Esta fase inicial engloba la limpieza del corpus textual, la estandarización del conjunto de datos mediante una división estratificada (conjuntos de \textit{Train} y \textit{Test} de desarrollo para garantizar la reproducibilidad) y la extracción automatizada de características visuales. Para esto último, se procesaron los archivos multimedia generando diferentes conjuntos de \textit{frames}.
+    \item \textbf{Preparación y Tratamiento de Datos}: Esta fase inicial engloba la limpieza del corpus textual y la estandarización del conjunto de datos mediante una división estratificada. Se generó un conjunto de \textit{Train} y un \textit{Test} local de desarrollo (destinado empíricamente a la calibración y selección de modelos). Para garantizar una reproducibilidad estricta, los identificadores exactos (\textit{IDs}) de los vídeos pertenecientes a cada partición se han publicado en el repositorio del proyecto. Finalmente, se llevó a cabo la extracción automatizada de características visuales, procesando los archivos multimedia para generar diferentes conjuntos de \textit{frames}.
     \item \textbf{Selección y Entrenamiento Unimodal}: Ante la complejidad del formato vídeo, se optó por la estrategia de ``divide y vencerás'', seleccionando y entrenando arquitecturas expertas para cada modalidad de forma aislada:
     \begin{itemize}
         \item \textit{Modalidad de texto}: Experimentación con modelos discriminativos multilingües (familia \textit{Transformer}) y modelos generativos masivos (\textit{LLMs}).
@@ -100,7 +100,8 @@ Para adaptar este conjunto a los requisitos de la Tarea 3.1 (clasificación bina
 Dado que el archivo en bruto proporcionado no exponía de forma explícita una columna con la etiqueta \textit{Gold Standard} unificada, se optó por ignorar el supuesto \textit{label} oficial externo y reconstruir las etiquetas desde las matrices de votación para asegurar la coherencia absoluta del conjunto de entrenamiento:
 \begin{itemize}
     \item \textbf{Voto por mayoría}: En la inmensa mayoría de las instancias, que contaban con 3 anotadores (reflejando la adjudicación),se asignó directamente la etiqueta mayoritaria. Por ejemplo: un registro con los votos \texttt{[YES, NO, YES]} se catalogó de forma automática como sexista.
-    \item \textbf{Descarte por conflicto}: Durante la extracción, se detectaron 16 casos residuales evaluados únicamente por 2 anotadores en los que existía un empate absoluto (1 voto a favor y 1 en contra), sin constancia de un tercer voto de resolución en la matriz de datos. En lugar de forzar una etiqueta de manera manual o aleatoria, se tomó la decisión de eliminar estas muestras para evitar introducir ruido en el entrenamiento de la red neuronal. 
+    \item \textbf{Descarte por conflicto}: Durante el procesamiento de las etiquetas, se aplicó un \textbf{criterio} estricto de exclusión para aquellos casos en los que no se llegó a un consenso. Específicamente, se detectaron 16 casos residuales evaluados únicamente por 2 anotadores en los que existía un empate absoluto (1 voto a favor y 1 en contra), sin constancia de un tercer voto de resolución en la matriz de datos. En lugar de forzar una asignación de manera manual o aleatoria, se eliminaron estas muestras. El \textbf{impacto} estadístico de esta decisión supone una reducción marginal del corpus (eliminando apenas un 0.8\% de los datos, para fijar el conjunto final de entrenamiento en 2006 instancias), pero resulta metodológicamente crítico para evitar inyectar ruido e inconsistencias en la red neuronal. Para garantizar la trazabilidad de esta limpieza, los identificadores de estas muestras han sido documentados \footnote{Los \textit{IDs} de los 16 vídeos descartados por empate absoluto son: [120157, 120165, 120478, 120551, 120785, 120997, 121304, 121316, 220023, 220157, 220778, 220793, 220872, 220921, 220929, 121443]}.
+
 \end{itemize}
 
 Para asegurar la total reproducibilidad de esta reducción, el filtro se ejecutó automáticamente mediante un \textit{script} incluido en el cuaderno \texttt{Dataset\_Task\_3\_1.ipynb}. Tras aplicarlo, tal y como se puede apreciar en la \autoref{fig:Dataset3.1Transformado}, el conjunto original de 2524 vídeos se redujo a 2508 registros limpios (1306 no sexistas y 1202 sexistas), garantizando que los modelos se entrenaran exclusivamente sobre instancias con un consenso humano verificable.  
@@ -145,8 +146,8 @@ Las transcripciones automáticas de los vídeos suelen presentar irregularidades
 
 Una vez finalizada la limpieza del texto, el proceso de tokenización varió drásticamente en función de la familia de modelos utilizados: 
 \begin{itemize}
-    \item \textbf{\textit{Transformers}}: Se emplearon los tokenizadores nativos de cada arquitectura. Los textos fueron truncados y rellenados dinámicamente (\textit{padding}) para igualar las longitudes de los tensores. A nivel interno, una frase como ``\textit{El machismo no existe}'' se descompone en tokens elementales y se traduce a un vector numérico estructurado (por ejemplo: \texttt{[101, 235, 14234, 156, ...]}) denominado \texttt{input\_ids}, acompañado de una máscara de atención (\texttt{attention\_mask}).    
-    \item \textbf{\textit{LLMs}}: Para el \textit{fine-tuning} de modelos como \textit{Llama} o \textit{Mistral}, el preprocesamiento exigió la implementación de una técnica de \textit{Prompt Engineering}. Cada transcripción se envolvió en una plantilla estructurada que indicaba explícitamente al modelo su tarea, restringiendo su vocabulario de salida exclusivamente a las palabras ``YES'' o ``NO''.
+    \item \textbf{\textit{Transformers}}: Se emplearon los tokenizadores nativos de cada arquitectura (utilizando algoritmos como \textit{WordPiece} para las variantes de \textit{BERT} y \textit{Byte-Pair Encoding} o \textit{BPE} para \textit{RoBERTa}). Para garantizar la uniformidad de los tensores de entrada y optimizar el consumo de memoria de la GPU, se aplicó un truncamiento y rellenado dinámico (\textit{padding}) estableciendo una longitud máxima de secuencia (\textit{max\_length}) de \textbf{[128]} \textit{tokens}. A nivel interno, una frase como ``\textit{El machismo no existe}'' se descompone en tokens elementales y se traduce a un vector numérico estructurado (por ejemplo: \texttt{[101, 235, 14234, 156, ...]}) denominado \texttt{input\_ids}, acompañado de una máscara de atención (\texttt{attention\_mask}).
+    \item \textbf{\textit{LLMs}}: Para el \textit{fine-tuning} de modelos como \textit{LLaMA} o \textit{Mistral}, el preprocesamiento exigió la implementación de una técnica de \textit{Prompt Engineering}. Cada transcripción se envolvió en una plantilla estructurada que indicaba explícitamente al modelo su tarea, restringiendo su vocabulario de salida exclusivamente a las palabras ``YES'' o ``NO''.
 \end{itemize}
 
 \subsection{Extracción de Características Visuales}
@@ -194,7 +195,7 @@ Para asegurar la reproducibilidad de los resultados presentados, es fundamental 
 Debido a las estrictas limitaciones computacionales y de tiempo operativo derivadas del procesamiento profundo en redes neuronales, cada configuración se ejecutó una única vez. Esta metodología constituye una limitación formal del estudio: al carecer de ejecuciones múltiples, las variaciones en el rendimiento entre ciertos modelos podrían atribuirse a la aleatoriedad de la inicialización de los pesos y no únicamente a la superioridad de una arquitectura frente a otra. 
 
 \subsection*{Establecimiento del \textit{Baseline} Local}
-Para poder medir objetivamente el impacto de las nuevas estrategias y modelos que se detallarán en las siguientes secciones, resultó indispensable establecer un punto de referencia o \textit{baseline} local. Para ello, se evaluaron los dos modelos originales enviados a la competición oficial sobre el \textbf{conjunto local de desarrollo o \textit{holdout} exploratorio} (las 502 instancias reservadas en la fase de preprocesamiento).
+Para poder medir objetivamente el impacto de las nuevas estrategias y modelos que se detallarán en las siguientes secciones, resultó indispensable establecer un punto de referencia o \textit{baseline} local. Para ello, se evaluaron los dos modelos originales enviados al reto oficial sobre el \textbf{conjunto local de desarrollo o \textit{holdout} exploratorio} (las 502 instancias reservadas en la fase de preprocesamiento).
 
 
 En la \autoref{tab:BaselineLocal} se exponen las métricas obtenidas por la arquitectura discriminativa multilingüe y el modelo generativo \textit{Zero-Shot} ante este conjunto exploratorio:
@@ -235,7 +236,7 @@ Tras una primera iteración de entrenamientos, con los hiperparámetros estánda
         \textit{weight\_decay} & 0.1 \\
         \bottomrule
     \end{tabular}
-    \caption{Configuración estándar con las que fueron entrenados los \textit{Transformers}}.
+    \caption{Configuración estándar con las que fueron entrenados los \textit{Transformers}.}
     \label{tab:HiperparametrosPorDefectoTransformers}
 \end{table}
 
@@ -337,7 +338,7 @@ Para evaluar qué arquitectura extraía mejores características espaciales, se 
 El proceso de entrenamiento evaluaba el modelo fotograma a fotograma. Sin embargo, dado que el objetivo de la Tarea 3.1 es clasificar el vídeo en su conjunto, durante la fase de inferencia sobre el conjunto local de desarrollo se implementaron tres estrategias de \textit{pooling}:
 \begin{enumerate}
     \item \textbf{\textit{Max-Pooling}}: Si al menos un fotograma del vídeo es clasificado como sexista (probabilidad > 0.5), el vídeo completo se cataloga como sexista.
-    \item \textbf{\textit{Mean-Pooling}}: Se calcula la media aritmética de las probabilidades de todos los fotogramas del vídeo. Si la media supera el 50\%, se clasifica como sexista.
+    \item \textbf{\textit{Mean-Pooling}}: Se calcula la media aritmética de las probabilidades de todos los fotogramas del vídeo. Bajo esta lógica, la decisión final evalúa la tendencia general de la secuencia. Entonces, la presencia aislada de un único fotograma con alta probabilidad de sexismo no determina necesariamente que la media supere el umbral del 50\% si el resto del contenido visual puntúa a la baja, actuando así como un mecanismo estabilizador frente a picos o falsos positivos puntuales.
     \item \textbf{\textit{Majority vote}}: El vídeo se etiqueta como sexista solo si la mitad o más de sus fotogramas individuales superan el umbral de decisión. 
 \end{enumerate}
 
@@ -751,7 +752,7 @@ Esta diferencia de 15 puntos porcentuales es la causa directa de la acumulación
 \label{subsec:EvaluacionFinalTestCiego}
 Tras la calibración interna del sistema explicada en las secciones anteriores, se procedió a la fase de evaluación definitiva. Con el objetivo de validar verdaderamente el modelo, se ejecutó la inferencia completa sobre el conjunto de \textit{Test} ciego oficial proporcionado por la organización del reto \textit{EXIST 2025} (compuesto por 674 vídeos sin etiquetar), el cual garantiza la separación rigurosa de autores para evitar fuga de información.
 
-Las predicciones binarias generadas por el \textit{Ensemble} fueron enviadas a la plataforma oficial de evaluación de la competición \footnote{\url{https://evall.uned.es/}}. En la \autoref{tab:ResultadosOficialesEnsemble} se presentan las métricas finales emitidas por el sistema \textit{PyEvALL}.
+Las predicciones binarias generadas por el \textit{Ensemble} fueron enviadas a la plataforma oficial de evaluación del reto \footnote{\url{https://evall.uned.es/}}. En la \autoref{tab:ResultadosOficialesEnsemble} se presentan las métricas finales emitidas por el sistema \textit{PyEvALL}.
 
 \begin{table}[H]
     \centering
@@ -761,7 +762,7 @@ Las predicciones binarias generadas por el \textit{Ensemble} fueron enviadas a l
         \textbf{\begin{tabular}[c]{@{}c@{}}Ranking \\ Hipotético\end{tabular}} & 
         \textbf{ICM-Hard} & 
         \textbf{\begin{tabular}[c]{@{}c@{}}ICM-Hard \\ Norm\end{tabular}} & 
-        \textbf{F1 (Clase YES)} \\
+        \textbf{F1 Macro} \\
         \midrule
         \begin{tabular}[c]{@{}l@{}}\textit{Ensemble Multimodal} \\ (\textit{Late Fusion})\end{tabular} & 34 & -0.1008 & 0.4491 & 0.6311 \\
         \bottomrule
@@ -770,13 +771,13 @@ Las predicciones binarias generadas por el \textit{Ensemble} fueron enviadas a l
     \label{tab:ResultadosOficialesEnsemble}
 \end{table}
 
-Al contrastar esta evaluación independiente con las métricas de las entregas unimodales iniciales de la competición (detalladas previamente en la \autoref{tab:ResultadosOficialesEXIST}), se observa una mejora en el rendimiento del sistema. El \textit{Ensemble} alcanza un \textit{ICM Norm} de 0.4491, superando el 0.4355 de nuestro mejor envío oficial (\textit{BERT}) y distanciándose significativamente del 0.2874 obtenido por el modelo generativo \textit{Llama}.
+Al contrastar esta evaluación independiente con las métricas de las entregas unimodales iniciales del reto (detalladas previamente en la \autoref{tab:ResultadosOficialesEXIST}), se observa una mejora en el rendimiento del sistema. El \textit{Ensemble} alcanza un \textit{ICM Norm} de 0.4491, superando el 0.4355 de nuestro mejor envío oficial (\textit{BERT}) y distanciándose significativamente del 0.2874 obtenido por el modelo generativo \textit{LLaMA}.
 
 Como es habitual en este tipo de investigaciones, se registra una caída en el rendimiento al pasar del entorno de selección local (\textit{F1}: 0.7261) al entorno ciego (\textit{F1}: 0.6311), evidenciando el \textit{overfitting} del conjunto exploratorio reutilizado y la dificultad que presentan las nuevas distribuciones de datos. Sin embargo, la evolución positiva respecto a los \textit{baselines} oficiales sugiere que la estrategia de fusión multimodal aporta una mayor robustez frente al problema. La combinación del análisis espacial de la imagen con la transcripción textual resulta de gran utilidad para contextualizar el mensaje, mitigando parte de la ambigüedad presente en las redes sociales y estableciendo una base más sólida para la moderación automática. 
 
 \section{Perspectivismo en \textit{LeWiDi}}
 \label{sec:PerspectivismoEnLewidi}
-El reto \textit{EXIST 2025} introduce un desafío pionero en el campo de la detección del sexismo: la noción de que el sexismo, especialmente en sus formas más sutiles (como micromachismos y paternalismos), no siempre goza de un consenso absoluto. La percepción de si un comentario es sexista o inofensivo puede variar significativamente dependiendo de los sesgos culturales, las vivencias personales y, particularmente, el género del individuo que lo evalúa. Este concepto, conocido como Perspectivismo (\textit{Learning with Disagreement} o \textit{LeWiDi}), defiende que el desacuerdo entre anotadores no es un ``ruido'' que deba limpiarse, sino una señal rica en información que debe modelarse. 
+El reto \textit{EXIST 2025} introduce un desafío pionero en el campo de la detección del sexismo: la noción de que el sexismo, especialmente en sus formas más sutiles (como micromachismos y paternalismos), no siempre goza de un consenso absoluto. La percepción de si un comentario es sexista o inofensivo puede variar significativamente dependiendo de los sesgos culturales, las vivencias personales y, particularmente, el género del individuo que lo evalúa. Esta pluralidad de visiones se fundamenta teóricamente en el \textbf{Perspectivismo}, un concepto que reconoce la subjetividad en la interpretación del discurso. En el ámbito del aprendizaje automático, esta noción se materializa a través del paradigma \textbf{\textit{Learning with Disagreement} (\textit{LeWiDi})}, el cual defiende que el desacuerdo empírico entre anotadores no es un ``ruido'' estadístico que deba limpiarse, sino una señal rica en información que debe modelarse.
 
 En las secciones anteriores, los modelos se entrenaron mediante ``Consenso Mayoritario'' (fusionando todas las opiniones en una sola etiqueta unificada). En esta última fase experimental referente a la Tarea 3.1, se buscará explorar cómo varía el rendimiento empírico de las redes neuronales cuando se filtran los datos de entrenamiento por el género del anotador o se instruye a un modelo generativo a simular un rol. 
 
@@ -854,7 +855,7 @@ En la \autoref{fig:ResultadosTransformersPerspectivismoHombreDiscard} y en la \a
 En la \autoref{fig:ResultadosTransformersPerspectivismoHombrePessimistic} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerPessimistic}, asumiendo la etiqueta sexista en caso de empate humano, las métricas muestran el siguiente comportamiento:
 \begin{itemize}
     \item \textbf{Perspectiva Femenina}: Alcanza aquí el mejor rendimiento global registrado en esta fase (\textit{F1-score} de 0.6860). La adopción de esta postura conservadora no dispara de forma descontrolada los Falsos Positivos, conservando una \textit{Precisión} de 0.72 para la clase positiva.
-    \item \textbf{Perspectiva Masculina}: El modelo disminuye su rendimiento bajo esta directriz (F1: 0.6453). Al obligarle a asumir la etiqueta sexista en los empates, el modelo incrementa los errores al clasificar instancias de la clase 0, lo que reduce su \textit{Accuracy} global a 0.6494.
+    \item \textbf{Perspectiva Masculina}: El modelo disminuye su rendimiento bajo esta directriz (F1: 0.6453). Al obligarle a asumir la etiqueta sexista en los empates, el modelo incrementa los errores al clasificar instancias de la clase 0.
 \end{itemize}
 
 \begin{figure}[H]
@@ -872,8 +873,8 @@ En la \autoref{fig:ResultadosTransformersPerspectivismoHombrePessimistic} y en l
 
 En la \autoref{fig:ResultadosTransformersPerspectivismoHombreOptimistic} y en la \autoref{fig:ResultadosTransformersPerspectivismoMujerOptimistic}, asumiendo la etiqueta no sexista en los empates, se observa:
 \begin{itemize}
-    \item \textbf{Perspectiva Masculina}: El modelo logra un \textit{Accuracy} general de 0.6713, pero presenta un \textit{Recall} de 0.54 para la clase sexista, arrojando 110 Falsos Negativos en su matriz frente a los datos del \textit{Gold Standard}.
-    \item \textbf{Perspectiva Femenina}: Aunque su \textit{Accuracy} global decae (0.6534), su \textit{Recall} para la clase sexista se sitúa en 0.71, reduciendo los Falsos Negativos a 71.
+    \item \textbf{Perspectiva Masculina}: El modelo presenta un \textit{Recall} de 0.54 para la clase sexista, arrojando 110 Falsos Negativos en su matriz frente a los datos del \textit{Gold Standard}.
+    \item \textbf{Perspectiva Femenina}: Su \textit{Recall} para la clase sexista se sitúa en 0.71, reduciendo los Falsos Negativos a 71.
 \end{itemize}
 
 \begin{figure}[H]
@@ -1061,10 +1062,10 @@ El entrenamiento aislado de los cuatro mejores modelos contra las cinco etiqueta
     \label{tab:ResultadosEntrenamientosMultietiqueta}
 \end{table}
 
-El análisis comparativo de las métricas de rendimiento (\textit{F1-score Macro} y \textit{Accuracy}) arroja tres observaciones fundamentales que sugieren cómo se comportan las redes neuronales frente al tipo de sexismo:
+El análisis comparativo de las métricas de rendimiento (\textit{F1-score Macro} y \textit{Accuracy}) por etiquetas arrojan tres observaciones fundamentales que sugieren cómo se comportan las redes neuronales frente al tipo de sexismo:
 \begin{enumerate}
     \item \textbf{El dominio del Texto en la Ideología y el Estereotipo}: Para la etiqueta \textit{Ideological and Inequality}, el modelo puramente textual \texttt{RoBERTa-base} dominó la clasificación con un F1 de \textbf{0.7050}, muy superior al resto de modelos, incluyendo a \textit{Mistral} que obtuvo un pobre 0.4473. El contenido ideológico y político en plataformas como \textit{TikTok} recae casi exclusivamente en el discurso hablado o escrito, haciendo que las modalidades visuales (\texttt{ConvNeXt}: 0.5911, \texttt{TimeSFormer}: 0.5908) queden relegadas a un papel secundario. En la categoría \textit{Stereotyping and Dominance}, \texttt{RoBERTa} volvió a liderar (F1: 0.5963), seguido de cerca por la visión temporal (0.5624), sugiriendo que los estereotipos sí poseen una carga visual de acciones o roles que el modelo de vídeo logra captar en mejor medida que el de imagen estática.
-    \item \textbf{Indicios sobre el movimiento en la Cosificación}: En la etiqueta \textit{Objectification}, los modelos de texto (\texttt{RoBERTa}: 0.5087) y de imagen estática (\texttt{ConvNeXt}: 0.5116) mostraron dificultades, obteniendo métricas cercanas a la clasificación aleatoria. Sin embargo, la arquitectura de visión temporal \texttt{TimeSFormer} logró despuntar ligeramente (F1: \textbf{0.5399}). A falta de pruebas de evaluaciones en un entorno de test ciego, este resultado sirve como un indicio exploratorio de que la cosificación en formato vídeo podría captarse con mayor eficacia modelando el movimiento (poses, movimientos de cámara o acciones sugerentes en el tiempo) que analizando un fotograma congelado.
+    \item \textbf{Indicios sobre el movimiento en la Cosificación}: En la etiqueta \textit{Objectification}, los modelos de texto (\texttt{RoBERTa}: 0.5087) y de imagen estática (\texttt{ConvNeXt}: 0.5116) mostraron dificultades. Sin embargo, la arquitectura de visión temporal \texttt{TimeSFormer} logró despuntar ligeramente (F1: \textbf{0.5399}). A falta de pruebas de evaluaciones en un entorno de test ciego, este resultado sirve como un indicio exploratorio de que la cosificación en formato vídeo podría captarse con mayor eficacia modelando el movimiento (poses, movimientos de cámara o acciones sugerentes en el tiempo) que analizando un fotograma congelado.
     \item \textbf{Colapso predictivo ante el desbalanceo de clases raras}: Para las categorías extremadamente minoritarias en el \textit{dataset} (\textit{Sexual Violence} y \textit{Misogyny and Non-Sexual Violence}), los cuatro modelos sin excepción sufrieron un colapso. El valor de \textit{F1-score Macro} de \textbf{0.4601} (con un \textit{Accuracy} de 0.8522) observado en \textit{Sexual Violence} ilustra el \textit{baseline} mayoritario: debido a la extrema escasez de ejemplos positivos de violencia sexual, las redes neuronales no logran extraer patrones y optan por predecir sistemáticamente la clase negativa (0) en todas las instancias. El 0.4601 no representa un aprendizaje deficiente, sino el valor matemático resultante de obtener un \textit{Recall} perfecto en la clase mayoritaria y un cero absoluto en la minoritaria. Ninguna modalidad pudo sobreponerse a esta barrera estadística sin la aplicación previa de técnicas agresivas de \textit{Oversampling} o ajustes en la ponderación de la función de pérdida.
 \end{enumerate}
 
@@ -1096,6 +1097,6 @@ En la \autoref{tab:ResumenGlobalMejoresModelos} se consolida exclusivamente el m
     \label{tab:ResumenGlobalMejoresModelos}
 \end{table}
 
-Como se observa empíricamente en la tabla, dentro del entorno de desarrollo local ninguna modalidad aislada fue capaz de superar al \texttt{Mistral-7B-Instruct} en la métrica \textit{F1-score}. La mejora más significativa a nivel interno se produjo al fusionar los grandes modelos de lenguaje con la extracción de características espaciales de la visión estática y temporal, sugiriendo el potencial del enfoque multimodal para el análisis del sexismo en redes sociales modernas. Si bien la evaluación independiente sobre el conjunto ciego oficial ajusta el rendimiento real del sistema a un \textit{F1-score} de 0.6311 (reflejando el sobreajuste previo al conjunto local de validación), la arquitectura unificada logra una mejora evidente frente a los envíos unimodales originales de la competición.
+Como se observa empíricamente en la tabla, dentro del entorno de desarrollo local ninguna modalidad aislada fue capaz de superar al \texttt{Mistral-7B-Instruct} en la métrica \textit{F1-score}. La mejora más significativa a nivel interno se produjo al fusionar los grandes modelos de lenguaje con la extracción de características espaciales de la visión estática y temporal, sugiriendo el potencial del enfoque multimodal para el análisis del sexismo en redes sociales modernas. Si bien la evaluación independiente sobre el conjunto ciego oficial ajusta el rendimiento real del sistema a un \textit{F1-score} de 0.6311 (reflejando el sobreajuste previo al conjunto local de validación), la arquitectura unificada logra una mejora evidente frente a los envíos unimodales originales del reto.
 
 Adicionalmente, los experimentos complementarios de la Tarea 3.3 sugirieron que la detección de tipologías específicas requiere enfoques especializados (por ejemplo, el movimiento temporal para captar la cosificación, o el texto puro para el sesgo ideológico), mientras que la experimentación exploratoria con \textit{LeWiDi} sugirió que las diferencias demográficas en la anotación podrían influir en el comportamiento del modelo, si bien este hallazgo debe interpretarse con suma cautela debido a los factores presentes en las distribuciones de los datos.

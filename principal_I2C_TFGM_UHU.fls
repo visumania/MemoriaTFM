@@ -577,6 +577,7 @@ INPUT .\Figuras\DatasetOriginal.png
 INPUT .\Figuras\DatasetOriginal.png
 INPUT .\Figuras\DatasetOriginal.png
 INPUT .\Figuras\DatasetOriginal.png
+INPUT C:\Users\adria\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti0900.tfm
 INPUT .\Figuras\Dataset3.1Transformado.png
 INPUT .\Figuras\Dataset3.1Transformado.png
 INPUT .\Figuras\Dataset3.1Transformado.png
@@ -696,6 +697,10 @@ INPUT .\principal_I2C_TFGM_UHU.out
 INPUT .\principal_I2C_TFGM_UHU.out
 INPUT principal_I2C_TFGM_UHU.run.xml
 OUTPUT principal_I2C_TFGM_UHU.run.xml
+INPUT C:\Users\adria\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti0900.pk
+INPUT C:\Users\adria\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti0900.pk
+INPUT C:\Users\adria\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk
+INPUT C:\Users\adria\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk
 INPUT C:\Users\adria\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecso1440.pk
 INPUT C:\Users\adria\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecso1440.pk
 INPUT C:\Users\adria\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt0900.pk
