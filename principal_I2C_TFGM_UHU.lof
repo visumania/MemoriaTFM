@@ -28,4 +28,4 @@
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Resultados de la técnica \textit {Persona Prompting} instruyendo el rol de mujer}}{70}{figure.3.14}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Interfaz web desarrollada con Gradio alojada en Hugging Face Spaces.}}{88}{figure.Alph1.1}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Interfaz web desarrollada con Gradio alojada mediante un \textit {iframe} en \textit {Hugging Face Spaces}.}}{89}{figure.Alph1.1}%

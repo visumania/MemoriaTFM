@@ -2376,7 +2376,7 @@
     <bcf:citekey order="8" intorder="1">plaza2025overview</bcf:citekey>
     <bcf:citekey order="9" intorder="1">tian2025mario</bcf:citekey>
     <bcf:citekey order="10" intorder="1">mitchell1997machine</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">m2006pattern</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">bishop2006pattern</bcf:citekey>
     <bcf:citekey order="12" intorder="1">hastie2009elements</bcf:citekey>
     <bcf:citekey order="13" intorder="1">barto2019reinforcement</bcf:citekey>
     <bcf:citekey order="14" intorder="1">zhang2013review</bcf:citekey>
@@ -2450,7 +2450,6 @@
     <bcf:citekey order="82" intorder="1">sokolova2009systematic</bcf:citekey>
     <bcf:citekey order="83" intorder="1">tsoumakas2007multi</bcf:citekey>
     <bcf:citekey order="84" intorder="1">amigo2022evaluating</bcf:citekey>
-    <bcf:citekey order="85" intorder="1">chen2023vanillanet</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

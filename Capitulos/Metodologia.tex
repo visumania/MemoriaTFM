@@ -557,7 +557,7 @@ Al analizar las estrategias de \textit{Data Augmentation}, vemos que la caída d
 
 Aunque para afirmar que existe un sobreajuste sería necesario un análisis de las curvas de pérdida de entrenamiento y validación, la justificación principal  de esta degradación apunta a la naturaleza del dominio visual. A diferencia de un conjunto de imágenes ``naturales'' (donde un perro sigue siendo un perro aunque se rote 15 grados), los vídeos de redes sociales como \textit{TikTok} poseen una fuerte dependencia espacial: voltear horizontalmente la imagen destruye la legibilidad de los textos superpuestos, y alterar la saturación puede eliminar elementos vitales para el contexto. Por lo tanto, deducimos de forma precavida que estas técnicas, en lugar de regularizar el modelo, han inyectado ruido semántico. 
 
-En conclusión, la experimentación empírica nos dictamina que la arquitectura en su estado más puro y simple es la que mejor se adapta a este dominio de datos. En el mundo de la Inteligencia Artificial, este tipo de arquitecturas se conoce como \textbf{modelos vainilla} \cite{chen2023vanillanet}.
+En conclusión, la experimentación empírica nos dictamina que la arquitectura en su configuración base original, sin la aplicación de técnicas agresivas de aumento de datos, es la que mejor preserva el contexto espacial y se adapta a este dominio de redes sociales.
 
 \section{Experimentación con Modelos de Visión Temporal}
 \label{sec:ExperimentacionConModelosDeVisionTemporal}
